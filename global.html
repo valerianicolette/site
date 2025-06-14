@@ -357,11 +357,6 @@
         color: #699b49;
       }
 
-     
-
-       .floating-element{
-        animation: float 4s ease-in-out infinite;
-      }
 
        .floating-element{
         animation: float 4s ease-in-out infinite;
@@ -386,17 +381,7 @@
           left: -2.5rem;
         }
 
-        .experience-item {
-          grid-template-columns: 1fr;
-          gap: 1.5rem;
-          margin-bottom: 3rem;
-        }
-
-        .experience-right::before {
-          display: none;
-        }
-      }
-
+        
       .section-divider {
         position: relative;
         text-align: center;
@@ -413,6 +398,66 @@
         height: 2px;
         background: linear-gradient(135deg, #9db88d 0%, #699b49 100%);
         border-radius: 2px;
+      }
+
+      /* Clean Experience Layout */
+      .experience-item {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        gap: 4rem;
+        margin-bottom: 4rem;
+        align-items: start;
+      }
+
+      .experience-left {
+        text-align: left;
+      }
+
+      .experience-date {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.875rem;
+        color: #6b7280;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+
+      .experience-position {
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        color: #374151;
+        font-weight: 500;
+      }
+
+      .experience-right {
+        position: relative;
+      }
+
+      .experience-right::before {
+        content: '';
+        position: absolute;
+        left: -2rem;
+        top: 0.5rem;
+        width: 8px;
+        height: 8px;
+        background: #044c8c;
+        border-radius: 50%;
+      }
+
+      .experience-company {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.125rem;
+        color: #111827;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .experience-description {
+        color: #4b5563;
+        line-height: 1.7;
+        font-size: 0.95rem;
       }
 
     </style>
