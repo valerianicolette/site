@@ -35,7 +35,7 @@
                 dark: '#699b49',
               },
               accent: '#7a9968',
-              gold: '#c2204c', // Now using guava for gold references
+              gold: '#c2204c', 
             },
             backgroundImage: {
             hero: 'radial-gradient(ellipse at top left, #fefdfb 0%, #f5f1eb 40%, #f0ece6 75%)',
@@ -296,21 +296,28 @@
         border-radius: 2px;
       }
 
-      .text-about:hover {
-  color: #c6234e;
-}
-.text-story:hover {
-  color: #643b9f;
-}
-.text-exp:hover {
+    .text-about:hover {
+     color: #c6234e;
+    }
+
+    .text-story:hover {
+    color: #643b9f;
+    }
+
+    .text-global:hover {
+    color:
+    #699b49;
+    }
+
+    .text-exp:hover {
    color: #0887f7;
-}
-.text-portfolio:hover {
-  color: #b38d94;
-}
-.text-contact:hover {
-  color: #307848;
-}
+    }
+    .text-portfolio:hover {
+     color: #b38d94;
+    }
+    .text-contact:hover {
+    color: #307848;
+    }
 
       /* Guava hover effects for links */
 
@@ -425,7 +432,7 @@
         <div class="hidden md:flex space-x-8 text-sm tracking-wide uppercase font-medium">
             <a href="about.html" class="nav-link text-about">About Me</a>
             <a href="mylife.html" class="nav-link text-story">My Story</a>
-            <a href="global.html" class="nav-link text-story">Global Perspective</a>
+            <a href="global.html" class="nav-link text-global">Global Perspective</a>
             <a href="experience.html" class="nav-link text-exp">Experience</a>
             <a href="creative.html" class="nav-link text-portfolio">Portfolio</a>
             <a href="contact.html" class="nav-link text-contact">Contact & Collaborate</a>
@@ -444,7 +451,7 @@
         <div class="flex flex-col items-center justify-center h-full space-y-8 text-lg tracking-wide uppercase font-medium">
             <a href="about.html" class="nav-link text-about" onclick="closeMobileMenu()">About Me</a>
             <a href="mylife.html" class="nav-link text-story" onclick="closeMobileMenu()">My Story</a>
-            <a href="global.html" class="nav-link text-story" onclick="closeMobileMenu()">Global Perspective</a>
+            <a href="global.html" class="nav-link text-global" onclick="closeMobileMenu()">Global Perspective</a>
             <a href="experience.html" class="nav-link text-exp" onclick="closeMobileMenu()">Experience</a>
             <a href="creative.html" class="nav-link text-portfolio" onclick="closeMobileMenu()">Portfolio</a>
             <a href="contact.html" class="nav-link text-contact" onclick="closeMobileMenu()">Contact</a>
