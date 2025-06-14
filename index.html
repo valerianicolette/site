@@ -134,10 +134,49 @@
         border-color: rgba(157, 184, 141, 0.4);
       }
 
-      .section-icon {
+      .section-icon-about {
         width: 3rem;
         height: 3rem;
-        background: linear-gradient(135deg, #F9D5D3 0%, #f87171 100%);
+        background: linear-gradient(135deg, #F9D5D3 0%, #643b9f 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .section-icon-global {
+        width: 3rem;
+        height: 3rem;
+        background: linear-gradient(135deg, #F9D5D3 0%, #699b49; 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .section-icon-exp {
+        width: 3rem;
+        height: 3rem;
+        background: linear-gradient(135deg, #F9D5D3 0%, #0887f7; 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .section-icon-portfolio {
+        width: 3rem;
+        height: 3rem;
+        background: linear-gradient(135deg, #F9D5D3 0%, #b38d94; 100%);
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -448,8 +487,8 @@
 
           <!-- My Story Card --> 
           <div class="section-card rounded-2xl p-6 fade-up" style="animation-delay: 0.1s">
-            <div class="section-icon">
-              <i data-lucide="heart" class="w-6 h-6"></i>
+            <div class="section-icon-about">
+              <i data-lucide="book-open-text" class="w-6 h-6"></i>
             </div>
             <h3 class="font-display text-xl mb-3 text-[#22221f]">My Foundation</h3>
             <p class="text-[#4a4a45] text-sm mb-4 leading-relaxed">
@@ -462,10 +501,10 @@
             </a>
           </div>
 
-          <!-- Experience Card -->
+          <!-- Worldview Card -->
           <div class="section-card rounded-2xl p-6 fade-up" style="animation-delay: 0.2s">
-            <div class="section-icon">
-              <i data-lucide="briefcase" class="w-6 h-6"></i>
+            <div class="section-icon-global">
+              <i data-lucide="earth" class="w-6 h-6"></i>
             </div>
             <h3 class="font-display text-xl mb-3 text-[#22221f]">My Approach</h3>
             <p class="text-[#4a4a45] text-sm mb-4 leading-relaxed">
@@ -477,10 +516,10 @@
             </a>
           </div>
 
-          <!-- Creative Portfolio Card -->
+          <!-- Experience Card -->
           <div class="section-card rounded-2xl p-6 fade-up" style="animation-delay: 0.3s">
-            <div class="section-icon">
-              <i data-lucide="palette" class="w-6 h-6"></i>
+            <div class="section-icon-exp">
+              <i data-lucide="briefcase" class="w-6 h-6"></i>
             </div>
             <h3 class="font-display text-xl mb-3 text-[#22221f]">My Mission</h3>
             <p class="text-[#4a4a45] text-sm mb-4 leading-relaxed">
@@ -495,10 +534,10 @@
             </a>
           </div>
 
-          <!-- Contact Card -->
+          <!-- Portfolio Card -->
           <div class="section-card rounded-2xl p-6 fade-up" style="animation-delay: 0.4s">
-            <div class="section-icon">
-              <i data-lucide="users" class="w-6 h-6"></i>
+            <div class="section-icon-portfolio">
+              <i data-lucide="palette" class="w-6 h-6"></i>
             </div>
             <h3 class="font-display text-xl mb-3 text-[#22221f]">My Voice</h3>
             <p class="text-[#4a4a45] text-sm mb-4 leading-relaxed">
