@@ -29,10 +29,10 @@
                 DEFAULT: '#9db88d',
                 dark: '#7a9968',
               },
-              guava: {
-                light: '#fde2e2',
-                DEFAULT: '#c2204c',
-                dark: '#dc2626',
+              page: {
+                light: '#b9d6a6',
+                DEFAULT: '#93C572',
+                dark: '#699b49',
               },
               accent: '#7a9968',
               gold: '#c2204c', // Now using guava for gold references
@@ -319,43 +319,41 @@
       }
 
       .bodylink:hover {
-    color:#c6234e;  
+    color: #93C572;  
       }
 
-      .hover-guava:hover {
-        color: #c6234e !important;
+      .hover-page:hover {
+        color: #699b49!important;
       }
 
-      .bg-guava {
-        background-color: #c24969;
+      .bg-page {
+        background-color: #699b49;
       }
 
-      .bg-guava:hover {
-        background-color: #c24969;
+      .bg-page:hover {
+        background-color: #699b49;
       }
 
       .bg-quote {
-        background-color: #c24969;
+        background-color: #699b49;
       }
 
-      .border-guava {
-        border-color: #c6234e;
+      .border-page {
+        border-color: #699b49;
       }
 
-      .text-guava {
-        color: #c6234e;
-      }
-
-      .text-guava2 {
-        color: #c24969;
-      }
-
-      .bg-pistachio {
-        background-color: #cdddc8;
-      }
-
-      .text-pistachio {
+      .text-page {
         color: #9db88d;
+      }
+
+      .text-page2 {
+        color: #699b49;
+      }
+
+     
+
+       .floating-element{
+        animation: float 4s ease-in-out infinite;
       }
 
        .floating-element{
@@ -368,13 +366,48 @@
       }
 
       @media (max-width: 768px) {
-        .skills-grid {
-          grid-template-columns: 1fr;
+        .timeline {
+          padding-left: 1rem;
         }
-        .creative-preview {
+        
+        .timeline-item {
+          margin-left: 1.5rem;
+          padding: 1.5rem;
+        }
+        
+        .timeline-item::before {
+          left: -2.5rem;
+        }
+
+        .experience-item {
           grid-template-columns: 1fr;
+          gap: 1.5rem;
+          margin-bottom: 3rem;
+        }
+
+        .experience-right::before {
+          display: none;
         }
       }
+
+      .section-divider {
+        position: relative;
+        text-align: center;
+        margin: 3rem 0;
+      }
+
+      .section-divider::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(135deg, #9db88d 0%, ##699b49 100%);
+        border-radius: 2px;
+      }
+
     </style>
   </head>
 
@@ -427,15 +460,15 @@
           <!-- Text content on the left -->
           <div class="space-y-8 text-left ml-4">
             <div class="floating-element">
-            <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight">Bridging Worlds<br> <span class="text-guava block">Local experiences, global perspective</span></h1>
+            <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight">Bridging Worlds<br> <span class="text-page block">Local experiences, global perspective</span></h1>
             </div>
 
             <p class="text-lg md:text-xl text-[#4a4a45] leading-relaxed">
                 How personal experiences of community care inspired a global perspective on shared challenges</p>
             
             <div class="flex flex-wrap gap-4 pt-4">
-              <a href="#about" class="inline-flex items-center gap-2 px-8 py-3 bg-guava text-white hover:bg-guava/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-guava">
-                Get To Know Me <i data-lucide="arrow-down" class="w-4 h-4"></i>
+              <a href="#about" class="inline-flex items-center gap-2 px-8 py-3 bg-page text-white hover:bg-page/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-page">
+                My POV <i data-lucide="arrow-down" class="w-4 h-4"></i>
               </a>
               
             </div>
@@ -443,7 +476,7 @@
           
           <div class="flex justify-center lg:justify-end">
             <div class="w-100 h-100 flex items-center justify-center">
-              <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/aboutme.png" alt="Valeria" class="w-100 h-100 object-cover">
+              <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/global.png" alt="Valeria" class="w-100 h-100 object-cover">
             </div>
           </div>
         </div>
@@ -556,9 +589,9 @@
           </a>
         </div>
         
-        <form action="https://formspree.io/f/mblyozep" method="POST" class="max-w-lg mx-auto flex border border-guava focus-within:ring-2 focus-within:ring-guava rounded-lg overflow-hidden">
+        <form action="https://formspree.io/f/mblyozep" method="POST" class="max-w-lg mx-auto flex border border-page focus-within:ring-2 focus-within:ring-page rounded-lg overflow-hidden">
           <input type="email" name="email" placeholder="Your email" class="flex-grow px-5 py-3 bg-transparent placeholder-[#706f6a] focus:outline-none" required />
-          <button type="submit" class="px-6 py-3 bg-guava text-white font-medium hover:bg-guava/90 transition-colors">Subscribe</button>
+          <button type="submit" class="px-6 py-3 bg-page text-white font-medium hover:bg-page/90 transition-colors">Subscribe</button>
         </form>
         
         <p class="text-sm text-[#6d6d67]">© <span id="year"></span> Valeria Nicolette Mera</p>
