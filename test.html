@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valeria Mera</title>
+
+     <link rel="icon" href="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sparkle.png" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Marion', 'Playfair Display', 'serif'],
+              body: ['Inter', 'Helvetica Neue', 'sans-serif'],
+            },
+            colors: {
+                        'cream': '#f8f5f0',
+                        'cream-200': '#f0ebe4',
+                        'guava': '#ff6b6b',
+                        'guava2': '#ff5252',
+                        'about': '#6366f1',
+                        'story': '#10b981',
+                        'exp': '#f59e0b',
+                        'portfolio': '#ec4899',
+                        'contact': '#8b5cf6'
+                    },
+            backgroundImage: {
+            hero: 'radial-gradient(ellipse at top left, #fefdfb 0%, #f5f1eb 40%, #f0ece6 75%)',
+          }
+          },
+        },
+      };
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Marion&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+    <style>
+      html{scroll-behavior:smooth}
+      body{font-family:'Inter',sans-serif}
+      .fade{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+      .fade.show{opacity:1;transform:translateY(0)}
+      .fade-up{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+      .fade-up.show{opacity:1;transform:translateY(0)}
+
+       /* Dropdown Styles */
+        .nav-item {
+            position: relative;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(248, 245, 240, 0.95);
+            backdrop-filter: blur(15px);
+            min-width: 200px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(240, 235, 228, 0.8);
+            z-index: 50;
+            margin-top: 8px;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 12px 16px;
+            color: #22221f;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+            margin: 4px 8px;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+        .dropdown-link:hover {
+            background: rgba(255, 107, 107, 0.1);
+            color: #ff6b6b;
+            transform: translateX(4px);
+        }
+
+        .dropdown-link:first-child {
+            margin-top: 8px;
+        }
+
+        .dropdown-link:last-child {
+            margin-bottom: 8px;
+        }
+
+        /* Arrow indicator for dropdown items */
+        .has-dropdown::after {
+            content: '▼';
+            font-size: 8px;
+            margin-left: 6px;
+            transition: transform 0.3s ease;
+            opacity: 0.7;
+        }
+
+        .nav-item:hover .has-dropdown::after {
+            transform: rotate(180deg);
+        }
+
+        /* Mobile dropdown styles */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+            }
+
+            .mobile-menu.open {
+                transform: translateX(0);
+            }
+
+            .mobile-dropdown {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                background: rgba(248, 245, 240, 0.1);
+                margin-top: 8px;
+                border-radius: 8px;
+            }
+
+            .mobile-dropdown.active {
+                max-height: 300px;
+            }
+
+            .mobile-dropdown .dropdown-link {
+                padding: 12px 24px;
+                color: rgba(34, 34, 31, 0.8);
+                font-size: 14px;
+                margin: 2px 0;
+            }
+
+            .mobile-dropdown .dropdown-link:hover {
+                color: #ff6b6b;
+                background: rgba(255, 107, 107, 0.1);
+            }
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Fade in animation */
+        .fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 100%;
+        height: 1.5px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+      .nav-link:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+       /* Mobile menu animation */
+        .mobile-menu {
+            transition: all 0.3s ease;
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        .mobile-menu.open {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Hamburger animation */
+        .hamburger span {
+            transition: all 0.3s ease;
+        }
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+      .section-card {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(157, 184, 141, 0.2);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .section-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(157, 184, 141, 0.1), transparent);
+        transition: left 0.6s ease;
+      }
+
+      .section-card:hover::before {
+        left: 100%;
+      }
+
+      .section-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(157, 184, 141, 0.2);
+        border-color: rgba(157, 184, 141, 0.4);
+      }
+
+      .section-icon {
+        width: 3rem;
+        height: 3rem;
+        background: linear-gradient(135deg, #F9D5D3 0%, #f87171 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .section-card:hover .section-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .skill-category {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+        border: 1px solid rgba(157, 184, 141, 0.1);
+      }
+
+      .skill-category:hover {
+        transform: translateY(-4px);
+        border-color: rgba(157, 184, 141, 0.3);
+      }
+
+      .skill-category h4 {
+        color: #f37272;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .skill-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .skill-list li {
+        color: #4a4a45;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1rem;
+      }
+
+      .skill-list li::before {
+        content: '•';
+        color: #ef4444;
+        position: absolute;
+        left: 0;
+      }
+
+      .creative-preview {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .creative-item {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(157, 184, 141, 0.1);
+      }
+
+      .creative-item:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        border-color: #eca3bb;
+      }
+
+      .creative-item-image {
+  height: 150px;
+  background: linear-gradient(135deg, #faf3f6 0%, #fdf7fa 50%); /* Lighter pastel tones */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ef4444;
+}
+
+      .creative-item-content {
+        padding: 1.5rem;
+      }
+
+      .creative-item h4 {
+        font-family: 'Marion', serif;
+        color: #22221f;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .creative-item p {
+        color: #6b7280;
+        font-size: 0.875rem;
+        line-height: 1.6;
+      }
+
+      .social-icon {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: linear-gradient(145deg, #f7f7f4, #f0f0eb);
+        box-shadow: 5px 5px 10px #e6e6e1, -5px -5px 10px #ffffff;
+        transition: all 0.3s ease;
+        color: #f15b5b;
+      }
+
+      .social-icon:hover {
+        transform: translateY(-3px);
+        box-shadow: 8px 8px 15px #e6e6e1, -8px -8px 15px #ffffff;
+        color: #f87171;
+      }
+
+      .section-divider {
+        position: relative;
+        text-align: center;
+        margin: 3rem 0;
+      }
+
+      .section-divider::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+        border-radius: 2px;
+      }
+
+      .text-about:hover {
+  color: #c6234e;
+}
+.text-story:hover {
+  color: #643b9f;
+}
+.text-exp:hover {
+   color: #0887f7;
+}
+.text-portfolio:hover {
+  color: #b38d94;
+}
+.text-contact:hover {
+  color: #307848;
+}
+
+      /* Guava hover effects for links */
+      .hover-guava:hover {
+        color: #f87171 !important;
+      }
+
+      .bg-guava {
+        background-color: #f7a1a1;
+      }
+
+      .bg-guava:hover {
+        background-color: #f37272;
+      }
+
+      .bg-quote {
+        background-color: #fa9e9e;
+      }
+
+      .border-guava {
+        border-color: #f87171;
+      }
+
+      .text-guava {
+        color: #f87171;
+      }
+
+      .text-guava2 {
+        color: #fa9e9e;
+      }
+
+      .bg-pistachio {
+        background-color: #cdddc8;
+      }
+
+      .text-pistachio {
+        color: #9db88d;
+      }
+
+       .floating-element{
+        animation: float 4s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(1deg); }
+      }
+
+      @media (max-width: 768px) {
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+        .creative-preview {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="font-body antialiased text-[#22221f] bg-hero bg-fixed bg-no-repeat bg-cover min-h-screen">
+    <nav class="fixed top-0 left-0 w-full z-20 py-5 px-6 md:px-12 flex items-center justify-between bg-cream/60 backdrop-blur-md border-b border-cream-200">
+        <!-- Home Icon -->
+        <a href="index.html" class="block w-6 h-6 hover:text-guava2 hover:rotate-12 transition-all duration-300" aria-label="Home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-4H10v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            </svg>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8 text-sm tracking-wide uppercase font-medium">
+            <div class="nav-item">
+                <a href="about.html" class="nav-link text-about has-dropdown hover:text-about/80 transition-colors duration-300">About Me</a>
+                <div class="dropdown">
+                    <a href="about.html#foundation" class="dropdown-link">My Foundation</a>
+                    <a href="about.html#mission" class="dropdown-link">My Mission</a>
+                    <a href="about.html#interests" class="dropdown-link">Interests & Hobbies</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="mylife.html" class="nav-link text-story has-dropdown hover:text-story/80 transition-colors duration-300">My Story</a>
+                <div class="dropdown">
+                    <a href="mylife.html#introduction" class="dropdown-link">Introduction</a>
+                    <a href="mylife.html#blog" class="dropdown-link">Blog</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="experience.html" class="nav-link text-exp has-dropdown hover:text-exp/80 transition-colors duration-300">Experience</a>
+                <div class="dropdown">
+                    <a href="experience.html#summary" class="dropdown-link">Professional Summary</a>
+                    <a href="experience.html#education" class="dropdown-link">Education</a>
+                    <a href="experience.html#policy" class="dropdown-link">Policy</a>
+                    <a href="experience.html#global" class="dropdown-link">Global</a>
+                    <a href="experience.html#leadership" class="dropdown-link">Leadership</a>
+                    <a href="experience.html#service" class="dropdown-link">Customer Service</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="creative.html" class="nav-link text-portfolio has-dropdown hover:text-portfolio/80 transition-colors duration-300">Portfolio</a>
+                <div class="dropdown">
+                    <a href="creative.html#professional" class="dropdown-link">Professional Work</a>
+                    <a href="creative.html#personal" class="dropdown-link">Personal Projects</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="contact.html" class="nav-link text-contact hover:text-contact/80 transition-colors duration-300">Contact & Collaborate</a>
+            </div>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="md:hidden hamburger flex flex-col justify-center items-center w-6 h-6 space-y-1" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span class="block w-5 h-0.5 bg-current"></span>
+            <span class="block w-5 h-0.5 bg-current"></span>
+            <span class="block w-5 h-0.5 bg-current"></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-cream/95 backdrop-blur-md z-10 md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-6 text-lg tracking-wide uppercase font-medium">
+            <div class="mobile-nav-item">
+                <a href="about.html" class="nav-link text-about" onclick="toggleMobileDropdown(event, 'aboutDropdown')">About Me ▼</a>
+                <div id="aboutDropdown" class="mobile-dropdown">
+                    <a href="about.html#foundation" class="dropdown-link" onclick="closeMobileMenu()">My Foundation</a>
+                    <a href="about.html#mission" class="dropdown-link" onclick="closeMobileMenu()">My Mission</a>
+                    <a href="about.html#interests" class="dropdown-link" onclick="closeMobileMenu()">Interests & Hobbies</a>
+                </div>
+            </div>
+
+            <div class="mobile-nav-item">
+                <a href="mylife.html" class="nav-link text-story" onclick="toggleMobileDropdown(event, 'storyDropdown')">My Story ▼</a>
+                <div id="storyDropdown" class="mobile-dropdown">
+                    <a href="mylife.html#introduction" class="dropdown-link" onclick="closeMobileMenu()">Introduction</a>
+                    <a href="mylife.html#blog" class="dropdown-link" onclick="closeMobileMenu()">Blog</a>
+                </div>
+            </div>
+
+            <div class="mobile-nav-item">
+                <a href="experience.html" class="nav-link text-exp" onclick="toggleMobileDropdown(event, 'expDropdown')">Experience ▼</a>
+                <div id="expDropdown" class="mobile-dropdown">
+                    <a href="experience.html#summary" class="dropdown-link" onclick="closeMobileMenu()">Professional Summary</a>
+                    <a href="experience.html#education" class="dropdown-link" onclick="closeMobileMenu()">Education</a>
+                    <a href="experience.html#policy" class="dropdown-link" onclick="closeMobileMenu()">Policy</a>
+                    <a href="experience.html#global" class="dropdown-link" onclick="closeMobileMenu()">Global</a>
+                    <a href="experience.html#leadership" class="dropdown-link" onclick="closeMobileMenu()">Leadership</a>
+                    <a href="experience.html#service" class="dropdown-link" onclick="closeMobileMenu()">Customer Service</a>
+                </div>
+            </div>
+
+            <div class="mobile-nav-item">
+                <a href="creative.html" class="nav-link text-portfolio" onclick="toggleMobileDropdown(event, 'portfolioDropdown')">Portfolio ▼</a>
+                <div id="portfolioDropdown" class="mobile-dropdown">
+                    <a href="creative.html#professional" class="dropdown-link" onclick="closeMobileMenu()">Professional Work</a>
+                    <a href="creative.html#personal" class="dropdown-link" onclick="closeMobileMenu()">Personal Projects</a>
+                </div>
+            </div>
+
+            <a href="contact.html" class="nav-link text-contact" onclick="closeMobileMenu()">Contact & Collaborate</a>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <header class="relative flex items-center justify-center min-h-screen pt-32 pb-24 px-6 md:px-0">
+        <div class="max-w-6xl mx-auto fade show">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 text-left ml-4">
+                    <div class="floating-element">
+                        <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight text-white">Hi, I'm&nbsp;Valeria.<br />Nice to meet you!</h1>
+                        <p class="text-lg md:text-xl text-white/80 leading-relaxed">Welcome to my world, where policy and creativity come together — grounded in empathy, driven by purpose, and built to make a difference.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#about" class="inline-flex items-center gap-2 px-8 py-3 bg-guava text-white hover:bg-guava/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-guava">
+                            Who I Am <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                        </a>
+                        <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-3 border border-guava text-guava hover:bg-guava hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-guava">
+                            Let's Connect <i data-lucide="mail" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center lg:justify-end">
+                    <div class="w-100 h-100 flex items-center justify-center">
+                        <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cherry-red.png" alt="Valeria" class="w-100 h-100 object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT ME DETAILED -->
+    <section id="about" class="py-24 bg-cream/80 backdrop-blur-sm">
+      <div class="max-w-4xl mx-auto px-6 md:px-0">
+        <div class="text-center mb-16 fade">
+          <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">Introducing Me</h2>
+        </div>
+
+        <div class="space-y-8 text-[#3e3e38] leading-relaxed fade-up">
+          <p class="text-lg text-center">I believe in the power of people, policy, and stories to create real, lasting change.</p>
+          <div class="grid md:grid-cols-2 gap-12 pt-8">
+            <div class="space-y-6">
+              <div>
+                <h3 class="font-display text-xl text-guava mb-4">My Foundation</h3>
+                <p class="text-[#4a4a45] leading-relaxed">Born and raised in NC as a first-generation Peruvian-American, I grew up shaped by two cultures and with a deep awareness of how systems impact people’s lives. That perspective sparked my commitment to making policy more compassionate, accessible, and <span class="font-display font-medium text-guava2">human-centered</span>.</p>
+              </div>
+            </div>
+            <div class="space-y-6">
+               <div>
+                <h3 class="font-display text-xl text-guava mb-4">My Mission</h3>
+                <p class="text-[#4a4a45] leading-relaxed">Today, I'm in Washington, DC, looking for the perfect opportunity in the climate policy landscape that allows me to grow by connecting with the community, creating content, and shaping sustainability programs.</p>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-12 fade-up">
+                <a href="about.html" class="inline-flex items-center gap-2 px-8 py-3 border border-guava text-guava hover:bg-guava hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-guava">
+                 Read My Background<i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- NAV PREVIEW -->
+    <section class="py-24 bg-hero/50 backdrop-blur-sm">
+       <div class="max-w-6xl mx-auto px-6 md:px-0">
+        <div class="text-center mb-16 fade">
+          <h2 class="font-display text-4xl md:text-5xl mb-6">What You'll Find Here</h2>
+          <p class="text-lg text-[#4a4a45] max-w-2xl mx-auto">Explore my journey through policy, creativity, and the connections that drive meaningful change.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- My Story Card -->
+          <div class="section-card rounded-2xl p-6 fade-up" style="animation-delay: 0.1s">
+            <div class="section-icon">
+              <i data-lucide="heart" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-xl mb-3 text-[#22221f]">My Story</h3>
+            <p class="text-[#4a4a45] text-sm mb-4 leading-relaxed">Those that know me know that I went through a lot of change with my family as a teenager. The journey's been full of grief and joy and everything in between - Now, I'm writing as a way to make sense of it all and how it's shaped me.</p>
+            <a href="mylife.html" class="text-guava2 text-sm font-medium hover:underline inline-flex items-center gap-1">
+              Read My Journey <i data-lucide="arrow-right" class="w-3 h-3"></i>
+            </a>
+          </div>
+
+          <!-- Experience Card -->
+          <div class="section-card rounded-2xl p-6 fade-up" style="animation-delay: 0.2s">
+            <div class="section-icon">
+              <i data-lucide="briefcase" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-xl mb-3 text-[#22221f]">Experience</h3>
+            <p class="text-[#4a4a45] text-sm mb-4 leading-relaxed">Masters in Public Policy graduate, focused on social policy and environmental justice, working towards a more sustainable and equitable world.</p>
+            <a href="experience.html" class="text-guava2 text-sm font-medium hover:underline inline-flex items-center gap-1">
+              View My Work <i data-lucide="arrow-right" class="w-3 h-3"></i>
+            </a>
+          </div>
+
+          <!-- Creative Portfolio Card -->
+          <div class="section-card rounded-2xl p-6 fade-up" style="animation-delay: 0.3s">
+            <div class="section-icon">
+              <i data-lucide="palette" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-xl mb-3 text-[#22221f]">Creative Work</h3>
+            <p class="text-[#4a4a45] text-sm mb-4 leading-relaxed">
+              My personal creative spirit - from social media content and professional writing to graphic design and video editing - drives my passion for bringing policy to life through compelling visual narratives.
+            </p>
+            <a href="creative.html" class="text-guava2 text-sm font-medium hover:underline inline-flex items-center gap-1">
+              See My Projects <i data-lucide="arrow-right" class="w-3 h-3"></i>
+            </a>
+          </div>
+
+          <!-- Contact Card -->
+          <div class="section-card rounded-2xl p-6 fade-up" style="animation-delay: 0.4s">
+            <div class="section-icon">
+              <i data-lucide="users" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-xl mb-3 text-[#22221f]">Let's Collaborate</h3>
+            <p class="text-[#4a4a45] text-sm mb-4 leading-relaxed">If you're interested in what I'm doing, you want to connect to create meaningful change together, or you just want to talk about what a better future looks like...</p>
+            <a href="contact.html" class="text-guava2 text-sm font-medium hover:underline inline-flex items-center gap-1">
+              Let's Be Friends! <i data-lucide="arrow-right" class="w-3 h-3"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS PREVIEW -->
+    <section class="py-24 bg-cream/80 backdrop-blur-sm">
+      <div class="max-w-6xl mx-auto px-6 md:px-0">
+        <div class="text-center mb-16 fade">
+          <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">What I Bring</h2>
+          <p class="text-lg text-[#4a4a45] max-w-2xl mx-auto">A unique blend of policy expertise, creative skills, and human-centered thinking.</p>
+        </div>
+
+        <div class="skills-grid fade-up">
+          <div class="skill-category">
+            <h4>Policy & Research</h4>
+            <ul class="skill-list">
+              <li>Environmental Justice</li>
+              <li>Social Policy Analysis</li>
+              <li>Quantitative Research Methods</li>
+              <li>Policy Brief Writing</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h4>Creative & Communication</h4>
+            <ul class="skill-list">
+              <li>Video Production & Editing</li>
+              <li>Content Creation</li>
+              <li>Storytelling</li>
+              <li>Visual Design</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h4>Community & Collaboration</h4>
+            <ul class="skill-list">
+              <li>Community Engagement</li>
+              <li>Program Development</li>
+              <li>Cross-Cultural Communication</li>
+              <li>Public Speaking</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h4>Technical Skills</h4>
+            <ul class="skill-list">
+              <li>Data Analysis (R, STATA)</li>
+              <li>Data Visualization (Tableau)</li>
+              <li>Web Development</li>
+              <li>Adobe Creative Suite</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+     <!-- CONTACT FOOTER -->
+    <footer id="contact" class="py-24 bg-cream fade">
+      <div class="max-w-4xl mx-auto text-center space-y-12 px-6 md:px-0">
+        <div class="space-y-4">
+          <h3 class="font-display text-2xl md:text-3xl">Ready to Create Change Together?</h3>
+          <p class="text-[#4a4a45] max-w-2xl mx-auto">Whether you're looking to collaborate on climate policy, need creative content, or want to chat about making systems more human-centered, I'd love to connect.</p>
+        </div>
+        
+        <div class="flex justify-center space-x-10">
+          <a href="mailto:vnm58293@gmail.com" aria-label="Email" class="social-icon">
+            <i data-lucide="mail"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/valeriamera/" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <i data-lucide="linkedin"></i>
+          </a>
+          <a href="https://www.instagram.com/valeriamera/" target="_blank" aria-label="Instagram" class="social-icon">
+            <i data-lucide="instagram"></i>
+          </a>
+        </div>
+        
+         <form action="https://formspree.io/f/mblyozep" method="POST" class="max-w-lg mx-auto flex border border-blue focus-within:ring-2 focus-within:ring-blue rounded-lg overflow-hidden">
+          <input type="email" name="email" placeholder="Your email" class="flex-grow px-5 py-3 bg-transparent placeholder-[#706f6a] focus:outline-none" required />
+          <button type="submit" class="px-6 py-3 bg-blue text-white font-medium hover:bg-blue/90 transition-colors">Subscribe</button>
+        </form>
+        
+        <p class="text-sm text-[#6d6d67]">© <span id="year"></span> Valeria Nicolette Mera</p>
+      </div>
+    </footer>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide icons
+            if (window.lucide && typeof lucide.createIcons === 'function') {
+                lucide.createIcons();
+            }
+
+            // Initialize Intersection Observer with staggered animations
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('show');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                }
+            );
+
+            // Observe all fade elements
+            document.querySelectorAll('.fade, .fade-up').forEach(el => observer.observe(el));
+
+            // Update copyright year
+            const yearElement = document.getElementById('year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            mobileMenu.classList.toggle('open');
+            hamburger.classList.toggle('open');
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            mobileMenu.classList.remove('open');
+            hamburger.classList.remove('open');
+        }
+
+        function toggleMobileDropdown(event, dropdownId) {
+            event.preventDefault();
+            const dropdown = document.getElementById(dropdownId);
+            dropdown.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (!event.target.closest('nav') && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+
+  </body>
+</html>
