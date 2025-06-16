@@ -918,271 +918,274 @@
         });
     </script>
 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-    <script>
-        (function() {
-            // City coordinates - Fixed coordinate errors
-            const cityCoords = {
-                'Los Angeles, CA': [34.0522, -118.2437], 
-                'San Diego, CA': [32.7157, -117.1611], 
-                'Laguna Beach, CA': [33.5427, -117.7854], 
-                'Santa Monica, CA': [34.0119, -118.4916],
-                'Chicago, IL': [41.8781, -87.6298], 
-                'Denver, CO': [39.7392, -104.9903], 
-                'Buena Vista, CO': [38.8422, -106.1311],
-                'Grand Canyon National Park, AZ': [36.2679, -112.3535],
-                'Orlando, FL': [28.5383, -81.3792], 
-                'Atlanta, GA': [33.7490, -84.3880], 
-                'Savannah, GA': [32.0835, -81.0998], // Fixed coordinates
-                'New Orleans, LA': [29.9509, -90.0758],
-                'Raleigh, NC': [35.7796, -78.6382], 
-                'Wilmington, NC': [34.2257, -77.9447], 
-                'Wrightsville Beach, NC': [34.2085, -77.7964], 
-                'Greenville, NC': [35.6115, -77.3752], 
-                'Boone, NC': [36.2182, -81.6830], 
-                'Asheville, NC': [35.5975, -82.5461],
-                'Lake Gaston, NC': [36.5076, -77.9453], 
-                'Charlotte, NC': [35.2216, -80.8401], 
-                'Durham, NC': [35.9956, -78.9002], 
-                'Cary, NC': [35.7890, 78.7798],
-                'Lake Lure, NC': [35.4279, -82.2048],
-                'Chapel Hill, NC': [35.9132, -79.0558], // Added coordinates
-                'Apex, NC': [35.7327, -78.8503], // Added coordinates
-                'Millers Creek, NC': [36.2412, -81.2637], // Added coordinates
-                'Myrtle Beach, SC': [33.6954, -78.8802], // Fixed longitude sign
-                'Charleston, SC': [32.7833, -79.9320],
-                'Charlottesville, VA': [38.0293, -78.4767], 
-                'Richmond, VA': [37.5407, -77.4360], // Added coordinates
-                'Washington, DC': [38.9072, -77.0369],
-                'Nashville, TN': [36.1627, -86.7816],
-                'Boston, MA': [42.3601, -71.0589], 
-                'New York City, NY': [40.7128, -74.0060], 
-                'Bethany Beach, DE': [38.5390, -75.0610], 
-                'Lahaina, HI': [20.8783, -156.6825], 
-                'Kihei, HI': [20.7399, -156.4542], 
-                'Hana, HI': [20.7557, -155.9880],
-                'Cincinnati, OH': [39.1031, -84.5120], 
-                'Austin, Texas': [30.2672, -97.7431],
-                'Providence, RI': [41.8240, -71.4128], 
-                'Philadelphia, PA': [39.9526, -75.1652],
-                'San Juan, PR': [18.4655, -66.1057], // Added coordinates
-                'Lima': [-12.0464, -77.0428], 
-                'Pucallpa': [-8.3791, -74.5539], 
-                'Cajamarca': [-7.1617, -78.5128],
-                'Cusco': [-13.5319, -71.9675], 
-                'Bogotá': [4.7110, -74.0721],
-                'Cancún': [21.1619, -86.8515], 
-                'Cabo San Lucas': [22.8905, -109.9167],
-                'Havana': [23.1136, -82.3666], 
-                'Pinar del Río': [22.4163, -83.6983], 
-                'Varadero': [23.1799, -81.1885],
-                'Prague': [50.0755, 14.4378], 
-                'Černý Důl': [50.6368, 15.7071], 
-                'Karlovy Vary': [50.2319, 12.8720],
-                'Budapest': [47.4979, 19.0402], 
-                'Vienna': [48.2082, 16.3738],
-                'Amsterdam': [52.3676, 4.9041],
-                'Annecy': [45.8992, 6.1294], 
-                'Paris': [48.8566, 2.3522], 
-                'Versailles': [48.8014, 2.1301], // Added coordinates
-                'Nice': [43.7102, 7.2620], // Added coordinates
-                'Strasbourg': [48.5734, 7.7521],
-                'Chamonix': [45.9237, 6.8694], 
-                'Interlaken': [46.6863, 7.8632],
-                'Lucerne': [47.0502, 8.3093], 
-                'Zurich': [47.3769, 8.5417],
-                'Madrid': [40.4168, -3.7038], 
-                'Barcelona': [41.3851, 2.1734],
-                'Rome': [41.9028, 12.4964], 
-                'Florence': [43.7696, 11.2558], 
-                'Venice': [45.4404, 12.3160],
-                'Porto': [41.1579, -8.6291], 
-                'London': [51.5074, -0.1278],
-                'Berlin': [52.5200, 13.4050], 
-                'Munich': [48.1351, 11.5820]
-            };
+     
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+    (function() {
+        // City coordinates - Fixed coordinate errors
+        const cityCoords = {
+            'Los Angeles, CA': [34.0522, -118.2437], 
+            'San Diego, CA': [32.7157, -117.1611], 
+            'Laguna Beach, CA': [33.5427, -117.7854], 
+            'Santa Monica, CA': [34.0119, -118.4916],
+            'Chicago, IL': [41.8781, -87.6298], 
+            'Denver, CO': [39.7392, -104.9903], 
+            'Buena Vista, CO': [38.8422, -106.1311],
+            'Grand Canyon National Park, AZ': [36.2679, -112.3535],
+            'Orlando, FL': [28.5383, -81.3792], 
+            'Atlanta, GA': [33.7490, -84.3880], 
+            'Savannah, GA': [32.0835, -81.0998],
+            'New Orleans, LA': [29.9509, -90.0758],
+            'Raleigh, NC': [35.7796, -78.6382], 
+            'Wilmington, NC': [34.2257, -77.9447], 
+            'Wrightsville Beach, NC': [34.2085, -77.7964], 
+            'Greenville, NC': [35.6115, -77.3752], 
+            'Boone, NC': [36.2182, -81.6830], 
+            'Asheville, NC': [35.5975, -82.5461],
+            'Lake Gaston, NC': [36.5076, -77.9453], 
+            'Charlotte, NC': [35.2216, -80.8401], 
+            'Durham, NC': [35.9956, -78.9002], 
+            'Cary, NC': [35.7890, -78.7798], // Fixed longitude sign
+            'Lake Lure, NC': [35.4279, -82.2048],
+            'Chapel Hill, NC': [35.9132, -79.0558],
+            'Apex, NC': [35.7327, -78.8503],
+            'Millers Creek, NC': [36.2412, -81.2637],
+            'Myrtle Beach, SC': [33.6954, -78.8802],
+            'Charleston, SC': [32.7833, -79.9320],
+            'Charlottesville, VA': [38.0293, -78.4767], 
+            'Richmond, VA': [37.5407, -77.4360],
+            'Washington, DC': [38.9072, -77.0369],
+            'Nashville, TN': [36.1627, -86.7816],
+            'Boston, MA': [42.3601, -71.0589], 
+            'New York City, NY': [40.7128, -74.0060], 
+            'Bethany Beach, DE': [38.5390, -75.0610], 
+            'Lahaina, HI': [20.8783, -156.6825], 
+            'Kihei, HI': [20.7399, -156.4542], 
+            'Hana, HI': [20.7557, -155.9880],
+            'Cincinnati, OH': [39.1031, -84.5120], 
+            'Austin, Texas': [30.2672, -97.7431],
+            'Providence, RI': [41.8240, -71.4128], 
+            'Philadelphia, PA': [39.9526, -75.1652],
+            'San Juan, PR': [18.4655, -66.1057],
+            'Lima': [-12.0464, -77.0428], 
+            'Pucallpa': [-8.3791, -74.5539], 
+            'Cajamarca': [-7.1617, -78.5128],
+            'Cusco': [-13.5319, -71.9675], 
+            'Bogotá': [4.7110, -74.0721],
+            'Cancún': [21.1619, -86.8515], 
+            'Cabo San Lucas': [22.8905, -109.9167],
+            'Havana': [23.1136, -82.3666], 
+            'Pinar del Río': [22.4163, -83.6983], 
+            'Varadero': [23.1799, -81.1885],
+            'Prague': [50.0755, 14.4378], 
+            'Černý Důl': [50.6368, 15.7071], 
+            'Karlovy Vary': [50.2319, 12.8720],
+            'Budapest': [47.4979, 19.0402], 
+            'Vienna': [48.2082, 16.3738],
+            'Amsterdam': [52.3676, 4.9041],
+            'Annecy': [45.8992, 6.1294], 
+            'Paris': [48.8566, 2.3522], 
+            'Versailles': [48.8014, 2.1301],
+            'Nice': [43.7102, 7.2620],
+            'Strasbourg': [48.5734, 7.7521],
+            'Chamonix': [45.9237, 6.8694], 
+            'Interlaken': [46.6863, 7.8632],
+            'Lucerne': [47.0502, 8.3093], 
+            'Zurich': [47.3769, 8.5417],
+            'Madrid': [40.4168, -3.7038], 
+            'Barcelona': [41.3851, 2.1734],
+            'Rome': [41.9028, 12.4964], 
+            'Florence': [43.7696, 11.2558], 
+            'Venice': [45.4404, 12.3160],
+            'Porto': [41.1579, -8.6291], 
+            'London': [51.5074, -0.1278],
+            'Berlin': [52.5200, 13.4050], 
+            'Munich': [48.1351, 11.5820]
+        };
 
-            // City images
-            const cityImages = {
-                 const cityCoords = {
-                'Los Angeles, CA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/la.jpg',
-                'San Diego, CA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sandiego.jpeg',
-                'Laguna Beach, CA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lagunabeach.jpg', 
-                'Santa Monica, CA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/santamonica.jpg',
-                'Chicago, IL': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chicago.jpg',
-                'Denver, CO': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/denver-1.jpg', 
-                'Buena Vista, CO': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/buenavista.jpg',
-                'Grand Canyon National Park, AZ': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grandcanyon.jpeg',
-                'Orlando, FL': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/orlando.jpeg',
-                'Atlanta, GA': '',
-                'Savannah, GA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/savannah.jpeg',
-                'New Orleans, LA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/neworleans.jpg',
-                'Raleigh, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/raleigh.jpg',
-                'Wilmington, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/wilmington.jpg',
-                'Wrightsville Beach, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/wrightsville.jpg',
-                'Greenville, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/greenville.jpeg',
-                'Boone, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/boone.jpg',
-                'Asheville, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/asheville.jpg',
-                'Lake Gaston, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lakegaston.jpg',
-                'Charlotte, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/charlotte.jpg',
-                'Durham, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/durham.jpg',
-                'Cary, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cary.jpeg',
-                'Lake Lure, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lakelure.jpeg',
-                'Chapel Hill, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chapel-hill.jpeg',
-                'Apex, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/apex.jpeg',
-                'Millers Creek, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/millerscreek.jpeg',
-                'Myrtle Beach, SC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/myrtlebeach.jpeg',
-                'Charleston, SC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/charleston.jpg',
-                'Charlottesville, VA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/charlottesville.jpg',
-                'Richmond, VA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/richmond.jpeg',
-                'Washington, DC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/dc.jpg',
-                'Nashville, TN': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nashville.jpeg',
-                'Boston, MA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/boston.jpeg', 
-                'New York City, NY': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nyc.jpg',
-                'Bethany Beach, DE': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/bethanybeach.jpeg',
-                'Lahaina, HI': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lahaina.jpeg',
-                'Kihei, HI': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/kihei.jpg',
-                'Hana, HI': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/hana.jpg',
-                'Cincinnati, OH': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cincy.jpg',
-                'Austin, Texas': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/austin.jpeg',
-                'Providence, RI': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/providence.jpg',
-                'Philadelphia, PA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/philly.jpg',
-                'San Juan, PR': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sanjuan.jpg',
-                'Lima': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lima.jpeg',
-                'Pucallpa': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pucallpa.jpg', 
-                'Cajamarca': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cajamarca.jpeg',
-                'Cusco': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cuzco.jpg',
-                'Bogotá': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/bogota.jpeg',
-                'Cancún': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cancun.jpg',
-                'Cabo San Lucas': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cabo.jpg',
-                'Havana': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/havana.jpg',
-                'Pinar del Río': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pinardelrio.jpg',
-                'Varadero': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/varadero.jpg',
-                'Prague': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/prague.jpg',
-                'Černý Důl': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cernydul.jpg',
-                'Karlovy Vary': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/karlovy.jpeg',
-                'Budapest': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/budapest.jpg',
-                'Vienna': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/vienna.jpg',
-                'Amsterdam': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/amsterdam.jpg',
-                'Annecy': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/annecy.jpg', 
-                'Paris': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris.jpeg',
-                'Versailles': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/versailles.jpeg',
-                'Nice': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nice.jpg',
-                'Strasbourg': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/strasbourg.jpeg',
-                'Chamonix': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chamonix.jpeg',
-                'Interlaken': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/interlaken.jpg',
-                'Lucerne': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lucerne.jpg',
-                'Zurich': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/zurich.jpg',
-                'Madrid': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall2.jpg',
-                'Barcelona': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/barcelona.jpg',
-                'Rome': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/rome.jpeg',
-                'Florence': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/film_florence.jpg',
-                'Venice': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/venice.jpeg',
-                'Porto': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/porto.jpeg',
-                'London': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/london.jpeg',
-                'Berlin': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/berlin.jpg',
-                'Munich': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/munich.jpg',
-            };
+        // City images - Fixed syntax error
+        const cityImages = {
+            'Los Angeles, CA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/la.jpg',
+            'San Diego, CA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sandiego.jpeg',
+            'Laguna Beach, CA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lagunabeach.jpg', 
+            'Santa Monica, CA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/santamonica.jpg',
+            'Chicago, IL': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chicago.jpg',
+            'Denver, CO': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/denver-1.jpg', 
+            'Buena Vista, CO': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/buenavista.jpg',
+            'Grand Canyon National Park, AZ': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grandcanyon.jpeg',
+            'Orlando, FL': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/orlando.jpeg',
+            'Atlanta, GA': '',
+            'Savannah, GA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/savannah.jpeg',
+            'New Orleans, LA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/neworleans.jpg',
+            'Raleigh, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/raleigh.jpg',
+            'Wilmington, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/wilmington.jpg',
+            'Wrightsville Beach, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/wrightsville.jpg',
+            'Greenville, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/greenville.jpeg',
+            'Boone, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/boone.jpg',
+            'Asheville, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/asheville.jpg',
+            'Lake Gaston, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lakegaston.jpg',
+            'Charlotte, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/charlotte.jpg',
+            'Durham, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/durham.jpg',
+            'Cary, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cary.jpeg',
+            'Lake Lure, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lakelure.jpeg',
+            'Chapel Hill, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chapel-hill.jpeg',
+            'Apex, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/apex.jpeg',
+            'Millers Creek, NC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/millerscreek.jpeg',
+            'Myrtle Beach, SC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/myrtlebeach.jpeg',
+            'Charleston, SC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/charleston.jpg',
+            'Charlottesville, VA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/charlottesville.jpg',
+            'Richmond, VA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/richmond.jpeg',
+            'Washington, DC': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/dc.jpg',
+            'Nashville, TN': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nashville.jpeg',
+            'Boston, MA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/boston.jpeg', 
+            'New York City, NY': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nyc.jpg',
+            'Bethany Beach, DE': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/bethanybeach.jpeg',
+            'Lahaina, HI': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lahaina.jpeg',
+            'Kihei, HI': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/kihei.jpg',
+            'Hana, HI': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/hana.jpg',
+            'Cincinnati, OH': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cincy.jpg',
+            'Austin, Texas': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/austin.jpeg',
+            'Providence, RI': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/providence.jpg',
+            'Philadelphia, PA': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/philly.jpg',
+            'San Juan, PR': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sanjuan.jpg',
+            'Lima': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lima.jpeg',
+            'Pucallpa': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pucallpa.jpg', 
+            'Cajamarca': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cajamarca.jpeg',
+            'Cusco': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cuzco.jpg',
+            'Bogotá': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/bogota.jpeg',
+            'Cancún': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cancun.jpg',
+            'Cabo San Lucas': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cabo.jpg',
+            'Havana': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/havana.jpg',
+            'Pinar del Río': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pinardelrio.jpg',
+            'Varadero': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/varadero.jpg',
+            'Prague': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/prague.jpg',
+            'Černý Důl': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cernydul.jpg',
+            'Karlovy Vary': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/karlovy.jpeg',
+            'Budapest': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/budapest.jpg',
+            'Vienna': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/vienna.jpg',
+            'Amsterdam': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/amsterdam.jpg',
+            'Annecy': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/annecy.jpg', 
+            'Paris': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris.jpeg',
+            'Versailles': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/versailles.jpeg',
+            'Nice': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nice.jpg',
+            'Strasbourg': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/strasbourg.jpeg',
+            'Chamonix': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chamonix.jpeg',
+            'Interlaken': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/interlaken.jpg',
+            'Lucerne': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lucerne.jpg',
+            'Zurich': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/zurich.jpg',
+            'Madrid': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall2.jpg',
+            'Barcelona': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/barcelona.jpg',
+            'Rome': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/rome.jpeg',
+            'Florence': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/film_florence.jpg',
+            'Venice': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/venice.jpeg',
+            'Porto': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/porto.jpeg',
+            'London': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/london.jpeg',
+            'Berlin': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/berlin.jpg',
+            'Munich': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/munich.jpg'
+        };
 
-            // Countries and their cities
-            const countries = {
-                'United States': { 
-                    continent: 'North America', 
-                    cities: ['Los Angeles, CA', 'Laguna Beach, CA', 'Santa Monica, CA', 'San Diego, CA', 
-                            'Chicago, IL', 'Denver, CO', 'Buena Vista, CO', 'Grand Canyon National Park, AZ', 
-                            'Orlando, FL', 'Atlanta, GA', 'Savannah, GA', 'New Orleans, LA', 'Raleigh, NC', 'Wilmington, NC', 
-                            'Wrightsville Beach, NC', 'Greenville, NC', 'Boone, NC', 'Asheville, NC', 'Lake Gaston, NC', 
-                            'Charlotte, NC', 'Durham, NC', 'Cary, NC', 'Lake Lure, NC', 'Chapel Hill, NC', 'Apex, NC', 
-                            'Millers Creek, NC', 'Myrtle Beach, SC', 'Charlottesville, VA', 'Richmond, VA', 
-                            'Washington, DC', 'Nashville, TN', 'Boston, MA', 'New York City, NY', 
-                            'Bethany Beach, DE', 'Lahaina, HI', 'Kihei, HI', 'Hana, HI', 'Cincinnati, OH', 
-                            'Austin, Texas', 'Providence, RI', 'Philadelphia, PA', 'San Juan, PR'] 
-                },
-                'Peru': { continent: 'South America', cities: ['Lima', 'Pucallpa', 'Cusco', 'Cajamarca'] },
-                'Colombia': { continent: 'South America', cities: ['Bogotá'] },
-                'Mexico': { continent: 'North America', cities: ['Cancún', 'Cabo San Lucas'] },
-                'Cuba': { continent: 'North America', cities: ['Havana', 'Pinar del Río', 'Varadero'] },
-                'Czech Republic': { continent: 'Europe', cities: ['Prague', 'Černý Důl', 'Karlovy Vary'] },
-                'Hungary': { continent: 'Europe', cities: ['Budapest'] },
-                'Austria': { continent: 'Europe', cities: ['Vienna'] },
-                'Netherlands': { continent: 'Europe', cities: ['Amsterdam'] },
-                'France': { continent: 'Europe', cities: ['Annecy', 'Paris', 'Chamonix', 'Versailles', 'Nice', 'Strasbourg'] },
-                'Switzerland': { continent: 'Europe', cities: ['Interlaken', 'Lucerne', 'Zurich'] },
-                'Spain': { continent: 'Europe', cities: ['Madrid', 'Barcelona'] },
-                'Italy': { continent: 'Europe', cities: ['Rome', 'Florence', 'Venice'] },
-                'Portugal': { continent: 'Europe', cities: ['Porto'] },
-                'United Kingdom': { continent: 'Europe', cities: ['London'] },
-                'Germany': { continent: 'Europe', cities: ['Berlin', 'Munich'] }
-            };
+        // Countries and their cities
+        const countries = {
+            'United States': { 
+                continent: 'North America', 
+                cities: ['Los Angeles, CA', 'Laguna Beach, CA', 'Santa Monica, CA', 'San Diego, CA', 
+                        'Chicago, IL', 'Denver, CO', 'Buena Vista, CO', 'Grand Canyon National Park, AZ', 
+                        'Orlando, FL', 'Atlanta, GA', 'Savannah, GA', 'New Orleans, LA', 'Raleigh, NC', 'Wilmington, NC', 
+                        'Wrightsville Beach, NC', 'Greenville, NC', 'Boone, NC', 'Asheville, NC', 'Lake Gaston, NC', 
+                        'Charlotte, NC', 'Durham, NC', 'Cary, NC', 'Lake Lure, NC', 'Chapel Hill, NC', 'Apex, NC', 
+                        'Millers Creek, NC', 'Myrtle Beach, SC', 'Charleston, SC', 'Charlottesville, VA', 'Richmond, VA', 
+                        'Washington, DC', 'Nashville, TN', 'Boston, MA', 'New York City, NY', 
+                        'Bethany Beach, DE', 'Lahaina, HI', 'Kihei, HI', 'Hana, HI', 'Cincinnati, OH', 
+                        'Austin, Texas', 'Providence, RI', 'Philadelphia, PA', 'San Juan, PR'] 
+            },
+            'Peru': { continent: 'South America', cities: ['Lima', 'Pucallpa', 'Cusco', 'Cajamarca'] },
+            'Colombia': { continent: 'South America', cities: ['Bogotá'] },
+            'Mexico': { continent: 'North America', cities: ['Cancún', 'Cabo San Lucas'] },
+            'Cuba': { continent: 'North America', cities: ['Havana', 'Pinar del Río', 'Varadero'] },
+            'Czech Republic': { continent: 'Europe', cities: ['Prague', 'Černý Důl', 'Karlovy Vary'] },
+            'Hungary': { continent: 'Europe', cities: ['Budapest'] },
+            'Austria': { continent: 'Europe', cities: ['Vienna'] },
+            'Netherlands': { continent: 'Europe', cities: ['Amsterdam'] },
+            'France': { continent: 'Europe', cities: ['Annecy', 'Paris', 'Chamonix', 'Versailles', 'Nice', 'Strasbourg'] },
+            'Switzerland': { continent: 'Europe', cities: ['Interlaken', 'Lucerne', 'Zurich'] },
+            'Spain': { continent: 'Europe', cities: ['Madrid', 'Barcelona'] },
+            'Italy': { continent: 'Europe', cities: ['Rome', 'Florence', 'Venice'] },
+            'Portugal': { continent: 'Europe', cities: ['Porto'] },
+            'United Kingdom': { continent: 'Europe', cities: ['London'] },
+            'Germany': { continent: 'Europe', cities: ['Berlin', 'Munich'] }
+        };
 
-            // Initialize map
-            function initMap() {
-                const mapEl = document.getElementById('travel-map');
-                if (!mapEl) return;
+        // Initialize map
+        function initMap() {
+            const mapEl = document.getElementById('travel-map');
+            if (!mapEl) return;
 
-                const map = L.map('travel-map').setView([20, 0], 2);
-                
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '© OpenStreetMap contributors',
-                    maxZoom: 18
-                }).addTo(map);
+            const map = L.map('travel-map').setView([20, 0], 2);
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors',
+                maxZoom: 18
+            }).addTo(map);
 
-                const cityIcon = L.divIcon({
-                    className: 'custom-city-marker',
-                    html: '<div></div>',
-                    iconSize: [16, 16],
-                    iconAnchor: [8, 8]
+            const cityIcon = L.divIcon({
+                className: 'custom-city-marker',
+                html: '<div></div>',
+                iconSize: [16, 16],
+                iconAnchor: [8, 8]
+            });
+
+            const markers = [];
+            
+            // Add city markers
+            Object.entries(countries).forEach(([countryName, countryData]) => {
+                countryData.cities.forEach(cityName => {
+                    const coords = cityCoords[cityName];
+                    if (!coords || coords.length !== 2) return;
+
+                    const image = cityImages[cityName];
+                    const popupContent = `
+                        <div class="popup-content">
+                            <h3>${cityName}</h3>
+                            <p>${countryName}, ${countryData.continent}</p>
+                            ${image ? `<img src="${image}" alt="${cityName}" onerror="this.style.display='none';">` : ''}
+                        </div>
+                    `;
+
+                    const marker = L.marker(coords, { icon: cityIcon })
+                        .addTo(map)
+                        .bindPopup(popupContent);
+                    markers.push(marker);
                 });
+            });
 
-                const markers = [];
-                
-                // Add city markers
-                Object.entries(countries).forEach(([countryName, countryData]) => {
-                    countryData.cities.forEach(cityName => {
-                        const coords = cityCoords[cityName];
-                        if (!coords || coords.length !== 2) return;
+            // Update stats
+            const totalCities = Object.values(countries).reduce((sum, c) => sum + c.cities.length, 0);
+            const totalCountries = Object.keys(countries).length;
+            const continents = new Set(Object.values(countries).map(c => c.continent)).size;
 
-                        const image = cityImages[cityName];
-                        const popupContent = `
-                            <div class="popup-content">
-                                <h3>${cityName}</h3>
-                                <p>${countryName}, ${countryData.continent}</p>
-                                ${image ? `<img src="${image}" alt="${cityName}" onerror="this.style.display='none';">` : ''}
-                            </div>
-                        `;
+            const citiesEl = document.getElementById('cities-count');
+            const countriesEl = document.getElementById('countries-count');
+            const continentsEl = document.getElementById('continents-count');
 
-                        const marker = L.marker(coords, { icon: cityIcon })
-                            .addTo(map)
-                            .bindPopup(popupContent);
-                        markers.push(marker);
-                    });
-                });
+            if (citiesEl) citiesEl.textContent = totalCities;
+            if (countriesEl) countriesEl.textContent = totalCountries;
+            if (continentsEl) continentsEl.textContent = continents;
 
-                // Update stats
-                const totalCities = Object.values(countries).reduce((sum, c) => sum + c.cities.length, 0);
-                const totalCountries = Object.keys(countries).length;
-                const continents = new Set(Object.values(countries).map(c => c.continent)).size;
-
-                document.getElementById('cities-count').textContent = totalCities;
-                document.getElementById('countries-count').textContent = totalCountries;
-                document.getElementById('continents-count').textContent = continents;
-
-                // Fit map to markers
-                if (markers.length > 0) {
-                    const group = new L.featureGroup(markers);
-                    map.fitBounds(group.getBounds().pad(0.05));
-                }
+            // Fit map to markers
+            if (markers.length > 0) {
+                const group = new L.featureGroup(markers);
+                map.fitBounds(group.getBounds().pad(0.05));
             }
+        }
 
-            // Initialize when DOM is ready
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initMap);
-            } else {
-                initMap();
-            }
-        })();
-    </script>
-
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initMap);
+        } else {
+            initMap();
+        }
+    })();
+</script>
 
 
   </body>
