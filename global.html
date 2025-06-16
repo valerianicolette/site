@@ -473,28 +473,7 @@
         font-size: 0.95rem;
       }
 
-      /* MUST HAVE - Sets the map container size */
-      #travel-map {
-          height: 600px;
-          width: 100%;
-      }
-
-      /* MUST HAVE - Custom marker styling */
-      .custom-city-marker {
-          background: transparent;
-          border: none;
-      }
-
-      .custom-city-marker div {
-          background-color: #699b49;
-          border: 3px solid white;
-          border-radius: 50%;
-          width: 16px;
-          height: 16px;
-          box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      }
-
-      .stats {
+     .stats {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             padding: 20px;
@@ -521,27 +500,87 @@
             letter-spacing: 1px;
             margin: 5px 0 0 0;
         }
-
-      /* MUST HAVE - Removes default Leaflet popup margins */
-      .leaflet-popup-content {
-          margin: 0;
-          padding: 0;
-      }
-
-      /* Popup content styling - makes popups look nice */
-      .popup-content {
-          text-align: center;
-          padding: 15px;
-          min-width: 200px;
-          max-width: 250px;
-      }
-
-      /* Mobile responsiveness for map */
-      @media (max-width: 768px) {
-          #travel-map {
-              height: 400px;
-          }
-      }
+        
+        #travel-map {
+            height: 600px;
+            width: 100%;
+        }
+        
+        .leaflet-popup-content {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .popup-content {
+            text-align: center;
+            padding: 15px;
+            min-width: 200px;
+            max-width: 250px;
+        }
+        
+        .popup-content h3 {
+            margin: 0 0 8px 0;
+            color: #699b49;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        .popup-content p {
+            margin: 0 0 10px 0;
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+        
+        .popup-content img {
+            width: 100%;
+            max-width: 200px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .custom-city-marker {
+            background: transparent;
+            border: none;
+        }
+        
+        .custom-city-marker div {
+            background-color: #699b49;
+            border: 3px solid white;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .custom-city-marker:hover div {
+            transform: scale(1.2);
+            background-color: #5a8a3a;
+        }
+        
+        @media (max-width: 768px) {
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .stat {
+                border-bottom: 1px solid #e9ecef;
+                padding-bottom: 15px;
+            }
+            
+            .stat:last-child {
+                border-bottom: none;
+            }
+            
+            #travel-map {
+                height: 400px;
+            }
+        }
 
     </style>
   </head>
@@ -765,33 +804,27 @@
                 A map made for me, by me — visualizing the cities I’ve visited and some of the memories tied to them. It’s not just a snapshot of my travels, but a creative way to keep building my coding skills and create a digital keepsake.
                </p>
              
-
-              <div class="w-full pt-6 max-w-4xl mx-auto">
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-                  <div id="travel-map" style="height: 500px; width: 100%;"></div>
+                <div class="container">
+                <div id="travel-map"></div>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number" id="cities-count">0</div>
+                        <div class="stat-label">Cities Visited</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="countries-count">0</div>
+                        <div class="stat-label">Countries Explored</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="continents-count">0</div>
+                        <div class="stat-label">Continents Discovered</div>
+                    </div>
                 </div>
-              </div>
+            </div>
 
-               <!-- Travel Stats -->
 
-               <div class="container">
-        <div id="travel-map"></div>
-        
-        <div class="stats">
-            <div class="stat">
-                <div class="stat-number" id="cities-count">0</div>
-                <div class="stat-label">Cities Visited</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number" id="countries-count">0</div>
-                <div class="stat-label">Countries Explored</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number" id="continents-count">0</div>
-                <div class="stat-label">Continents Discovered</div>
-            </div>
-        </div>
-    </div>
+               
         </section>
     
 
@@ -902,9 +935,7 @@
         });
     </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
     <script>
         (function() {
             // City coordinates - Fixed coordinate errors
@@ -1085,6 +1116,8 @@
             }
         })();
     </script>
+
+
 
   </body>
 </html>
