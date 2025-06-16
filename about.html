@@ -317,12 +317,20 @@
       /* Guava hover effects for links */
 
       .bodylink {
-    text-decoration: underline; 
+      font-weight: 500;
       }
+
+      
 
       .bodylink:hover {
     color:#c6234e;  
       }
+
+      .bodylink:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
 
       .hover-guava:hover {
         color: #c6234e !important;
