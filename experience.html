@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Experience</title>
+
+      <link rel="icon" href="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/disco.png" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Marion', 'Playfair Display', 'serif'],
+              body: ['Inter', 'Helvetica Neue', 'sans-serif'],
+            },
+            colors: {
+              cream: {
+                DEFAULT: '#f7f7f4',
+                100: '#f9f9f6',
+                200: '#f0f0eb',
+              },
+              
+              blue: {
+                light: '#0887f7',
+                DEFAULT: '#066cc6',
+                dark: '#044c8c',
+              },
+              accent: '#7a9968',
+              gold: '#044c8c', // Now using guava for gold references
+            },
+            backgroundImage: {
+            hero: 'radial-gradient(ellipse at top left, #fefdfb 0%, #f5f1eb 40%, #f0ece6 75%)',
+          }
+          },
+        },
+      };
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Marion&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+    <style>
+      html{scroll-behavior:smooth}
+      body{font-family:'Inter',sans-serif}
+      .fade{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+      .show{opacity:1;transform:translateY(0)}
+      .link{position:relative}
+      .link::after{content:'';position:absolute;left:0;bottom:-2px;width:100%;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+      .link:hover::after{transform:scaleX(1)}
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 100%;
+        height: 1.5px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+      .nav-link:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+       /* Mobile menu animation */
+        .mobile-menu {
+            transition: all 0.3s ease;
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        .mobile-menu.open {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Hamburger animation */
+        .hamburger span {
+            transition: all 0.3s ease;
+        }
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+
+      .social-icon {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: linear-gradient(145deg, #f7f5f2, #ece7e1);
+        box-shadow: 5px 5px 10px #e6e1d9, -5px -5px 10px #ffffff;
+        transition: all 0.3s ease;
+        color: #04447c;
+      }
+      .social-icon:hover {
+        transform: translateY(-3px);
+        box-shadow: 8px 8px 15px #e6e1d9, -8px -8px 15px #ffffff;
+      }
+      .social-icon i {
+        transition: transform 0.3s ease;
+      }
+      .social-icon:hover i {
+        transform: scale(1.1);
+      }
+      
+      /* Timeline Styles for Education */
+      .timeline {
+        position: relative;
+        padding-left: 2rem;
+      }
+
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 1rem;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(180deg, #bfa76f 0%, #8a8d6f 100%);
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 3rem;
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-left: 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border-left: 3px solid #bfa76f;
+      }
+
+      .timeline-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -3.5rem;
+        top: 2rem;
+        width: 12px;
+        height: 12px;
+        background: #bfa76f;
+        border-radius: 50%;
+        border: 3px solid white;
+        box-shadow: 0 0 0 2px #bfa76f;
+      }
+
+      .timeline-date {
+        display: inline-block;
+        background: linear-gradient(135deg, #bfa76f 0%, #8a8d6f 100%);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        font-family: 'Inter', sans-serif;
+      }
+
+      .timeline-title {
+        font-family: 'Marion', 'Playfair Display', serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #22221f;
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-subtitle {
+        font-size: 1.125rem;
+        color: #bfa76f;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      .timeline-description {
+        color: #4a4a45;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+      }
+
+      .timeline-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .skill-tag {
+        background: #f7f5f2;
+        color: #5a6c7d;
+        padding: 0.25rem 0.75rem;
+        border-radius: 16px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        border: 1px solid #ece7e1;
+      }
+
+      .achievement {
+        background: #fdf4e7;
+        border-left: 4px solid #bfa76f;
+        padding: 0.75rem 1rem;
+        margin-top: 1rem;
+        border-radius: 0 6px 6px 0;
+      }
+
+      .achievement-text {
+        color: #8a8d6f;
+        font-weight: 500;
+        font-size: 0.875rem;
+      }
+
+      /* Clean Experience Layout */
+      .experience-item {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        gap: 4rem;
+        margin-bottom: 4rem;
+        align-items: start;
+      }
+
+      .experience-left {
+        text-align: left;
+      }
+
+      .experience-date {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.875rem;
+        color: #6b7280;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+
+      .experience-position {
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        color: #374151;
+        font-weight: 500;
+      }
+
+      .experience-right {
+        position: relative;
+      }
+
+      .experience-right::before {
+        content: '';
+        position: absolute;
+        left: -2rem;
+        top: 0.5rem;
+        width: 8px;
+        height: 8px;
+        background: #044c8c;
+        border-radius: 50%;
+      }
+
+      .experience-company {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.125rem;
+        color: #111827;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .experience-description {
+        color: #4b5563;
+        line-height: 1.7;
+        font-size: 0.95rem;
+      }
+
+      .research {
+        color: #4b5563;
+        line-height: 1.7;
+        font-size: 0.95rem;
+        padding-top: 1em;
+      }
+
+        .research-description {
+        color: #4b5563;
+        line-height: 1.7;
+        font-size: 0.95rem;
+        font-style: italic;
+        padding-bottom: 1em;
+      }
+
+      /* Guava hover effects for links */
+      .hover-blue:hover {
+        color: #044c8c!important;
+      }
+
+      .bg-blue {
+        background-color: #0887f7;
+      }
+
+      .bg-blue:hover {
+        background-color: #055194;
+      }
+
+      .border-blue {
+        border-color: #066cc6;
+      }
+
+      .text-blue {
+        color: #055fad;
+      }
+
+      .text-blue2 {
+        color: #04447c;
+      }
+
+      .text-guava {
+        color: #f87171;
+      }
+
+      .text-guava2 {
+        color: #fa9e9e;
+      }
+
+      /*nav bar */
+
+       .text-about:hover {
+  color: #f87171;
+}
+.text-story:hover {
+  color: #643b9f;
+}
+ .text-global:hover {
+      color:
+      #699b49;
+      }
+.text-exp:hover {
+  color: #0887f7;
+}
+.text-portfolio:hover {
+  color: #b38d94;
+}
+.text-contact:hover {
+  color: #307848;
+}
+
+
+      .floating-element{
+        animation: float 4s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(1deg); }
+      }
+
+      @media (max-width: 768px) {
+        .timeline {
+          padding-left: 1rem;
+        }
+        
+        .timeline-item {
+          margin-left: 1.5rem;
+          padding: 1.5rem;
+        }
+        
+        .timeline-item::before {
+          left: -2.5rem;
+        }
+
+        .experience-item {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          margin-bottom: 3rem;
+        }
+
+        .experience-right::before {
+          display: none;
+        }
+      }
+
+      .section-divider {
+        position: relative;
+        text-align: center;
+        margin: 3rem 0;
+      }
+
+      .section-divider::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(135deg, #066cc6 0%, #044c8c 100%);
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+
+  <body class="font-body antialiased text-[#22221f] bg-hero bg-fixed bg-no-repeat bg-cover min-h-screen">
+    
+  <nav class="fixed top-0 left-0 w-full z-20 py-5 px-6 md:px-12 flex items-center justify-between bg-cream/60 backdrop-blur-md border-b border-cream-200">
+        <!-- Home Icon -->
+        <a href="index.html" class="block w-6 h-6 hover:text-guava2 hover:rotate-12 transition-all duration-300" aria-label="Home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-4H10v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            </svg>
+        </a>
+
+         <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8 text-sm tracking-wide uppercase font-medium">
+            <a href="about.html" class="nav-link text-about">About Me</a>
+            <a href="mylife.html" class="nav-link text-story">My Story</a>
+            <a href="global.html" class="nav-link text-global">Worldview</a>
+            <a href="experience.html" class="nav-link text-exp">Experience</a>
+            <a href="creative.html" class="nav-link text-portfolio">Portfolio</a>
+            <a href="contact.html" class="nav-link text-contact">Contact & Collaborate</a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="md:hidden hamburger flex flex-col justify-center items-center w-6 h-6 space-y-1" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span class="block w-5 h-0.5 bg-current"></span>
+            <span class="block w-5 h-0.5 bg-current"></span>
+            <span class="block w-5 h-0.5 bg-current"></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-cream/95 backdrop-blur-md z-10 md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 text-lg tracking-wide uppercase font-medium">
+            <a href="about.html" class="nav-link text-about" onclick="closeMobileMenu()">About Me</a>
+            <a href="mylife.html" class="nav-link text-story" onclick="closeMobileMenu()">My Story</a>
+            <a href="global.html" class="nav-link text-global" onclick="closeMobileMenu()">Worldview</a>
+            <a href="experience.html" class="nav-link text-exp" onclick="closeMobileMenu()">Experience</a>
+            <a href="creative.html" class="nav-link text-portfolio" onclick="closeMobileMenu()">Portfolio</a>
+            <a href="contact.html" class="nav-link text-contact" onclick="closeMobileMenu()">Contact</a>
+        </div>
+    </div>
+
+
+    <!-- HERO SECTION -->
+    <header class="relative flex items-center justify-center min-h-screen pt-32 pb-24 px-6 md:px-0">
+      <div class="max-w-6xl mx-auto fade show">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+          <!-- Text content on the left -->
+          <div class="space-y-8 text-left ml-4">
+              <div class="floating-element">
+               <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight">
+                Building my
+                <span class="text-blue2 block">career path.</span>
+              </h1>
+              </div>
+                    
+              <p class="text-lg md:text-xl text-[#4a4a45]">My work history, technical expertise, and professional accomplishments that showcase my career growth.</p>
+
+              <div class="flex flex-wrap gap-4 pt-4">
+              <a href="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/valeria-mera-resume-website-2.pdf" class="inline-flex items-center gap-2 px-8 py-3 bg-blue text-white hover:bg-blue/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue">
+              View my Resume <i data-lucide="file-user" class="w-4 h-4"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/valeriamera/" class="inline-flex items-center gap-2 px-8 py-3 border border-blue text-blue hover:bg-blue hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue">
+              LinkedIn Profile<i data-lucide="user-round-search" class="w-4 h-4"></i>
+              </a>
+              </div>
+
+          </div>
+          
+          <!-- Image on the right -->
+
+        <div class="flex justify-center lg:justify-end">
+        <div class="w-100 h-100 flex items-center justify-center">
+            <!-- Image -->
+            <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad-background.png" alt="Valeria" class="w-100 h-100 object-cover">
+        </div>
+        </div>
+         
+
+        </div>
+      </div>
+    </header>
+
+         <!--1. ABOUT SECTION -->
+    <section id="intro" class="py-24 bg-cream/80 backdrop-blur-sm">
+      <div class="max-w-4xl mx-auto px-6 md:px-0 space-y-12">
+
+        <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">PROFESSIONAL SUMMARY</h2>
+        <div class="space-y-8 text-[#3e3e38] text-center justify-center leading-relaxed">
+          <p>I am a values-driven public policy professional passionate about strengthening democracy, improving government services, and advancing community-centered climate solutions. As a first-generation Peruvian American with a global perspective shaped by study abroad experiences in Cuba, Prague, and Paris, I bring cross-cultural understanding and multilingual skills to collaborative problem-solving.
+          </p>
+          <p> My career spans local and federal government experience, from helping establish the Town of Apex's first sustainability program to working on Capitol Hill. I recently graduated with a Masters in Public Policy from Georgetown University, and specialize in turning policy ideas into real impact through work in communications, implementation, and community engagement.
+            </p>
+           <p> I'm energized by bringing people together across differences and believe effective public service must be inclusive and rooted in lived experiences. My approach combines attention to detail with big-picture thinking, always guided by the values of listening closely, working hard, and showing up for my community.
+        </p>
+              <p class="font-display text-base"></p>
+            <u><a href="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/mera-valeria-sf_top_5.pdf" class="mt-10">Top 5 Clifton Strengths</a></u><br>
+            Harmony • Arranger • Context<br>Woo • Individualization
+            <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/top5strengths-1-e1749832831334.png" 
+     style="width: 180px; height: auto; display: block; margin: 0 auto;" 
+     class="mt-10">
+
+          </div>
+      
+      </div>
+    </section>
+
+    <!-- 2. Education Section -->
+    <section id="education" class="py-24 fade">
+      <div class="max-w-5xl mx-auto px-6 md:px-0">
+        <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">EDUCATION</h2>
+        
+        <div class="space-y-12">
+
+          <div class="experience-item">
+
+            <div class="experience-left">
+              <div class="experience-date">2023-2025</div>
+              <div class="experience-position">Master of Public Policy</div>
+
+               <!-- GRADUATION PIC -->
+
+                <div style="
+                margin-top: 10px;
+                width: 180px;
+                height: 200px;
+                background: white;
+                border: 1px solid #ccc;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                padding: 8px;
+                box-sizing: border-box;
+                text-align: center;
+                font-family: sans-serif;">
+
+                <div style="
+                    width: 100%;
+                    height: 160px;
+                    overflow: hidden;">
+
+                    <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/05/img_0281-e1749427842301.jpeg" alt="Georgetown Graduation Photo"
+                    style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                </div>
+                </div>
+
+         <!-- Education Section -->
+
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Georgetown University, McCourt School of Public Policy</h3>
+
+             <p class="experience-description">
+                <b>Finalist:</b> <a href="https://mccourt.georgetown.edu/news/2024-public-policy-challenge-finalists/" class="nav-link hover:text-gold">2024 Georgetown Public Policy Challenge;</a>
+                 <a href="https://www.linkedin.com/posts/georgetown-mccourt-school-of-public-policy_congratulations-to-our-mccourt-showcase-finalists-activity-7320872054419869698-YwZD?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACEPIqwBxZ8G95E2NuCqWVMwdBduoo0tVM8" class="nav-link hover:text-gold">2025 Annual McCourt Student Showcase </a>
+                </p>
+
+               <p class="research">
+                <b>Graduate Thesis Project:</b> <a href="https://proquest.com/docview/3215951181" class="nav-link hover:text-gold">Public Opinion’s Impact on Climate Policy Outcomes - The Case of the Inflation Reduction Act</a>
+                </p> 
+
+                 <p class="research-description">Measured the impact that public opinion has on policy outcomes by comparing support from the Inflation Reduction Act to the amount of funding received by states using regression analysis. 
+                    Calculated test statistics to draw conclusions on the relationship between support for climate policy and funding outcomes, contributing to the body of research analyzing public opinion’s influences on policy outcomes.
+                </p>
+
+               <p class="experience-description">
+                <a href="https://lnkd.in/eEs7CyUT" target="_blank" class="inline-flex items-center text-blue hover:bg-blue hover:text-white transition-all duration-300">More on my Thesis<i data-lucide="arrow-right"></i></a> 
+              </p>
+
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2016-2020</div>
+              <div class="experience-position">B.A. in Political Science</div> 
+
+        <!-- GRADUATION PIC -->
+
+        <div style="
+        margin-top: 10px;
+        width: 180px;
+        height: 200px;
+        background: white;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 8px;
+        box-sizing: border-box;
+        text-align: center;
+        font-family: sans-serif;">
+
+        <div style="
+            width: 100%;
+            height: 160px;
+            overflow: hidden;">
+
+            <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/img_2666-3-e1749427554710.jpg" alt="NCSU Graduation Photo"
+            style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        </div>
+        </div>
+        </div>
+
+        <!-- Education Section -->
+            <div class="experience-right">
+              <h3 class="experience-company">North Carolina State University (NC State)</h3>
+
+              <p class="experience-description">
+                <b>Minors:</b> French, History 
+              </p>
+
+             <p class="experience-description">
+                <b>Honors: </b> Magna Cum Laude, Dean's List, Political Science Honors Program, Global Perspectives Certificate Program, Leadership Development Program
+                </p>
+
+             <p class="research">
+                <b>Senior Thesis Project:</b> The Impact of Gender Stereotyped Evaluations on Statewide Low-Information Races </p>
+
+
+                <p class="research-description">Measured the effect of stereotypes on statewide-low information races in North Carolina using a survey experiment that simulated Democratic and Republican primaries. 
+                  Calculated test statistics to conclude that there is no gender bias in statewide races, with the exception for Judge in a Democratic primary in which there is an advantage for the female candidate.
+                  Selected to present research at the 78th Annual Midwest Political Science Association Conference, Chicago, IL.
+                  <em>*Conference canceled due to COVID-19 pandemic</em>
+                </p>
+                
+
+                
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Policy Experience Section -->
+    <section class="py-24 bg-cream/80 backdrop-blur-sm">
+      <div class="max-w-5xl mx-auto px-6 md:px-8">
+        <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">POLICY EXPERIENCE</h2>
+        <div class="space-y-12">
+
+          <div class="experience-item">
+          <div class="experience-left">
+           <div class="experience-date">2025*</div>
+            <div class="experience-position">Spring Intern (Selected)</div>
+           </div>
+
+         <div class="experience-right">
+           <h3 class="experience-company">
+            Office of Management and Budget, Executive Office of the President
+           </h3>
+    
+         <p class="experience-description">
+           Selected for competitive Executive Office of the President Internship Program for Spring 2025. Placed in the Environment Branch of the Natural Resources Division in the Office of Management and Budget (OMB) to contribute to EPA's federal budget process. Position focused on drinking water, children's health, and Tribal programs. 
+         <em>*Internship cancelled due to federal funding freeze under new administration.</em></p>
+           <p class="experience-description mt-2">
+                <a href="https://www.linkedin.com/posts/valeriamera_policytopractice-publicservice-environmentalpolicy-activity-7315372861139947520-hJuD?utm_source=share&utm_medium=member_desktop&rcm=ACoAACEPIqwBxZ8G95E2NuCqWVMwdBduoo0tVM8"
+                 target="_blank" class="inline-flex items-center text-gold hover:bg-gold hover:text-white transition-all duration-300">Read More <i data-lucide="arrow-right"></i></a> 
+            </p>
+
+          </div>
+        </div>
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2024</div>
+              <div class="experience-position">Federal Funding Policy Intern</div>
+            </div>
+
+            <div class="experience-right">
+              <h3 class="experience-company">
+                <a href="https://www.southeastsdn.org/" class="nav-link hover:text-gold">Southeast Sustainability Directors Network</a></h3>
+                
+              <p class="experience-description">
+                Analyzed 500+ grant applications representing $1M+ in funding requests, identifying key success factors for sustainability projects. Delivered data-driven insights through interactive dashboards and reports to 50+ stakeholders across 10 Southeast states. Achieved 99% data accuracy while reducing processing time by 30%.
+              </p>
+
+              <div class="timeline-skills mt-2">
+              <span class="skill-tag">Data Analysis</span>
+              <span class="skill-tag">Grant Writing</span>
+              <span class="skill-tag">Tableau</span>
+              <span class="skill-tag">Policy Research</span>
+            </div>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2024</div>
+              <div class="experience-position">Press Intern</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">
+                <a href="https://www.epw.senate.gov/public/" class="nav-link hover:text-gold">U.S. Senate Committee on Environment and Public Works</a></h3>
+
+
+              <p class="experience-description">
+                Developed thought leadership content on climate, clean energy, and infrastructure policy reaching 100K+ stakeholders. Translated complex policy issues into accessible messaging and coordinated rapid-response communications. Boosted positive media coverage by 25% while reducing response time by 30%.
+              </p>
+
+                 <div class="timeline-skills mt-2">
+              <span class="skill-tag">Strategic Communications</span>
+              <span class="skill-tag">Policy Writing</span>
+              <span class="skill-tag">Media Relations</span>
+              <span class="skill-tag">Climate Policy</span>
+              </div>
+                <p class="experience-description mt-2">
+                <a href="creative.html#senate" class="inline-flex items-center text-gold hover:bg-gold hover:text-white transition-all duration-300">Social for the Senate<i data-lucide="arrow-right"></i></a> 
+              </p>
+
+
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2024</div>
+              <div class="experience-position">Graduate Assistant</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Office of Strategic Communications, McCourt School of Public Policy </h3>
+              <p class="experience-description">
+                Managed and regularly updated over 20 WordPress pages to deliver timely policy research and news to the McCourt School’s online audience. 
+                Ensured all content aligned with branding goals, contributing to a cohesive digital presence and strong school identity. 
+                Worked collaboratively with the Strategic Communications team to improve site functionality, resulting in enhanced user experience and accessibility across the platform.
+                </p>
+
+                <div class="timeline-skills mt-2">
+              <span class="skill-tag">WordPress</span>
+              <span class="skill-tag">Strategic Communication</span>
+              <span class="skill-tag">Website Content Management</span>
+              <span class="skill-tag">Digital Strategy</span>
+            </div>
+
+              <p class="experience-description mt-2">
+                <a href="creative.html#gu" class="inline-flex items-center text-gold hover:bg-gold hover:text-white transition-all duration-300">Creating Content with Georgetown<i data-lucide="arrow-right"></i></a> 
+              </p>
+
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2022-2023</div>
+              <div class="experience-position">Staff Assistant</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">U.S. Senate, Office of Senator Jacky Rosen</h3>
+              <p class="experience-description">
+                Spearheaded creation of the first Staff Assistant Manual detailing 100+ standard operating procedures. Led 25+ Capitol tours engaging constituents with policy insights and facilitated cross-agency collaboration. Reduced onboarding time by 20% while enhancing administrative efficiency.
+              </p>
+              <div class="timeline-skills mt-2">
+              <span class="skill-tag">Process Improvement</span>
+              <span class="skill-tag">Public Speaking</span>
+              <span class="skill-tag">Stakeholder Relations</span>
+              <span class="skill-tag">Project Management</span>
+            </div>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2021-2022</div>
+              <div class="experience-position">Sustainability Specialist</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Town of Apex, North Carolina</h3>
+              <p class="experience-description">
+                Created and launched the <a href="ttps://www.youtube.com/watch?v=kLmFlm-F584" target="_blank">Town's first Earth Day event</a> with an $11K budget, recruiting 25 vendors and attracting 1,000+ participants. Spearheaded the first greenhouse gas inventory using ICLEI's ClearPath tool. Successfully launched inaugural sustainability program while managing comprehensive budget responsibilities.
+              </p>
+              <div class="timeline-skills mt-2">
+              <span class="skill-tag">Program Administration</span>
+              <span class="skill-tag">Community Engagement</span>
+              <span class="skill-tag">Data Organization</span>
+              <span class="skill-tag">Event Coordination</span>
+            </div>
+
+               <p class="experience-description mt-2">
+                <a href="https://www.youtube.com/watch?v=kLmFlm-F584" class="inline-flex items-center text-gold hover:bg-gold hover:text-white transition-all duration-300">EarthFest 2022 Recap Video<i data-lucide="arrow-right"></i></a> 
+              </p>
+              
+                <p class="experience-description mt-2">
+                <a href="creative.html#apex" class="inline-flex items-center text-gold hover:bg-gold hover:text-white transition-all duration-300">Promotional Material Created<i data-lucide="arrow-right"></i></a> 
+              </p>
+
+            </div>
+          </div>
+
+           <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2020-2021</div>
+              <div class="experience-position">Lead for North Carolina Fellow</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company"> AmeriCorps / UNC School of Government</h3>
+              <p class="experience-description">
+                Designed and launched the Town’s first-ever Sustainability Program, building operational frameworks, managing logistics, developing outreach materials, and securing support from local leadership to ensure long-term impact. 
+                Selected as one of 11 fellows nationwide for a prestigious public service fellowship supported by AmeriCorps and Lead for America, aimed at strengthening communities and increasing local government capacity. 
+                Completed over 100 hours of training through the UNC School of Government, gaining hands-on expertise in public administration, policy implementation, local government finance, and strategic leadership.
+              </p>  
+               <div class="timeline-skills mt-2">
+              <span class="skill-tag">Program Development & Implementation</span>
+              <span class="skill-tag">Stakeholder Engagement</span>
+              <span class="skill-tag">Strategic Communication</span>
+            </div>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2019</div>
+              <div class="experience-position">Campaign Finance Intern</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Terry Van Duyn for Lieutenant Governor</h3>
+              <p class="experience-description">
+              Represented campaign at community events; maintained donor database to support outreach.
+              Strengthened voter engagement, grassroots organizing, database management, and political communications skills.
+              </p>  
+               <div class="timeline-skills mt-2">
+              <span class="skill-tag">Community Engagement</span>
+              <span class="skill-tag">Grassroots Organizing</span>
+              <span class="skill-tag">Campaign Finance</span>
+              <span class="skill-tag">Fundraising</span>
+               </div>
+            </div>
+          </div>
+
+           <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2018 - 2019</div>
+              <div class="experience-position">Research Assistant</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">College of Humanities and Social Sciences, NC State</h3>
+              <p class="experience-description">
+              Supported a faculty-led study on legislative effectiveness by organizing and coding roll-call and co-sponsorship data from the U.S. House of Representatives spanning the 1990s and 2000s. 
+              Facilitated advanced statistical analysis by preparing clean, structured datasets for regression and multilevel mixed effects models. 
+              Contributed to research examining how seniority influences coalition-building, providing insights into how long-serving legislators leverage interpersonal relationships to advance policy proposals. 
+              Strengthened data management, political research, and collaborative academic research skills in a fast-paced, detail-oriented environment.
+              </p>  
+               <div class="timeline-skills mt-2">
+              <span class="skill-tag">Data Management & Cleaning</span>
+              <span class="skill-tag">Quantitative Research</span>
+              <span class="skill-tag">Quantitative Research</span>
+              <span class="skill-tag">Academic Collaboration</span>
+               </div>
+            </div>
+          </div>
+
+           <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2017</div>
+              <div class="experience-position">Community Engagement Intern</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Marbles Kids Museum</h3>
+              <p class="experience-description">
+             Initiated and enhanced community engagement across all core initiatives and programs. 
+             Assisted with partnerships, volunteer programs (such as weekly library visits), and events (such as Kick Off to Kindergarten). 
+             Captured impact through weekly evaluation and reporting.
+              </p>  
+               <div class="timeline-skills mt-2">
+              <span class="skill-tag">Community Engagement</span>
+              <span class="skill-tag">Program Evaluation</span>
+               </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+     <!-- 4. Customer Service Section -->
+    <section id="customer-service" class="py-24 fade">
+       <div class="max-w-5xl mx-auto px-6 md:px-0">
+        <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider"> CUSTOMER SERVICE EXPERIENCE</h2>
+    
+        <div class="space-y-12">
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2023 - Present</div>
+              <div class="experience-position">Bartender/Server</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Dacha Beer Garden</h3>
+              <p class="experience-description">
+                I’ve been a server and bartender at Dacha Beer Garden since I moved to D.C., balancing the job alongside working on Capitol Hill and later while attending grad school. I’ve jumped in wherever needed — even helping with social media — and genuinely love being part of a place that brings people together. If you’ve been to Dacha, you know the community vibe is real, and I’m proud to contribute to that while showing up fully across everything I do.
+              </p>
+          
+                <p class="experience-description mt-2">
+                <a href="creative.html#dacha" class="inline-flex items-center text-gold hover:bg-gold hover:text-white transition-all duration-300">Social for Dacha<i data-lucide="arrow-right"></i></a> 
+              </p>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2015 - 2022</div>
+              <div class="experience-position">Hostess / Server / Takeaway / Bartender</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Outback Steakhouse</h3>
+              <p class="experience-description">
+                I worked at Outback Steakhouse for over seven years — 
+                it was my first job, and it became a bit of a personality trait because I was there for so long. 
+                I started as a hostess at 16, and over time, moved through almost every front-of-house role: takeout, server, bartender. I stayed because the management was supportive, the team felt like family, and — out of necessity — I had to take care of myself. 
+                That experience shaped me, because I learned how to juggle responsibilities in a fast-paced environemnt, read a room, build real relationships, and hustle no matter what. 
+                That “make it work” mentality has stuck with me ever since.
+              </p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+     <!-- Leadership Development Section -->
+    <section id="leadership" class="py-24 bg-cream/60 backdrop-blur-sm fade">
+      <div class="max-w-5xl mx-auto px-6 md:px-0">
+        <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider"> LEADERSHIP DEVELOPMENT</h2>
+    
+        <div class="space-y-12">
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2025 - PRESENT</div>
+              <div class="experience-position">Food Pantry Volunteer</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Father McKenna Center</h3>
+              <p class="experience-description">
+                Regular volunteer at the local food pantry, dedicating time at a weekly basis to set-up, assist with shopping, and breakdown for the pantry service hours.
+              </p>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2024</div>
+              <div class="experience-position">Seminar Participant</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Georgetown Technology Policy Initiative, McCourt School of Public Policy</h3>
+              <p class="experience-description">
+                Selected to participate in an 8-Part Dinner Salon Series, <a href="https://www.linkedin.com/posts/georgetown-mccourt-school-of-public-policy_dinnerseries-policymaking-activity-7158160977203462145-pld-?utm_source=share&utm_medium=member_desktop&rcm=ACoAACEPIqwBxZ8G95E2NuCqWVMwdBduoo0tVM8" target="_blank">
+                The Art and Science of Civic Entrepeneurship,</a> designed to deepen understanding of civic engagement and public service.
+              </p>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2023</div>
+              <div class="experience-position">Vice President</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Capitol Hill Intern Association</h3>
+              <p class="experience-description">
+                Selected as Vice President of the Capitol Hill Intern Association, leading professional development efforts for over 500 interns and fostering a supportive network on the Hill.
+                </p>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2019 - 2020</div>
+              <div class="experience-position">Sustainability Director</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Student Government, NC State</h3>
+              <p class="experience-description">
+                Appointed by Student Senate to serve as Student Sustainability Director, serving as liaison between University Sustainability Department and various student organizations.
+                </p>
+            </div>
+          </div>
+
+           <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2019</div>
+              <div class="experience-position">Certificate</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Leadership Development Program, NC State</h3>
+              <p class="experience-description">
+                Participated in 10 Leadership Foundation Courses. Applied course-learnings to leadership experience of Student Government Director of Sustainability. 
+                </p>
+            </div>
+          </div>
+
+           <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2019</div>
+              <div class="experience-position">Participant</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company"><a href="https://ncbudget.org/ncspi/" target="_blank">NC Summer Policy Institute</a></h3>
+              <p class="experience-description">
+                Selected as one of ~25 statewide participants for a competitive, four-day intensive program on state budget and policy‑making.
+                Gained hands‑on experience in stakeholder engagement, policy communication, and public finance tools.
+                </p>
+            </div>
+          </div>
+
+            <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2019</div>
+              <div class="experience-position">Participant</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company"><a href="https://equalopportunity.ncsu.edu/news/2019/06/14/leading-with-integrity-leadershape-2/">LeaderShape Institute</a></h3>
+              <p class="experience-description">
+                Selected among 60 NC State students for a week‑long immersive leadership program focused on values-based leadership and integrity.
+                Engaged in deep self-reflection, small-group facilitation, and progressive dialogue to align personal values with a leadership vision grounded in integrity.
+                Collaborated with peers to design and lead exercises, helping each other practice courageous conversations and ethical decision‑making.
+                </p>
+            </div>
+          </div>
+
+
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2016-2017</div>
+              <div class="experience-position">Student Village Member</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">EcoVillage, NC State</h3>
+              <p class="experience-description">
+                Selected for a competitive, sustainability-focused living and learning community, fostering interdisciplinary collaboration among students from diverse academic backgrounds.
+              </p>
+            </div>
+          </div>
+          
+
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-blue text-cream py-20 fade">
+      <blockquote class="max-w-3xl mx-auto text-center text-2xl md:text-3xl font-display italic px-6">
+        "The people crazy enough to think they can change the world are the ones that do."
+      </blockquote>
+    </section>
+
+    <!-- CONTACT FOOTER -->
+    <footer id="contact" class="py-24 bg-cream fade">
+      <div class="max-w-4xl mx-auto text-center space-y-12 px-6 md:px-0">
+        <div class="space-y-4">
+          <h3 class="font-display text-2xl md:text-3xl">Ready to Create Change Together?</h3>
+          <p class="text-[#4a4a45] max-w-2xl mx-auto">Whether you're looking to collaborate on climate policy, need creative content, or want to chat about making systems more human-centered, I'd love to connect.</p>
+          For occassional direct updates 
+        </div>
+        
+        <div class="flex justify-center space-x-10">
+          <a href="mailto:vnm58293@gmail.com" aria-label="Email" class="social-icon">
+            <i data-lucide="mail"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/valeriamera/" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <i data-lucide="linkedin"></i>
+          </a>
+          <a href="https://www.instagram.com/valeriamera/" target="_blank" aria-label="Instagram" class="social-icon">
+            <i data-lucide="instagram"></i>
+          </a>
+        </div>
+        
+         <form action="https://formspree.io/f/mblyozep" method="POST" class="max-w-lg mx-auto flex border border-blue focus-within:ring-2 focus-within:ring-blue rounded-lg overflow-hidden">
+          <input type="email" name="email" placeholder="Your email" class="flex-grow px-5 py-3 bg-transparent placeholder-[#706f6a] focus:outline-none" required />
+          <button type="submit" class="px-6 py-3 bg-blue text-white font-medium hover:bg-blue/90 transition-colors">Subscribe</button>
+        </form>
+        
+        <p class="text-sm text-[#6d6d67]">© <span id="year"></span> Valeria Nicolette Mera</p>
+      </div>
+    </footer>
+
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        // Initialize Lucide icons
+        if (window.lucide && typeof lucide.createIcons === 'function') {
+          lucide.createIcons();
+        }
+
+        // Initialize Intersection Observer
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.15,
+            rootMargin: '0px'
+          }
+        );
+
+        // Observe all fade elements
+        document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+        // Update copyright year
+        const yearElement = document.getElementById('year');
+        if (yearElement) {
+          yearElement.textContent = new Date().getFullYear();
+        }
+      });
+    </script>
+
+     <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            mobileMenu.classList.toggle('open');
+            hamburger.classList.toggle('open');
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            mobileMenu.classList.remove('open');
+            hamburger.classList.remove('open');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (!event.target.closest('nav') && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+
+  </body>
+</html>

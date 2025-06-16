@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valeria Mera</title>
+
+          <link rel="icon" href="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/disco.png" type="image/png">
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Marion', 'Playfair Display', 'serif'],
+              body: ['Inter', 'Helvetica Neue', 'sans-serif'],
+            },
+            colors: {
+              cream: {
+                DEFAULT: '#f7f7f4',
+                100: '#f9f9f6',
+                200: '#f0f0eb',
+              },
+              pistachio: {
+                light: '#e8f5e1',
+                DEFAULT: '#9db88d',
+                dark: '#7a9968',
+              },
+              guava: {
+                light: '#fde2e2',
+                DEFAULT: '#c2204c',
+                dark: '#dc2626',
+              },
+              accent: '#7a9968',
+              gold: '#c2204c', // Now using guava for gold references
+            },
+            backgroundImage: {
+            hero: 'radial-gradient(ellipse at top left, #fefdfb 0%, #f5f1eb 40%, #f0ece6 75%)',
+          }
+          },
+        },
+      };
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Marion&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+    <style>
+      html{scroll-behavior:smooth}
+      body{font-family:'Inter',sans-serif}
+      .fade{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+      .fade.show{opacity:1;transform:translateY(0)}
+      .fade-up{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+      .fade-up.show{opacity:1;transform:translateY(0)}
+      
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 100%;
+        height: 1.5px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+      .nav-link:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      /* Mobile menu animation */
+        .mobile-menu {
+            transition: all 0.3s ease;
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        .mobile-menu.open {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Hamburger animation */
+        .hamburger span {
+            transition: all 0.3s ease;
+        }
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        .social-icon {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: linear-gradient(145deg, #f7f7f4, #f0f0eb);
+        box-shadow: 5px 5px 10px #e6e6e1, -5px -5px 10px #ffffff;
+        transition: all 0.3s ease;
+        color: #c2204c;
+      }
+
+      .social-icon:hover {
+        transform: translateY(-3px);
+        box-shadow: 8px 8px 15px #e6e6e1, -8px -8px 15px #ffffff;
+        color: #f87171;
+      }
+
+      .social-icon i {
+        transition: transform 0.3s ease;
+      }
+      .social-icon:hover i {
+        transform: scale(1.1);
+      }
+
+      .section-card {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(157, 184, 141, 0.2);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .section-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(157, 184, 141, 0.1), transparent);
+        transition: left 0.6s ease;
+      }
+
+      .section-card:hover::before {
+        left: 100%;
+      }
+
+      .section-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(157, 184, 141, 0.2);
+        border-color: rgba(157, 184, 141, 0.4);
+      }
+
+      .section-icon {
+        width: 3rem;
+        height: 3rem;
+        background: linear-gradient(135deg, #F9D5D3 0%, #f87171 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .section-card:hover .section-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .skill-category {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+        border: 1px solid rgba(157, 184, 141, 0.1);
+      }
+
+      .skill-category:hover {
+        transform: translateY(-4px);
+        border-color: rgba(157, 184, 141, 0.3);
+      }
+
+      .skill-category h4 {
+        color: #c2204c;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .skill-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .skill-list li {
+        color: #4a4a45;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1rem;
+      }
+
+      .skill-list li::before {
+        content: '•';
+        color: #ef4444;
+        position: absolute;
+        left: 0;
+      }
+
+      .creative-preview {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .creative-item {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(157, 184, 141, 0.1);
+      }
+
+      .creative-item:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        border-color: #eca3bb;
+      }
+
+      .creative-item-image {
+  height: 150px;
+  background: linear-gradient(135deg, #faf3f6 0%, #fdf7fa 50%); /* Lighter pastel tones */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ef4444;
+}
+
+      .creative-item-content {
+        padding: 1.5rem;
+      }
+
+      .creative-item h4 {
+        font-family: 'Marion', serif;
+        color: #22221f;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .creative-item p {
+        color: #6b7280;
+        font-size: 0.875rem;
+        line-height: 1.6;
+      }
+
+      
+
+      .section-divider {
+        position: relative;
+        text-align: center;
+        margin: 3rem 0;
+      }
+
+      .section-divider::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+        border-radius: 2px;
+      }
+
+      .text-about:hover {
+  color: #c6234e;
+}
+.text-story:hover {
+  color: #643b9f;
+}
+ .text-global:hover {
+      color:
+      #699b49;
+      }
+.text-exp:hover {
+   color: #0887f7;
+}
+.text-portfolio:hover {
+  color: #b38d94;
+}
+.text-contact:hover {
+  color: #307848;
+}
+
+      /* Guava hover effects for links */
+
+      .bodylink {
+    text-decoration: underline; 
+      }
+
+      .bodylink:hover {
+    color:#c6234e;  
+      }
+
+      .hover-guava:hover {
+        color: #c6234e !important;
+      }
+
+      .bg-guava {
+        background-color: #c24969;
+      }
+
+      .bg-guava:hover {
+        background-color: #c24969;
+      }
+
+      .bg-quote {
+        background-color: #c24969;
+      }
+
+      .border-guava {
+        border-color: #c6234e;
+      }
+
+      .text-guava {
+        color: #c6234e;
+      }
+
+      .text-guava2 {
+        color: #c24969;
+      }
+
+      .bg-pistachio {
+        background-color: #cdddc8;
+      }
+
+      .text-pistachio {
+        color: #9db88d;
+      }
+
+       .floating-element{
+        animation: float 4s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(1deg); }
+      }
+
+      @media (max-width: 768px) {
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+        .creative-preview {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+<body class="font-body antialiased text-[#22221f] bg-hero bg-fixed bg-no-repeat bg-cover min-h-screen">
+    
+  <nav class="fixed top-0 left-0 w-full z-20 py-5 px-6 md:px-12 flex items-center justify-between bg-cream/60 backdrop-blur-md border-b border-cream-200">
+        <!-- Home Icon -->
+        <a href="index.html" class="block w-6 h-6 hover:text-guava2 hover:rotate-12 transition-all duration-300" aria-label="Home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-4H10v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            </svg>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8 text-sm tracking-wide uppercase font-medium">
+            <a href="about.html" class="nav-link text-about">About Me</a>
+            <a href="mylife.html" class="nav-link text-story">My Story</a>
+            <a href="global.html" class="nav-link text-global">Worldview</a>
+            <a href="experience.html" class="nav-link text-exp">Experience</a>
+            <a href="creative.html" class="nav-link text-portfolio">Portfolio</a>
+            <a href="contact.html" class="nav-link text-contact">Contact & Collaborate</a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="md:hidden hamburger flex flex-col justify-center items-center w-6 h-6 space-y-1" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span class="block w-5 h-0.5 bg-current"></span>
+            <span class="block w-5 h-0.5 bg-current"></span>
+            <span class="block w-5 h-0.5 bg-current"></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-cream/95 backdrop-blur-md z-10 md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 text-lg tracking-wide uppercase font-medium">
+            <a href="about.html" class="nav-link text-about" onclick="closeMobileMenu()">About Me</a>
+            <a href="mylife.html" class="nav-link text-story" onclick="closeMobileMenu()">My Story</a>
+            <a href="global.html" class="nav-link text-global" onclick="closeMobileMenu()">Worldview</a>
+            <a href="experience.html" class="nav-link text-exp" onclick="closeMobileMenu()">Experience</a>
+            <a href="creative.html" class="nav-link text-portfolio" onclick="closeMobileMenu()">Portfolio</a>
+            <a href="contact.html" class="nav-link text-contact" onclick="closeMobileMenu()">Contact</a>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <header class="relative flex items-center justify-center min-h-screen pt-32 pb-24 px-6 md:px-0">
+      <div class="max-w-6xl mx-auto fade show">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+          <!-- Text content on the left -->
+          <div class="space-y-8 text-left ml-4">
+            <div class="floating-element">
+            <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight">The Real Me: <br> <span class="text-guava block">Beyond the Resume</span></h1>
+            </div>
+
+            <p class="text-lg md:text-xl text-[#4a4a45] leading-relaxed">
+                My narrative, the experiences that shaped me, and a bit extra of what makes me, me </p>
+            
+            <div class="flex flex-wrap gap-4 pt-4">
+              <a href="#about" class="inline-flex items-center gap-2 px-8 py-3 bg-guava text-white hover:bg-guava/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-guava">
+                Get To Know Me <i data-lucide="arrow-down" class="w-4 h-4"></i>
+              </a>
+              
+            </div>
+          </div>
+          
+          <div class="flex justify-center lg:justify-end">
+            <div class="w-100 h-100 flex items-center justify-center">
+              <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/aboutme.png" alt="Valeria" class="w-100 h-100 object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+   
+    <!-- Section 1 -->
+     <section class="py-24 bg-cream/80 backdrop-blur-sm">
+      <div class="max-w-6xl mx-auto px-6 md:px-0">
+        <div class="text-center mb-12 fade">
+          <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">MY FOUNDATION</h2>
+          <p class="text-lg text-[#4a4a45] mt-4 max-w-2xl mx-auto">
+            I was born and raised in Raleigh, North Carolina, and have been calling DC home since 2022. 
+            As a Peruvian American, I'm deeply connected to my heritage—most of my family still lives in Peru, and I spent every summer there growing up. 
+            These experiences shaped my worldview and sparked a lifelong passion for understanding different cultures and perspectives.
+          </p>
+          <p class="text-lg text-[#4a4a45] mt-4 max-w-2xl mx-auto">
+            High school brought unexpected challenges that fundamentally changed my path and taught me what resilience really means. 
+            Those formative years shaped who I am today in ways I'm still processing with each new milestone. 
+            But through it all, I learned that the people in my life are everything to me. 
+            The communities that supported me through those challenges showed me the incredible power of connection and belonging.
+            </p>
+            <p class="text-lg text-[#4a4a45] mt-4 max-w-2xl mx-auto">
+            This foundation of community continues to drive me today. 
+            I love creating spaces for people to gather (translation: I throw great parties), and connecting people I care about with each other brings me enormous joy.
+            I've always loved to create and I've used that to create community and bring people together and think outside the box in every area of my life.
+            My belief that we can build a better world is entirely grounded in community and the incredible good that flows from it—a belief that was forged through my own experiences of being lifted up by others when I needed it most.
+            </p>
+     
+          
+                 <p class="text-base text-gray-500 italic mt-4 max-w-2xl mx-auto">
+            <a href="mylife.html" class="inline-flex items-center gap-1 hover:text-gray-700 transition-colors">
+                More on my Life Story
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            </p>
+
+        </div>
+     </section>
+
+    <!-- Section 2 -->
+     <section class="py-24 fade">
+      <div class="max-w-6xl mx-auto px-6 md:px-0">
+        <div class="text-center mb-12 fade">
+          <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">MY APPROACH</h2>
+          <p class="text-lg text-[#4a4a45] mt-4 max-w-2xl mx-auto">
+            Seeing how community lifted me up in my personal life during high school complemented what I was learning in school as well. As I was being introduced to ideas like shopping local to support the local economy and supporting small businesses, I was simultaneously experiencing what it meant to show up for your community. I started to draw the parallels between what was happening both personally and outside of me—how the same principles of care, support, and interconnectedness applied across different scales.
+             </p>
+            <p class="text-lg text-[#4a4a45] mt-4 max-w-2xl mx-auto">
+                This foundation of local care shaped my curiosity about the world beyond Raleigh. 
+                I care deeply about local issues, but because I’d experienced how different life could be around the world from visiting my family, I was drawn to complementing this micro-perspective by learning about global systems. 
+                With this in mind, and because I’m someone who likes to challenge myself and seek out the unfamiliar, it was only natural to complete the
+                <u><a href="global.html#global" class="bodylink">Global Perspectives Certificate Progam</a></u>
+                in my undergraduate years. 
+                I’ve also taken advantage of the opportunity to study abroad, not just once, but three times: a summer program in Cuba, a semester in Prague, and most recently, a semester in Paris as part of my master's degree.
+                </p>
+
+                <p class="text-lg text-[#4a4a45] mt-4 max-w-2xl mx-auto">
+                  The more I’ve travelled, the more I’ve witnessed all the different ways local issues have global impact. No matter where I live or where I'm learning from, we all share this planet and we’re all responsible for taking care of her. Climate change is something that I feel on a daily basis in my own community, but I've also felt its impact in communities around the world. 
+                </p>
+
+                 <p class="text-lg text-[#4a4a45] mt-4 max-w-2xl mx-auto">
+
+                  My fluency in Spanish opened my eyes to the power of connecting across languages, and my ongoing French learning journey continues to reinforce that belief. These international experiences taught me that understanding different cultures makes us better humans and better problem-solvers. These experiences reinforced my belief that the most effective communication—whether across languages, cultures, or complex policy topics—requires both analytical understanding and creative expression to truly connect with people. The most effective solutions to global challenges require understanding diverse perspectives and building bridges across cultures.
+
+                 </p>
+                
+
+
+                 <p class="text-base text-gray-500 italic mt-4 max-w-2xl mx-auto">
+            <a href="experience.html#global" class="inline-flex items-center gap-1 hover:text-gray-700 transition-colors">
+                More on my Global Experience 
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            </p>
+        
+          
+        </div>
+     </section>
+
+    <!-- Section 3 -->
+     <section class="py-24 bg-cream/80 backdrop-blur-sm">
+      <div class="max-w-6xl mx-auto px-6 md:px-0">
+        <div class="text-center mb-12 fade">
+          <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">MY MISSION</h2>
+
+          <p class="text-lg text-[#4a4a45] mt-4 max-w-2xl mx-auto">
+            My career path traces back to high school, though I didn't realize it at the time. I just knew I loved my AP US History class and my AP Environmental Science class. Those courses sparked my passion for both public service and sustainability, but it was discovering how to communicate these complex ideas creatively that made me realize policy work needed to be accessible to build real community support. This led me to get involved in environmental extracurriculars that would shape my future work. This created the groundwork for deciding to major in political science and discover my calling in public policy.
+            </p>
+
+            <p class="text-lg text-[#4a4a45] mt-4 max-w-2xl mx-auto">
+              After graduating in 2020, I worked for the Town of Apex—first as a Lead for North Carolina Fellow (LFNC), then as a full-time employee where I helped build the Town's first sustainability program. But I felt restless and ready to grow somewhere new. I took a leap of faith, signed a DC lease, and gave myself two months to find a job. That bold move landed me a position on Capitol Hill, an opportunity that would have made my 18-year-old self incredibly proud.
+            </p>
+
+            <p class="text-lg text-[#4a4a45] mt-4 max-w-2xl mx-auto">
+              After a year on the Hill, I returned to school full-time to study public policy. Having just graduated, I'm refocusing my career on what I believe is the most urgent challenge of our generation: climate change. I'm drawn to understanding how different jurisdictions approach climate change because as we're waiting for the world to respond, organizations at every level are being faced with the challenge right now.
+            </p>
+
+            <p class="text-lg text-[#4a4a45] mt-4 max-w-2xl mx-auto">
+              My graduate studies reinforced this focus through empirical evidence—to create the kind of platform we need to move the needle, we have to start at the grassroots level. Climate policy represents the perfect intersection of everything I've learned: bringing community-centered values from Raleigh together with global awareness to address the challenge that communities feel every day while building the broader systems change we desperately need.
+            </p>
+         
+
+               <p class="text-base text-gray-500 italic mt-4 max-w-2xl mx-auto">
+            <a href="experience.html" class="inline-flex items-center gap-1 hover:text-gray-700 transition-colors">
+                More on my Career Journey
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </p>
+        
+        </div>
+     </section>
+
+    <!-- Section 4 -->
+     <section class="py-24 fade">
+      <div class="max-w-6xl mx-auto px-6 md:px-0">
+        <div class="text-center mb-12 fade">
+          <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">MY VOICE</h2>
+          <p class="text-lg text-[#4a4a45] mt-4 max-w-2xl mx-auto">
+            The same instinct that drives me to connect people at parties and bridge conversations across languages naturally extends to how I approach both creative expression and strategic communication. My creative spirit—whether I'm capturing travel moments, making jewelry, or coding websites—is what drives everything I do, including my professional work translating complex climate policy into accessible stories. This isn't just about making information digestible; it's about using creativity to build the emotional connections that make people care. Every piece in my portfolio, from community newsletters to personal projects that bring me pure joy, reflects my belief that effective communication requires both analytical thinking and imaginative storytelling. From my foundation in community building to my global perspective on interconnected challenges, my voice has always been about bringing people together around shared values. Now, through strategic communications and creative expression, I'm using that voice to help communities see themselves in the climate solutions we desperately need—making the complex accessible, the urgent compelling, and the technical deeply human through the power of creative storytelling.
+          </p>
+
+            <p class="text-base text-gray-500 italic mt-4 max-w-2xl mx-auto">
+            <a href="portfolio.html" class="inline-flex items-center gap-1 hover:text-gray-700 transition-colors">
+                More on my Creative Journey
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </p>
+        
+
+       
+        </div>
+     </section>
+
+    <!-- CONTACT FOOTER -->
+    <footer id="contact" class="py-24 bg-cream fade">
+      <div class="max-w-4xl mx-auto text-center space-y-12 px-6 md:px-0">
+        <div class="space-y-4">
+          <h3 class="font-display text-2xl md:text-3xl">Ready to Create Change Together?</h3>
+          <p class="text-[#4a4a45] max-w-2xl mx-auto">Whether you're looking to collaborate on climate policy, need creative content, or want to chat about making systems more human-centered, I'd love to connect.</p>
+        </div>
+        
+        <div class="flex justify-center space-x-10">
+          <a href="mailto:vnm58293@gmail.com" aria-label="Email" class="social-icon">
+            <i data-lucide="mail"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/valeriamera/" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <i data-lucide="linkedin"></i>
+          </a>
+          <a href="https://www.instagram.com/valeriamera/" target="_blank" aria-label="Instagram" class="social-icon">
+            <i data-lucide="instagram"></i>
+          </a>
+        </div>
+        
+        <form action="https://formspree.io/f/mblyozep" method="POST" class="max-w-lg mx-auto flex border border-guava focus-within:ring-2 focus-within:ring-guava rounded-lg overflow-hidden">
+          <input type="email" name="email" placeholder="Your email" class="flex-grow px-5 py-3 bg-transparent placeholder-[#706f6a] focus:outline-none" required />
+          <button type="submit" class="px-6 py-3 bg-guava text-white font-medium hover:bg-guava/90 transition-colors">Subscribe</button>
+        </form>
+        
+        <p class="text-sm text-[#6d6d67]">© <span id="year"></span> Valeria Nicolette Mera</p>
+      </div>
+    </footer>
+
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        // Initialize Lucide icons
+        if (window.lucide && typeof lucide.createIcons === 'function') {
+          lucide.createIcons();
+        }
+
+        // Initialize Intersection Observer with staggered animations
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+          }
+        );
+
+        // Observe all fade elements
+        document.querySelectorAll('.fade, .fade-up').forEach(el => observer.observe(el));
+
+        // Update copyright year
+        const yearElement = document.getElementById('year');
+        if (yearElement) {
+          yearElement.textContent = new Date().getFullYear();
+        }
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          });
+        });
+      });
+    </script>
+
+     <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            mobileMenu.classList.toggle('open');
+            hamburger.classList.toggle('open');
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            mobileMenu.classList.remove('open');
+            hamburger.classList.remove('open');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (!event.target.closest('nav') && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+
+  </body>
+</html>

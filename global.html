@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valeria Mera</title>
+
+          <link rel="icon" href="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/disco.png" type="image/png">
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Marion', 'Playfair Display', 'serif'],
+              body: ['Inter', 'Helvetica Neue', 'sans-serif'],
+            },
+            colors: {
+              cream: {
+                DEFAULT: '#f7f7f4',
+                100: '#f9f9f6',
+                200: '#f0f0eb',
+              },
+              pistachio: {
+                light: '#e8f5e1',
+                DEFAULT: '#9db88d',
+                dark: '#7a9968',
+              },
+              page: {
+                light: '#b9d6a6',
+                DEFAULT: '#93C572',
+                dark: '#699b49',
+              },
+              accent: '#7a9968',
+              gold: '#699b49', 
+            },
+            backgroundImage: {
+            hero: 'radial-gradient(ellipse at top left, #fefdfb 0%, #f5f1eb 40%, #f0ece6 75%)',
+          }
+          },
+        },
+      };
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Marion&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+
+
+    <style>
+      html{scroll-behavior:smooth}
+      body{font-family:'Inter',sans-serif}
+      .fade{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+      .fade.show{opacity:1;transform:translateY(0)}
+      .fade-up{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+      .fade-up.show{opacity:1;transform:translateY(0)}
+      
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 100%;
+        height: 1.5px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+      .nav-link:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      /* Mobile menu animation */
+        .mobile-menu {
+            transition: all 0.3s ease;
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        .mobile-menu.open {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Hamburger animation */
+        .hamburger span {
+            transition: all 0.3s ease;
+        }
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        .social-icon {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: linear-gradient(145deg, #f7f7f4, #f0f0eb);
+        box-shadow: 5px 5px 10px #e6e6e1, -5px -5px 10px #ffffff;
+        transition: all 0.3s ease;
+        color: #699b49;
+      }
+
+      .social-icon:hover {
+        transform: translateY(-3px);
+        box-shadow: 8px 8px 15px #e6e6e1, -8px -8px 15px #ffffff;
+        color: #49762a;
+      }
+
+      .social-icon i {
+        transition: transform 0.3s ease;
+      }
+      .social-icon:hover i {
+        transform: scale(1.1);
+      }
+
+      .section-card {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(157, 184, 141, 0.2);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .section-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(157, 184, 141, 0.1), transparent);
+        transition: left 0.6s ease;
+      }
+
+      .section-card:hover::before {
+        left: 100%;
+      }
+
+      .section-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(157, 184, 141, 0.2);
+        border-color: rgba(157, 184, 141, 0.4);
+      }
+
+      .section-icon {
+        width: 3rem;
+        height: 3rem;
+        background: linear-gradient(135deg, #F9D5D3 0%, #f87171 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .section-card:hover .section-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .skill-category {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+        border: 1px solid rgba(157, 184, 141, 0.1);
+      }
+
+      .skill-category:hover {
+        transform: translateY(-4px);
+        border-color: rgba(157, 184, 141, 0.3);
+      }
+
+      .skill-category h4 {
+        color: #c2204c;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .skill-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .skill-list li {
+        color: #4a4a45;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1rem;
+      }
+
+      .skill-list li::before {
+        content: '•';
+        color: #ef4444;
+        position: absolute;
+        left: 0;
+      }
+
+      .creative-preview {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .creative-item {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(157, 184, 141, 0.1);
+      }
+
+      .creative-item:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        border-color: #eca3bb;
+      }
+
+      .creative-item-image {
+        height: 150px;
+        background: linear-gradient(135deg, #faf3f6 0%, #fdf7fa 50%); /* Lighter pastel tones */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ef4444;
+        }
+
+      .creative-item-content {
+        padding: 1.5rem;
+      }
+
+      .creative-item h4 {
+        font-family: 'Marion', serif;
+        color: #22221f;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .creative-item p {
+        color: #6b7280;
+        font-size: 0.875rem;
+        line-height: 1.6;
+      }
+
+      
+      .section-divider {
+        position: relative;
+        text-align: center;
+        margin: 3rem 0;
+      }
+
+      .section-divider::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(135deg, #9db88d 0%, #7a9968 100%);
+        border-radius: 2px;
+      }
+
+    .text-about:hover {
+     color: #c6234e;
+    }
+
+    .text-story:hover {
+    color: #643b9f;
+    }
+
+    .text-global:hover {
+    color:
+    #699b49;
+    }
+
+    .text-exp:hover {
+   color: #0887f7;
+    }
+    .text-portfolio:hover {
+     color: #b38d94;
+    }
+    .text-contact:hover {
+    color: #307848;
+    }
+
+      /* Guava hover effects for links */
+
+      .bodylink {
+    text-decoration: underline; 
+      }
+
+      .bodylink:hover {
+    color: #93C572;  
+      }
+
+      .hover-page:hover {
+        color: #699b49!important;
+      }
+
+      .bg-page {
+        background-color: #699b49;
+      }
+
+      .bg-page:hover {
+        background-color: #699b49;
+      }
+
+      .bg-quote {
+        background-color: #699b49;
+      }
+
+      .border-page {
+        border-color: #699b49;
+      }
+
+      .text-page {
+        color: #9db88d;
+      }
+
+      .text-page2 {
+        color: #699b49;
+      }
+
+
+       .floating-element{
+        animation: float 4s ease-in-out infinite;
+      }
+
+     @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(1deg); }
+      }
+
+      @media (max-width: 768px) {
+        .timeline {
+          padding-left: 1rem;
+        }
+        
+        .timeline-item {
+          margin-left: 1.5rem;
+          padding: 1.5rem;
+        }
+        
+        .timeline-item::before {
+          left: -2.5rem;
+        }
+
+        .experience-item {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          margin-bottom: 3rem;
+        }
+
+        .experience-right::before {
+          display: none;
+        }
+      }
+
+      .section-divider {
+        position: relative;
+        text-align: center;
+        margin: 3rem 0;
+      }
+
+      .section-divider::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(135deg, #9db88d 0%, #699b49 100%);
+        border-radius: 2px;
+      }
+
+      /* Clean Experience Layout */
+      .experience-item {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        gap: 4rem;
+        margin-bottom: 4rem;
+        align-items: start;
+      }
+
+      .experience-left {
+        text-align: left;
+      }
+
+      .experience-date {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.875rem;
+        color: #6b7280;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+
+      .experience-position {
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        color: #374151;
+        font-weight: 500;
+      }
+
+      .experience-right {
+        position: relative;
+      }
+
+      .experience-right::before {
+        content: '';
+        position: absolute;
+        left: -2rem;
+        top: 0.5rem;
+        width: 8px;
+        height: 8px;
+        background: #49762a;
+        border-radius: 50%;
+      }
+
+      .experience-company {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.125rem;
+        color: #111827;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .experience-description {
+        color: #4b5563;
+        line-height: 1.7;
+        font-size: 0.95rem;
+      }
+
+    </style>
+  </head>
+
+<body class="font-body antialiased text-[#22221f] bg-hero bg-fixed bg-no-repeat bg-cover min-h-screen">
+    
+  <nav class="fixed top-0 left-0 w-full z-20 py-5 px-6 md:px-12 flex items-center justify-between bg-cream/60 backdrop-blur-md border-b border-cream-200">
+        <!-- Home Icon -->
+        <a href="index.html" class="block w-6 h-6 hover:text-guava2 hover:rotate-12 transition-all duration-300" aria-label="Home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-4H10v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            </svg>
+        </a>
+
+         <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8 text-sm tracking-wide uppercase font-medium">
+            <a href="about.html" class="nav-link text-about">About Me</a>
+            <a href="mylife.html" class="nav-link text-story">My Story</a>
+            <a href="global.html" class="nav-link text-global">Worldview</a>
+            <a href="experience.html" class="nav-link text-exp">Experience</a>
+            <a href="creative.html" class="nav-link text-portfolio">Portfolio</a>
+            <a href="contact.html" class="nav-link text-contact">Contact & Collaborate</a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="md:hidden hamburger flex flex-col justify-center items-center w-6 h-6 space-y-1" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span class="block w-5 h-0.5 bg-current"></span>
+            <span class="block w-5 h-0.5 bg-current"></span>
+            <span class="block w-5 h-0.5 bg-current"></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-cream/95 backdrop-blur-md z-10 md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 text-lg tracking-wide uppercase font-medium">
+            <a href="about.html" class="nav-link text-about" onclick="closeMobileMenu()">About Me</a>
+            <a href="mylife.html" class="nav-link text-story" onclick="closeMobileMenu()">My Story</a>
+            <a href="global.html" class="nav-link text-global" onclick="closeMobileMenu()">Worldview</a>
+            <a href="experience.html" class="nav-link text-exp" onclick="closeMobileMenu()">Experience</a>
+            <a href="creative.html" class="nav-link text-portfolio" onclick="closeMobileMenu()">Portfolio</a>
+            <a href="contact.html" class="nav-link text-contact" onclick="closeMobileMenu()">Contact</a>
+        </div>
+    </div>
+
+
+    <!-- HERO SECTION -->
+    <header class="relative flex items-center justify-center min-h-screen pt-32 pb-24 px-6 md:px-0">
+      <div class="max-w-6xl mx-auto fade show">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+          <!-- Text content on the left -->
+          <div class="space-y-8 text-left ml-4">
+            <div class="floating-element">
+            <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight">Bridging Worlds<br> <span class="text-page block">Local impact, global perspective</span></h1>
+            </div>
+
+            <p class="text-lg md:text-xl text-[#4a4a45] leading-relaxed">
+                How personal experiences of community care inspired a global perspective on shared challenges</p>
+
+            
+            <div class="flex flex-wrap gap-4 pt-4">
+              <a href="#about" class="inline-flex items-center gap-2 px-8 py-3 bg-page text-white hover:bg-page/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-page">
+                My POV <i data-lucide="arrow-down" class="w-4 h-4"></i>
+              </a>
+              
+            </div>
+          </div>
+          
+          <div class="flex justify-center lg:justify-end">
+            <div class="w-100 h-100 flex items-center justify-center">
+              <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/peru.png" alt="Valeria" class="w-100 h-100 object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+     <!-- INTRODUCTION-->
+     <section id="intro" class="py-24 bg-cream/80 backdrop-blur-sm">
+      <div class="max-w-6xl mx-auto px-6 md:px-0">
+        <div class="text-center mb-12 fade">
+          <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">INTRODUCTION</h2>
+          <p class="text-lg text-[#4a4a45] pt-2 max-w-5xl mx-auto">
+            My worldview was shaped long before I knew what a worldview was. Both sides of my family are from Pucallpa, Peru—a small city in the Amazon. 
+            Growing up, I'd spend entire summers there - literally from the day after school ended to right before we started a new school year - Switching between two completely different worlds every year. 
+            Having the opportunity to visit Peru as much as I did gave me the deep understanding that there are countless ways to live, solve problems, and build community. Knowing Spanish isn't just a skill—it's how I talk to my grandparents, how I understand who I am, and my connection to a whole way of seeing the world.
+          </p>
+        
+            <p class="text-lg text-[#4a4a45] mt-4 max-w-5xl mx-auto">
+                High school is when a lot of things clicked for me. It's when I realized how interested I was in political science and environmental science, when I really started to appreciate how incredible it is to know two languages (inspiring me to learn a third), and when I made the connection between how what I do in my life locally does indeed play a part in the rest of the world. When my community in Raleigh lifted me up during those challenging years, I was simultaneously learning about the Amazon being deforested near where my family lives. I started to see that we have to have this collective thinking to move forward and care for each other.
+            </p>
+            <p class="text-lg text-[#4a4a45] mt-4 max-w-5xl mx-auto">
+                Learning French has been magical—feeling your brain rewire, those moments when conversation suddenly clicks. Combined with my Spanish fluency, these languages open doors to new ways of understanding how people communicate and see the world. I seek to understand because I know I'm small in this big world, and the solutions we need require all of our voices—especially the ones that haven't been heard yet.
+                </p>
+        </div>
+     </section>
+
+   
+     <!-- Global Experience Section -->
+     <section id="global" class="py-24 bg-hero/80 backdrop-blur-sm">
+      <div class="max-w-5xl mx-auto px-3 md:px-0">
+        <h2 id="global-experience-header" class="font-display text-3xl md:text-4xl mb-6 section-divider">GLOBAL EXPERIENCE</h2>
+
+        <div class="space-y-12">
+
+          <div class="experience-item pt-2">
+            <div class="experience-left">
+              <div class="experience-date">2025 - PRESENT</div>
+              <div class="experience-position">Active Member</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Alliance Française</h3>
+              <p class="experience-description">
+                Enrolled in French courses (currently level B1.1) to enhance language proficiency and cultural understanding. 
+                Actively participating in cultural events and discussions to deepen knowledge of Francophone cultures and strengthen community ties.
+              </p>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2024</div>
+              <div class="experience-position">Study Abroad</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Sciences Po - Paris, France</h3>
+              <p class="experience-description">
+                Completed a semester abroad at Sciences Po, one of Europe's leading universities for social sciences, focusing on international relations and public policy. 
+                Engaged in cross-cultural exchanges with students from over 150 countries, enhancing global perspectives on policy issues.
+              </p>
+              <p class="experience-description">
+                <a href="global.html" class="inline-flex text-blue hover:bg-blue hover:text-page2 transition-all duration-300">
+                  My Paris Recommendations
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2017 - 2020</div>
+              <div class="experience-position">Certificate</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Global Perspective Certificate Program, NC State</h3>
+              <p class="experience-description">
+                Completed the Global Perspective Certificate Program at NC State and developed a deep understanding of global issues through coursework, cultural immersion, and hands-on experience.
+              </p>
+              <p class="experience-description">
+                <a href="https://catalog.ncsu.edu/undergraduate/university-college/global-perspectives-certificate/#planrequirementstext" target="_blank" rel="noopener noreferrer" class="inline-flex text-blue hover:bg-blue hover:text-page2 transition-all duration-300">
+                  Read Certificate Requirements
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2018</div>
+              <div class="experience-position">Study Abroad</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Prague Institute - Prague, Czech Republic</h3>
+              <p class="experience-description">
+                Participated in a semester study abroad program in Prague, focusing on European history and culture. 
+                Engaged with local communities and explored the rich cultural heritage of Central Europe.
+              </p>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-left">
+              <div class="experience-date">2017</div>
+              <div class="experience-position">Study Abroad</div>
+            </div>
+            <div class="experience-right">
+              <h3 class="experience-company">Havana, Cuba</h3>
+              <p class="experience-description">
+                Participated in a summer study abroad program in Havana, Cuba, focusing on Latin American politics and culture. 
+                Engaged with local communities and explored the rich cultural heritage of the Caribbean region. 
+                Developed a nuanced understanding of Cuba's unique political landscape and its historical context.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+     </section>
+
+
+        <!-- WHERE I'VE BEEN -->
+
+        <section class="py-24 bg-cream/80 backdrop-blur-sm">
+          <div class="max-w-4xl mx-auto px-6 md:px-0">
+            <div class="text-center mb-12 fade">
+              <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">WHERE I'VE BEEN</h2>
+              
+              <p class="text-lg text-[#4a4a45] pt-4 pb-4 max-w-4xl mx-auto">
+                A map made for me, by me — visualizing the cities I’ve visited and some of the memories tied to them. It’s not just a snapshot of my travels, but a creative way to keep building my coding skills and create a digital keepsake.
+               </p>
+             
+
+              <div class="w-full pt-6 max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                  <div id="travel-map" style="height: 500px; width: 100%;"></div>
+                </div>
+              </div>
+
+               <!-- Travel Stats -->
+
+               <div class="flex justify-around p-6 bg-gray-50 border-t">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-page" id="cities-count">0</div>
+                  <div class="text-sm text-[#4a4a45]">Cities Visited</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-page" id="countries-count">0</div>
+                  <div class="text-sm text-[#4a4a45]">Countries Explored</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-page" id="continents-count">0</div>
+                  <div class="text-sm text-[#4a4a45]">Continents</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+
+
+
+    <!-- CONTACT FOOTER -->
+    <footer id="contact" class="py-24 bg-cream/80 backdrop-blur-sm">
+      <div class="max-w-4xl mx-auto text-center space-y-12 px-6 md:px-0">
+        <div class="space-y-4">
+          <h3 class="font-display text-2xl md:text-3xl">Ready to Create Change Together?</h3>
+          <p class="text-[#4a4a45] max-w-2xl mx-auto">Whether you're looking to collaborate on climate policy, need creative content, or want to chat about making systems more human-centered, I'd love to connect.</p>
+        </div>
+        
+        <div class="flex justify-center space-x-10">
+          <a href="mailto:vnm58293@gmail.com" aria-label="Email" class="social-icon">
+            <i data-lucide="mail"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/valeriamera/" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <i data-lucide="linkedin"></i>
+          </a>
+          <a href="https://www.instagram.com/valeriamera/" target="_blank" aria-label="Instagram" class="social-icon">
+            <i data-lucide="instagram"></i>
+          </a>
+        </div>
+        
+        <form action="https://formspree.io/f/mblyozep" method="POST" class="max-w-lg mx-auto flex border border-page focus-within:ring-2 focus-within:ring-page rounded-lg overflow-hidden">
+          <input type="email" name="email" placeholder="Your email" class="flex-grow px-5 py-3 bg-transparent placeholder-[#706f6a] focus:outline-none" required />
+          <button type="submit" class="px-6 py-3 bg-page text-white font-medium hover:bg-page/90 transition-colors">Subscribe</button>
+        </form>
+        
+        <p class="text-sm text-[#6d6d67]">© <span id="year"></span> Valeria Nicolette Mera</p>
+      </div>
+    </footer>
+
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        // Initialize Lucide icons
+        if (window.lucide && typeof lucide.createIcons === 'function') {
+          lucide.createIcons();
+        }
+
+        // Initialize Intersection Observer with staggered animations
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+          }
+        );
+
+        // Observe all fade elements
+        document.querySelectorAll('.fade, .fade-up').forEach(el => observer.observe(el));
+
+        // Update copyright year
+        const yearElement = document.getElementById('year');
+        if (yearElement) {
+          yearElement.textContent = new Date().getFullYear();
+        }
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          });
+        });
+      });
+    </script>
+
+     <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            mobileMenu.classList.toggle('open');
+            hamburger.classList.toggle('open');
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            mobileMenu.classList.remove('open');
+            hamburger.classList.remove('open');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (!event.target.closest('nav') && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  
+<script>
+(function() {
+  // City coordinates
+  const cityCoords = {
+    'Los Angeles, CA': [34.0522, -118.2437], 'San Diego, CA': [32.7157, -117.1611], 'Laguna Beach, CA': [33.5427, -117.7854], 'Santa Monica, CA': [34.0119, -118.4916],
+    'Chicago, IL': [41.8781, -87.6298], 
+    'Denver, CO': [39.7392, -104.9903], 'Buena Vista, CO':[38.8422, -106.1311],
+    'Grand Canyon National Park, AZ': [36.2679, -112.3535],
+    'Orlando, FL': [28.5383, -81.3792], 'Atlanta, GA': [33.7490, -84.3880], 'Savannah, GA': [45.4404, -12.3160],
+    'Raleigh, NC': [35.7796, -78.6382], 'Wilmington, NC': [34.2257, -77.9447], 'Wrightsville Beach, NC': [34.2085, -77.7964], 
+    'Greenville, NC': [35.6115, -77.3752], 'Boone, NC': [36.2182, -81.6830], 'Lake Gaston, NC': [36.5076, -77.9453], 
+    'Charlotte, NC':[35.2216, -80.8401], 'Durham, NC': [35.9956, -78.9002], 'Lake Lure, NC': [35.4279, -82.2048],
+    'Chapel Hill, NC': [], 'Apex, NC': [], 'Millers Creek, NC': [],
+    'Myrtle Beach, SC': [33.6954, 78.8802],
+    'Charlottesville, VA': [38.0293, -78.4767], 'Richmond, VA': [],
+    'Washington, DC': [38.9072, -77.0369],
+    'Nashville, TN': [36.1627, -86.7816],
+    'Boston, MA': [42.3601, -71.0589], 
+    'New York City, NY': [40.7128, -74.0060], 
+    'Bethany Beach, DE': [38.5390, -75.0610], 
+    'Lahaina, HI': [20.8783, -156.6825], 'Kihei, HI': [20.7399, -156.4542], 'Hana, HI': [20.7557, -155.9880],
+    'Cincinnati, OH': [39.1031, -84.5120], 'Austin, Texas': [30.2672, -97.7431],
+    'Providence, RI': [41.8240, -71.4128], 'Philadelphia, PA': [39.9526, -75.1652],
+    'San Juan, PR': [],
+    'Lima': [-12.0464, -77.0428], 'Pucallpa': [-8.3791, -74.5539], 'Cajamarca': [-7.1617,-78.5128],
+    'Cusco': [-13.5319, -71.9675], 'Bogotá': [4.7110, -74.0721],
+    'Cancún': [21.1619, -86.8515], 'Cabo San Lucas': [22.8905, -109.9167],
+    'Havana': [23.1136, -82.3666], 'Pinar del Río': [22.4163, -83.6983], 'Varadero': [23.1799, -81.1885],
+    'Prague': [50.0755, 14.4378], 'Černý Důl': [50.6368,15.7071], 'Karlovy Vary': [50.2319,12.8720],
+    'Budapest':[47.4979, 19.0402], 'Vienna': [48.2082, 16.3738],
+    'Annecy': [45.8992, 6.1294], 'Paris': [48.8566, 2.3522], 'Versailles': [], 'Nice': [],
+    'Chamonix': [45.9237, 6.8694], 'Interlaken': [46.6863, 7.8632],
+    'Lucerne': [47.0502, 8.3093], 'Zurich': [47.3769, 8.5417],
+    'Madrid': [40.4168, -3.7038], 'Barcelona': [41.3851, 2.1734],
+    'Rome': [41.9028, 12.4964], 'Florence': [43.7696, 11.2558], 'Venice': [45.4404, 12.3160],
+    'Porto': [41.1579, -8.6291], 'London': [51.5074, -0.1278],
+    'Berlin': [52.5200, 13.4050], 'Munich': [48.1351, 11.5820]
+  };
+
+  // City images - add your photo URLs here
+  const cityImages = {
+    'Los Angeles, CA': '', 
+    'Laguna Beach, CA': '',
+    'Santa Monica, CA': '',
+    'San Diego, CA': '', 
+    'Chicago, IL': '', 
+    'Denver, CO': '',
+    'Buena Vista, CO': '',
+    'Grand Canyon National Park, AZ': '',
+    'Orlando, FL': '', 
+    'Atlanta, GA': '', 
+    'Savannah, GA': '', 
+    'Raleigh, NC': '', 
+    'Wilmington, NC': '',
+    'Wrightsville Beach, NC': '',
+    'Greenville, NC': '',
+    'Boone, NC': '',
+    'Lake Gaston, NC': '',
+    'Charlotte, NC': '',
+    'Durham, NC': '',
+    'Lake Lure, NC': '',
+    'Chapel Hill, NC': '',
+    'Apex, NC': '',
+    'Millers Creek, NC': '',
+    'Myrtle Beach, SC': '',
+    'Charlottesville, VA': '', 
+    'Richmond, VA': '',
+    'Washington, DC': '', 
+    'Nashville, TN'L '',
+    'Boston, MA': '', 
+    'New York City, NY': '',
+    'Bethany Beach, DE': '', 
+    'Lahaina, HI': '', 
+    'Kihei, HI': '',
+    'Hana, HI': '',
+    'Cincinnati, OH': '', 
+    'Austin, Texas': '',
+    'Providence, RI': '', 
+    'Philadelphia, PA': '', 
+    'San Juan, PR': '',
+    'Lima': '', 
+    'Pucallpa': '',
+    'Cusco': '',
+    'Cajamarca':'',
+    'Bogotá': '',
+    'Cancún': '', 
+    'Cabo San Lucas': '',
+    'Havana': '', 
+    'Pinar del Río': '',
+    'Varadero': '',
+    'Prague': '',
+    'Černý Důl': '',
+    'Karlovy Vary': '',
+    'Budapest': '', 
+    'Vienna': '',
+    'Annecy': '', 
+    'Paris': '', 
+    'Versailles': '',
+    'Nice': '',
+    'Chamonix': '',
+    'Interlaken': '',
+    'Lucerne': '',
+    'Zurich': '',
+    'Madrid': 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall2.jpg', 'Barcelona': '',
+    'Rome': '',
+    'Florence': '',
+    'Venice': '',
+    'Porto': '',
+    'London': '',
+    'Berlin': '',
+    'Munich': ''
+  };
+
+  // Countries and their cities
+  const countries = {
+    'United States': { continent: 'North America', cities: 
+          ['Los Angeles, CA', 'Laguna Beach, CA', 'Santa Monica, CA', 'San Diego, CA', 
+          'Chicago, IL', 
+          'Denver, CO', 'Buena Vista, CO', 
+          'Grand Canyon National Park, AZ', 
+          'Orlando, FL', 
+          'Atlanta, GA', 'Savannah, GA',
+          'Raleigh, NC', 'Wilmington, NC', 'Wrightsville Beach, NC', 'Greenville, NC', 'Boone, NC', 
+          'Lake Gaston, NC', 'Charlotte, NC', 'Durham, NC', 'Lake Lure, NC', 'Chapel Hill, NC', 'Apex, NC', 'Millers Creek, NC',
+          'Myrtle Beach, SC', 
+          'Charlottesville, VA', 
+          'Richmond, VA', 
+          'Washington, DC', 
+          'Nashville, TN',
+          'Boston, MA', 
+          'New York City, NY', 
+          'Bethany Beach, DE', 
+          'Lahaina, HI', 'Kihei, HI', 'Hana, HI', 
+          'Cincinnati, OH', 
+          'Austin, Texas', 
+          'Providence, RI', 
+          'Philadelphia, PA',
+          'San Juan, PR'] },
+    'Peru': { continent: 'South America', cities: ['Lima', 'Pucallpa', 'Cusco', 'Cajamarca'] },
+    'Colombia': { continent: 'South America', cities: ['Bogotá'] },
+    'Mexico': { continent: 'North America', cities: ['Cancún', 'Cabo San Lucas'] },
+    'Cuba': { continent: 'North America', cities: ['Havana', 'Pinar del Río', 'Varadero'] },
+    'Czech Republic': { continent: 'Europe', cities: ['Prague', 'Černý Důl', 'Karlovy Vary'] },
+    'Hungary': { continent: 'Europe', cities: ['Budapest'] },
+    'Austria': { continent: 'Europe', cities: ['Vienna'] },
+    'France': { continent: 'Europe', cities: ['Annecy', 'Paris', 'Chamonix', 'Versailles', 'Nice'] },
+    'Switzerland': { continent: 'Europe', cities: ['Interlaken', 'Lucerne', 'Zurich'] },
+    'Spain': { continent: 'Europe', cities: ['Madrid', 'Barcelona'] },
+    'Italy': { continent: 'Europe', cities: ['Rome', 'Florence', 'Venice'] },
+    'Portugal': { continent: 'Europe', cities: ['Porto'] },
+    'United Kingdom': { continent: 'Europe', cities: ['London'] },
+    'Germany': { continent: 'Europe', cities: ['Berlin', 'Munich'] }
+  };
+
+  // Initialize map when DOM is ready
+  function initMap() {
+    const mapEl = document.getElementById('travel-map');
+    if (!mapEl) return;
+
+    const map = L.map('travel-map').setView([20, 0], 2);
+    
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 18
+    }).addTo(map);
+
+    const cityIcon = L.divIcon({
+      className: 'custom-city-marker',
+      html: '<div style="background-color: #699b49; border: 3px solid white; border-radius: 50%; width: 16px; height: 16px; box-shadow: 0 2px 5px rgba(0,0,0,0.3);"></div>',
+      iconSize: [16, 16],
+      iconAnchor: [8, 8]
+    });
+
+    const markers = [];
+    
+    // Add city markers
+    Object.entries(countries).forEach(([countryName, countryData]) => {
+      countryData.cities.forEach(cityName => {
+        const coords = cityCoords[cityName];
+        if (!coords) return;
+
+        const image = cityImages[cityName];
+        const popupContent = `
+          <div style="text-align: center; padding: 12px; min-width: 200px; max-width: 250px;">
+            <h3 style="margin: 0 0 8px 0; color: #699b49; font-size: 1.2em;">${cityName}</h3>
+            <p style="margin: 0 0 10px 0; color: #666; font-size: 0.9em; font-style: italic;">${countryName}, ${countryData.continent}</p>
+            ${image ? `<img src="${image}" alt="${cityName}" style="width: 100%; max-width: 200px; height: 120px; object-fit: cover; border-radius: 8px; margin-top: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" onerror="this.style.display='none';">` : ''}
+          </div>
+        `;
+
+        const marker = L.marker(coords, { icon: cityIcon })
+          .addTo(map)
+          .bindPopup(popupContent);
+        markers.push(marker);
+      });
+    });
+
+    // Update stats
+    const totalCities = Object.values(countries).reduce((sum, c) => sum + c.cities.length, 0);
+    const totalCountries = Object.keys(countries).length;
+    const continents = new Set(Object.values(countries).map(c => c.continent)).size;
+
+    document.getElementById('cities-count').textContent = totalCities;
+    document.getElementById('countries-count').textContent = totalCountries;
+    document.getElementById('continents-count').textContent = continents;
+
+    // Fit map to markers
+    if (markers.length > 0) {
+      const group = new L.featureGroup(markers);
+      map.fitBounds(group.getBounds().pad(0.05));
+    }
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMap);
+  } else {
+    initMap();
+  }
+})();
+</script>
+
+  </body>
+</html>
