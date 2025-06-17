@@ -368,27 +368,23 @@
       }
 
       /* Guava hover effects for links */
-      .hover-blue:hover {
+      .hover-exp:hover {
         color: #044c8c!important;
       }
 
-      .bg-blue {
-        background-color: #0887f7;
-      }
-
-      .bg-blue:hover {
+      .bg-exp {
         background-color: #055194;
       }
 
-      .border-blue {
+      .border-exp {
         border-color: #066cc6;
       }
 
-      .text-blue {
+      .text-exp {
         color: #055fad;
       }
 
-      .text-blue2 {
+      .text-exp2 {
         color: #04447c;
       }
 
@@ -487,13 +483,14 @@
             </svg>
         </a>
 
+        
          <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-8 text-sm tracking-wide uppercase font-medium">
             <a href="about.html" class="nav-link text-about">About Me</a>
-            <a href="mylife.html" class="nav-link text-story">My Story</a>
-            <a href="global.html" class="nav-link text-global">Worldview</a>
+            <a href="story.html" class="nav-link text-story">My Story</a>
+            <a href="world.html" class="nav-link text-world">Worldview</a>
             <a href="experience.html" class="nav-link text-exp">Experience</a>
-            <a href="creative.html" class="nav-link text-portfolio">Portfolio</a>
+            <a href="portfolio.html" class="nav-link text-portfolio">Portfolio</a>
             <a href="contact.html" class="nav-link text-contact">Contact & Collaborate</a>
         </div>
 
@@ -509,10 +506,10 @@
     <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-cream/95 backdrop-blur-md z-10 md:hidden">
         <div class="flex flex-col items-center justify-center h-full space-y-8 text-lg tracking-wide uppercase font-medium">
             <a href="about.html" class="nav-link text-about" onclick="closeMobileMenu()">About Me</a>
-            <a href="mylife.html" class="nav-link text-story" onclick="closeMobileMenu()">My Story</a>
-            <a href="global.html" class="nav-link text-global" onclick="closeMobileMenu()">Worldview</a>
+            <a href="story.html" class="nav-link text-story" onclick="closeMobileMenu()">My Story</a>
+            <a href="world.html" class="nav-link text-world" onclick="closeMobileMenu()">Worldview</a>
             <a href="experience.html" class="nav-link text-exp" onclick="closeMobileMenu()">Experience</a>
-            <a href="creative.html" class="nav-link text-portfolio" onclick="closeMobileMenu()">Portfolio</a>
+            <a href="portfolio.html" class="nav-link text-portfolio" onclick="closeMobileMenu()">Portfolio</a>
             <a href="contact.html" class="nav-link text-contact" onclick="closeMobileMenu()">Contact</a>
         </div>
     </div>
@@ -528,17 +525,19 @@
               <div class="floating-element">
                <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight">
                 Building my
-                <span class="text-blue2 block">career path.</span>
+                <span class="text-exp2 block">career path.</span>
               </h1>
               </div>
                     
               <p class="text-lg md:text-xl text-[#4a4a45]">My work history, technical expertise, and professional accomplishments that showcase my career growth.</p>
 
               <div class="flex flex-wrap gap-4 pt-4">
-              <a href="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/valeria-mera-resume-website-2.pdf" class="inline-flex items-center gap-2 px-8 py-3 bg-exp text-white hover:bg-exp/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue">
+              <a href="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/valeria-mera-resume-website-2.pdf" 
+              class="inline-flex items-center gap-2 px-8 py-3 bg-exp text-white hover:bg-exp/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue">
               View my Resume <i data-lucide="file-user" class="w-4 h-4"></i>
               </a>
-              <a href="https://www.linkedin.com/in/valeriamera/" class="inline-flex items-center gap-2 px-8 py-3 border border-exp text-exp hover:bg-exp hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue">
+              <a href="https://www.linkedin.com/in/valeriamera/" 
+              class="inline-flex items-center gap-2 px-8 py-3 border border-exp text-exp hover:bg-exp hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-exp">
               LinkedIn Profile<i data-lucide="user-round-search" class="w-4 h-4"></i>
               </a>
               </div>
@@ -1141,8 +1140,8 @@
       </div>
     </section>
 
-    <section class="bg-blue text-cream py-20 fade">
-      <blockquote class="max-w-3xl mx-auto text-center text-2xl md:text-3xl font-display italic px-6">
+    <section class="bg-exp text-cream py-20 fade">
+      <blockquote class="max-w-3xl mx-auto text-center text-2xl md:text-3xl font-display italic px-6 hover:bg-exp/90 transition-colors">
         "The people crazy enough to think they can change the world are the ones that do."
       </blockquote>
     </section>
@@ -1168,9 +1167,9 @@
           </a>
         </div>
         
-         <form action="https://formspree.io/f/mblyozep" method="POST" class="max-w-lg mx-auto flex border border-blue focus-within:ring-2 focus-within:ring-blue rounded-lg overflow-hidden">
+         <form action="https://formspree.io/f/mblyozep" method="POST" class="max-w-lg mx-auto flex border border-exp focus-within:ring-2 focus-within:ring-exp rounded-lg overflow-hidden">
           <input type="email" name="email" placeholder="Your email" class="flex-grow px-5 py-3 bg-transparent placeholder-[#706f6a] focus:outline-none" required />
-          <button type="submit" class="px-6 py-3 bg-blue text-white font-medium hover:bg-blue/90 transition-colors">Subscribe</button>
+          <button type="submit" class="px-6 py-3 bg-exp text-white font-medium hover:bg-exp/90 transition-colors">Subscribe</button>
         </form>
         
         <p class="text-sm text-[#6d6d67]">© <span id="year"></span> Valeria Nicolette Mera</p>

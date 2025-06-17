@@ -53,7 +53,7 @@
       .fade-up{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
       .fade-up.show{opacity:1;transform:translateY(0)}
       
-      /* Universal body link styles - applies to all links in body content */
+    
    /* Universal body link styles - applies to all links in body content */
       .content-link {
       display: inline-flex;
@@ -468,13 +468,13 @@
             </svg>
         </a>
 
-        <!-- Desktop Navigation -->
+         <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-8 text-sm tracking-wide uppercase font-medium">
             <a href="about.html" class="nav-link text-about">About Me</a>
-            <a href="mylife.html" class="nav-link text-story">My Story</a>
-            <a href="global.html" class="nav-link text-global">Worldview</a>
+            <a href="story.html" class="nav-link text-story">My Story</a>
+            <a href="world.html" class="nav-link text-world">Worldview</a>
             <a href="experience.html" class="nav-link text-exp">Experience</a>
-            <a href="creative.html" class="nav-link text-portfolio">Portfolio</a>
+            <a href="portfolio.html" class="nav-link text-portfolio">Portfolio</a>
             <a href="contact.html" class="nav-link text-contact">Contact & Collaborate</a>
         </div>
 
@@ -490,10 +490,10 @@
     <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-cream/95 backdrop-blur-md z-10 md:hidden">
         <div class="flex flex-col items-center justify-center h-full space-y-8 text-lg tracking-wide uppercase font-medium">
             <a href="about.html" class="nav-link text-about" onclick="closeMobileMenu()">About Me</a>
-            <a href="mylife.html" class="nav-link text-story" onclick="closeMobileMenu()">My Story</a>
-            <a href="global.html" class="nav-link text-global" onclick="closeMobileMenu()">Worldview</a>
+            <a href="story.html" class="nav-link text-story" onclick="closeMobileMenu()">My Story</a>
+            <a href="world.html" class="nav-link text-world" onclick="closeMobileMenu()">Worldview</a>
             <a href="experience.html" class="nav-link text-exp" onclick="closeMobileMenu()">Experience</a>
-            <a href="creative.html" class="nav-link text-portfolio" onclick="closeMobileMenu()">Portfolio</a>
+            <a href="portfolio.html" class="nav-link text-portfolio" onclick="closeMobileMenu()">Portfolio</a>
             <a href="contact.html" class="nav-link text-contact" onclick="closeMobileMenu()">Contact</a>
         </div>
     </div>
@@ -576,7 +576,7 @@
                 This foundation of local care shaped my curiosity about the world beyond Raleigh. 
                 I care deeply about local issues, but because I’d experienced how different life could be around the world from visiting my family, I was drawn to complementing this micro-perspective by learning about global systems. 
                 With this in mind, and because I’m someone who likes to challenge myself and seek out the unfamiliar, it was only natural to complete the
-                <a href="global.html#global" class=" font-semibold bodylink">Global Perspectives Certificate Progam</a>
+                <a href="global.html#gpc" class=" font-semibold bodylink">Global Perspectives Certificate Progam</a>
                 in my undergraduate years. 
                 I’ve also taken advantage of the opportunity to study abroad, not just once, but three times: a summer program in Cuba, a semester in Prague, and most recently, a semester in Paris as part of my master's degree.
                 </p>
@@ -594,7 +594,7 @@
 
 
                  <p class="text-base text-gray-500 mt-4 max-w-2xl mx-auto">
-            <a href="experience.html#global" class="inline-flex items-center gap-1 bodylink transition-colors">
+            <a href="global.html" class="inline-flex items-center gap-1 bodylink transition-colors">
                 More on my Global Experience 
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
@@ -652,11 +652,17 @@
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
         </p>
-        
 
-       
         </div>
      </section>
+
+         <!-- QUOTE SECTION -->
+    <section class="bg-about text-cream py-16 fade">
+      <div class="max-w-4xl mx-auto text-center px-6">
+        <blockquote class="text-2xl md:text-3xl font-display italic mb-6">
+          "The people crazy enough to think they can change the world are the ones that do."
+        </blockquote>
+      </section>
 
     <!-- CONTACT FOOTER -->
     <footer id="contact" class="py-24 bg-cream fade">
@@ -678,9 +684,9 @@
           </a>
         </div>
         
-        <form action="https://formspree.io/f/mblyozep" method="POST" class="max-w-lg mx-auto flex border border-guava focus-within:ring-2 focus-within:ring-guava rounded-lg overflow-hidden">
+        <form action="https://formspree.io/f/mblyozep" method="POST" class="max-w-lg mx-auto flex border border-about focus-within:ring-2 focus-within:ring-about rounded-lg overflow-hidden">
           <input type="email" name="email" placeholder="Your email" class="flex-grow px-5 py-3 bg-transparent placeholder-[#706f6a] focus:outline-none" required />
-          <button type="submit" class="px-6 py-3 bg-guava text-white font-medium hover:bg-guava/90 transition-colors">Subscribe</button>
+          <button type="submit" class="px-6 py-3 bg-about text-white font-medium hover:bg-about/90 transition-colors">Subscribe</button>
         </form>
         
         <p class="text-sm text-[#6d6d67]">© <span id="year"></span> Valeria Nicolette Mera</p>
