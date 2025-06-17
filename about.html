@@ -54,7 +54,8 @@
       .fade-up.show{opacity:1;transform:translateY(0)}
       
       /* Universal body link styles - applies to all links in body content */
-    body a {
+   /* Universal body link styles - applies to all links in body content */
+      .content-link {
       display: inline-flex;
       align-items: center;
       gap: 0.25rem; /* gap-1 equivalent */
@@ -65,7 +66,7 @@
       text-decoration: none;
     }
 
-    body a::after {
+    .content-link::after {
       content: '';
       position: absolute;
       left: 0;
@@ -78,11 +79,11 @@
       transition: transform 0.3s ease;
     }
 
-    body a:hover {
-      color: #699b49;
+    .content-link:hover {
+      color: #c6234e;
     }
 
-    body a:hover::after {
+    .content-link:hover::after {
       transform: scaleX(1);
       transform-origin: left;
     }
@@ -176,7 +177,7 @@
       .social-icon:hover {
         transform: translateY(-3px);
         box-shadow: 8px 8px 15px #e6e6e1, -8px -8px 15px #ffffff;
-        color: #f87171;
+        color:#c6234e;
       }
 
       .social-icon i {
@@ -512,7 +513,7 @@
                 My narrative, the experiences that shaped me, and a bit extra of what makes me, me </p>
             
             <div class="flex flex-wrap gap-4 pt-4">
-              <a href="#about" class="inline-flex items-center gap-2 px-8 py-3 bg-guava text-white hover:bg-guava/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-guava">
+              <a href="#about" class="inline-flex items-center gap-2 px-8 py-3 bg-about text-white hover:bg-about/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-guava">
                 Get To Know Me <i data-lucide="arrow-down" class="w-4 h-4"></i>
               </a>
               

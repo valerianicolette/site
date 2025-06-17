@@ -32,7 +32,7 @@
               dark: '#8f6b73',
               },
            
-              accent: '#7a9968',
+              accent: '#8f6b73',
               gold: '#699b49', 
             },
               
@@ -57,8 +57,8 @@
       .link::after{content:'';position:absolute;left:0;bottom:-2px;width:100%;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
       .link:hover::after{transform:scaleX(1)}
 
-     /* Universal body link styles - applies to all links in body content */
-    body a {
+   /* Universal body link styles - applies to all links in body content */
+      .content-link {
       display: inline-flex;
       align-items: center;
       gap: 0.25rem; /* gap-1 equivalent */
@@ -69,7 +69,7 @@
       text-decoration: none;
     }
 
-    body a::after {
+    .content-link::after {
       content: '';
       position: absolute;
       left: 0;
@@ -82,11 +82,11 @@
       transition: transform 0.3s ease;
     }
 
-    body a:hover {
-      color: #b38d94;
+    .content-link:hover {
+      color: #0887f7;
     }
 
-    body a:hover::after {
+    .content-link:hover::after {
       transform: scaleX(1);
       transform-origin: left;
     }
@@ -553,7 +553,7 @@
         }
         
         .category-badge {
-            background: linear-gradient(135deg, var(--mauve), var(--ballet));
+            background: linear-gradient(135deg, var(--portfolio), var(--ballet));
             color: white;
             padding: 4px 12px;
             border-radius: 20px;
@@ -935,16 +935,16 @@
           <!-- Text content on the left -->
          <div class="space-y-8 text-left ml-4">
           <div class="floating-element">
-            <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight">My Portfolio.<br />Bringing ideas to <span class="text-mauve block">life.</span></h1> 
+            <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight">My Portfolio.<br />Bringing ideas to <span class="text-portfolio block">life.</span></h1> 
           </div>                     
             
           <p class="text-lg md:text-xl text-[#4a4a45]">From making complex ideas accessible to creating just for joy - a glimpse into the creative spirit that drives me.</p>
 
             <div class="flex flex-wrap gap-4 pt-4">
-              <a href="#professional" class="inline-flex items-center gap-2 px-8 py-3 bg-mauve text-white hover:bg-mauve/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ballet">
+              <a href="#professional" class="inline-flex items-center gap-2 px-8 py-3 bg-portfolio text-white hover:bg-portfolio/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ballet">
                 Professional <i data-lucide="mail" class="w-4 h-4"></i>
               </a>
-              <a href="#personal" class="inline-flex items-center gap-2 px-8 py-3 border border-mauve text-mauve hover:bg-mauve hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ballet">
+              <a href="#personal" class="inline-flex items-center gap-2 px-8 py-3 border border-portfolio text-portfolio hover:bg-portfolio hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ballet">
                 Personal <i data-lucide="star" class="w-4 h-4"></i>
               </a>
             </div>
@@ -1283,7 +1283,7 @@
                         class="w-full h-[270px] object-cover">
                         <div class="p-4">
                         <p class="text-[#4a4a45] text-sm leading-relaxed mb-4">If you really want to soak in the #oktoberfest spirit, you need to try our food specials. Crispy pork schnitzel, Kartoffelpuffer (potato pancakes), German potato salad -- You get a little taste of the old country with a modern twist. 🇩🇪🍺</p>
-                        <a href="https://www.instagram.com/reel/CxTeAp0R3p_/?utm_source=ig_web_copy_link" target="_blank" class="portfolio-link text-sm font-medium">
+                        <a href="https://www.instagram.com/reel/CxTeAp0R3p_/?utm_source=ig_web_copy_link" target="_blank" class="portfolio-link text-base font-medium">
                             View on Instagram →
                         </a>
                         </div>
@@ -1841,9 +1841,9 @@
           </a>
         </div>
         
-        <form action="https://formspree.io/f/mblyozep" method="POST" class="max-w-lg mx-auto flex border border-mauve focus-within:ring-2 focus-within:ring-mauve rounded-lg overflow-hidden">
+        <form action="https://formspree.io/f/mblyozep" method="POST" class="max-w-lg mx-auto flex border border-portfolio focus-within:ring-2 focus-within:ring-portfolio rounded-lg overflow-hidden">
           <input type="email" name="email" placeholder="Your email" class="flex-grow px-5 py-3 bg-transparent placeholder-[#706f6a] focus:outline-none" required />
-          <button type="submit" class="px-6 py-3 bg-mauve text-white font-medium hover:bg-mauve/90 transition-colors">Subscribe</button>
+          <button type="submit" class="px-6 py-3 bg-portfolio text-white font-medium hover:bg-portfolio/90 transition-colors">Subscribe</button>
         </form>
         
         <p class="text-sm text-[#6d6d67]">© <span id="year"></span> Valeria Nicolette Mera</p>

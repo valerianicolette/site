@@ -29,9 +29,6 @@
               DEFAULT: '#0887f7',
               dark: '#0669c4',
               },
-            
-              accent: '#7a9968',
-              gold: '#699b49', 
             },
               
             backgroundImage: {
@@ -56,7 +53,7 @@
       .link:hover::after{transform:scaleX(1)}
 
      /* Universal body link styles - applies to all links in body content */
-    body a {
+      .content-link {
       display: inline-flex;
       align-items: center;
       gap: 0.25rem; /* gap-1 equivalent */
@@ -67,7 +64,7 @@
       text-decoration: none;
     }
 
-    body a::after {
+    .content-link::after {
       content: '';
       position: absolute;
       left: 0;
@@ -80,11 +77,11 @@
       transition: transform 0.3s ease;
     }
 
-    body a:hover {
-      color: #0887f7,
+    .content-link:hover {
+      color: #0887f7;
     }
 
-    body a:hover::after {
+    .content-link:hover::after {
       transform: scaleX(1);
       transform-origin: left;
     }
@@ -577,7 +574,7 @@
         </p>
               <p class="font-display text-base"></p>
             <a href="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/mera-valeria-sf_top_5.pdf" 
-              class="font-medium nav-link hover:text-gold mt-10">
+              class="content-link mt-10">
               Top 5 Clifton Strengths</a><br>
             Harmony • Arranger • Context<br>Woo • Individualization
             <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/top5strengths-1-e1749832831334.png" 
@@ -635,16 +632,16 @@
              <p class="experience-description">
                 <b>Finalist:</b> 
                 <a href="https://mccourt.georgetown.edu/news/2024-public-policy-challenge-finalists/" 
-                class="font-medium nav-link hover:text-gold">
+                class="content-link">
                 2024 Georgetown Public Policy Challenge;</a>
                  <a href="https://www.linkedin.com/posts/georgetown-mccourt-school-of-public-policy_congratulations-to-our-mccourt-showcase-finalists-activity-7320872054419869698-YwZD?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACEPIqwBxZ8G95E2NuCqWVMwdBduoo0tVM8" 
-                 class="font-medium nav-link hover:text-gold">
+                 class="content-link">
                  2025 Annual McCourt Student Showcase </a>
                 </p>
 
                <p class="research">
                 <b>Graduate Thesis Project:</b> <a href="https://proquest.com/docview/3215951181" 
-                class="font-medium nav-link hover:text-gold">
+                class="content-link">
                 Public Opinion’s Impact on Climate Policy Outcomes</a>
                 </p> 
 
@@ -654,7 +651,7 @@
 
                <p class="experience-description">
                 <a href="https://lnkd.in/eEs7CyUT" target="_blank" 
-                class="inline-flex items-center gap-1 font-medium nav-link hover:text-gold">
+                class="inline-flex items-center gap-1 content-link">
                 More on my Thesis
                 <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i></a>
               </p>
@@ -746,7 +743,7 @@
            <p class="experience-description mt-2">
                 <a href="https://www.linkedin.com/posts/valeriamera_policytopractice-publicservice-environmentalpolicy-activity-7315372861139947520-hJuD?utm_source=share&utm_medium=member_desktop&rcm=ACoAACEPIqwBxZ8G95E2NuCqWVMwdBduoo0tVM8"
                  target="_blank"  
-                 class="inline-flex items-center gap-1 font-medium nav-link hover:text-gold">
+                 class="inline-flex items-center gap-1 content-link">
                  Read More
                 <i data-lucide="arrow-right" class="w-3 h-3"></i></a> 
             </p>
@@ -762,7 +759,7 @@
 
             <div class="experience-right">
               <h3 class="experience-company">
-                <a href="https://www.southeastsdn.org/" class="nav-link hover:text-gold">Southeast Sustainability Directors Network</a></h3>
+                <a href="https://www.southeastsdn.org/" class="nav-link">Southeast Sustainability Directors Network</a></h3>
                 
               <p class="experience-description">
                 Analyzed 500+ grant applications representing $1M+ in funding requests, identifying key success factors for sustainability projects. Delivered data-driven insights through interactive dashboards and reports to 50+ stakeholders across 10 Southeast states. Achieved 99% data accuracy while reducing processing time by 30%.
@@ -784,7 +781,7 @@
             </div>
             <div class="experience-right">
               <h3 class="experience-company">
-                <a href="https://www.epw.senate.gov/public/" class="nav-link hover:text-gold">U.S. Senate Committee on Environment and Public Works</a></h3>
+                <a href="https://www.epw.senate.gov/public/" class="nav-link">U.S. Senate Committee on Environment and Public Works</a></h3>
 
 
               <p class="experience-description">
@@ -799,7 +796,7 @@
               </div>
                 <p class="experience-description mt-2">
                 <a href="creative.html#senate" 
-                class="inline-flex items-center gap-1 font-medium nav-link hover:text-gold">
+                class="inline-flex items-center gap-1 content-link">
                 Social for the Senate<i data-lucide="arrow-right" class="w-3 h-3"></i></a> 
               </p>
 
@@ -829,7 +826,7 @@
 
               <p class="experience-description mt-2">
                 <a href="creative.html#gu" 
-                class="inline-flex items-center gap-1 font-medium nav-link hover:text-gold">
+                class="inline-flex items-center gap-1 content-link">
                 Creating Content with Georgetown<i data-lucide="arrow-right" class="w-3 h-3"></i></a> 
               </p>
 
@@ -864,7 +861,7 @@
               <h3 class="experience-company">Town of Apex, North Carolina</h3>
               <p class="experience-description">
                 Created and launched the <a href="ttps://www.youtube.com/watch?v=kLmFlm-F584" 
-                 class="font-medium nav-link hover:text-gold" target="_blank">Town's first Earth Day event</a> with an $11K budget, recruiting 25 vendors and attracting 1,000+ participants. Spearheaded the first greenhouse gas inventory using ICLEI's ClearPath tool. Successfully launched inaugural sustainability program while managing comprehensive budget responsibilities.
+                 class="content-link" target="_blank">Town's first Earth Day event</a> with an $11K budget, recruiting 25 vendors and attracting 1,000+ participants. Spearheaded the first greenhouse gas inventory using ICLEI's ClearPath tool. Successfully launched inaugural sustainability program while managing comprehensive budget responsibilities.
               </p>
               <div class="timeline-skills mt-2">
               <span class="skill-tag">Program Administration</span>
@@ -875,13 +872,13 @@
 
                <p class="experience-description mt-2">
                 <a href="https://www.youtube.com/watch?v=kLmFlm-F584" 
-                class="inline-flex items-center gap-1 font-medium nav-link hover:text-gold">
+                class="inline-flex items-center gap-1 content-link">
                 EarthFest 2022 Recap Video<i data-lucide="arrow-right" class="w-3 h-3"></i></a> 
               </p>
               
                 <p class="experience-description mt-2">
                 <a href="creative.html#apex" 
-                class="inline-flex items-center gap-1 font-medium nav-link hover:text-gold">
+                class="inline-flex items-center gap-1 content-link">
                 Promotional Material Created<i data-lucide="arrow-right" class="w-3 h-3"></i></a> 
               </p>
 
@@ -993,7 +990,7 @@
           
                 <p class="experience-description mt-2">
                 <a href="creative.html#dacha" 
-                class="inline-flex items-center gap-1 font-semibold nav-link hover:text-gold">
+                class="inline-flex items-center gap-1 content-link">
                 Social for Dacha<i data-lucide="arrow-right" class="w-3 h-3"></i></a> 
               </p>
             </div>
@@ -1051,7 +1048,7 @@
               <p class="experience-description">
                 Selected to participate in an 8-Part Dinner Salon Series, 
                 <a href="https://www.linkedin.com/posts/georgetown-mccourt-school-of-public-policy_dinnerseries-policymaking-activity-7158160977203462145-pld-?utm_source=share&utm_medium=member_desktop&rcm=ACoAACEPIqwBxZ8G95E2NuCqWVMwdBduoo0tVM8" 
-                class="font-medium nav-link hover:text-gold" target="_blank">
+                class="content-link" target="_blank">
                 The Art and Science of Civic Entrepeneurship,</a> designed to deepen understanding of civic engagement and public service.
               </p>
             </div>
@@ -1102,7 +1099,7 @@
               <div class="experience-position">Participant</div>
             </div>
             <div class="experience-right">
-              <h3 class="experience-company"><a href="https://ncbudget.org/ncspi/" class="nav-link hover:text-gold" target="_blank">NC Summer Policy Institute</a></h3>
+              <h3 class="experience-company"><a href="https://ncbudget.org/ncspi/" class="nav-link" target="_blank">NC Summer Policy Institute</a></h3>
               <p class="experience-description">
                 Selected as one of ~25 statewide participants for a competitive, four-day intensive program on state budget and policy‑making.
                 Gained hands‑on experience in stakeholder engagement, policy communication, and public finance tools.

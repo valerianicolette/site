@@ -30,8 +30,8 @@
               DEFAULT: '#307848',
               dark: '#245937',
               },
-              accent: '#7a9968',
-              gold: '#699b49', 
+              accent: '#245937',
+              gold: '#d1e3d6', 
             },
               
             backgroundImage: {
@@ -52,8 +52,8 @@
       .fade{opacity:0;transform:translateY(20px);transition:opacity 0.8s ease,transform 0.8s ease}
       .show{opacity:1;transform:translateY(0)}
 
-      /* Universal body link styles - applies to all links in body content */
-    body a {
+     /* Universal body link styles - applies to all links in body content */
+      .content-link {
       display: inline-flex;
       align-items: center;
       gap: 0.25rem; /* gap-1 equivalent */
@@ -64,7 +64,7 @@
       text-decoration: none;
     }
 
-    body a::after {
+    .content-link::after {
       content: '';
       position: absolute;
       left: 0;
@@ -77,11 +77,11 @@
       transition: transform 0.3s ease;
     }
 
-    body a:hover {
+    .content-link:hover {
       color: #307848;
     }
 
-    body a:hover::after {
+    .content-link:hover::after {
       transform: scaleX(1);
       transform-origin: left;
     }
@@ -234,7 +234,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(135deg, #b4d98e 0%, #7ea850 100%);
+        background: linear-gradient(135deg, transparent, #b4d98e 0%, #7ea850 100%);
       }
 
       .contact-card:hover {
@@ -263,15 +263,14 @@
       }
 
       .contact-method::before {
-        content: '';
+    content: '';
         position: absolute;
         top: 0;
-        left: 0;
+        left: -100%;
         width: 100%;
-        height: 2px;
-        background: linear-gradient(135deg, #bfa76f 0%, #7ea850 100%);
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(157, 184, 141, 0.1), transparent);
+        transition: left 0.6s ease;
       }
 
       .contact-method:hover::before {
@@ -281,7 +280,7 @@
       .contact-method:hover {
         transform: translateY(-4px);
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-        border-color: #bfa76f;
+        border-color: #307848;
       }
 
       .contact-icon {
@@ -478,7 +477,7 @@
             </div>
             <h3 class="font-display text-xl text-[#22221f] mb-2">Email Me</h3>
             <p class="text-[#4a4a45] mb-4 text-sm leading-relaxed">For professional inquiries, collaboration opportunities, or just to say hello</p>
-            <a href="mailto:vnm58293@gmail.com" class="text-forest hover:text-accent transition-colors font-medium">vnm58293@gmail.com</a>
+            <a href="mailto:vnm58293@gmail.com" class="text-contact hover:text-accent transition-colors font-medium">vnm58293@gmail.com</a>
           </div>
 
           <!-- LinkedIn -->
@@ -488,7 +487,7 @@
             </div>
             <h3 class="font-display text-xl text-[#22221f] mb-2">Connect on LinkedIn</h3>
             <p class="text-[#4a4a45] mb-4 text-sm leading-relaxed">Let's expand our professional networks and explore opportunities together</p>
-            <a href="https://www.linkedin.com/in/valeriamera/" target="_blank" class="text-gold hover:text-accent transition-colors font-medium">@valeriamera</a>
+            <a href="https://www.linkedin.com/in/valeriamera/" target="_blank" class="text-contact hover:text-accent transition-colors font-medium">@valeriamera</a>
           </div>
 
           <!-- Instagram -->
@@ -498,7 +497,7 @@
             </div>
             <h3 class="font-display text-xl text-[#22221f] mb-2">Follow My Journey</h3>
             <p class="text-[#4a4a45] mb-4 text-sm leading-relaxed">Behind-the-scenes content, creative projects, and glimpses into my daily life</p>
-            <a href="https://www.instagram.com/valeriamera/" target="_blank" class="text-gold hover:text-accent transition-colors font-medium">@valeriamera</a>
+            <a href="https://www.instagram.com/valeriamera/" target="_blank" class="text-contact hover:text-accent transition-colors font-medium">@valeriamera</a>
           </div>
         </div>
       </div>
@@ -559,7 +558,7 @@
     <!-- 3. COLLABORATION SECTION -->
     <section class="py-24 bg-cream/80 backdrop-blur-sm">
      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="font-display text-3xl md:text-4xl mb-8 section-divider">What I'm Looking For</h2>
+        <h2 class="font-display text-3xl md:text-4xl mb-10 section-divider">What I'm Looking For</h2>
         
         <div class="grid md:grid-cols-2 gap-8 mb-12">
           <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-cream-200">
@@ -585,9 +584,9 @@
      <!-- 4. FRIENDS SECTION -->
     <section class="py-24 bg-hero/50 backdrop-blur-sm">
       <div class="max-w-6xl mx-auto px-6 md:px-0">
-        <div class="text-center mb-12 fade">
-          <h2 class="font-display text-3xl md:text-4xl mb-16 text-center section-divider">Let's Be Friends!</h2>
-          <p class="text-base text-[#4a4a45] mt-4 max-w-2xl mx-auto">
+        <div class="text-center mb-4 fade">
+          <h2 class="font-display text-3xl md:text-4xl mb-10 text-center section-divider">Let's Be Friends!</h2>
+          <p class="text-base text-[#4a4a45] max-w-2xl mx-auto">
             Beyond my story, my community, and my dedication to public service, I'm a collection of passions that keep me curious and growing - and I'm sure you are too!! Whether you're interested in connecting professionally or you're reaching out to because you think we'd get along, I'm open to it all! Below are some other things we might connect on ◡̈
           </p>
 
@@ -609,7 +608,7 @@
     </section>
 
     <!-- QUOTE SECTION -->
-    <section class="bg-pistachio text-cream py-16 fade">
+    <section class="bg-contact text-cream py-16 fade">
       <div class="max-w-4xl mx-auto text-center px-6">
         <blockquote class="text-2xl md:text-3xl font-display italic mb-6">
           "The people crazy enough to think they can change the world are the ones that do."
@@ -638,9 +637,9 @@
           </a>
         </div>
         
-         <form action="https://formspree.io/f/mblyozep" method="POST" class="max-w-lg mx-auto flex border border-forest focus-within:ring-2 focus-within:ring-forest rounded-lg overflow-hidden">
+         <form action="https://formspree.io/f/mblyozep" method="POST" class="max-w-lg mx-auto flex border border-contact focus-within:ring-2 focus-within:ring-contact rounded-lg overflow-hidden">
           <input type="email" name="email" placeholder="Your email" class="flex-grow px-5 py-3 bg-transparent placeholder-[#706f6a] focus:outline-none" required />
-          <button type="submit" class="px-6 py-3 bg-forest text-white font-medium hover:bg-forest/90 transition-colors">Subscribe</button>
+          <button type="submit" class="px-6 py-3 bg-contact text-white font-medium hover:bg-contact/90 transition-colors">Subscribe</button>
         </form>
         
         <p class="text-sm text-[#6d6d67]">© <span id="year"></span> Valeria Nicolette Mera</p>

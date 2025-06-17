@@ -55,8 +55,8 @@
       .link::after{content:'';position:absolute;left:0;bottom:-2px;width:100%;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
       .link:hover::after{transform:scaleX(1)}
 
-     /* Universal body link styles - applies to all links in body content */
-    body a {
+    /* Universal body link styles - applies to all links in body content */
+      .content-link {
       display: inline-flex;
       align-items: center;
       gap: 0.25rem; /* gap-1 equivalent */
@@ -67,7 +67,7 @@
       text-decoration: none;
     }
 
-    body a::after {
+    .content-link::after {
       content: '';
       position: absolute;
       left: 0;
@@ -80,14 +80,15 @@
       transition: transform 0.3s ease;
     }
 
-    body a:hover {
+    .content-link:hover {
       color: #643b9f;
     }
 
-    body a:hover::after {
+    .content-link:hover::after {
       transform: scaleX(1);
       transform-origin: left;
     }
+
 
     .home-icon {
       display: block !important;
@@ -665,7 +666,7 @@
         </p>
 
         <div class="flex flex-wrap gap-4 pt-4">
-          <a href="https://valerianicolette.wordpress.com/" target="_blank" class="inline-flex items-center gap-2 px-8 py-3 bg-purple text-white hover:bg-purple/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple">
+          <a href="https://valerianicolette.wordpress.com/" target="_blank" class="inline-flex items-center gap-2 px-8 py-3 bg-story text-white hover:bg-story/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple">
             View WordPress <i data-lucide="pencil-line" class="w-4 h-4"></i>
           </a>
         </div>
