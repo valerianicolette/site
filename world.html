@@ -27,12 +27,12 @@
               
              world: {
                 light: '#d4e8d9',
-                DEFAULT: '#699b49',
-                dark: '#4f7335',
+                DEFAULT: '#4caf50;',
+                dark: '#2e7d32',
                 },
              
               accent: '#7a9968',
-              gold: '#699b49', 
+              gold: '#4caf50', 
             },
               
             backgroundImage: {
@@ -85,7 +85,7 @@
     }
 
     .content-link:hover {
-      color: #699b49;
+      color: #4caf50;
     }
 
     .content-link:hover::after {
@@ -181,13 +181,13 @@
         background: linear-gradient(145deg, #f7f7f4, #f0f0eb);
         box-shadow: 5px 5px 10px #e6e6e1, -5px -5px 10px #ffffff;
         transition: all 0.3s ease;
-        color: #699b49;
+        color: #4caf50;
       }
 
         .social-icon:hover {
           transform: translateY(-3px);
           box-shadow: 8px 8px 15px #e6e6e1, -8px -8px 15px #ffffff;
-          color: #49762a;
+          color: #4caf50;
         }
 
         .social-icon i {
@@ -344,56 +344,41 @@
       }
 
     
-      .text-about:hover {
-     color: #c6234e;
-    }
+      /* Nav hover colors */
+      .text-home:hover { color: #f87171; }
+      .text-about:hover { color: #c6234e; }
+      .text-story:hover { color: #541388; }
+      .text-world:hover {color: #4caf50;}
+      .text-exp:hover {color: #2e7d32;}
+      .text-portfolio:hover { color: #b38d94; }
+      .text-contact:hover { color: #307848; }
 
-    .text-story:hover {
-    color: #643b9f;
-    }
-
-    .text-world:hover {
-    color:
-    #699b49;
-    }
-
-    .text-exp:hover {
-   color: #0887f7;
-    }
-    .text-portfolio:hover {
-     color: #b38d94;
-    }
-    .text-contact:hover {
-    color: #307848;
-    }
+      /* Utility classes */
+      .bg-guava { background-color: #f7a1a1; }
+      .bg-guava:hover { background-color: #f37272; }
+      .border-guava { border-color: #f87171; }
+      .text-guava { color: #f87171; }
+      .text-guava2 { color: #fa9e9e; }
 
       
       .hover-page:hover {
-        color: #699b49!important;
+        color: #66bb6a!important;
       }
 
       .bg-page {
-        background-color: #699b49;
+        background-color: #4caf50;
       }
 
       .bg-page:hover {
-        background-color: #699b49;
+        background-color: #66bb6a;
       }
 
       .bg-quote {
-        background-color: #699b49;
+        background-color: #4caf50;
       }
 
       .border-page {
-        border-color: #699b49;
-      }
-
-      .text-page {
-        color: #9db88d;
-      }
-
-      .text-page2 {
-        color: #699b49;
+        border-color: #4caf50;
       }
 
 
@@ -445,7 +430,7 @@
         transform: translateX(-50%);
         width: 60px;
         height: 2px;
-        background: linear-gradient(135deg, #9db88d 0%, #699b49 100%);
+        background: linear-gradient(135deg, #4caf50 0%, #699b49 100%);
         border-radius: 2px;
       }
 
@@ -489,7 +474,7 @@
         top: 0.5rem;
         width: 8px;
         height: 8px;
-        background: #49762a;
+        background: #4caf50;
         border-radius: 50%;
       }
 
@@ -525,7 +510,7 @@
         .stat-number {
             font-size: 2.5em;
             font-weight: bold;
-            color: #699b49;
+            color: #4caf50;
             margin: 0;
         }
         
@@ -556,7 +541,7 @@
         
         .popup-content h3 {
             margin: 0 0 8px 0;
-            color: #699b49;
+            color: #4caf50;
             font-size: 1.2em;
             font-weight: 600;
         }
@@ -584,7 +569,7 @@
         }
         
         .custom-city-marker div {
-            background-color: #699b49;
+            background-color: #4caf50;
             border: 3px solid white;
             border-radius: 50%;
             width: 16px;
@@ -669,19 +654,19 @@
           <!-- Text content on the left -->
           <div class="space-y-8 text-left ml-4">
             <div class="floating-element">
-            <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight">Bridging Worlds<br> <span class="text-page block">Local impact, global perspective</span></h1>
+            <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight">Bridging Worlds<br> <span class="text-world block">Local impact, global perspective</span></h1>
             </div>
 
             <p class="text-lg md:text-xl text-[#4a4a45] leading-relaxed">
             How community care and cultural connection shaped my global perspective on shared challenges and collective solutions.
             
             <div class="flex flex-wrap gap-4 pt-4">
-              <a href="#intro" class="inline-flex items-center gap-2 px-8 py-3 bg-world text-white hover:bg-world/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-page">
-                My POV <i data-lucide="arrow-down" class="w-4 h-4"></i>
+              <a href="#map" class="inline-flex items-center gap-2 px-8 py-3 bg-page text-white hover:bg-page/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-world">
+                Travel <i data-lucide="plane" class="w-4 h-4"></i>
               </a>
-               <a href="#map" 
-              class="inline-flex items-center gap-2 px-8 py-3 border border-world text-world hover:bg-world hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-world">
-              Travel<i data-lucide="plane" class="w-4 h-4"></i>
+               <a href="https://valerianicolette.wordpress.com/paris/" 
+              target="_blank" class=" inline-flex items-center gap-2 px-8 py-3 border border-page text-world hover:bg-world hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-world">
+              Paris Guide<i data-lucide="file-heart" class="w-4 h-4"></i>
             </a>
             </div>
           </div>
@@ -895,8 +880,8 @@
         </div>
         
         <form action="https://formspree.io/f/mblyozep" method="POST" class="max-w-lg mx-auto flex border border-page focus-within:ring-2 focus-within:ring-page rounded-lg overflow-hidden">
-          <input type="email" name="email" placeholder="Your email" class="flex-grow px-5 py-3 bg-transparent placeholder-[#706f6a] focus:outline-none" required />
-          <button type="submit" class="px-6 py-3 bg-page text-white font-medium hover:bg-page/90 transition-colors">Subscribe</button>
+          <input type="email" name="email" placeholder="Your email" class="flex-grow px-5 py-3 bg-transparent placeholder-[#4caf50] focus:outline-none" required />
+          <button type="submit" class="px-6 py-3 bg-world text-white font-medium hover:bg-world/90 transition-colors">Subscribe</button>
         </form>
         
         <p class="text-sm text-[#6d6d67]">© <span id="year"></span> Valeria Nicolette Mera</p>
