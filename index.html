@@ -358,6 +358,90 @@
           grid-template-columns: 1fr;
         }
       }
+
+
+      .color-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px 40px;
+            margin-bottom: 60px;
+        }
+
+        .color-item {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .color-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .color-circle:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+       
+        /* Color-specific circles (use these if not using images) */
+        .home-color { background-color: #ad1457; }
+        .about-color { background-color: #E0295D; }
+        .story-color { background-color: #f48fb1; }
+        .worldview-color { background-color: #4caf50; }
+        .experience-color { background-color: #2f7d31; }
+        .portfolio-color { background-color: #0887f7; }
+        .contact-color { background-color: #1876d2; }
+
+        .palette-container {
+            text-align: right;
+            margin-top: 40px;
+        }
+
+        .palette-image {
+            width: 200px;
+            height: auto;
+            max-width: 100%;
+        }
+
+        /* Responsive design */
+        @media (max-width: 900px) {
+            .color-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 40px 20px;
+            }
+            
+            .color-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px 20px;
+            }
+            
+            .color-circle,
+            .color-image {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .title {
+                font-size: 1.8em;
+                letter-spacing: 2px;
+            }
+            
+            .palette-container {
+                text-align: center;
+            }
+        }
     </style>
   </head>
 
@@ -579,6 +663,87 @@
         </div>
       </div>
     </section>
+
+    <!-- COLORS -->
+    <section id="colors" class="py-24 bg-cream">
+       <div class="max-w-5xl mx-auto px-6 md:px-0">
+
+        <div class="text-center mb-12 fade">
+          <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">THE STORY BEHIND THESE COLORS</h2>
+          <p class="text-lg text-[#4a4a45] mt-8 max-w-2xl mx-auto">
+            I didn't just pick colors I liked—I chose colors that reflect what I love most about the world around me. As an earth sign, I've always been drawn to groundedness, warmth, and organic beauty. I want my personality to shine through colors that capture the beauty and vibrance of our gardens, forests, oceans, and skies. 
+            </p>
+        
+         <div class="color-grid mt-16">
+        <div class="color-item">
+
+             <div class="color-circle home-color"></div>
+            <h3 class="font-display text-xl mb-2 text-[#22221f]"><a href="#" class="nav-link text-home">HOME</a></h3>
+            <p class="text-[#4a4a45] text-sm mb-3 leading-relaxed">
+              This deep magenta feels like coming home to myself. It's the color of flowers blooming at dusk, holding all the richness and warmth I want to create in every space I live in.
+            </p>
+        </div>
+
+        <div class="color-item">
+            <div class="color-circle about-color"></div> 
+            <h3 class="font-display text-xl mb-2 text-[#22221f]"><a href="about.html" class="nav-link text-about">ABOUT</a></h3>
+            <p class="text-[#4a4a45] text-sm mb-3 leading-relaxed">
+              Bright raspberry is pure joy to me. It's that feeling when you're watching an incredible sunset and can't help but smile. This is how I try to show up: open-hearted, honest, and never afraid to be vulnerable if it means we can really connect.
+            </p>
+        </div>
+
+        <div class="color-item">
+            <div class="color-circle story-color"></div> 
+            <h3 class="font-display text-xl mb-2 text-[#22221f]"><a href="story.html" class="nav-link text-story">MY STORY</a></h3>
+            <p class="text-[#4a4a45] text-sm mb-3 leading-relaxed">
+              This soft rose reminds me that strength doesn't have to be loud. Like delicate petals pushing through concrete, it's gentle but determined. When I share my story, I want it to feel tender but powerful, because that's where real trust begins.
+            </p>
+        </div>
+
+        <div class="color-item">
+          <div class="color-circle worldview-color"></div> 
+            <h3 class="font-display text-xl mb-2 text-[#22221f]"><a href="world.html" class="nav-link text-world">WORLD</a></h3>
+           <p class="text-[#4a4a45] text-sm mb-3 leading-relaxed">
+            Fresh grass after rain! This bright green is that moment when everything feels possible again, when you remember we're all connected in ways we don't even realize. It holds all my hope for what we can build together.
+           </p>
+        </div>
+
+        <div class="color-item">
+           <div class="color-circle experience-color"></div>
+            <h3 class="font-display text-xl mb-2 text-[#22221f]"><a href="experience.html" class="nav-link text-exp">EXPERIENCE</a></h3>
+            <p class="text-[#4a4a45] text-sm mb-3 leading-relaxed">
+              Forest green grounds me completely. Like having your hands in rich soil or walking through ancient trees. 
+              This color represents my commitment to climate work and the deep responsibility I feel to protect what sustains us all.
+            </p>
+        </div>
+
+        <div class="color-item">
+            <div class="color-circle portfolio-color"></div> 
+            <h3 class="font-display text-xl mb-2 text-[#22221f]"><a href="portfolio.html" class="nav-link text-portfolio">PORTFOLIO</a></h3>
+            <p class="text-[#4a4a45] text-sm mb-3 leading-relaxed">
+              Electric blue is pure possibility. 
+              It's that feeling when you look up at an endless sky and you suddenly remember that that's your limit. It's the color of imagination running wild and creating something that's never existed before.
+            </p>
+        </div>
+
+        <div class="color-item">
+            <div class="color-circle contact-color"></div> 
+            <h3 class="font-display text-xl mb-2 text-[#22221f]"><a href="contact.html" class="nav-link text-contact">CONTACT</a></h3>
+           <p class="text-[#4a4a45] text-sm mb-3 leading-relaxed">
+            Deep blue feels like the most honest conversation you've ever had. Calm, clear, genuine. This is the energy I want to bring when connecting with new people: steady, trustworthy, and genuinely excited to see what we might create together.
+           </p>
+        </div>
+        
+        <div class="color-item">
+        <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/palette.png" 
+             alt="Artist's color palette with paintbrushes" 
+             class="palette-image"></div>
+
+    </div>
+
+
+        </div>
+      </section>
 
     <!-- QUOTE SECTION -->
     <section class="bg-index text-cream py-16 fade">
