@@ -47,8 +47,11 @@
     <style>
       html{scroll-behavior:smooth}
       body{font-family:'Inter',sans-serif}
-      .fade{opacity:0;transform:translateY(20px);transition:opacity 0.8s ease,transform 0.8s ease}
+      .fade{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
       .show{opacity:1;transform:translateY(0)}
+      .link{position:relative}
+      .link::after{content:'';position:absolute;left:0;bottom:-2px;width:100%;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+      .link:hover::after{transform:scaleX(1)}
 
      /* Universal body link styles - applies to all links in body content */
       .content-link {
@@ -179,10 +182,10 @@
         transition: all 0.3s ease;
         color: #1976d2;
       }
-
       .social-icon:hover {
         transform: translateY(-3px);
         box-shadow: 8px 8px 15px #e6e1d9, -8px -8px 15px #ffffff;
+        color: #135ea8;
       }
       .social-icon i {
         transition: transform 0.3s ease;
@@ -238,7 +241,7 @@
       }
 
       .contact-method::before {
-    content: '';
+        content: '';
         position: absolute;
         top: 0;
         left: -100%;
@@ -428,11 +431,12 @@
             </p>
 
              <div class="flex flex-wrap gap-4 pt-4">
-              <a href="https://www.linkedin.com/in/valeriamera/" class="inline-flex items-center gap-2 px-8 py-3 bg-contact text-white hover:bg-contact/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-contact">
-                LinkedIn <i data-lucide="user-round-search" class="w-4 h-4"></i>
+              <a href="https://www.linkedin.com/in/valeriamera/" target="_blank" 
+              class="inline-flex items-center gap-2 px-8 py-3 bg-contact text-white hover:bg-contact/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-contact">
+              LinkedIn <i data-lucide="user-round-search" class="w-4 h-4"></i>
               </a>
-               <a href="https://www.instagram.com/valeriamera/" 
-              target="_blank" class=" inline-flex items-center gap-2 px-8 py-3 border border-contact text-contact hover:bg-contact hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-contact">
+              <a href="https://www.instagram.com/valeriamera/" target="_blank" 
+              class=" inline-flex items-center gap-2 px-8 py-3 border border-contact text-contact hover:bg-contact hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-contact">
               Instagram<i data-lucide="instagram" class="w-4 h-4"></i>
             </a>
             </div>
