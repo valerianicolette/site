@@ -374,22 +374,21 @@
  <body class="font-body antialiased text-[#22221f] bg-hero bg-fixed bg-no-repeat bg-cover min-h-screen">
    
     <nav class="fixed top-0 left-0 w-full z-20 py-5 px-6 md:px-12 flex items-center justify-between bg-cream/60 backdrop-blur-md border-b border-cream-200">
-        <!-- Home Icon -->
-         <a href="index.html" class="home-icon block w-6 h-6 hover:rotate-12 transition-all duration-300" aria-label="Home">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-4H10v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-            </svg>
-        </a>
+       <!-- Home Icon -->
+         <a href="index.html" class="home-icon block w-12 h-12 hover:rotate-12 transition-all duration-300" aria-label="Home">
+          <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmcontact.png" class=" object-cover">
+      </a>
 
-      
-       <!-- Desktop Navigation -->
+
+         <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-8 text-sm tracking-wide uppercase font-medium">
+            <a href="index.html" class="nav-link text-home">Home</a>
             <a href="about.html" class="nav-link text-about">About Me</a>
             <a href="story.html" class="nav-link text-story">My Story</a>
             <a href="world.html" class="nav-link text-world">Worldview</a>
             <a href="experience.html" class="nav-link text-exp">Experience</a>
             <a href="portfolio.html" class="nav-link text-portfolio">Portfolio</a>
-            <a href="contact.html" class="nav-link text-contact">Contact & Collaborate</a>
+            <a href="contact.html" class="nav-link text-contact">Contact</a>
         </div>
 
         <!-- Mobile Hamburger Button -->
@@ -403,6 +402,7 @@
     <!-- Mobile Menu Overlay -->
     <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-cream/95 backdrop-blur-md z-10 md:hidden">
         <div class="flex flex-col items-center justify-center h-full space-y-8 text-lg tracking-wide uppercase font-medium">
+            <a href="index.html" class="nav-link text-home" onclick="closeMobileMenu()">Home</a>
             <a href="about.html" class="nav-link text-about" onclick="closeMobileMenu()">About Me</a>
             <a href="story.html" class="nav-link text-story" onclick="closeMobileMenu()">My Story</a>
             <a href="world.html" class="nav-link text-world" onclick="closeMobileMenu()">Worldview</a>
@@ -608,13 +608,12 @@
           <button type="submit" class="px-6 py-3 bg-contact text-white font-medium hover:bg-contact/90 transition-colors">Subscribe</button>
         </form>
         
-         <div class="flex items-center justify-center w-full gap-4">
-        <p class="text-sm text-[#6d6d67]">© <span id="year"></span> Valeria Nicolette Mera</p>
-  
-      <div class="flex items-center justify-center">
-        <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmcontact.png" class="w-10 h-10 object-cover">
-      </div>
-      </div>
+        <div class="flex flex-col items-center justify-center w-full gap-2 text-sm text-[#6d6d67]">
+        <div class="flex items-center gap-4">
+        <p>© <span id="year"></span> Valeria Nicolette Mera</p>
+        </div>
+        <span>Site designed and coded by yours truly.</span>
+        </div>
 
       </div>
     </footer>
