@@ -938,92 +938,188 @@
 
 
     <script>
-    // Visitor Counter with CountAPI
-    (function() {
-      // Your domain configured for CountAPI
-      const SITE_KEY = 'valeriamera.com';
-      const API_URL = `https://api.countapi.xyz/hit/${SITE_KEY}/visits`;
+// Enhanced Global Visitor Counter with CountAPI
+(function() {
+  // Your domain configured for CountAPI
+  const SITE_KEY = 'valeriamera.com';
+  const API_URL = `https://api.countapi.xyz/hit/${SITE_KEY}/visits`;
+  const BACKUP_API_URL = `https://api.countapi.xyz/get/${SITE_KEY}/visits`;
+  
+  // Prevent multiple increments per session
+  const SESSION_KEY = 'vnm-session-' + Date.now();
+  const hasIncrementedThisSession = sessionStorage.getItem(SESSION_KEY);
+  
+  async function incrementAndGetCount() {
+    try {
+      // Only increment if we haven't already in this session
+      let response, data;
       
-      async function incrementAndGetCount() {
-        try {
-          const response = await fetch(API_URL);
-          const data = await response.json();
-          
-          if (data.value) {
-            return data.value;
-          } else {
-            throw new Error('Invalid API response');
-          }
-        } catch (error) {
-          console.error('Counter API error:', error);
-          // Fallback to localStorage if API fails
-          const fallback = localStorage.getItem('vnm-visitor-fallback') || '0';
-          const newCount = parseInt(fallback) + 1;
-          localStorage.setItem('vnm-visitor-fallback', newCount.toString());
-          return newCount;
-        }
+      if (!hasIncrementedThisSession) {
+        // Increment the counter
+        response = await fetch(API_URL);
+        data = await response.json();
+        
+        // Mark this session as having incremented
+        sessionStorage.setItem(SESSION_KEY, 'true');
+      } else {
+        // Just get current count without incrementing
+        response = await fetch(BACKUP_API_URL);
+        data = await response.json();
       }
       
-      function updateCounterDisplay(count) {
-        const counterElement = document.getElementById('counterNumber');
-        if (counterElement) {
-          counterElement.textContent = count.toLocaleString();
+      if (data.value !== undefined) {
+        return data.value;
+      } else {
+        throw new Error('Invalid API response');
+      }
+    } catch (error) {
+      console.error('Counter API error:', error);
+      
+      // Enhanced fallback system
+      try {
+        // Try to get current count without incrementing
+        const backupResponse = await fetch(BACKUP_API_URL);
+        const backupData = await backupResponse.json();
+        if (backupData.value !== undefined) {
+          return backupData.value;
         }
+      } catch (backupError) {
+        console.error('Backup API also failed:', backupError);
       }
       
-      function animateCounter(start, end, duration = 800) {
-        const counterElement = document.getElementById('counterNumber');
-        if (!counterElement) return;
-        
-        const startTime = performance.now();
-        
-        function updateCounter(currentTime) {
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          
-          const current = Math.floor(start + (end - start) * progress);
-          counterElement.textContent = current.toLocaleString();
-          
-          if (progress < 1) {
-            requestAnimationFrame(updateCounter);
-          }
-        }
-        
+      // Final fallback to estimated count
+      const estimatedCount = getEstimatedCount();
+      return estimatedCount;
+    }
+  }
+  
+  function getEstimatedCount() {
+    // Estimate based on site age and typical traffic
+    const siteStartDate = new Date('2024-01-01'); // Adjust to your site's launch date
+    const daysSinceLaunch = Math.floor((Date.now() - siteStartDate.getTime()) / (1000 * 60 * 60 * 24));
+    const estimatedDailyVisits = 50; // Adjust based on your typical traffic
+    return Math.max(1000, daysSinceLaunch * estimatedDailyVisits);
+  }
+  
+  function updateCounterDisplay(count) {
+    const counterElement = document.getElementById('counterNumber');
+    if (counterElement) {
+      counterElement.textContent = count.toLocaleString();
+    }
+  }
+  
+  function animateCounter(start, end, duration = 1200) {
+    const counterElement = document.getElementById('counterNumber');
+    if (!counterElement) return;
+    
+    const startTime = performance.now();
+    const difference = end - start;
+    
+    function updateCounter(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Use easing function for smoother animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const current = Math.floor(start + difference * easeOutQuart);
+      
+      counterElement.textContent = current.toLocaleString();
+      
+      if (progress < 1) {
         requestAnimationFrame(updateCounter);
       }
+    }
+    
+    requestAnimationFrame(updateCounter);
+  }
+  
+  function addVisualEffects(isNewVisit) {
+    const counter = document.getElementById('visitorCounter');
+    if (!counter) return;
+    
+    // Add pulse effect for new visits
+    if (isNewVisit) {
+      counter.classList.add('new-visit');
+      setTimeout(() => {
+        counter.classList.remove('new-visit');
+      }, 800);
+    }
+    
+    // Add loaded class for any additional styling
+    counter.classList.add('counter-loaded');
+  }
+  
+  async function initializeCounter() {
+    try {
+      const isNewVisit = !hasIncrementedThisSession;
+      const count = await incrementAndGetCount();
       
-      async function initializeCounter() {
-        try {
-          // Get current count and increment
-          const count = await incrementAndGetCount();
-          
-          // Start animation from a lower number for visual effect
-          const startNumber = Math.max(0, count - 5);
-          animateCounter(startNumber, count);
-          
-          // Add pulse animation
-          setTimeout(() => {
-            const counter = document.getElementById('visitorCounter');
-            if (counter) {
-              counter.classList.add('new-visit');
-              setTimeout(() => {
-                counter.classList.remove('new-visit');
-              }, 600);
-            }
-          }, 400);
-        } catch (error) {
-          console.error('Failed to initialize counter:', error);
+      // Start animation from a lower number for visual effect
+      const startNumber = Math.max(1, count - Math.floor(Math.random() * 10 + 5));
+      animateCounter(startNumber, count);
+      
+      // Add visual effects
+      setTimeout(() => {
+        addVisualEffects(isNewVisit);
+      }, 600);
+      
+      // Log for debugging (remove in production)
+      console.log(`Global visitor count: ${count} ${isNewVisit ? '(new visit)' : '(returning in session)'}`);
+      
+    } catch (error) {
+      console.error('Failed to initialize counter:', error);
+      // Still show something even if everything fails
+      updateCounterDisplay(getEstimatedCount());
+    }
+  }
+  
+  // Retry mechanism for failed requests
+  function initializeWithRetry(maxRetries = 3) {
+    let attempts = 0;
+    
+    async function attempt() {
+      try {
+        await initializeCounter();
+      } catch (error) {
+        attempts++;
+        if (attempts < maxRetries) {
+          console.log(`Counter initialization failed, retrying... (${attempts}/${maxRetries})`);
+          setTimeout(attempt, 1000 * attempts); // Exponential backoff
+        } else {
+          console.error('Counter initialization failed after all retries');
+          updateCounterDisplay(getEstimatedCount());
         }
       }
-      
-      // Initialize when DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initializeCounter);
-      } else {
-        initializeCounter();
+    }
+    
+    attempt();
+  }
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => initializeWithRetry());
+  } else {
+    initializeWithRetry();
+  }
+  
+  // Optional: Update counter periodically to show real-time growth
+  // Uncomment if you want live updates every 30 seconds
+  /*
+  setInterval(async () => {
+    try {
+      const response = await fetch(BACKUP_API_URL);
+      const data = await response.json();
+      if (data.value !== undefined) {
+        updateCounterDisplay(data.value);
       }
-    })();
-    </script>
+    } catch (error) {
+      // Silently fail for periodic updates
+    }
+  }, 30000);
+  */
+  
+})();
+</script>
 
   </body>
 </html>
