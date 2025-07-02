@@ -1,25 +1,24 @@
-/*  Universal Visitor Counter - Fixed Version  |  valeriamera.com
-    Multiple fallback options for reliable counting                      */
+/*  Universal Visitor Counter with CORS Proxy  |  valeriamera.com
+    Uses CORS proxy to bypass blocking issues                             */
 
 (() => {
   /* ----------  Configuration  ---------- */
   const SITE_KEY   = 'valeriamera.com';
   const MAIN_KEY   = 'unique-visits';
   
-  // Multiple API options (try in order)
-  const API_OPTIONS = [
-    'https://api.countapi.xyz',
-    'https://api.counterapi.dev/v1',  // Alternative service
-    // Add more as needed
+  // CORS proxies to try (in order)
+  const CORS_PROXIES = [
+    'https://corsproxy.io/?',
+    'https://cors-anywhere.herokuapp.com/',
+    'https://api.allorigins.win/raw?url=',
+    'https://proxy.cors.sh/',
   ];
   
+  const COUNTAPI_BASE = 'https://api.countapi.xyz';
   const TRACK_PAGES = true;
-  const FALLBACK_START_DATE = new Date('2025-07-02'); // Your site launch date
-  const FALLBACK_DAILY_VISITS = 10; // Estimated daily visits for fallback
 
   /* ----------  Session flags  ---------- */
   const SITE_SESSION_FLAG = 'vnm-site-visited';
-  const LOCAL_COUNT_KEY = 'vnm-local-count'; // Local storage backup
 
   function pageFlag() {
     const cleanPath = location.pathname
@@ -28,33 +27,33 @@
     return `vnm-page-${cleanPath}-visited`;
   }
 
-  /* ----------  API helpers with fallback  ---------- */
-  async function tryAPI(endpoint, method = 'GET') {
+  /* ----------  CORS Proxy API helpers  ---------- */
+  async function tryWithCorsProxy(endpoint) {
+    const url = `${COUNTAPI_BASE}/${endpoint}`;
     const errors = [];
     
-    for (const apiBase of API_OPTIONS) {
+    // First try direct (in case CORS is now working)
+    try {
+      console.log(`Trying direct: ${url}`);
+      const response = await fetch(url);
+      if (response.ok) {
+        const data = await response.json();
+        console.log('✅ Direct API call successful:', data);
+        return data;
+      }
+    } catch (error) {
+      console.log('❌ Direct call failed, trying proxies...');
+      errors.push(`Direct: ${error.message}`);
+    }
+    
+    // Try each CORS proxy
+    for (const proxy of CORS_PROXIES) {
       try {
-        console.log(`Trying API: ${apiBase}`);
+        const proxiedUrl = `${proxy}${encodeURIComponent(url)}`;
+        console.log(`Trying proxy: ${proxy}`);
         
-        let url, options = { method };
-        
-        if (apiBase.includes('countapi.xyz')) {
-          // CountAPI.xyz format
-          url = `${apiBase}/${endpoint}`;
-        } else if (apiBase.includes('counterapi.dev')) {
-          // CounterAPI.dev format (different structure)
-          const parts = endpoint.split('/');
-          if (parts[0] === 'hit') {
-            url = `${apiBase}/${parts[1]}/${parts[2]}/increment`;
-            options.method = 'POST';
-          } else if (parts[0] === 'get') {
-            url = `${apiBase}/${parts[1]}/${parts[2]}`;
-          }
-        }
-        
-        const response = await fetch(url, {
-          ...options,
-          mode: 'cors',
+        const response = await fetch(proxiedUrl, {
+          method: 'GET',
           headers: {
             'Content-Type': 'application/json',
           }
@@ -65,79 +64,27 @@
         }
         
         const data = await response.json();
-        console.log(`✅ API success with ${apiBase}:`, data);
-        
-        // Normalize response format
-        return { 
-          value: data.value || data.count || data.total || 0,
-          success: true 
-        };
+        console.log(`✅ Proxy success with ${proxy}:`, data);
+        return data;
         
       } catch (error) {
-        console.warn(`❌ API ${apiBase} failed:`, error.message);
-        errors.push(`${apiBase}: ${error.message}`);
+        console.warn(`❌ Proxy ${proxy} failed:`, error.message);
+        errors.push(`${proxy}: ${error.message}`);
         continue;
       }
     }
     
-    // All APIs failed
-    throw new Error(`All APIs failed: ${errors.join('; ')}`);
+    throw new Error(`All methods failed: ${errors.join('; ')}`);
   }
 
   async function hit(namespace, key) {
-    try {
-      const result = await tryAPI(`hit/${namespace}/${key}`);
-      
-      // Store successful count locally as backup
-      localStorage.setItem(LOCAL_COUNT_KEY, result.value.toString());
-      localStorage.setItem(`${LOCAL_COUNT_KEY}-timestamp`, Date.now().toString());
-      
-      return result.value;
-    } catch (error) {
-      console.error('All hit APIs failed:', error.message);
-      return await fallbackHit();
-    }
+    const data = await tryWithCorsProxy(`hit/${namespace}/${key}`);
+    return data.value;
   }
 
   async function get(namespace, key) {
-    try {
-      const result = await tryAPI(`get/${namespace}/${key}`);
-      return result.value;
-    } catch (error) {
-      console.error('All get APIs failed:', error.message);
-      return fallbackGet();
-    }
-  }
-
-  /* ----------  Fallback methods  ---------- */
-  function fallbackHit() {
-    // Increment local counter
-    const currentLocal = parseInt(localStorage.getItem(LOCAL_COUNT_KEY) || '0');
-    const newCount = currentLocal + 1;
-    localStorage.setItem(LOCAL_COUNT_KEY, newCount.toString());
-    localStorage.setItem(`${LOCAL_COUNT_KEY}-timestamp`, Date.now().toString());
-    
-    console.log(`📱 Using local fallback counter: ${newCount}`);
-    return newCount;
-  }
-
-  function fallbackGet() {
-    // Try local storage first
-    const localCount = parseInt(localStorage.getItem(LOCAL_COUNT_KEY) || '0');
-    const localTimestamp = parseInt(localStorage.getItem(`${LOCAL_COUNT_KEY}-timestamp`) || '0');
-    
-    if (localCount > 0 && localTimestamp > 0) {
-      console.log(`📱 Using local stored count: ${localCount}`);
-      return localCount;
-    }
-    
-    // Calculate rough estimate based on days since launch
-    const now = new Date();
-    const daysSinceLaunch = Math.floor((now - FALLBACK_START_DATE) / (1000 * 60 * 60 * 24));
-    const estimatedCount = Math.max(1, daysSinceLaunch * FALLBACK_DAILY_VISITS);
-    
-    console.log(`📊 Using estimated count: ${estimatedCount} (${daysSinceLaunch} days × ${FALLBACK_DAILY_VISITS} visits/day)`);
-    return estimatedCount;
+    const data = await tryWithCorsProxy(`get/${namespace}/${key}`);
+    return data.value;
   }
 
   /* ----------  UI helpers  ---------- */
@@ -171,13 +118,12 @@
     requestAnimationFrame(step);
   }
 
-  /* ----------  Enhanced init with better error handling  ---------- */
+  /* ----------  Main flow  ---------- */
   async function init() {
-    console.log('🚀 Initializing visitor counter...');
+    console.log('🚀 Initializing universal visitor counter...');
     
-    // Check if counter element exists
     if (!$num()) {
-      console.error('❌ Counter element #counterNumber not found in DOM');
+      console.error('❌ Counter element #counterNumber not found');
       return;
     }
     
@@ -189,17 +135,17 @@
 
     try {
       if (firstVisit) {
-        console.log('📈 Attempting to increment counter...');
+        console.log('📈 Attempting to increment universal counter...');
         current = await hit(SITE_KEY, MAIN_KEY);
         sessionStorage.setItem(SITE_SESSION_FLAG, '1');
-        console.log(`✅ Counter incremented to: ${current}`);
+        console.log(`✅ Universal counter incremented to: ${current}`);
       } else {
-        console.log('📊 Fetching current count...');
+        console.log('📊 Fetching current universal count...');
         current = await get(SITE_KEY, MAIN_KEY);
-        console.log(`✅ Current count: ${current}`);
+        console.log(`✅ Current universal count: ${current}`);
       }
 
-      // Background page-level tracking
+      // Background page tracking
       if (TRACK_PAGES && !sessionStorage.getItem(pageFlag())) {
         console.log('📄 Tracking page visit...');
         hit(SITE_KEY, pageFlag()).catch(e => 
@@ -208,58 +154,36 @@
         sessionStorage.setItem(pageFlag(), '1');
       }
 
-      // Animate from slightly lower number for visual effect
       const start = Math.max(0, current - Math.floor(Math.random() * 5 + 1));
       animate(start, current);
 
     } catch (error) {
-      console.error('💥 Counter initialization failed:', error);
-      
-      // Ultimate fallback
-      const fallbackCount = fallbackGet();
-      show(fallbackCount);
-      console.log(`🔄 Using fallback count: ${fallbackCount}`);
+      console.error('💥 All counter methods failed:', error);
+      show('Error loading counter');
     }
   }
 
   /* ----------  Debug helpers  ---------- */
   window.getSiteStats = async () => {
-    console.log('📊 Site Statistics Debug');
-    console.log('========================');
+    console.log('📊 Universal Site Statistics');
+    console.log('============================');
     
     try {
       const total = await get(SITE_KEY, MAIN_KEY);
-      console.log('✅ Total unique visits:', total);
-    } catch (error) {
-      console.log('❌ API Error:', error.message);
-      console.log('📱 Local count:', localStorage.getItem(LOCAL_COUNT_KEY) || 'Not set');
-    }
-
-    if (TRACK_PAGES) {
-      try {
+      console.log('✅ Total unique visits (universal):', total);
+      
+      if (TRACK_PAGES) {
         const pageCount = await get(SITE_KEY, pageFlag());
-        console.log(`✅ Current page ("${pageFlag()}") hits:`, pageCount);
-      } catch (error) {
-        console.log('❌ Page stats error:', error.message);
+        console.log(`✅ Current page hits:`, pageCount);
       }
+    } catch (error) {
+      console.error('❌ Error fetching stats:', error.message);
     }
-    
-    // Session info
-    console.log('Session flags:', {
-      siteVisited: !!sessionStorage.getItem(SITE_SESSION_FLAG),
-      pageVisited: !!sessionStorage.getItem(pageFlag())
-    });
   };
 
   window.resetCounter = () => {
     sessionStorage.clear();
-    localStorage.removeItem(LOCAL_COUNT_KEY);
-    localStorage.removeItem(`${LOCAL_COUNT_KEY}-timestamp`);
-    console.log('🔄 Counter reset - refresh page to test as new visitor');
-  };
-
-  window.forceCounterUpdate = () => {
-    init();
+    console.log('🔄 Session cleared - refresh to test as new visitor');
   };
 
   /* ----------  Initialize  ---------- */
@@ -269,5 +193,5 @@
     init();
   }
 
-  console.log('🔧 Counter script loaded. Debug commands: getSiteStats(), resetCounter(), forceCounterUpdate()');
+  console.log('🌍 Universal counter script loaded');
 })();
