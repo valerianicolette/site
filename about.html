@@ -413,6 +413,69 @@
           font-weight: bold;
         }
 
+    /* Visitor Counter Styles */
+    .visitor-counter {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(74, 74, 69, 0.7);
+      color: rgba(245, 245, 240, 0.9);
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 400;
+      box-shadow: 0 2px 8px rgba(74, 74, 69, 0.15);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(74, 74, 69, 0.2);
+      z-index: 1000;
+      transition: all 0.3s ease;
+      font-family: inherit;
+      opacity: 0.8;
+    }
+
+    .visitor-counter:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(74, 74, 69, 0.25);
+      background: rgba(74, 74, 69, 0.85);
+      opacity: 1;
+    }
+
+    .counter-icon {
+      display: inline-block;
+      margin-right: 6px;
+      font-size: 14px;
+      opacity: 1;
+    }
+
+    .counter-number {
+      color: rgba(245, 245, 240, 0.9);
+      font-weight: 500;
+      margin-left: 4px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .visitor-counter.new-visit {
+      animation: pulse 0.6s ease-in-out;
+    }
+
+    @media (max-width: 640px) {
+      .visitor-counter {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 14px;
+        font-size: 12px;
+      }
+      
+      .counter-icon {
+        font-size: 13px;
+      }
+    }
+
     </style>
   </head>
 
@@ -683,9 +746,16 @@
     </div>
     <span>Site designed and coded by yours truly.</span>
     </div>
+    </div>
 
-      </div>
-    </footer>
+     <!-- Visitor Counter -->
+    <div class="visitor-counter" id="visitorCounter">
+    <span class="counter-icon">🪩</span>
+    <span>Page visitors:</span>
+    <span class="counter-number" id="counterNumber">...</span>
+    </div>
+
+  </footer>
 
     <script>
       window.addEventListener('DOMContentLoaded', () => {
@@ -761,6 +831,89 @@
                 closeMobileMenu();
             }
         });
+    </script>
+
+    <script>
+    // About Page Visitor Counter with CountAPI
+    (function() {
+      const SITE_KEY = 'valeriamera.com';
+      const PAGE_KEY = 'about';
+      const API_URL = `https://api.countapi.xyz/hit/${SITE_KEY}/${PAGE_KEY}`;
+      
+      async function incrementAndGetCount() {
+        try {
+          const response = await fetch(API_URL);
+          const data = await response.json();
+          
+          if (data.value) {
+            return data.value;
+          } else {
+            throw new Error('Invalid API response');
+          }
+        } catch (error) {
+          console.error('Counter API error:', error);
+          // Fallback to localStorage if API fails
+          const fallback = localStorage.getItem('vnm-about-fallback') || '0';
+          const newCount = parseInt(fallback) + 1;
+          localStorage.setItem('vnm-about-fallback', newCount.toString());
+          return newCount;
+        }
+      }
+      
+      function updateCounterDisplay(count) {
+        const counterElement = document.getElementById('counterNumber');
+        if (counterElement) {
+          counterElement.textContent = count.toLocaleString();
+        }
+      }
+      
+      function animateCounter(start, end, duration = 800) {
+        const counterElement = document.getElementById('counterNumber');
+        if (!counterElement) return;
+        
+        const startTime = performance.now();
+        
+        function updateCounter(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          const current = Math.floor(start + (end - start) * progress);
+          counterElement.textContent = current.toLocaleString();
+          
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          }
+        }
+        
+        requestAnimationFrame(updateCounter);
+      }
+      
+      async function initializeCounter() {
+        try {
+          const count = await incrementAndGetCount();
+          const startNumber = Math.max(0, count - 5);
+          animateCounter(startNumber, count);
+          
+          setTimeout(() => {
+            const counter = document.getElementById('visitorCounter');
+            if (counter) {
+              counter.classList.add('new-visit');
+              setTimeout(() => {
+                counter.classList.remove('new-visit');
+              }, 600);
+            }
+          }, 400);
+        } catch (error) {
+          console.error('Failed to initialize counter:', error);
+        }
+      }
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeCounter);
+      } else {
+        initializeCounter();
+      }
+    })();
     </script>
 
   </body>
