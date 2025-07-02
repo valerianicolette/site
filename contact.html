@@ -770,87 +770,86 @@
     </script>
 
      <script>
-    // About Page Visitor Counter with CountAPI
-    (function() {
-      const SITE_KEY = 'valeriamera.com';
-      const PAGE_KEY = 'story';
-      const API_URL = `https://api.countapi.xyz/hit/${SITE_KEY}/${PAGE_KEY}`;
-      
-      async function incrementAndGetCount() {
+// Contact Page Visitor Counter with CountAPI
+(function() {
+    const SITE_KEY = 'valeriamera.com';
+    const PAGE_KEY = 'contact';
+    const API_URL = `https://api.countapi.xyz/hit/${SITE_KEY}/${PAGE_KEY}`;
+
+    async function incrementAndGetCount() {
         try {
-          const response = await fetch(API_URL);
-          const data = await response.json();
-          
-          if (data.value) {
-            return data.value;
-          } else {
-            throw new Error('Invalid API response');
-          }
+            const response = await fetch(API_URL);
+            const data = await response.json();
+            if (data.value) {
+                return data.value;
+            } else {
+                throw new Error('Invalid API response');
+            }
         } catch (error) {
-          console.error('Counter API error:', error);
-          // Fallback to localStorage if API fails
-          const fallback = localStorage.getItem('vnm-about-fallback') || '0';
-          const newCount = parseInt(fallback) + 1;
-          localStorage.setItem('vnm-about-fallback', newCount.toString());
-          return newCount;
+            console.error('Counter API error:', error);
+            // Fallback to localStorage if API fails
+            const fallback = localStorage.getItem('vnm-contact-fallback') || '0';
+            const newCount = parseInt(fallback) + 1;
+            localStorage.setItem('vnm-contact-fallback', newCount.toString());
+            return newCount;
         }
-      }
-      
-      function updateCounterDisplay(count) {
+    }
+
+    function updateCounterDisplay(count) {
         const counterElement = document.getElementById('counterNumber');
         if (counterElement) {
-          counterElement.textContent = count.toLocaleString();
+            counterElement.textContent = count.toLocaleString();
         }
-      }
-      
-      function animateCounter(start, end, duration = 800) {
+    }
+
+    function animateCounter(start, end, duration = 800) {
         const counterElement = document.getElementById('counterNumber');
         if (!counterElement) return;
-        
+
         const startTime = performance.now();
-        
+
         function updateCounter(currentTime) {
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          
-          const current = Math.floor(start + (end - start) * progress);
-          counterElement.textContent = current.toLocaleString();
-          
-          if (progress < 1) {
-            requestAnimationFrame(updateCounter);
-          }
-        }
-        
-        requestAnimationFrame(updateCounter);
-      }
-      
-      async function initializeCounter() {
-        try {
-          const count = await incrementAndGetCount();
-          const startNumber = Math.max(0, count - 5);
-          animateCounter(startNumber, count);
-          
-          setTimeout(() => {
-            const counter = document.getElementById('visitorCounter');
-            if (counter) {
-              counter.classList.add('new-visit');
-              setTimeout(() => {
-                counter.classList.remove('new-visit');
-              }, 600);
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const current = Math.floor(start + (end - start) * progress);
+
+            counterElement.textContent = current.toLocaleString();
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
             }
-          }, 400);
-        } catch (error) {
-          console.error('Failed to initialize counter:', error);
         }
-      }
-      
-      if (document.readyState === 'loading') {
+
+        requestAnimationFrame(updateCounter);
+    }
+
+    async function initializeCounter() {
+        try {
+            const count = await incrementAndGetCount();
+            const startNumber = Math.max(0, count - 5);
+            animateCounter(startNumber, count);
+
+            setTimeout(() => {
+                const counter = document.getElementById('visitorCounter');
+                if (counter) {
+                    counter.classList.add('new-visit');
+                    setTimeout(() => {
+                        counter.classList.remove('new-visit');
+                    }, 600);
+                }
+            }, 400);
+        } catch (error) {
+            console.error('Failed to initialize counter:', error);
+        }
+    }
+
+    if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initializeCounter);
-      } else {
+    } else {
         initializeCounter();
-      }
-    })();
-    </script>
+    }
+})();
+</script>
 
   </body>
 </html>
