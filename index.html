@@ -938,34 +938,55 @@
 
 
     <script>
-// Enhanced Global Visitor Counter with CountAPI
+// Universal Website Counter - Same counter across all pages
 (function() {
-  // Your domain configured for CountAPI
+  // Configuration
   const SITE_KEY = 'valeriamera.com';
-  const API_URL = `https://api.countapi.xyz/hit/${SITE_KEY}/visits`;
-  const BACKUP_API_URL = `https://api.countapi.xyz/get/${SITE_KEY}/visits`;
+  const MAIN_COUNTER = 'visits'; // Using your existing counter name
+  const API_BASE = 'https://api.countapi.xyz';
+  
+  // RESET OPTION - Set to true to reset counter to 0, then change back to false
+  const RESET_COUNTER = false; // Reset complete - now counting normally
+  
+  // Optional: Track individual pages for your analytics (hidden from users)
+  const TRACK_INDIVIDUAL_PAGES = true; // Set to false if you don't want page-specific tracking
+  
+  // Get current page identifier for optional individual tracking
+  const getCurrentPageKey = () => {
+    const path = window.location.pathname;
+    // Clean up the path to create a valid key
+    return path.replace(/[^a-zA-Z0-9]/g, '-').replace(/^-+|-+$/g, '') || 'home';
+  };
   
   // Prevent multiple increments per session
   const SESSION_KEY = 'vnm-session-' + Date.now();
-  const hasIncrementedThisSession = sessionStorage.getItem(SESSION_KEY);
+  const SITE_SESSION_KEY = 'vnm-site-visited';
+  const hasVisitedSiteThisSession = sessionStorage.getItem(SITE_SESSION_KEY);
   
-  async function incrementAndGetCount() {
+  async function resetCounter() {
     try {
-      // Only increment if we haven't already in this session
-      let response, data;
+      console.log('Resetting counter to 0...');
+      const response = await fetch(`${API_BASE}/set/${SITE_KEY}/${MAIN_COUNTER}?value=0`);
+      const data = await response.json();
       
-      if (!hasIncrementedThisSession) {
-        // Increment the counter
-        response = await fetch(API_URL);
-        data = await response.json();
-        
-        // Mark this session as having incremented
-        sessionStorage.setItem(SESSION_KEY, 'true');
+      if (data.value === 0) {
+        console.log('✅ Counter successfully reset to 0');
+        alert('Counter reset to 0! Please change RESET_COUNTER to false in the code.');
+        return true;
       } else {
-        // Just get current count without incrementing
-        response = await fetch(BACKUP_API_URL);
-        data = await response.json();
+        throw new Error('Reset failed');
       }
+    } catch (error) {
+      console.error('❌ Counter reset failed:', error);
+      alert('Counter reset failed. Check console for details.');
+      return false;
+    }
+  }
+
+  async function incrementMainCounter() {
+    try {
+      const response = await fetch(`${API_BASE}/hit/${SITE_KEY}/${MAIN_COUNTER}`);
+      const data = await response.json();
       
       if (data.value !== undefined) {
         return data.value;
@@ -973,28 +994,73 @@
         throw new Error('Invalid API response');
       }
     } catch (error) {
-      console.error('Counter API error:', error);
+      console.error('Main counter API error:', error);
+      throw error;
+    }
+  }
+  
+  async function getCurrentCount() {
+    try {
+      const response = await fetch(`${API_BASE}/get/${SITE_KEY}/${MAIN_COUNTER}`);
+      const data = await response.json();
       
-      // Enhanced fallback system
-      try {
-        // Try to get current count without incrementing
-        const backupResponse = await fetch(BACKUP_API_URL);
-        const backupData = await backupResponse.json();
-        if (backupData.value !== undefined) {
-          return backupData.value;
-        }
-      } catch (backupError) {
-        console.error('Backup API also failed:', backupError);
+      if (data.value !== undefined) {
+        return data.value;
+      } else {
+        throw new Error('Invalid API response');
+      }
+    } catch (error) {
+      console.error('Get counter API error:', error);
+      throw error;
+    }
+  }
+  
+  async function trackPageVisit() {
+    if (!TRACK_INDIVIDUAL_PAGES) return;
+    
+    try {
+      const pageKey = getCurrentPageKey();
+      const pageSessionKey = `vnm-page-${pageKey}-visited`;
+      
+      // Only track once per page per session
+      if (!sessionStorage.getItem(pageSessionKey)) {
+        await fetch(`${API_BASE}/hit/${SITE_KEY}/page-${pageKey}`);
+        sessionStorage.setItem(pageSessionKey, 'true');
+        
+        // Optional: Log for your analytics (remove in production)
+        console.log(`Page tracked: ${pageKey}`);
+      }
+    } catch (error) {
+      console.error('Page tracking error:', error);
+      // Don't let page tracking errors affect main counter
+    }
+  }
+  
+  async function getCounterValue() {
+    try {
+      let count;
+      
+      // Only increment main counter once per site visit session
+      if (!hasVisitedSiteThisSession) {
+        count = await incrementMainCounter();
+        sessionStorage.setItem(SITE_SESSION_KEY, 'true');
+        
+        // Track individual page in background
+        trackPageVisit();
+      } else {
+        // Just get current count without incrementing
+        count = await getCurrentCount();
       }
       
-      // Final fallback to estimated count
-      const estimatedCount = getEstimatedCount();
-      return estimatedCount;
+      return count;
+    } catch (error) {
+      console.error('Counter error:', error);
+      return getEstimatedCount();
     }
   }
   
   function getEstimatedCount() {
-    // Estimate based on site age and typical traffic
+    // Fallback estimation
     const siteStartDate = new Date('2024-01-01'); // Adjust to your site's launch date
     const daysSinceLaunch = Math.floor((Date.now() - siteStartDate.getTime()) / (1000 * 60 * 60 * 24));
     const estimatedDailyVisits = 50; // Adjust based on your typical traffic
@@ -1019,7 +1085,7 @@
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       
-      // Use easing function for smoother animation
+      // Smooth easing animation
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
       const current = Math.floor(start + difference * easeOutQuart);
       
@@ -1037,7 +1103,6 @@
     const counter = document.getElementById('visitorCounter');
     if (!counter) return;
     
-    // Add pulse effect for new visits
     if (isNewVisit) {
       counter.classList.add('new-visit');
       setTimeout(() => {
@@ -1045,35 +1110,38 @@
       }, 800);
     }
     
-    // Add loaded class for any additional styling
     counter.classList.add('counter-loaded');
   }
   
   async function initializeCounter() {
+    // Handle counter reset if enabled
+    if (RESET_COUNTER) {
+      await resetCounter();
+      return; // Don't continue with normal counter operation during reset
+    }
+    
     try {
-      const isNewVisit = !hasIncrementedThisSession;
-      const count = await incrementAndGetCount();
+      const isNewSiteVisit = !hasVisitedSiteThisSession;
+      const count = await getCounterValue();
       
-      // Start animation from a lower number for visual effect
-      const startNumber = Math.max(1, count - Math.floor(Math.random() * 10 + 5));
+      // Animate from slightly lower number
+      const startNumber = Math.max(0, count - Math.floor(Math.random() * 10 + 5));
       animateCounter(startNumber, count);
       
-      // Add visual effects
+      // Visual effects
       setTimeout(() => {
-        addVisualEffects(isNewVisit);
+        addVisualEffects(isNewSiteVisit);
       }, 600);
       
-      // Log for debugging (remove in production)
-      console.log(`Global visitor count: ${count} ${isNewVisit ? '(new visit)' : '(returning in session)'}`);
+      // Debug info (remove in production)
+      console.log(`Total site visits: ${count} ${isNewSiteVisit ? '(new site visit)' : '(returning this session)'}`);
       
     } catch (error) {
       console.error('Failed to initialize counter:', error);
-      // Still show something even if everything fails
       updateCounterDisplay(getEstimatedCount());
     }
   }
   
-  // Retry mechanism for failed requests
   function initializeWithRetry(maxRetries = 3) {
     let attempts = 0;
     
@@ -1084,7 +1152,7 @@
         attempts++;
         if (attempts < maxRetries) {
           console.log(`Counter initialization failed, retrying... (${attempts}/${maxRetries})`);
-          setTimeout(attempt, 1000 * attempts); // Exponential backoff
+          setTimeout(attempt, 1000 * attempts);
         } else {
           console.error('Counter initialization failed after all retries');
           updateCounterDisplay(getEstimatedCount());
@@ -1102,21 +1170,41 @@
     initializeWithRetry();
   }
   
-  // Optional: Update counter periodically to show real-time growth
-  // Uncomment if you want live updates every 30 seconds
-  /*
-  setInterval(async () => {
-    try {
-      const response = await fetch(BACKUP_API_URL);
-      const data = await response.json();
-      if (data.value !== undefined) {
-        updateCounterDisplay(data.value);
-      }
-    } catch (error) {
-      // Silently fail for periodic updates
+  // Optional: Expose function to manually get page stats (for your analytics)
+  window.getPageStats = async function() {
+    if (!TRACK_INDIVIDUAL_PAGES) {
+      console.log('Individual page tracking is disabled');
+      return;
     }
-  }, 30000);
-  */
+    
+    try {
+      const pageKey = getCurrentPageKey();
+      const response = await fetch(`${API_BASE}/get/${SITE_KEY}/page-${pageKey}`);
+      const data = await response.json();
+      console.log(`Page "${pageKey}" visits:`, data.value || 0);
+      return data.value || 0;
+    } catch (error) {
+      console.error('Error getting page stats:', error);
+      return 0;
+    }
+  };
+  
+  // Optional: Get all site stats (for your analytics dashboard)
+  window.getSiteStats = async function() {
+    try {
+      const mainCount = await getCurrentCount();
+      console.log('Total site visits:', mainCount);
+      
+      if (TRACK_INDIVIDUAL_PAGES) {
+        console.log('Call getPageStats() to see individual page data');
+      }
+      
+      return mainCount;
+    } catch (error) {
+      console.error('Error getting site stats:', error);
+      return 0;
+    }
+  };
   
 })();
 </script>
