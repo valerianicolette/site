@@ -4,7 +4,7 @@
 (function() {
   // Configuration
   const SITE_KEY = 'valeriamera.com';
-  const MAIN_COUNTER = 'visits-2025'; // Fresh counter - starts at 0
+  const MAIN_COUNTER = 'total-visits'; // Fresh counter - starts at 0
   const API_BASE = 'https://api.countapi.xyz';
   
   // Optional: Track individual pages for your analytics (hidden from users)
