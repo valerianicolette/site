@@ -169,7 +169,7 @@
             transform: rotate(-45deg) translate(7px, -6px);
         }
 
-
+      /* Social Icons */
       .social-icon {
         position: relative;
         display: inline-flex;
@@ -194,84 +194,73 @@
       .social-icon:hover i {
         transform: scale(1.1);
       }
-      
-      /* Timeline Styles for Education */
-      .timeline {
-        position: relative;
-        padding-left: 2rem;
+
+      /* Page colors */
+      .hover-exp:hover { color: #044c8c!important; }
+      .bg-exp { background-color: #055194; }
+      .border-exp { border-color: #066cc6;}
+      .text-exp { color: #066cc6; }
+
+     /* Nav hover colors */
+      .text-home:hover { color: #ad1457 }
+      .text-about:hover { color: #E0295D; }
+      .text-story:hover { color: #f48fb1; }
+      .text-world:hover { color: #4caf50; }
+      .text-exp:hover { color: #2e7d32; }
+      .text-portfolio:hover { color: #0887f7 }
+      .text-contact:hover { color: #1976d2; }
+
+      .floating-element{
+        animation: float 4s ease-in-out infinite; }
+
+       @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(1deg); }
       }
 
-      .timeline::before {
+      /* Mobile Responsive styles */
+      @media (max-width: 768px) {
+
+        .timeline {
+          padding-left: 1rem;
+        }
+        
+        .timeline-item {
+          margin-left: 1.5rem;
+          padding: 1.5rem;
+        }
+        
+        .timeline-item::before {
+          left: -2.5rem;
+        }
+
+         .experience-item {
+          gap: 1.5rem;
+          margin-bottom: 3rem;
+        }
+
+        .experience-right::before {
+          display: none;
+        }
+      }
+
+       /* Section Divider */
+      .section-divider {
+        position: relative;
+        text-align: center;
+        margin: 3rem 0;
+      }
+
+      .section-divider::after {
         content: '';
         position: absolute;
-        left: 1rem;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: linear-gradient(180deg, #bfa76f 0%, #8a8d6f 100%);
-      }
-
-      .timeline-item {
-        position: relative;
-        margin-bottom: 3rem;
-        background: white;
-        border-radius: 12px;
-        padding: 2rem;
-        margin-left: 2rem;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
-        border-left: 3px solid #bfa76f;
-      }
-
-      .timeline-item:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-      }
-
-      .timeline-item::before {
-        content: '';
-        position: absolute;
-        left: -3.5rem;
-        top: 2rem;
-        width: 12px;
-        height: 12px;
-        background: #bfa76f;
-        border-radius: 50%;
-        border: 3px solid white;
-        box-shadow: 0 0 0 2px #bfa76f;
-      }
-
-      .timeline-date {
-        display: inline-block;
-        background: linear-gradient(135deg, #bfa76f 0%, #8a8d6f 100%);
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-size: 0.875rem;
-        font-weight: 500;
-        margin-bottom: 1rem;
-        font-family: 'Inter', sans-serif;
-      }
-
-      .timeline-title {
-        font-family: 'Marion', 'Playfair Display', serif;
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: #22221f;
-        margin-bottom: 0.5rem;
-      }
-
-      .timeline-subtitle {
-        font-size: 1.125rem;
-        color: #bfa76f;
-        font-weight: 500;
-        margin-bottom: 1rem;
-      }
-
-      .timeline-description {
-        color: #4a4a45;
-        line-height: 1.7;
-        margin-bottom: 1rem;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+        border-radius: 2px;
       }
 
       .timeline-skills {
@@ -291,21 +280,14 @@
         border: 1px solid #ece7e1;
       }
 
-      .achievement {
-        background: #fdf4e7;
-        border-left: 4px solid #bfa76f;
-        padding: 0.75rem 1rem;
-        margin-top: 1rem;
-        border-radius: 0 6px 6px 0;
-      }
-
-      .achievement-text {
-        color: #8a8d6f;
-        font-weight: 500;
-        font-size: 0.875rem;
-      }
-
       /* Clean Experience Layout */
+      .education-item {
+        display: grid;
+        gap: 2rem;
+        margin-bottom: 4rem;
+        align-items: start;
+      }
+
       .experience-item {
         display: grid;
         grid-template-columns: 1fr 4fr;
@@ -372,88 +354,11 @@
         padding-top: 1em;
       }
 
-        .research-description {
+      .research-description {
         color: #4b5563;
         line-height: 1.7;
         font-size: 0.9rem;
         padding-bottom: 1em;
-      }
-
-      .hover-exp:hover {
-        color: #044c8c!important;
-      }
-
-      .bg-exp {
-        background-color: #055194;
-      }
-
-      .border-exp {
-        border-color: #066cc6;
-      }
-
-      .text-exp {
-        color: #066cc6;
-      }
-
-     /* Nav hover colors */
-      .text-home:hover { color: #ad1457 }
-      .text-about:hover { color: #E0295D; }
-      .text-story:hover { color: #f48fb1; }
-      .text-world:hover { color: #4caf50; }
-      .text-exp:hover { color: #2e7d32; }
-      .text-portfolio:hover { color: #0887f7 }
-      .text-contact:hover { color: #1976d2; }
-
-      .floating-element{
-        animation: float 4s ease-in-out infinite;
-      }
-
-      @keyframes float {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-15px) rotate(1deg); }
-      }
-
-      @media (max-width: 768px) {
-        .timeline {
-          padding-left: 1rem;
-        }
-        
-        .timeline-item {
-          margin-left: 1.5rem;
-          padding: 1.5rem;
-        }
-        
-        .timeline-item::before {
-          left: -2.5rem;
-        }
-
-        .experience-item {
-          grid-template-columns: 1fr;
-          gap: 1.5rem;
-          margin-bottom: 3rem;
-        }
-
-        .experience-right::before {
-          display: none;
-        }
-      }
-
-      .section-divider {
-        position: relative;
-        text-align: center;
-        margin: 3rem 0;
-      }
-
-      .section-divider::after {
-        content: '';
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 2px;
-        background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
-        border-radius: 2px;
       }
 
        /* Visitor Counter Styles */
@@ -578,7 +483,7 @@
               </h1>
               </div>
                     
-              <p class="text-lg md:text-xl text-[#4a4a45]">
+              <p class="text-lg md:text-xl text-[#4a4a45] leading-relaxed">
                 Each role, project, and challenge has shaped my path — and the drive I carry into a career centered on real-world change.
               </p>
 
@@ -595,8 +500,7 @@
 
           </div>
           
-          <!-- Image on the right -->
-
+        <!-- Image on the right -->
         <div class="flex justify-center lg:justify-end">
         <div class="w-100 h-100 flex items-center justify-center">
             <!-- Image -->
@@ -609,7 +513,7 @@
       </div>
     </header>
 
-         <!--1. ABOUT SECTION -->
+    <!-- 1. ABOUT SECTION -->
     <section id="intro" class="py-24 bg-cream/80 backdrop-blur-sm">
       <div class="max-w-4xl mx-auto px-6 md:px-0 space-y-12">
 
@@ -637,145 +541,113 @@
 
     <!-- 2. Education Section -->
     <section id="education" class="py-24 fade">
-      <div class="max-w-5xl mx-auto px-6 md:px-0">
-        <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">EDUCATION</h2>
-        
-        <div class="space-y-12 mt-12">
+  <div class="max-w-5xl mx-auto px-6 md:px-0">
+    <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">EDUCATION</h2>
 
-          <div class="experience-item">
+    <div class="space-y-12 mt-12">
+      
+      <!-- GEORGETOWN -->
+      <div class="education-item grid grid-cols-1 md:grid-cols-[1fr_4fr] gap-8 md:gap-16 mb-16">
 
-            <div class="experience-left">
-              <div class="experience-date">2023-2025</div>
-              <div class="experience-position">Master of Public Policy</div>
+        <div class="experience-left space-y-4">
+          <div class="experience-date">2023–2025</div>
+          <div class="experience-position">Master of Public Policy</div>
 
-               <!-- GRADUATION PIC -->
-
-                <div style="
-                margin-top: 10px;
-                width: 180px;
-                height: 200px;
-                background: white;
-                border: 1px solid #ccc;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                padding: 8px;
-                box-sizing: border-box;
-                text-align: center;
-                font-family: sans-serif;">
-
-                <div style="
-                    width: 100%;
-                    height: 160px;
-                    overflow: hidden;">
-
-                    <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/05/img_0281-e1749427842301.jpeg" alt="Georgetown Graduation Photo"
-                    style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-                </div>
-                </div>
-
-         <!-- Education Section -->
-
-            </div>
-            <div class="experience-right">
-              <h3 class="experience-company">Georgetown University, McCourt School of Public Policy</h3>
-
-             <p class="experience-description">
-                <b>Finalist:</b> 
-                <a href="https://mccourt.georgetown.edu/news/2024-public-policy-challenge-finalists/" 
-                class="content-link">
-                2024 Georgetown Public Policy Challenge;</a>
-                 <a href="https://www.linkedin.com/posts/georgetown-mccourt-school-of-public-policy_congratulations-to-our-mccourt-showcase-finalists-activity-7320872054419869698-YwZD?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACEPIqwBxZ8G95E2NuCqWVMwdBduoo0tVM8" 
-                 class="content-link">
-                 2025 Annual McCourt Student Showcase </a>
-                </p>
-
-               <p class="research">
-                <b>Graduate Thesis Project:</b> <a href="https://proquest.com/docview/3215951181" 
-                class="content-link">
-                Public Opinion’s Impact on Climate Policy Outcomes</a>
-                </p> 
-
-                 <p class="research-description">
-                  Explored how public support for climate action shapes the distribution of Inflation Reduction Act funding across states by analyzing state-level opinion data alongside funding allocations. 
-                  Using regression analysis, I tested the relationship between voter attitudes and funding outcomes while controlling for factors like state population and political alignment.
-                  My analysis showed that larger states receive more funding, which makes sense—but it also made me think deeply about smaller states that might need help the most but get less support. This project pushed me to reflect on the challenges of balancing fairness, political influence, and real access to climate resources.
-
-                </p>
-              
-
-               <p class="experience-description">
-                <a href="https://lnkd.in/eEs7CyUT" target="_blank" 
-                class="inline-flex items-center gap-1 content-link">
-                More on my Thesis
-                <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i></a>
-              </p>
-
+          <!-- Graduation Photo -->
+          <div class="w-[180px] h-[200px] bg-white border border-gray-300 shadow-md p-2 text-center font-sans">
+            <div class="w-full h-[160px] overflow-hidden">
+              <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/05/img_0281-e1749427842301.jpeg"
+                alt="Georgetown Graduation Photo"
+                class="w-full h-full object-cover rounded-sm" />
             </div>
           </div>
-
-          <div class="experience-item">
-            <div class="experience-left">
-              <div class="experience-date">2016-2020</div>
-              <div class="experience-position">B.A. in Political Science</div> 
-
-        <!-- GRADUATION PIC -->
-
-        <div style="
-        margin-top: 10px;
-        width: 180px;
-        height: 200px;
-        background: white;
-        border: 1px solid #ccc;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        padding: 8px;
-        box-sizing: border-box;
-        text-align: center;
-        font-family: sans-serif;">
-
-        <div style="
-            width: 100%;
-            height: 160px;
-            overflow: hidden;">
-
-            <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/img_2666-3-e1749427554710.jpg" alt="NCSU Graduation Photo"
-            style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-        </div>
-        </div>
         </div>
 
-        <!-- Education Section -->
-            <div class="experience-right">
-              <h3 class="experience-company">North Carolina State University (NC State)</h3>
+        <div class="experience-right space-y-4">
+          <h3 class="experience-company">Georgetown University, McCourt School of Public Policy</h3>
 
-              <p class="experience-description">
-                <b>Minors:</b> French, History 
-              </p>
+          <p class="experience-description">
+            <b>Finalist:</b>
+            <a href="https://mccourt.georgetown.edu/news/2024-public-policy-challenge-finalists/" class="content-link">
+              2024 Georgetown Public Policy Challenge;
+            </a>
+            <a href="https://www.linkedin.com/posts/georgetown-mccourt-school-of-public-policy_congratulations-to-our-mccourt-showcase-finalists-activity-7320872054419869698-YwZD?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACEPIqwBxZ8G95E2NuCqWVMwdBduoo0tVM8"
+              class="content-link">
+              2025 Annual McCourt Student Showcase
+            </a>
+          </p>
 
-             <p class="experience-description">
-                <b>Honors: </b> Magna Cum Laude, Dean's List, Political Science Honors Program, Global Perspectives Certificate Program, Leadership Development Program
-                </p>
+          <p class="research">
+            <b>Graduate Thesis Project:</b>
+            <a href="https://proquest.com/docview/3215951181" class="content-link">
+              Public Opinion’s Impact on Climate Policy Outcomes
+            </a>
+          </p>
 
-             <p class="research">
-                <b>Senior Thesis Project:</b> The Impact of Gender Stereotyped Evaluations on Statewide Low-Information Races </p>
+          <p class="research-description">
+            Explored how public support for climate action shapes the distribution of Inflation Reduction Act funding across states by analyzing state-level opinion data alongside funding allocations. Using regression analysis, I tested the relationship between voter attitudes and funding outcomes while controlling for factors like state population and political alignment. My analysis showed that larger states receive more funding, which makes sense—but it also made me think deeply about smaller states that might need help the most but get less support. This project pushed me to reflect on the challenges of balancing fairness, political influence, and real access to climate resources.
+          </p>
 
-                <p class="research-description">
-                  Designed a survey experiment simulating real-world Democratic and Republican primary ballots in North Carolina to explore if gender influences how voters evaluate candidates when little information is available. The results showed limited gender bias overall — but a clear advantage for women in Democratic judicial races. The research shaped how I think about identity, context, and perception in elections.
-                  Selected to present at the Midwest Political Science Association Conference.
-                  <em>*Conference canceled due to COVID-19.</em>
-                </p>
-
-            </div>
-          </div>
+          <p class="experience-description">
+            <a href="https://lnkd.in/eEs7CyUT" target="_blank" class="inline-flex items-center gap-1 content-link">
+              More on my Thesis <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i>
+            </a>
+          </p>
         </div>
       </div>
-    </section>
+
+      <!-- NC STATE -->
+      <div class="education-item grid grid-cols-1 md:grid-cols-[1fr_4fr] gap-8 md:gap-16 mb-16">
+
+        <div class="experience-left space-y-4">
+          <div class="experience-date">2016–2020</div>
+          <div class="experience-position">B.A. in Political Science</div>
+
+          <!-- Graduation Photo -->
+          <div class="w-[180px] h-[200px] bg-white border border-gray-300 shadow-md p-2 text-center font-sans">
+            <div class="w-full h-[160px] overflow-hidden">
+              <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/img_2666-3-e1749427554710.jpg"
+                alt="NCSU Graduation Photo"
+                class="w-full h-full object-cover rounded-sm" />
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-right space-y-4">
+          <h3 class="experience-company">North Carolina State University (NC State)</h3>
+
+          <p class="experience-description">
+            <b>Minors:</b> French, History
+          </p>
+
+          <p class="experience-description">
+            <b>Honors:</b> Magna Cum Laude, Dean's List, Political Science Honors Program, Global Perspectives Certificate Program, Leadership Development Program
+          </p>
+
+          <p class="research">
+            <b>Senior Thesis Project:</b> The Impact of Gender Stereotyped Evaluations on Statewide Low-Information Races
+          </p>
+
+          <p class="research-description">
+            Designed a survey experiment simulating real-world Democratic and Republican primary ballots in North Carolina to explore if gender influences how voters evaluate candidates when little information is available. The results showed limited gender bias overall — but a clear advantage for women in Democratic judicial races. The research shaped how I think about identity, context, and perception in elections. Selected to present at the Midwest Political Science Association Conference.
+            <em>*Conference canceled due to COVID-19.</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- 3. Policy Experience Section -->
-    <section class="py-24 bg-cream/80 backdrop-blur-sm">
+    <section id="experience" class="py-24 bg-cream/80 backdrop-blur-sm">
       <div class="max-w-5xl mx-auto px-6 md:px-8">
         <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">POLICY EXPERIENCE</h2>
         <div class="space-y-12 mt-12">
+        
+          <!-- OMB -->
+          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
 
-          <div class="experience-item">
           <div class="experience-left">
            <div class="experience-date">2025*</div>
             <div class="experience-position">Spring Intern (Selected)</div>
@@ -783,12 +655,12 @@
 
          <div class="experience-right">
            <h3 class="experience-company">
-            Office of Management and Budget (OMB), Executive Office of the President
-           </h3>
+            Office of Management and Budget (OMB), Executive Office of the President</h3>
     
          <p class="experience-description">
           Selected for the highly competitive Executive Office of the President Internship Program and placed in OMB’s Environment Branch to support EPA programs focused on drinking water, children’s health, and Tribal communities. *Although the internship was ultimately canceled due to a federal funding freeze, being chosen for this placement was a reflection of the direction I’ve been moving toward — policy that’s equity-driven and grounded in community needs.
-        </p>
+          </p>
+
            <p class="experience-description mt-2">
                 <a href="https://www.linkedin.com/posts/valeriamera_policytopractice-publicservice-environmentalpolicy-activity-7315372861139947520-hJuD?utm_source=share&utm_medium=member_desktop&rcm=ACoAACEPIqwBxZ8G95E2NuCqWVMwdBduoo0tVM8"
                  target="_blank"  
@@ -798,9 +670,11 @@
             </p>
 
           </div>
-        </div>
+          </div>
 
-          <div class="experience-item">
+          <!-- SSDN -->
+          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2024</div>
               <div class="experience-position">Federal Funding Policy Intern</div>
@@ -821,10 +695,13 @@
               <span class="skill-tag">Policy Research</span>
               <span class="skill-tag">Local Government</span>
             </div>
+
             </div>
           </div>
 
-          <div class="experience-item">
+          <!-- Senate EPW -->
+          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2024</div>
               <div class="experience-position">Press Intern</div>
@@ -855,7 +732,9 @@
             </div>
           </div>
 
-          <div class="experience-item">
+          <!-- Graduate Assistant -->
+          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2024</div>
               <div class="experience-position">Graduate Assistant</div>
@@ -883,7 +762,9 @@
             </div>
           </div>
 
-          <div class="experience-item">
+          <!-- Staff Assistant -->
+          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2022-2023</div>
               <div class="experience-position">Staff Assistant</div>
@@ -903,7 +784,9 @@
             </div>
           </div>
 
-          <div class="experience-item">
+          <!-- Apex -->
+          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2021-2022</div>
               <div class="experience-position">Sustainability Specialist</div>
@@ -937,7 +820,9 @@
             </div>
           </div>
 
-           <div class="experience-item">
+          <!-- LFNC -->
+           <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2020-2021</div>
               <div class="experience-position">Lead for North Carolina Fellow</div>
@@ -957,7 +842,9 @@
             </div>
           </div>
 
-          <div class="experience-item">
+          <!-- Campaign Finance Intern -->
+          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2019</div>
               <div class="experience-position">Campaign Finance Intern</div>
@@ -977,7 +864,9 @@
             </div>
           </div>
 
-           <div class="experience-item">
+          <!-- Research Assistant -->
+          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2018 - 2019</div>
               <div class="experience-position">Research Assistant</div>
@@ -996,7 +885,8 @@
             </div>
           </div>
 
-           <div class="experience-item">
+           <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2017</div>
               <div class="experience-position">Community Engagement Intern</div>
@@ -1026,7 +916,8 @@
     
         <div class="space-y-12 mt-12">
 
-          <div class="experience-item">
+          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2023 - Present</div>
               <div class="experience-position">Bartender/Server</div>
@@ -1045,7 +936,8 @@
             </div>
           </div>
 
-          <div class="experience-item">
+          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2015 - 2022</div>
               <div class="experience-position">Hostess / Server / Takeaway / Bartender</div>
@@ -1074,7 +966,8 @@
     
         <div class="space-y-12 mt-12">
 
-          <div class="experience-item">
+          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2025 - PRESENT</div>
               <div class="experience-position">Food Pantry Volunteer</div>
@@ -1087,7 +980,8 @@
             </div>
           </div>
 
-          <div class="experience-item">
+          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2024</div>
               <div class="experience-position">Seminar Participant</div>
@@ -1103,7 +997,8 @@
             </div>
           </div>
 
-          <div class="experience-item">
+          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2023</div>
               <div class="experience-position">Vice President</div>
@@ -1116,7 +1011,8 @@
             </div>
           </div>
 
-          <div class="experience-item">
+          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2019 - 2020</div>
               <div class="experience-position">Sustainability Director</div>
@@ -1129,7 +1025,8 @@
             </div>
           </div>
 
-           <div class="experience-item">
+           <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2019</div>
               <div class="experience-position">Certificate</div>
@@ -1142,7 +1039,8 @@
             </div>
           </div>
 
-           <div class="experience-item">
+           <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2019</div>
               <div class="experience-position">Participant</div>
@@ -1156,7 +1054,8 @@
             </div>
           </div>
 
-            <div class="experience-item">
+            <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2019</div>
               <div class="experience-position">Participant</div>
@@ -1173,7 +1072,8 @@
 
 
 
-          <div class="experience-item">
+          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
             <div class="experience-left">
               <div class="experience-date">2016-2017</div>
               <div class="experience-position">Student Village Member</div>
