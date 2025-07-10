@@ -274,10 +274,57 @@
         background: #f7f5f2;
         color: #5a6c7d;
         padding: 0.25rem 0.75rem;
-        border-radius: 16px;
+        border-radius: 6px;
         font-size: 0.75rem;
         font-weight: 500;
         border: 1px solid #ece7e1;
+      }
+
+       .skill-tag-link {
+        background: #f7f5f2;
+        color: #5a6c7d;
+        padding: 0.25rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        border: 1px solid #d4d4d4;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .skill-tag-link:hover {
+        background: #6ca46f;
+        color: white;
+        transform: translateY(-1px);
+        box-shadow: 0 2px 4px rgba(108, 164, 111, 0.3);
+      }
+
+      /* Tooltip styling */
+      .skill-tag-link::before {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: white;
+        padding: 0.4rem 0.6rem;
+        border-radius: 4px;
+        font-size: 0.65rem;
+        font-style: normal;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+        margin-bottom: 0.3rem;
+        z-index: 10;
+      }
+
+      .skill-tag-link:hover::before {
+        opacity: 1;
+        visibility: visible;
       }
 
       /* Clean Experience Layout */
@@ -341,6 +388,24 @@
         margin-bottom: 1rem;
       }
 
+       .experience-company1 {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.125rem;
+        color: #111827;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .experience-company2 {
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        color: #111827;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+      }
+
       .experience-description {
         color: #4b5563;
         line-height: 1.7;
@@ -351,14 +416,13 @@
         color: #4b5563;
         line-height: 1.7;
         font-size: 0.95rem;
-        padding-top: 1em;
       }
 
       .research-description {
         color: #4b5563;
         line-height: 1.7;
         font-size: 0.9rem;
-        padding-bottom: 1em;
+        
       }
 
        /* Visitor Counter Styles */
@@ -617,17 +681,13 @@
           <h3 class="experience-company">North Carolina State University (NC State)</h3>
 
           <p class="experience-description">
-            <b>Minors:</b> French, History
-          </p>
-
-          <p class="experience-description">
+            <b>Minors:</b> French, History<br>
             <b>Honors:</b> Magna Cum Laude, Dean's List, Political Science Honors Program, Global Perspectives Certificate Program, Leadership Development Program
           </p>
 
           <p class="research">
             <b>Senior Thesis Project:</b> The Impact of Gender Stereotyped Evaluations on Statewide Low-Information Races
           </p>
-
           <p class="research-description">
             Designed a survey experiment simulating real-world Democratic and Republican primary ballots in North Carolina to explore if gender influences how voters evaluate candidates when little information is available. The results showed limited gender bias overall — but a clear advantage for women in Democratic judicial races. The research shaped how I think about identity, context, and perception in elections. Selected to present at the Midwest Political Science Association Conference.
             <em>*Conference canceled due to COVID-19.</em>
@@ -644,18 +704,47 @@
       <div class="max-w-5xl mx-auto px-6 md:px-8">
         <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">POLICY EXPERIENCE</h2>
         <div class="space-y-12 mt-12">
+
+           <!-- EIF -->
+          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
+
+          <div class="experience-left">
+           <div class="experience-date">2025 - PRESENT</div>
+            <div class="experience-position">Innovator Fellow</div>
+           </div>
+
+         <div class="experience-right">
+           <h3 class="experience-company1">
+            Energy Innovator Fellowship</h3>
+            <h4 class="experience-company2">Planning & Coordinating Thermal Energy Networks</h4>
+    
+         <p class="experience-description mb-2">
+          Selected as an Energy Innovator Fellow through the Oak Ridge Institute for Science and Education (ORISE) and the U.S. Department of Energy to support the New York State Department of Public Service in advancing thermal energy networks — critical infrastructure that can deliver both heating and cooling to communities more efficiently than traditional systems. This federal fellowship connects early-career professionals with organizations working to modernize America's power system and make it more reliable, affordable, and resilient.
+          </p><p class="experience-description">
+            My role focuses on the planning and coordination challenges that come with scaling thermal energy networks across New York State, bridging the gap between policy frameworks and on-the-ground implementation. It's exactly the kind of work that energizes me — taking innovative climate solutions and figuring out how to make them work for real people in real places. This fellowship represents the intersection of everything I've been building toward: federal energy policy, state-level implementation, and community-centered climate solutions.
+          </p><p class="experience-description">
+          </p>
+
+             <div class="timeline-skills mt-2">
+              <span class="skill-tag">Energy Infrastructure Planning</span>
+              <span class="skill-tag">Policy Implementation</span>
+              <span class="skill-tag">Data Analysis</span>
+            </div>
+
+          </div>
+          </div>
         
           <!-- OMB -->
           <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
 
           <div class="experience-left">
-           <div class="experience-date">2025*</div>
-            <div class="experience-position">Spring Intern (Selected)</div>
+           <div class="experience-date">2025</div>
+            <div class="experience-position">Spring Intern*</div>
            </div>
 
          <div class="experience-right">
            <h3 class="experience-company">
-            Office of Management and Budget (OMB), Executive Office of the President</h3>
+           Executive Office of the President</h3>
     
          <p class="experience-description">
           Selected for the highly competitive Executive Office of the President Internship Program and placed in OMB’s Environment Branch to support EPA programs focused on drinking water, children’s health, and Tribal communities. *Although the internship was ultimately canceled due to a federal funding freeze, being chosen for this placement was a reflection of the direction I’ve been moving toward — policy that’s equity-driven and grounded in community needs.
@@ -716,17 +805,13 @@
               </p>
 
                  <div class="timeline-skills mt-2">
-              <span class="skill-tag">Strategic Communications</span>
+              <a href="portfolio.html#senate" class="skill-tag-link" data-tooltip="View Social for the Senate">Strategic Communications</a>
               <span class="skill-tag">Policy Writing</span>
               <span class="skill-tag">Media Monitoring</span>
               <span class="skill-tag">Climate Policy</span>
               <span class="skill-tag">Rapid Response</span>
               </div>
-                <p class="experience-description mt-2">
-                <a href="portfolio.html#senate" 
-                class="inline-flex items-center gap-1 content-link">
-                Social for the Senate<i data-lucide="arrow-right" class="w-3 h-3"></i></a> 
-              </p>
+             
 
 
             </div>
@@ -736,7 +821,7 @@
           <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
 
             <div class="experience-left">
-              <div class="experience-date">2024</div>
+              <div class="experience-date">2023-2024</div>
               <div class="experience-position">Graduate Assistant</div>
             </div>
             <div class="experience-right">
@@ -747,17 +832,11 @@
 
                 <div class="timeline-skills mt-2">
               <span class="skill-tag">WordPress</span>
-              <span class="skill-tag">Content Strategy</span>
+              <a href="portfolio.html#gu" class="skill-tag-link" data-tooltip="View Content with Georgetown" target="_blank">Content Creation</a>
               <span class="skill-tag">UX Writing</span>
               <span class="skill-tag">Team Collaboration</span>
               <span class="skill-tag">Digital Accessibility</span>
             </div>
-
-              <p class="experience-description mt-2">
-                <a href="portfolio.html#gu" 
-                class="inline-flex items-center gap-1 content-link">
-                Creating Content with Georgetown<i data-lucide="arrow-right" class="w-3 h-3"></i></a> 
-              </p>
 
             </div>
           </div>
@@ -795,27 +874,17 @@
               <h3 class="experience-company">Town of Apex, North Carolina</h3>
               <p class="experience-description">
                 Launched the <a href="ttps://www.youtube.com/watch?v=kLmFlm-F584" 
-                 class="content-link" target="_blank">Town's first Earth Day event</a>, drawing over 1,000 attendees and 25+ local partners. I also conducted Apex’s first-ever greenhouse gas inventory using ClearPath, providing a foundation for future sustainability planning. This was hands-on, community-driven work that required collaboration, creativity, and a lot of logistics.
+                 class="content-link" target="_blank">Town's first Earth Day event</a>, drawing over 1,000 attendees and 25+ local partners. I also conducted Apex’s first-ever greenhouse gas inventory using ClearPath, providing a foundation for future sustainability planning. 
+                 It was the kind of ambiguous challenge I love: making something real out of nothing, with impact that lasts.
               </p>
-              <div class="timeline-skills mt-2">
-              <span class="skill-tag">Event Planning</span>
-              <span class="skill-tag">GHG Inventory</span>
-              <span class="skill-tag">Community Engagement</span>
-              <span class="skill-tag">Local Policy</span>
-              <span class="skill-tag">Environmental Data Tools</span>
-            </div>
 
-               <p class="experience-description mt-2">
-                <a href="https://www.youtube.com/watch?v=kLmFlm-F584" 
-                class="inline-flex items-center gap-1 content-link">
-                EarthFest 2022 Recap Video<i data-lucide="arrow-right" class="w-3 h-3"></i></a> 
-              </p>
-              
-                <p class="experience-description mt-2">
-                <a href="portfolio.html#apex" 
-                class="inline-flex items-center gap-1 content-link">
-                Promotional Material Created<i data-lucide="arrow-right" class="w-3 h-3"></i></a> 
-              </p>
+              <div class="timeline-skills mt-2">
+              <span class="skill-tag">Community Engagement</span>
+              <span class="skill-tag">Event Planning</span>
+              <a href="portfolio.html#earthfest" class="skill-tag-link" data-tooltip="View EarthFest Promtiona Video" target="_blank">Marketing Content</a>
+              <a href="portfolio.html#apex" class="skill-tag-link" data-tooltip="View newsletters created for the Town of Apex">Newsletter Development</a>
+              <span class="skill-tag">GHG Inventory</span>
+              </div>
 
             </div>
           </div>
@@ -825,18 +894,18 @@
 
             <div class="experience-left">
               <div class="experience-date">2020-2021</div>
-              <div class="experience-position">Lead for North Carolina Fellow</div>
+              <div class="experience-position">LFNC Fellow</div>
             </div>
             <div class="experience-right">
-              <h3 class="experience-company"> AmeriCorps / UNC School of Government</h3>
+              <h3 class="experience-company1">Lead for North Carolina Fellowship</h3>
+              <h4 class="experience-company2">Supporting Local Government Sustainability and Climate Resilience</h4>
               <p class="experience-description">
-                One of 11 fellows selected state-wide to strengthen local government capacity through service. I helped build Apex’s first Sustainability Program from the ground up — designing its vision, structure, communications, and partnerships. It was the kind of ambiguous challenge I love: making something real out of nothing, with impact that lasts.
-              </p>  
+                One of 11 fellows selected statewide to strengthen local government capacity through service. I helped build Apex's first Sustainability Program from the ground up — designing its vision, structure, communications, and partnerships. 
+              </p>
                <div class="timeline-skills mt-2">
               <span class="skill-tag">Program Development</span>
               <span class="skill-tag">Local Government</span>
               <span class="skill-tag">Stakeholder Engagement</span>
-              <span class="skill-tag">Strategic Communication</span>
               <span class="skill-tag">Civic Leadership</span>
             </div>
             </div>
