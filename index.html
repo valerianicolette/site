@@ -456,6 +456,85 @@
             }
         }
 
+   /* Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 15px; /* spacing on small screens */
+    }
+
+    /* Popup */
+    .popup {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      position: relative;
+      overflow-y: auto;
+      max-height: 90vh; /* allow scroll if too tall */
+      opacity: 0;
+      transform: scale(0.9);
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Close button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #555;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    /* Typography */
+    .popup h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .popup p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      .popup {
+        padding: 15px;
+      }
+      .popup h2 {
+        font-size: 1.2rem;
+      }
+      .popup p {
+        font-size: 0.95rem;
+      }
+    }
+
     /* Visitor Counter Styles */
     .visitor-counter {
       position: fixed;
@@ -592,6 +671,59 @@
         </div>
       </div>
     </header>
+
+
+    <!-- Overlay + Popup -->
+  <div id="overlay" class="overlay">
+    <div class="popup">
+      <span class="close-btn" id="closePopup">&times;</span>
+    
+      <!-- GoFundMe Widget -->
+      <div 
+        class="gfm-embed" 
+        data-url="https://www.gofundme.com/f/rebuild-abuelitas-home/widget/large?sharesheet=undefined&attribution_id=sl:91e83d29-fb26-45ad-9a9f-3da65495582d">
+      </div>
+      <br>
+       <p>
+        On my birthday, Sep 3 2025, the home that held generations of memories, including my mom’s ashes, 
+        was lost in a devastating fire. Despite this tragedy, I’m deeply grateful my family is safe.
+      </p>
+      <p>
+        I’ve started a GoFundMe to help build a new beginning for my abuelita and our family.  
+        Please consider donating and/or subscribing to my website for updates.
+      </p>
+
+
+    </div>
+  </div>
+
+  <!-- GoFundMe Embed Script -->
+  <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
+
+  <script>
+    const overlay = document.getElementById('overlay');
+    const closeBtn = document.getElementById('closePopup');
+
+    // Show popup after 3 seconds
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        overlay.style.display = 'flex';
+      }, 3000);
+    });
+
+    // Close with X
+    closeBtn.addEventListener('click', () => {
+      overlay.style.display = 'none';
+    });
+
+    // Close by clicking outside popup
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        overlay.style.display = 'none';
+      }
+    });
+  </script>
+
 
      <!-- WHAT I DO -->
     <section id="about" class="py-24 bg-hero">
