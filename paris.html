@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valeria Mera | Connect</title>
+
+    <link rel="icon" href="https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmabout.png" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Marion', 'Playfair Display', 'serif'],
+              body: ['Inter', 'Helvetica Neue', 'sans-serif'],
+            },
+            colors: {
+              cream: {
+                DEFAULT: '#f7f7f4',
+                100: '#f9f9f6',
+                200: '#f0f0eb',
+              },
+           
+              contact: {
+                light: '#f06292',
+                DEFAULT: '#E0295D',
+                dark: '#b71c4a',
+              },
+            },
+            backgroundImage: {
+              hero: 'radial-gradient(ellipse at top left, #fefdfb 0%, #f5f1eb 40%, #f0ece6 75%)',
+            }
+          },
+        },
+      };
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Marion&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EYFPGPTP0F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EYFPGPTP0F');
+    </script>
+
+    <style>
+      html{scroll-behavior:smooth}
+      body{font-family:'Inter',sans-serif}
+      .fade{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+      .show{opacity:1;transform:translateY(0)}
+      .link{position:relative}
+      .link::after{content:'';position:absolute;left:0;bottom:-2px;width:100%;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+      .link:hover::after{transform:scaleX(1)}
+
+      .content-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        color: #808080;
+        font-weight: 500;
+        position: relative;
+        transition: color 0.3s ease;
+        text-decoration: none;
+      }
+      .content-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 1.5px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+      .content-link:hover { color: #E0295D; }
+      .content-link:hover::after { transform: scaleX(1); transform-origin: left; }
+
+      .home-icon {
+        display: block !important;
+        align-items: initial !important;
+        gap: initial !important;
+        position: static !important;
+        color: #262626;
+      }
+      .home-icon::after { display: none !important; }
+      .home-icon:hover { color: #ad1457 !important; }
+
+      nav a {
+        display: initial;
+        align-items: initial;
+        gap: initial;
+        color: #262626;
+      }
+      .nav-link { position: relative; transition: color 0.3s ease; }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 100%;
+        height: 1.5px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+      .nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
+
+      .mobile-menu {
+        transition: all 0.3s ease;
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      .mobile-menu.open { transform: translateY(0); opacity: 1; }
+      .hamburger span { transition: all 0.3s ease; }
+      .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+      .hamburger.open span:nth-child(2) { opacity: 0; }
+      .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+
+       .section-card {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(157, 184, 141, 0.2);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .section-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(157, 184, 141, 0.1), transparent);
+        transition: left 0.6s ease;
+      }
+
+      .section-card:hover::before {
+        left: 100%;
+      }
+
+      .section-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(157, 184, 141, 0.2);
+        border-color: rgba(157, 184, 141, 0.4);
+      }
+
+      .section-icon {
+        width: 3rem;
+        height: 3rem;
+        background: linear-gradient(135deg, #F9D5D3 0%, #ad1457 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .section-card:hover .section-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+
+      .text-home:hover { color: #ad1457 }
+      .text-exp:hover { color: #2e7d32; }
+      .text-story:hover { color: #1976d2; }
+      .text-portfolio:hover { color: #0887f7 }
+      .text-world:hover { color: #4caf50; }
+      .text-contact:hover { color: #E0295D; }
+
+      .social-icon {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: linear-gradient(145deg, #f7f7f4, #f0f0eb);
+        box-shadow: 5px 5px 10px #e6e6e1, -5px -5px 10px #ffffff;
+        transition: all 0.3s ease;
+        color: #E0295D;
+      }
+      .social-icon:hover {
+        transform: translateY(-3px);
+        box-shadow: 8px 8px 15px #e6e1d9, -8px -8px 15px #ffffff;
+        color: #b71c4a;
+      }
+      .social-icon i { transition: transform 0.3s ease; }
+      .social-icon:hover i { transform: scale(1.1); }
+
+      .contact-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(191, 167, 111, 0.2);
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .contact-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, transparent, #f06292 0%, #E0295D 100%);
+      }
+      .contact-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .floating-element { animation: float 4s ease-in-out infinite; }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(1deg); }
+      }
+
+      .contact-method {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        border: 1px solid #ece7e1;
+        position: relative;
+        overflow: hidden;
+      }
+      .contact-method::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(157, 184, 141, 0.1), transparent);
+        transition: left 0.6s ease;
+      }
+      .contact-method:hover::before { transform: scaleX(1); }
+      .contact-method:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        border-color: #E0295D;
+      }
+
+      .contact-icon {
+        background: linear-gradient(135deg, #f06292 0%, #E0295D 100%);
+        color: white;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+      }
+      .contact-method:hover .contact-icon { transform: scale(1.1) rotate(5deg); }
+
+      .form-input {
+        background: rgba(255, 255, 255, 0.8);
+        border: 2px solid #ece7e1;
+        border-radius: 12px;
+        padding: 1rem 1.5rem;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+      }
+      .form-input:focus {
+        outline: none;
+        border-color: #bfa76f;
+        background: white;
+        box-shadow: 0 0 0 4px rgba(191, 167, 111, 0.1);
+        transform: translateY(-2px);
+      }
+      .form-textarea { resize: vertical; min-height: 120px; }
+
+      .send-button {
+        background: linear-gradient(135deg, #f06292 0%, #E0295D 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        padding: 1rem 2.5rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .send-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s;
+      }
+      .send-button:hover::before { left: 100%; }
+      .send-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(191, 167, 111, 0.4);
+      }
+
+      .section-divider {
+        position: relative;
+        text-align: center;
+        margin: 3rem 0;
+      }
+      .section-divider::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(135deg, #f06292 0%, #E0295D 100%);
+        border-radius: 2px;
+      }
+
+      .contents-card {
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid #ece7e1;
+        border-radius: 20px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+      }
+      .contents-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        border-color: #E0295D;
+      }
+
+      .passion-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: white;
+        border: 1px solid #ece7e1;
+        border-radius: 999px;
+        padding: 0.5rem 1.25rem;
+        font-size: 0.875rem;
+        color: #4a4a45;
+        transition: all 0.3s ease;
+      }
+      .passion-pill:hover {
+        border-color: #E0295D;
+        color: #E0295D;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(224, 41, 93, 0.12);
+      }
+
+      .visitor-counter {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(74, 74, 69, 0.7);
+        color: rgba(245, 245, 240, 0.9);
+        padding: 10px 14px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 400;
+        box-shadow: 0 2px 8px rgba(74, 74, 69, 0.15);
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(74, 74, 69, 0.2);
+        z-index: 1000;
+        transition: all 0.3s ease;
+        font-family: inherit;
+        opacity: 0.8;
+      }
+      .visitor-counter:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(74, 74, 69, 0.25);
+        background: rgba(74, 74, 69, 0.85);
+        opacity: 1;
+      }
+      .counter-icon { display: inline-block; margin-right: 6px; font-size: 14px; opacity: 1; }
+      .counter-number { color: rgba(245, 245, 240, 0.9); font-weight: 500; margin-left: 4px; }
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+      .visitor-counter.new-visit { animation: pulse 0.6s ease-in-out; }
+
+      @media (max-width: 640px) {
+        .visitor-counter { bottom: 15px; right: 15px; padding: 10px 14px; font-size: 12px; }
+        .counter-icon { font-size: 13px; }
+      }
+    </style>
+  </head>
+
+  <body class="font-body antialiased text-[#22221f] bg-hero bg-fixed bg-no-repeat bg-cover min-h-screen">
+
+    <nav class="fixed top-0 left-0 w-full z-20 py-5 px-6 md:px-12 flex items-center justify-between bg-cream/60 backdrop-blur-md border-b border-cream-200">
+      <a href="index.html" class="home-icon block w-12 h-12 hover:rotate-12 transition-all duration-300" aria-label="Home">
+        <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmabout.png" class="object-cover">
+      </a>
+
+     <!-- Desktop Navigation -->
+      <div class="hidden md:flex space-x-8 text-sm tracking-wide uppercase font-medium">
+        <a href="index.html" class="nav-link text-home">Home</a>
+        <a href="experience.html" class="nav-link text-exp">Experience</a>
+        <a href="story.html" class="nav-link text-story">Insights</a>
+        <a href="portfolio.html" class="nav-link text-portfolio">Portfolio</a>
+        <a href="world.html" class="nav-link text-world">Background</a>
+        <a href="contact.html" class="nav-link text-contact">Connect</a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="md:hidden hamburger flex flex-col justify-center items-center w-6 h-6 space-y-1" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+        <span class="block w-5 h-0.5 bg-current"></span>
+        <span class="block w-5 h-0.5 bg-current"></span>
+        <span class="block w-5 h-0.5 bg-current"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-cream/95 backdrop-blur-md z-10 md:hidden">
+      <div class="flex flex-col items-center justify-center h-full space-y-8 text-lg tracking-wide uppercase font-medium">
+        <a href="index.html" class="nav-link text-home" onclick="closeMobileMenu()">Home</a>
+        <a href="experience.html" class="nav-link text-exp" onclick="closeMobileMenu()">Experience</a>
+        <a href="story.html" class="nav-link text-story" onclick="closeMobileMenu()">Insights</a>
+        <a href="portfolio.html" class="nav-link text-portfolio" onclick="closeMobileMenu()">Portfolio</a>
+        <a href="world.html" class="nav-link text-world" onclick="closeMobileMenu()">Background</a>
+        <a href="contact.html" class="nav-link text-contact" onclick="closeMobileMenu()">Connect</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <header class="relative flex items-center justify-center min-h-screen pt-32 pb-24 px-6 md:px-0">
+      <div class="max-w-6xl mx-auto fade show">
+      
+          <div class="space-y-8 text-left ml-4">
+          </div>
+          <div class="flex justify-center lg:justify-end">
+            <div class="w-100 h-100 flex items-center justify-center">
+              <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/valeriameraparisbanner.png" alt="Valeria" class="w-100 h-100 object-cover">
+            </div>
+          </div>
+        
+      </div>
+    </header>
+
+    <!-- 1. INTRO / TABLE OF CONTENTS -->
+    <section id="intro" class="py-24 bg-cream/80 backdrop-blur-sm">
+      <div class="max-w-4xl mx-auto px-6 md:px-0 space-y-12">
+
+        <h2 class="font-display text-3xl md:text-4xl mb-6 text-center section-divider fade">Introduction</h2>
+         <div class="space-y-8 text-[#3e3e38] text-center justify-center leading-relaxed">
+            <p>It's been about 6 months since my return from Paris and I can still hardly believe I ever lived there! There's so much about this chapter that I want to make sure I remember, so before any more time passes, I'm sitting down to:</p>
+
+            <ol class="text-center text-[#4a4a45] max-w-2xl mx-auto mt-10 fade">
+                <li>   1. write out what to know if you're preparing to live in Paris / study at Sciences Po, and  </li>
+                <li>   2. curate a list of recommendations on where to go</li>
+            </ol>
+
+            <p> To read more about my experience, feel free to read my reflection on my first few months abroad here →  <a href="https://open.substack.com/pub/valeriamera/p/thoughts-on-paris-two-months-in?utm_campaign=post-expanded-share&utm_medium=post%20viewer" class="content-link content-link--dark">Thoughts on Paris</a> </p>
+        
+            <p>
+            I'm treating this page like a living document so feel free to send questions or more recommendations for me to add so this can be as updated/helpful as possible  ◡̈ </p>
+       
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+
+          <!-- What to Know -->
+         <div class="section-card rounded-2xl p-6 fade-up" style="animation-delay: 0.2s">
+            <div class="section-icon">
+              <i data-lucide="leaf" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-xl mb-3 text-[#22221f]">What to Know</h3>
+            <p class="text-[#4a4a45] text-sm leading-relaxed">
+
+            </p>
+          </div>
+
+          <!-- Where to Go -->
+          <div class="contents-card fade">
+            <div class="contact-icon">
+              <i data-lucide="sparkles" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-xl mb-3 text-[#22221f]">Where to Go</h3>
+            <p class="text-[#4a4a45] text-sm leading-relaxed">
+
+            </p>
+          </div>
+        </div>
+
+        <!-- Passions / Personality pills -->
+        
+      </div>
+    </section>
+
+
+    <!-- 2. ACKNOWLEDGEMENTS -->
+    <section id="acknowledgements" class="py-24 bg-hero/50 backdrop-blur-sm">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="font-display text-3xl md:text-4xl mb-16 text-center section-divider fade">Acknowledgements</h2>
+
+        
+
+       Before I go into the depths of the post, I wanted to thank every single person who played a part in my time abroad. From new friends made in Paris to old friends that came to visit, each and every one of you made this time remarkable - and are often mentioned by name throughout this page. I could feel my heart grow even fonder of everyone who made the effort to visit last fall, so I wanted to thank each of you by name (in order of when they visited).
+
+        To Nicole, who flew me out to Paris and made my first week incredible. To Jack, who was serendipitously in Paris at the same time as me and introduced me to his cool French friends, making Paris much less lonely while I adjusted to it. To Lyric and Cory, who surprised me and spent their Labor Day weekend in Paris with me - making my birthday that much more special. To Baaqir, who visited me for a collective month while I was in Europe, and made sure to not miss my birthday. He not only made the journey twice, but he stayed for two weeks at a time each time! If that's not love, I don't know what is. To Julia and Colleen - who always make me feel so loved, no matter where we are or what we're doing, and who were able to spend my birthday with me too. Needless to say, my birthday had me overwhelmed with love, which is all anyone can ask for. 
+
+        To Mel & Kat - I'm so grateful this trip made it out of the group chat, I couldn't have dreamt of a more perfect weekend in the Alps. To Megan D, thank God you visited when you did because it was exactly what I needed at exactly the right time. To Mika, I'll always hold the time we spent eating, laughing, and shopping together close to my heart, and I'm so grateful you were able to make it out (even though I never doubted you would). And last but not least, Vicky - I'll cherish our rainy little weekend together forever and ever and ever. The fact that we were abroad together was perfect, and being able to visit each other in our prospective cities made it even more so. 
+
+        To my friends in Paris - Monica, Ida, Megan S, Sean, Yass, Teo and Margaux - thanks for making me feel so welcome and for helping me find my footing throughout the semester. I look forward to when our paths cross again in the future :)
+
+      </div>
+    </section>
+
+    <!-- 3. WHAT TO KNOW-->
+    <section class="py-24 bg-cream/80 backdrop-blur-sm">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="font-display text-3xl md:text-4xl pb-6 section-divider"> What to Know</h2>
+          <div class="text-center mb-12">
+           
+
+            <!-- wp:paragraph {"style":{"typography":{"textAlign":"center"}},"fontSize":"small"} -->
+<p class="has-text-align-center has-small-font-size"><em>This section is mostly written for those planning to study abroad, though there are some useful things to skim over (like the map below). If that’s not you and you’re just planning a trip, the “<a href="https://valerianicolette.wordpress.com/paris/?fbclid=PAQ0xDSwLJUX5leHRuA2FlbQIxMQABp9Ax6BumWg4V2Wqx8UlQAKAZSPyfH8VA0tsuFusubxshD97Ej0cUgRodVQln_aem_p_VZkXaZalk9FR-Dxz4CDA#where-to-go-1">Where to Go</a>” section is more likely where you want to be!</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"fontSize":"medium","anchor":"general"} -->
+<h2 id="general" class="wp-block-heading has-medium-font-size"><span style="text-decoration: underline">General</span></h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"layout-of-parishow-safe-it-is-to-be-out-late-alone"} -->
+<h3 id="layout-of-parishow-safe-it-is-to-be-out-late-alone" class="wp-block-heading has-small-font-size">Layout of Paris</h3>
+<!-- /wp:heading -->
+
+<!-- wp:image {"id":977,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris-map-1.png?w=940" alt="" class="wp-image-977"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>For reference, I lived in a loft in between the 6/14 arrondissement for the first 2 months, then moved to an apartment between the 7/15 arrondissement for the rest of my stay (both indicated by the house icons). Science Po is in the 7th arrondissement, so my commute was always between 15-30 minutes, depending on if I walked or took the metro. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I typically felt safe at night, even when walking alone, but there are a few areas that can be sus, especially if you're a woman by yourself. The area between the 18th and 19th arrondissements (Gare du Nord) can be very sketchy at night and the only place I’ve heard of people having trouble in. All in all though the city feels very safe.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"finding-apartments"} -->
+<h3 id="finding-apartments" class="wp-block-heading has-small-font-size">Finding Apartments</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>First, I'll disclose that for my visa process, I did just put down that I was staying at an airbnb for my first two weeks because I still hadn't found housing. It was fine, and worked as a good back-up plan but I did cancel the reservation as soon as I locked an apartment down.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Second, I stayed in two different places throughout my semester abroad. The first was an amazing loft I had to myself, but was short-term because my subleaser was only renting it out for those 6 weeks I was there. The second was an apartment with a Parisian roommate - she saw my posting on a website that I mention below and reached out to me on Instagram. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Third, there were plenty of options for furnished apartments so I wouldn't stress too much about buying furniture - though I did get some storage things and towels for my second place from Ikea and Hema. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Lastly, you'll find some links and resources for finding housing below! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>I started my search by joining a few different <strong>facebook groups </strong>for Housing in Paris and Sciences Po students, which was a success because it's how I found my first place to live. <!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><a href="https://www.facebook.com/groups/479314958823807/">Logement Sciences Po Paris</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="https://www.facebook.com/groups/sciencespoparisnewstudents2025/">Sciences Po 2025 - International &amp; Erasmus Students</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="https://www.facebook.com/groups/scpo.exchange/">Sciences Po | Exchange students</a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>As I continued my search, I was directed to <a href="https://www.lacartedescolocs.fr/colocations/fr/ile-de-france/paris">La Carte des Colocs</a> to find a roommate/apartment, which is how I found my second palce.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>My dear friend Megan also shared this resource on <a href="https://www.instagram.com/friendzparis">Instagram (friendzparis</a>) where locals post subletting options in the city when I was still looking for somewhere to live after my loft stay ended. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>And here's a link to the <a href="https://www.sciencespo.fr/students/en/living/housing/">housing resources</a> shared with me by McCourt's partner at Sciences Po when I asked for guidance. The link offers options on the Sciences Po website for how to find housing through partnerships they have in Paris, which is another option but not one I looked at extensively, but sharing anyway in case it's helpful to someone else! </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"public-transit"} -->
+<h3 id="public-transit" class="wp-block-heading has-small-font-size">Public Transit</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>Depending on how updated your smartphone is, you can <a href="https://www.apple.com/newsroom/2024/05/apple-and-ile-de-france-mobilites-introduce-navigo-for-iphone-and-apple-watch/">add the Navigo card to your digital wallet</a> pretty easily. Instructions from Apple linked <a href="https://www.apple.com/newsroom/2024/05/apple-and-ile-de-france-mobilites-introduce-navigo-for-iphone-and-apple-watch/">here</a> for reference, but it's just like adding a debit/credit to your wallet. When it's cooperating, you should be able to buy a variety of different passes (i.e. single ticket, day passes, RER tickets, etc). </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><span style="text-decoration: underline"><strong>FOR CDG:</strong></span> in order to leave or go to CDG from the city, you <strong><span style="text-decoration: underline">must buy an RER-B ticket</span></strong>, which is separate from the standard metro ticket. If you can't load it on your phone by buying a pass on Navigo like I mentioned previously, you can buy a physical ticket at the airport. <strong>Hold onto it</strong>, because you're going to need to insert it into the gate to enter and to leave!!</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"going-out"} -->
+<h3 id="going-out" class="wp-block-heading has-small-font-size">Going Out </h3>
+<!-- /wp:heading -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>There's a few different resources online for where to go out but honestly, if you can befriend someone who's local to go out with, they'll show you the best places. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>To find things yourself, I'd download the <strong>Shotgun app</strong> to see what shows are around / upcoming.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Paris is also an amazing city for concerts - so keep an eye out for that if you can swing it.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Some bars/clubs I did go to that I can vouch for include: <strong>Supersonic</strong>, Palais de Tokyo, Badaboum, La Rotonde Stalingrad, Cabaret Sauvage, <strong>O'Sullivans</strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>I've heard Bastille is great for going out but like I said, I didn't go out much so I can't verify from my own experience.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:image {"id":984,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/screenshot-2025-06-24-at-4.21.16e280afpm.png?w=819" alt="" class="wp-image-984"/><figcaption class="wp-element-caption">Supersonic - I came here twice, once to see Flipturn and another time for Megan's birthday</figcaption></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:image {"id":987,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/347aaa10-3c03-4fa0-8409-0393ccd107dd_1_102_o.jpeg?w=1024" alt="" class="wp-image-987"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"fontSize":"medium","anchor":"sciences-po"} -->
+<h2 id="sciences-po" class="wp-block-heading has-medium-font-size"><span style="text-decoration: underline">Sciences Po </span></h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"registering-for-classes"} -->
+<h3 id="registering-for-classes" class="wp-block-heading has-small-font-size">Registering for Classes</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>There's so much I wish I knew about registering for classes haha. A general resource worth sharing is this <a href="https://www.sciencespo.fr/en/life-at-sciences-po/student-services-and-daily-life/">webpage on the Sciences Po website,</a> but below I've written out some other major things I learned that isn't as obvious.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4,"fontSize":"small","anchor":"course-load-georgetown-vs-sciences-po"} -->
+<h4 id="course-load-georgetown-vs-sciences-po" class="wp-block-heading has-small-font-size">Course load: Georgetown vs Sciences Po</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>First and foremost, you will be encouraged to register for 3-4 classes at Sciences Po. Whether you take 3 OR 4 classes affects how many classes you can register for in the Spring. This is something I wish I had investigated further but also that I wish I was advised differently on for a few reasons, the biggest one being that taking 4 classes at Sciences Po is <strong><em>very different </em></strong>from taking 4 classes at Georgetown. A full schedule at Sciences Po is typically 7-8 classes, which means that taking 3-4 classes will make you feel like a part-time student. You will have a lot of free time!! Enjoy it, but plan accordingly because if you're expecting the same kind of rigor as your first year, it's not like that at all (and it's something I personally would have wanted from my abroad experience).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column {"width":"66.66%"} -->
+<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:paragraph -->
+<p>There are other classes you can take and pay for out of pocket to take up more time, though they won't count on your Georgetown transcript. For example, I also took a French class and a painting class, which I thought were totally worth for paying myself. Information on what language classes and arts/sports classes are offered will be emailed to you over the summer, so be sure to stay updated on when registration deadlines for those because that is a separate process!</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><em>On the right/pictured below is a painting that I made in class, inspired by cows I saw in Switzerland with Baaqir</em> 🐮🇨🇭</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"width":"33.33%"} -->
+<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":1152,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paintingclass.jpeg?w=768" alt="" class="wp-image-1152"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4,"fontSize":"small","anchor":"policy-stream"} -->
+<h4 id="policy-stream" class="wp-block-heading has-small-font-size">Policy Stream</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>One thing I missed about Georgetown was how easy it was to make connections with my classmates because we were often in the same classes. I was hoping for something similar at Sciences Po, but it was only after I arrived that I learned about the different policy streams offered. It seems like non-exchange students will take certain classes in order to fulfill the requirements for one of the 11 policy streams. By doing so, you're also in some of the same classes with a specific cohort of people. Not only would this have made building community much easier, but it also would've given the classes I took abroad more cohesion. It was while I was in my <span style="text-decoration: underline"><strong>Global Inequalities and Sustainability</strong></span> class (which I'd highly recommend, it was a 10/10, incredibly fascinating and hands down my favorite class because of the content and the professor), I realized that the majority of the class was also enrolled in the <span style="text-decoration: underline"><strong>Comparing Welfare States, their reforms and futures</strong></span> class and that they were all in a group chat for the <strong><span style="text-decoration: underline">Social Policy and Social Innovation Policy Stream</span>.</strong> Had I known, I would have looked into the different policy streams and used that as guidance for my course enrollment, but I had no idea this was how their policy programs were structured!</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><a href="https://www.sciencespo.fr/ecole-affaires-publiques/en/academics/masters/policy-streams/">The 11 Policy Streams of the Masters </a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:image {"id":992,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/screenshot-2025-06-24-at-4.47.15e280afpm-e1750863402843.png?w=1024" alt="" class="wp-image-992"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"registration"} -->
+<h3 id="registration" class="wp-block-heading has-small-font-size">Registration</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Now that you know that, we can get into logistics of actually registering. Registration is <span style="text-decoration: underline">extremely</span> competitive, so make sure you plan out the courses you want well ahead of when registration opens and that you keep in mind the time difference!! Helpful information linked below which explains it better than I could, but just know that it is competitive. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><span style="text-decoration: underline"><a href="https://syllabus.sciencespo.fr/en/?202410/259714">Course Directory</a></span></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="https://www.sciencespo.fr/ressources-numeriques/sites/sciencespo.fr.ressources-numeriques/files/Guide_utilisateur_ESPACE_ETUDIANT_inscription_administrative_EN.pdf" target="_blank" rel="noreferrer noopener">Step-by-Step guide</a>&nbsp;to the&nbsp;Administrative registration</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"extracurriculars"} -->
+<h3 id="extracurriculars" class="wp-block-heading has-small-font-size">Extracurriculars</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>You'll likely be introduced to this during orientation, but getting involved in different clubs is a great way to meet even more people outside of class. I met my closest friend from Sciences Po, Monica, through an exchange student meeting the university held. The different associations on the Paris campus can be found at the this <a href="https://docs.google.com/presentation/d/e/2PACX-1vQto_TbsFRMV-MzAtE5wSLXba_KTMe9PWEULrcMV1Cj3DQy5qQvEb2T-yIP_wpctg/pub?start=true&amp;loop=false&amp;slide=id.g2e6d87ea96d_0_0">link</a>, though this guide is still a work-in-progress. One of the most popular groups is <a href="https://www.instagram.com/bdesciencespo?igsh=eWdnNzZmempnbjls">BDE (definitely worth following on Instagram),</a> which puts on a lot of events throughout the year for all the students. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I also joined <a href="https://www.instagram.com/sciencesponationsunies?igsh=ZW1wZWY3cGgwdTA2">Model UN</a>, which gave me the opportunity to visit different embassies and attend breakfast with ambassadors/diplomats.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"fontSize":"small","anchor":"finding-communitymaking-the-most-of-your-time-alone"} -->
+<h2 id="finding-communitymaking-the-most-of-your-time-alone" class="wp-block-heading has-small-font-size">Finding Community</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}}} -->
+<p style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">This is easily the hardest segment of the post to write because I personally struggled with having little structure and what felt like little opportunity to make community within school - and that's coming from someone who considers themselves super outgoing and extroverted!! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}}} -->
+<p style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">My advice would be to show yourself some grace, especially because it takes 4-6 months to adjust to a new city and new lifestyle anyway. Take time to build your routine, and really push yourself to reach out to new people, attend random happy hours being put on by the school. I had grappled with joining a run club or taking dance classes, but never did, and that's easily one of my regrets from my time abroad. Everything just seemed so intimidating to me because of the language barrier so putting myself out there was pretty daunting, and that's okay. Even when I did go out with some French friends one night, I remember being quiet and shy (again, not like me at all), because everyone was speaking French and I couldn't keep up. It was a bit existential for me at times but I wouldn't trade it -  I learned so much about what is important to me for my own success, well-being, and overall happiness. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I tried my best to embrace my alone time, and to not let that deter me from enjoying things in Paris by myself. This might be uncomfortable for some people, but the more you do it, the more gratifying it is to enjoy your own company - especially when you're in a city with so much art. My solo date at the Louvre is what helped me realize that my favorite way to experience a museum is by myself. I don't typically shy away from solo activities normally, but it does feel different in a foreign city. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In the end, your experience is what you make it! Whether you're able to find people to do things with you or you end up spending some quality time to yourself, there is so much to enjoy in Paris. I sometimes found all the recommendations overwhelming so another concrete piece of advice I'd give you is to just have a bucket list of sorts of things you want to check out, or buy a guide book! I would definitely encourage you to give a follow on Instagram to: </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><a href="https://www.instagram.com/ellevousguide/?hl=en">Estelle (@ellevousguide)</a> for recommendations, and </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="https://www.instagram.com/americanfille/?hl=en">Amanda (@americanfille)</a> for advice on living in Paris</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>It's easy to get overwhelmed by all the options of what there is to do but ... just decide when you want to do something and don't let anything stop you! It may sound like simple advice but sometimes it did <em>not</em> feel that simple. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"fontSize":"medium"} -->
+<p class="has-medium-font-size"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column {"width":"66.66%"} -->
+<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"fontSize":"medium","anchor":"flash-invaders"} -->
+<h2 id="flash-invaders" class="wp-block-heading has-medium-font-size">Flash Invaders</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>On a completely different, more light-hearted note... I would be remiss to not mention anything at all about Flash Invaders. One of my <em>favorite</em> parts of living in Paris was that every walk I went on was automatically a game because I'd be on the look out for these specific kinds of murals to scan on my phone and win points. That's the whole point. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The best part was that Baaqir also downloaded it, so we'd always be on the lookout for these murals together and see who could find the most first. These art pieces are not exclusive to Paris either - I found one in Versailles and one in New York - but it's where you'll find over 1.5k of these little space alien guys. I'm adding a screenshot of some of ones I found to the right so you have an idea of what to look out for because you'll come across some fake ones, but that's part of the fun. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"width":"33.33%"} -->
+<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":1252,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/flashinvaders.jpeg?w=472" alt="" class="wp-image-1252"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+
+          </div>
+         
+
+      </div>
+    </section>
+
+
+    <!-- 4. WHHERE TO GO -->
+    <section class="py-24 fade">
+       <div class="max-w-4xl mx-auto px-6">
+        <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider"> Where to Go </h2>
+        <div class="text-center mb-12">
+
+            <!-- wp:heading {"level":1,"style":{"typography":{"textAlign":"center"}},"fontSize":"large","anchor":"where-to-go-1"} -->
+<h1 class="wp-block-heading has-text-align-center has-large-font-size" id="where-to-go-1">Where to Go</h1>
+<!-- /wp:heading -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"fontSize":"medium","anchor":"food-drinks"} -->
+<h2 id="food-drinks" class="wp-block-heading has-medium-font-size"><span style="text-decoration: underline">Food / Drinks</span></h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"la-maison-d-isabelle"} -->
+<h3 id="la-maison-d-isabelle" class="wp-block-heading has-small-font-size">La Maison d'Isabelle</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The best croissant on the planet. It is everything a croissant should be. There's a reason it won best butter croissant in 2018 and if I could have it every day I would. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:jetpack/tiled-gallery {"columns":2,"columnWidths":[["36.04167","63.95833"]],"ids":[935,936]} -->
+<div class="wp-block-jetpack-tiled-gallery aligncenter is-style-rectangular"><div class=""><div class="tiled-gallery__gallery"><div class="tiled-gallery__row"><div class="tiled-gallery__col" style="flex-basis:36.04167%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="935" data-link="https://valerianicolette.wordpress.com/?attachment_id=935" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/croissant-2.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/croissant-2.jpeg"/></figure></div><div class="tiled-gallery__col" style="flex-basis:63.95833%"><figure class="tiled-gallery__item"><img alt="" data-height="3456" data-id="936" data-link="https://valerianicolette.wordpress.com/?attachment_id=936" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/croissant.jpeg?w=1024" data-width="4608" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/croissant.jpeg"/></figure></div></div></div></div></div>
+<!-- /wp:jetpack/tiled-gallery --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"large"} -->
+<p class="has-large-font-size"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"mamiche"} -->
+<h3 id="mamiche" class="wp-block-heading has-small-font-size">Mamiche</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Mamiche is another well-known bakery with delicious pastries. It's also one of the first places I went to with Nicole when we first arrived in Paris. Would also highly recommend!! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":1195,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/mamiche.jpeg?w=1024" alt="" class="wp-image-1195"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"holybelly"} -->
+<h3 id="holybelly" class="wp-block-heading has-small-font-size">Holybelly </h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I'd been dreaming about this restaurant since the first time I visited Paris, back in 2018. As soon as I knew I'd be in Paris again, I knew I'd be coming back... and I went back many, many times because it's still the best brunch in the world to me. If someone asks me if I'd rather have sweet or savory for breakfast, my answer is always that I have to have both!! Their savoury stack is one I will continue to dream about because it's truly the best combination of flavors you could ask for.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:jetpack/tiled-gallery {"columns":3,"columnWidths":[["50.00000","50.00000"],["13.97770","48.58775","18.71727","18.71727"]],"ids":[1015,1014,1006,1305,1010,1013]} -->
+<div class="wp-block-jetpack-tiled-gallery aligncenter is-style-rectangular"><div class=""><div class="tiled-gallery__gallery"><div class="tiled-gallery__row"><div class="tiled-gallery__col" style="flex-basis:50.00000%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="1015" data-link="https://valerianicolette.wordpress.com/holybellybaaqir/" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/holybellybaaqir.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/holybellybaaqir.jpeg"/></figure></div><div class="tiled-gallery__col" style="flex-basis:50.00000%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="1014" data-link="https://valerianicolette.wordpress.com/holybellymegan/" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/holybellymegan.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/holybellymegan.jpeg"/></figure></div></div><div class="tiled-gallery__row"><div class="tiled-gallery__col" style="flex-basis:13.97770%"><figure class="tiled-gallery__item"><img alt="" data-height="4096" data-id="1006" data-link="https://valerianicolette.wordpress.com/paris/holybelly1/" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/holybelly1-e1750818036930.jpg?w=572" data-width="2288" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/holybelly1-e1750818036930.jpg"/></figure></div><div class="tiled-gallery__col" style="flex-basis:48.58775%"><figure class="tiled-gallery__item"><img alt="" data-height="412" data-id="1305" data-link="https://valerianicolette.wordpress.com/paris/screenshot-2025-06-26-at-10-43-08-am/" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/screenshot-2025-06-26-at-10.43.08e280afam.png" data-width="806" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/screenshot-2025-06-26-at-10.43.08e280afam.png"/></figure></div><div class="tiled-gallery__col" style="flex-basis:18.71727%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="1010" data-link="https://valerianicolette.wordpress.com/paris/holybelly2/" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/holybelly2.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/holybelly2.jpeg"/></figure></div><div class="tiled-gallery__col" style="flex-basis:18.71727%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="1013" data-link="https://valerianicolette.wordpress.com/paris/holybelly4/" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/holybelly4.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/holybelly4.jpeg"/></figure></div></div></div></div></div>
+<!-- /wp:jetpack/tiled-gallery -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"mmmozza"} -->
+<h3 id="mmmozza" class="wp-block-heading has-small-font-size">Mmmozza</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>One of Baaqir's personal favorites, this sandwich shop was another food staple I took all my visitors to. Fresh af sandwich. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:jetpack/tiled-gallery {"columns":2,"columnWidths":[["36.04167","63.95833"]],"ids":[892,891]} -->
+<div class="wp-block-jetpack-tiled-gallery aligncenter is-style-rectangular"><div class=""><div class="tiled-gallery__gallery"><div class="tiled-gallery__row"><div class="tiled-gallery__col" style="flex-basis:36.04167%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="892" data-link="https://valerianicolette.wordpress.com/?attachment_id=892" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/mmmozza-2.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/mmmozza-2.jpeg"/></figure></div><div class="tiled-gallery__col" style="flex-basis:63.95833%"><figure class="tiled-gallery__item"><img alt="" data-height="3456" data-id="891" data-link="https://valerianicolette.wordpress.com/?attachment_id=891" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/mmmozza.jpeg?w=1024" data-width="4608" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/mmmozza.jpeg"/></figure></div></div></div></div></div>
+<!-- /wp:jetpack/tiled-gallery --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":1299,"sizeSlug":"large"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/img_1470-1.jpg?w=1024" alt="" class="wp-image-1299"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"la-relais-de-l-entrecote"} -->
+<h3 id="la-relais-de-l-entrecote" class="wp-block-heading has-small-font-size">La Relais de L'Entrecote</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This steak frites experience immediately became my obsession, and I took everyone I knew there whenever they came to visit. The only food items offered? Bread, walnut salad, and steak frites. This might sound limiting but you know it means they do these three items extremely well. You tell them how you'd like your steak cooked, and they bring out a serving of this perfect steak with fries and delicious sauce. And then, once you're done with your plate, they bring out a SECOND SERVING. Their house red was also one of the most beautiful and delicious bottles of red wine I've ever had. I'm obsessed with everything about this restaurant, but make sure you plan ahead if you want to eat there - they don't take reservations and there's usually a line out the door when they open because they're <em>that </em>popular.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:jetpack/tiled-gallery {"columns":3,"columnWidths":[["33.33333","33.33333","33.33333"],["50.00000","50.00000"]],"ids":[885,884,888,1002,887]} -->
+<div class="wp-block-jetpack-tiled-gallery aligncenter is-style-rectangular"><div class=""><div class="tiled-gallery__gallery"><div class="tiled-gallery__row"><div class="tiled-gallery__col" style="flex-basis:33.33333%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="885" data-link="https://valerianicolette.wordpress.com/?attachment_id=885" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais2.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais2.jpeg"/></figure></div><div class="tiled-gallery__col" style="flex-basis:33.33333%"><figure class="tiled-gallery__item"><img alt="" data-height="2048" data-id="884" data-link="https://valerianicolette.wordpress.com/?attachment_id=884" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais1-1.jpg?w=768" data-width="1536" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais1-1.jpg"/></figure></div><div class="tiled-gallery__col" style="flex-basis:33.33333%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="888" data-link="https://valerianicolette.wordpress.com/relais3/" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais3.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais3.jpeg"/></figure></div></div><div class="tiled-gallery__row"><div class="tiled-gallery__col" style="flex-basis:50.00000%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="1002" data-link="https://valerianicolette.wordpress.com/?attachment_id=1002" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais4-1.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais4-1.jpeg"/></figure></div><div class="tiled-gallery__col" style="flex-basis:50.00000%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="887" data-link="https://valerianicolette.wordpress.com/relais4/" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais4.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais4.jpeg"/></figure></div></div></div></div></div>
+<!-- /wp:jetpack/tiled-gallery -->
+
+<!-- wp:paragraph {"fontSize":"large"} -->
+<p class="has-large-font-size"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"pink-mamma"} -->
+<h3 id="pink-mamma" class="wp-block-heading has-small-font-size">Pink Mamma</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>This truffle pasta changed my life. It's what their known for, and I returned to get it 2x after going for a birthday dinner in September. Also worth noting is that there's a speakeasy underneath the restaurant - not a bad place to get a drink before dinner if there happens to be a wait! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:jetpack/tiled-gallery {"columns":2,"columnWidths":[["57.12572","42.87428"]],"ids":[1030,1031]} -->
+<div class="wp-block-jetpack-tiled-gallery aligncenter is-style-rectangular"><div class=""><div class="tiled-gallery__gallery"><div class="tiled-gallery__row"><div class="tiled-gallery__col" style="flex-basis:57.12572%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="1030" data-link="https://valerianicolette.wordpress.com/paris/pinkmamma/" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pinkmamma.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pinkmamma.jpeg"/></figure></div><div class="tiled-gallery__col" style="flex-basis:42.87428%"><figure class="tiled-gallery__item"><img alt="" data-height="711" data-id="1031" data-link="https://valerianicolette.wordpress.com/paris/pinkmamma-2/" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pinkmamma.gif" data-width="400" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pinkmamma.gif"/></figure></div></div></div></div></div>
+<!-- /wp:jetpack/tiled-gallery -->
+
+<!-- wp:paragraph {"fontSize":"large"} -->
+<p class="has-large-font-size"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column {"width":"33.33%"} -->
+<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:heading {"level":3,"fontSize":"small","anchor":"chez-janouz"} -->
+<h3 id="chez-janouz" class="wp-block-heading has-small-font-size">Chez Janouz 🎂</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Famous for its chocolate mousse and impeccable French cuisine, Julia was thoughtful and gracious enough to make a dinner reservation here for my actual birthday (which was also my first day of class). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Baaqir said it was one of the best duck plates he's ever tried, and my risotto was amazing. The chocolate mousse was the best birthday dessert I could've asked for, but you can't go to the restaurant just for the mousse. Like... they won't let you come for just dessert. So definitely come hungry for lunch/dinner! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>You HAVE to get a reservation by either going in person or calling ahead of time though because it's always packed.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"width":"66.66%"} -->
+<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:image {"id":1084,"aspectRatio":"2/3","scale":"cover","sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chezjanou.jpeg?w=768" alt="" class="wp-image-1084" style="aspect-ratio:2/3;object-fit:cover"/><figcaption class="wp-element-caption">Chez Janou, <strong>&nbsp;</strong>2 Rue Roger Verlomme</figcaption></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:gallery {"ids":[1080,1079,1077,1076,1078,1081],"linkTo":"none"} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":1080,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chezjanou1.jpeg?w=768" alt="" class="wp-image-1080"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1079,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chezjanou2.jpg?w=1024" alt="" class="wp-image-1079"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1077,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chezjanou3.jpg?w=768" alt="" class="wp-image-1077"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1076,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chezjanou5.jpg?w=768" alt="" class="wp-image-1076"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1078,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chezjanou4.jpg?w=768" alt="" class="wp-image-1078"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1081,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chezjanou6.gif?w=400" alt="" class="wp-image-1081"/></figure>
+<!-- /wp:image --></figure>
+<!-- /wp:gallery -->
+
+<!-- wp:paragraph {"fontSize":"large"} -->
+<p class="has-large-font-size"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"dinner-cruise-on-the-seine"} -->
+<h3 id="dinner-cruise-on-the-seine" class="wp-block-heading has-small-font-size">Dinner Cruise on the Seine</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>To celebrate our 6 month anniversary, I surprised Baaqir with a dinner cruise on the Seine and it was one of the best surprises I've probably ever pulled off. We collectively ordered a surf and turf and it was all delicious, definitely one of the more elegant dinners we've been to. However, if it wasn't for seeing the Eiffel Tower sparkle from the water, I'd actually recommend doing this tour during the day so you can better appreciate the view of the other landmarks near the Seine!</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:gallery {"linkTo":"none"} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":1069,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/dinnercruise1.jpeg?w=768" alt="" class="wp-image-1069"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1072,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/dinnercruise3.jpeg?w=768" alt="" class="wp-image-1072"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1071,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/dinnercruise2.jpeg?w=768" alt="" class="wp-image-1071"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1073,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/dinnercruise4.gif?w=400" alt="" class="wp-image-1073"/></figure>
+<!-- /wp:image --></figure>
+<!-- /wp:gallery -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"raclette"} -->
+<h3 id="raclette" class="wp-block-heading has-small-font-size">Raclette</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>While you're in France, you HAVE to try raclette. If you don't know what it is, it's essentially a superior version of fondue, because it's a dish made by melting cheese and scraping it onto other foods - usually meat and potatoes. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>Monica and I first tried raclette at <a href="https://lesfondusdelaraclette.fr/">Les Fondus de la Raclette</a> near Montparnasse, and I've been hooked ever since. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>It was only right that Mel, Kat, and I sat down for a raclette dinner when we went to French Alps since it's a dish that originates from the Swiss mountains. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>I also had to introduce Mika to raclette when she came to visit, though we went to a different restaurant and I liked the energy more from the first raclette place I went to with Monica. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>AND if you're around for the Christmas markets, you'll also definitely come across some raclette baguettes, which were so delicious. I'm getting hungry just thinking about it. </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:gallery {"columns":2,"linkTo":"none","className":"is-style-rectangular"} -->
+<figure class="wp-block-gallery has-nested-images columns-2 is-cropped is-style-rectangular"><!-- wp:image {"id":1181,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/raclette1.jpeg?w=768" alt="" class="wp-image-1181"/><figcaption class="wp-element-caption">Les Fondus de la Raclette, 209 Bd Raspail</figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1182,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/raclette4.jpeg?w=768" alt="" class="wp-image-1182"/><figcaption class="wp-element-caption">Raclette at the Notre Dame Christmas Market</figcaption></figure>
+<!-- /wp:image --></figure>
+<!-- /wp:gallery -->
+
+<!-- wp:paragraph {"style":{"typography":{"textAlign":"center"}},"fontSize":"medium"} -->
+<p class="has-text-align-center has-medium-font-size">I ❤️ Raclette</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"brasserie-des-pres-groovie"} -->
+<h3 id="brasserie-des-pres-groovie" class="wp-block-heading has-small-font-size">Brasserie des Pres / Groovie</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>For another high quality French dining experience, check out Brasserie des Pres. The other plus of going to this brasserie, besides having a reason to enjoy an amazing meal in the Saint-Germaine-Des-Pres neighborhood, is that there's the cutest bar tucked away on the top floor called<strong> Groovie.</strong> Amazing vibes and amazing drinks!</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:gallery {"ids":[1212,1213],"linkTo":"none"} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":1212,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/brasserie.jpeg?w=768" alt="" class="wp-image-1212"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1213,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/groovie.gif?w=400" alt="" class="wp-image-1213"/></figure>
+<!-- /wp:image --><figcaption class="blocks-gallery-caption wp-element-caption">Brasserie des Prés / Groovie,  6 Cr du Commerce Saint-André</figcaption></figure>
+<!-- /wp:gallery -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:heading {"level":3,"fontSize":"small","anchor":"le-17-45"} -->
+<h3 id="le-17-45" class="wp-block-heading has-small-font-size"><a href="https://www.le17-45.fr/">Le 17.45</a></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Build-Your-Own Charcuterie Boards! Found this place when I was looking for a place to meet Julia and we had the cutest little date. You'll get a menu with all the different <em>charcuterie</em>, <em>fromages</em>, and <em>tartinables</em> they offer - or you can order one of their various pre-selected board combinations. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"bar-a-bulles"} -->
+<h3 id="bar-a-bulles" class="wp-block-heading has-small-font-size">Bar À Bulles</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>There's a hidden bar BEHIND the windmill at the Moulin Rouge. To find it, walk past the Moulin Rouge to the left until you see a corridor, which takes you to the main entrance and their sprawling patio / indoor bar. Once you're inside, there may or may not be a line to the right, which is where you wait to be let upstairs and enjoy a drink outdoors in this iconic setting! </p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:image {"id":998,"sizeSlug":"large","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|duotone-1"}}} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/1745.gif?w=576" alt="" class="wp-image-998"/><figcaption class="wp-element-caption">Le 17.45, 21 Rue Gassendi</figcaption></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:gallery {"linkTo":"none"} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":1135,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/barabulles2.jpeg?w=768" alt="" class="wp-image-1135"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1134,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/barabulles1.jpg?w=768" alt="" class="wp-image-1134"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1136,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/barabulles3.gif?w=400" alt="" class="wp-image-1136"/></figure>
+<!-- /wp:image --><figcaption class="blocks-gallery-caption wp-element-caption">Bar À Bulles, 4 Cité Véron</figcaption></figure>
+<!-- /wp:gallery -->
+
+<!-- wp:paragraph {"fontSize":"large"} -->
+<p class="has-large-font-size"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"fontSize":"medium","anchor":"coffee-shops-coworking"} -->
+<h2 id="coffee-shops-coworking" class="wp-block-heading has-medium-font-size"><span style="text-decoration: underline">Coffee Shops / Coworking</span></h2>
+<!-- /wp:heading -->
+
+<!-- wp:columns {"className":"is-style-default"} -->
+<div class="wp-block-columns is-style-default"><!-- wp:column {"width":"50%"} -->
+<div class="wp-block-column" style="flex-basis:50%"><!-- wp:heading {"level":3,"fontSize":"small","anchor":"cafe-noir-1"} -->
+<h3 id="cafe-noir-1" class="wp-block-heading has-small-font-size">Cafe Noir</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>There's a few different locations around the city, you just have to have your own wifi/hotspot. There's one super close to campus too which was really convenient when I needed a quick pick-me-up between classes. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":1095,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cafenoir.jpeg?w=768" alt="" class="wp-image-1095"/><figcaption class="wp-element-caption">Cafe Noir</figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"bonjour-jacob-1"} -->
+<h3 id="bonjour-jacob-1" class="wp-block-heading has-small-font-size">Bonjour Jacob</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Modern coffee shop with SOME tables set aside for laptops/working. At the location we went to, there were two-three tables set aside for working. At all other tables, they'll ask you to put your laptops away so getting a seat/table for working isn't guaranteed but worth a shot! This is another good matcha option and they offer a few pastries, like the pistachio caramel cookie you see pictured.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"width":"50%"} -->
+<div class="wp-block-column" style="flex-basis:50%"><!-- wp:heading {"level":3,"fontSize":"small","anchor":"food-society-paris-1"} -->
+<h3 id="food-society-paris-1" class="wp-block-heading has-small-font-size"><a href="https://www.foodsociety.fr/">Food Society Paris</a></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Awesome coworking space right by the Montparnasse, introduced to me by my Parisian roommate. They have coffee, food, wifi, outlets, and plenty of space to work. Come hungry because they have a lot of food options - it is a food hall after all! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":1018,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/foodsociety.jpg?w=768" alt="" class="wp-image-1018"/><figcaption class="wp-element-caption">Food Society</figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1097,"aspectRatio":"1","scale":"cover","sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/bonjourjacob.jpeg?w=768" alt="" class="wp-image-1097" style="aspect-ratio:1;object-fit:cover"/><figcaption class="wp-element-caption">Bonjour Jacob</figcaption></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"cafe-fika"} -->
+<h3 id="cafe-fika" class="wp-block-heading has-small-font-size">Cafe Fika</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>A Swedish cafe that's great for getting a coffee or pastry and has lots of seating indoors and outdoors for working. It fills up quickly but both times I've been able to get a table outside (not that surprising because I went when it was cold out). A few months later, this specific coffee shop was alluded to in one of my French lessons (shoutout Alliance Francaise) which I thought was serendipitous because it was my Swedish friend Ida - who I met abroad through Bumble - that introduced me to the cafe! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:image {"id":1098,"aspectRatio":"3/2","scale":"cover","sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cafefika.jpeg?w=768" alt="" class="wp-image-1098" style="aspect-ratio:3/2;object-fit:cover"/><figcaption class="wp-element-caption">Cafe Fika, Indoors. </figcaption></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:image {"id":1102,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cafefikamention.png" alt="" class="wp-image-1102"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:pullquote {"style":{"spacing":{"padding":{"top":"0","bottom":"0"}}},"fontSize":"small"} -->
+<figure class="wp-block-pullquote has-small-font-size" style="padding-top:0;padding-bottom:0"><blockquote><p><em>Want to eat Swedish in Paris? It's possible! In the heart of the Marais, the Swedish Cafe is an atyptical and quiet place, located at 11 rue Payennr. On the inside, the kitchen side, come and taste kanelbullar (traditional Swedish brioche with cinnamon) or meatballs. <br>Be careful, there are only about twenty seats! Outside, on the courtyard side, share a drink or a meal on the terrace. <br>The cafe is close to the Picasso Museum. <br></em></p></blockquote></figure>
+<!-- /wp:pullquote -->
+
+<!-- wp:paragraph {"fontSize":"large"} -->
+<p class="has-large-font-size"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"fontSize":"medium","anchor":"sites"} -->
+<h2 id="sites" class="wp-block-heading has-medium-font-size"><span style="text-decoration: underline">Sites</span></h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"eiffel-tower-where-to-see-it"} -->
+<h3 id="eiffel-tower-where-to-see-it" class="wp-block-heading has-small-font-size">Eiffel Tower: Where to See It</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>One of my favorite parts about when Megan came to visit was that every night, we'd try to see the Eiffel Tower sparkle from a different location!! I'll list out where we went (and a few others) below in case you're also interested in appreciating it from different vantage points. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li>Up close and personal - classic</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>From the steps of the Sacré-Cœur in Montmarte</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Off the Trocadero metro </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Any rooftop in the 6th arrondissement</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>On a bridge near the Seine</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>On the Line 6 metro, where you can view it while riding over the Seine (between the Passy and Bir-Hakeim stations)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>On a dinner cruise </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>At a waterfront restaurant (such as Francette, which is where Lyric, Cory, Baaqir and I had dinner together)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>On the streets of the 5/6th arrondissements </li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:jetpack/slideshow {"autoplay":true,"ids":[1118,1120,1122,1116,1126,738,757,1130,1131],"sizeSlug":"full"} -->
+<div class="wp-block-jetpack-slideshow aligncenter" data-autoplay="true" data-delay="3" data-effect="slide" style="--aspect-ratio:calc(400 / 533)"><div class="wp-block-jetpack-slideshow_container swiper"><ul class="wp-block-jetpack-slideshow_swiper-wrapper swiper-wrapper"><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img alt="" class="wp-block-jetpack-slideshow_image wp-image-1118" data-id="1118" data-aspect-ratio="400 / 533" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sparkle2.gif"/><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">1. Up close</figcaption></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img alt="" class="wp-block-jetpack-slideshow_image wp-image-1120" data-id="1120" data-aspect-ratio="400 / 533" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sparkle3.gif"/><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">2. Sacré-Cœur</figcaption></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img alt="" class="wp-block-jetpack-slideshow_image wp-image-1122" data-id="1122" data-aspect-ratio="400 / 711" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sparkle4.gif"/><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">3. Trocadero</figcaption></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img alt="" class="wp-block-jetpack-slideshow_image wp-image-1116" data-id="1116" data-aspect-ratio="400 / 711" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sparkle1.gif"/><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">4. Rooftop at midnight</figcaption></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img alt="" class="wp-block-jetpack-slideshow_image wp-image-1126" data-id="1126" data-aspect-ratio="400 / 533" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sparkle6.gif"/><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">5. Bridge</figcaption></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img alt="" class="wp-block-jetpack-slideshow_image wp-image-738" data-id="738" data-aspect-ratio="400 / 500" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov7.gif"/><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">6. Line 6</figcaption></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img alt="" class="wp-block-jetpack-slideshow_image wp-image-757" data-id="757" data-aspect-ratio="400 / 500" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall14.gif"/><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">7. Dinner Cruise</figcaption></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img alt="" class="wp-block-jetpack-slideshow_image wp-image-1130" data-id="1130" data-aspect-ratio="400 / 711" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sparkle8.gif"/><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">8. Waterfront Restaurant</figcaption></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide"><figure><img alt="" class="wp-block-jetpack-slideshow_image wp-image-1131" data-id="1131" data-aspect-ratio="400 / 533" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sparkle7.gif"/><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">9. Ground view in the 5/6th </figcaption></figure></li></ul><a class="wp-block-jetpack-slideshow_button-prev swiper-button-prev swiper-button-white" role="button"></a><a class="wp-block-jetpack-slideshow_button-next swiper-button-next swiper-button-white" role="button"></a><a aria-label="Pause Slideshow" class="wp-block-jetpack-slideshow_button-pause" role="button"></a><div class="wp-block-jetpack-slideshow_pagination swiper-pagination swiper-pagination-white"></div></div></div>
+<!-- /wp:jetpack/slideshow --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:paragraph -->
+<p>The groundview in the last slide is one I cherish because I'd pass it often on my walks back to my apartment, and it truly never got old. You also may have noticed that in some of the pictures, the tower's golden lights are off - this is because they're turned off for the very last "show" of the night! Depending on what time of year you go, this will either be at midnight or 1am.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"fontSize":"large"} -->
+<p class="has-large-font-size"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"arc-de-triomphe"} -->
+<h3 id="arc-de-triomphe" class="wp-block-heading has-small-font-size">Arc de Triomphe</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I never went to the top of the Arc but there are tickets you can get for that underground... somewhere. I honestly don't have tips for how to find it but it's there. That entrance takes you to a pedestrian tunnel that takes you underneath the Arc in order to get to the center because crossing the street through this busy traffic circle would be terrifying/dangerous. Regardless of if you go to the top or not (we didn't), you have to see it. AND it's super close to the Champs-Elysees for some great shopping, including the biggest Sephora I've ever seen.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:gallery {"linkTo":"none"} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":1149,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/arc2.jpeg?w=768" alt="" class="wp-image-1149"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1148,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/arc1.jpeg?w=768" alt="" class="wp-image-1148"/></figure>
+<!-- /wp:image --><figcaption class="blocks-gallery-caption wp-element-caption">Arc de Triomphe</figcaption></figure>
+<!-- /wp:gallery -->
+
+<!-- wp:paragraph -->
+<p>This is also where I got stung by a bee, which was unfortunate, but I was able to practice my French in a really practical way at the pharmacy at least lol</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"fontSize":"large"} -->
+<p class="has-large-font-size"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"luxembourg-gardens"} -->
+<h3 id="luxembourg-gardens" class="wp-block-heading has-small-font-size">Luxembourg Gardens</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>These gardens will always have my heart. They're beautifully kept year-round, and so peaceful for reading or walking or basking in the sun. I plan to go back o is not being able to see it in all its springtime glory.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:jetpack/tiled-gallery {"columns":3,"columnWidths":[["36.34583","27.28568","36.36849"]],"ids":[1024,1026,1027]} -->
+<div class="wp-block-jetpack-tiled-gallery aligncenter is-style-rectangular"><div class=""><div class="tiled-gallery__gallery"><div class="tiled-gallery__row"><div class="tiled-gallery__col" style="flex-basis:36.34583%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="1024" data-link="https://valerianicolette.wordpress.com/?attachment_id=1024" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/luxembourg.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/luxembourg.jpeg"/></figure></div><div class="tiled-gallery__col" style="flex-basis:27.28568%"><figure class="tiled-gallery__item"><img alt="" data-height="3840" data-id="1026" data-link="https://valerianicolette.wordpress.com/?attachment_id=1026" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/luxembourg2.jpg?w=576" data-width="2160" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/luxembourg2.jpg"/></figure></div><div class="tiled-gallery__col" style="flex-basis:36.36849%"><figure class="tiled-gallery__item"><img alt="" data-height="533" data-id="1027" data-link="https://valerianicolette.wordpress.com/?attachment_id=1027" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/luxembourg.gif?w=400" data-width="400" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/luxembourg.gif"/></figure></div></div></div></div></div>
+<!-- /wp:jetpack/tiled-gallery -->
+
+<!-- wp:paragraph -->
+<p>There's a great L'Aduree close by too, which you have to get while you're in Paris (obviously). If you join their rewards program, they'll give you a macaron (or two) for free. I have to say though, I still think about the pistachio chocolate croissant I got from there once. The latte is alright, doesn’t have any caffeine.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:gallery {"linkTo":"none"} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":1145,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/laduree.jpeg?w=1024" alt="" class="wp-image-1145"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1146,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/laduree2.jpeg?w=1024" alt="" class="wp-image-1146"/></figure>
+<!-- /wp:image --></figure>
+<!-- /wp:gallery -->
+
+<!-- wp:paragraph -->
+<p>Also nearby (but on the other side of L'Aduree) is an amazing artisan gift shop called <a href="https://www.marinmontagut.com/en">Marin Montagut.</a> Perfect for an original souvenir because of the beautiful artistry. I don't have any pictures of it but it's worth checking out if you're in the area! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"fontSize":"large"} -->
+<p class="has-large-font-size"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"galeries-lafayette-by-the-opera"} -->
+<h3 id="galeries-lafayette-by-the-opera" class="wp-block-heading has-small-font-size">Galeries Lafayette by the Opera</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Great shopping and great rooftop view of the city! This is definitely worth seeing just for the interior of the mall!! Gorgeous and ornate, it's home to a myriad of brands from Guerlain to Skims to Free People to Ganni. There's a floor dedicated to just shoes and a floor for kid's toys - which I mention because it's where I bought the cutest macaron jellycat to gift my cousin. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Even if shopping</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If shopping doesn't appeal to you, there's a<strong> FREE</strong> rooftop view of Paris!! All you have to do is take the elevator up to the top floor (which is where you'll find souvenir shopping and their cafeteria) and then take a few stairs to get to the roof. Just make sure to go before the rooftop closes!! We missed it once because we didn't realize it closed at 7pm, so I'd double check before heading out there if that's what you're most excited for.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:jetpack/tiled-gallery {"columns":2,"columnWidths":[["42.87054","57.12946"]],"ids":[901,900]} -->
+<div class="wp-block-jetpack-tiled-gallery aligncenter is-style-rectangular"><div class=""><div class="tiled-gallery__gallery"><div class="tiled-gallery__row"><div class="tiled-gallery__col" style="flex-basis:42.87054%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="901" data-link="https://valerianicolette.wordpress.com/?attachment_id=901" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/galeries.jpeg?w=576" data-width="2268" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/galeries.jpeg"/></figure></div><div class="tiled-gallery__col" style="flex-basis:57.12946%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="900" data-link="https://valerianicolette.wordpress.com/?attachment_id=900" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/rooftopgalleries.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/rooftopgalleries.jpeg"/></figure></div></div></div></div></div>
+<!-- /wp:jetpack/tiled-gallery -->
+
+<!-- wp:heading {"level":3,"fontSize":"medium","anchor":"59-rivoli"} -->
+<h3 id="59-rivoli" class="wp-block-heading has-medium-font-size">59 Rivoli</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Formerly a squat, this building is now a well-known artist residency and public art space in Paris, located at 59 rue de Rivoli. Unlike many residencies, 59 Rivoli is open to the public, giving you a unique opportunity to engage with the creative process and observe some amazing, unique pieces from artists around the world - and it's free!  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column {"width":"100%","className":"is-style-section-3"} -->
+<div class="wp-block-column is-style-section-3" style="flex-basis:100%"><!-- wp:coblocks/gallery-offset -->
+<div aria-label="Offset Gallery" class="wp-block-coblocks-gallery-offset"><ul class="coblocks-gallery has-no-alignment has-caption-style-dark has-small-images has-small-gutter"><li class="coblocks-gallery--item"><figure class="wp-block-coblocks-gallery-offset__figure"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/rivoli2.jpeg?w=768" alt="" data-id="1238" data-imglink="" class="wp-image-1238"/></figure></li><li class="coblocks-gallery--item"><figure class="wp-block-coblocks-gallery-offset__figure"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/rivoli5.jpeg?w=768" alt="" data-id="1244" data-imglink="" class="wp-image-1244"/></figure></li><li class="coblocks-gallery--item"><figure class="wp-block-coblocks-gallery-offset__figure"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/rivoli7.jpeg?w=768" alt="" data-id="1245" data-imglink="" class="wp-image-1245"/></figure></li><li class="coblocks-gallery--item"><figure class="wp-block-coblocks-gallery-offset__figure"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/rivoli6.jpeg?w=768" alt="" data-id="1246" data-imglink="" class="wp-image-1246"/></figure></li><li class="coblocks-gallery--item"><figure class="wp-block-coblocks-gallery-offset__figure"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/rivoli8.jpeg?w=768" alt="" data-id="1248" data-imglink="" data-link="https://valerianicolette.wordpress.com/paris/rivoli8/" class="wp-image-1248"/></figure></li></ul></div>
+<!-- /wp:coblocks/gallery-offset --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:paragraph {"fontSize":"large"} -->
+<p class="has-large-font-size"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"fontSize":"medium","anchor":"museums"} -->
+<h2 id="museums" class="wp-block-heading has-medium-font-size"><span style="text-decoration: underline">Museums</span></h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"louis-vutton-museum"} -->
+<h3 id="louis-vutton-museum" class="wp-block-heading has-small-font-size">Louis Vutton Museum</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>We stumbled upon a random LV museum by Notre Dame. I don't think it exists anymore but I'll drop pics below anyway because it was a really cool exhibit on the history of LV. I include it only to say that there are a lot of pop ups and limited-time showings so... look out for them!</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:gallery {"linkTo":"none"} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":1240,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lv1.jpeg?w=768" alt="" class="wp-image-1240"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1241,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lv3.jpeg?w=768" alt="" class="wp-image-1241"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1242,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lv2.jpeg?w=768" alt="" class="wp-image-1242"/></figure>
+<!-- /wp:image --></figure>
+<!-- /wp:gallery -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"the-louvre"} -->
+<h3 id="the-louvre" class="wp-block-heading has-small-font-size">The Louvre</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>You could spend days in the Louvre by yourself. My favorite fun fact to share was that:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p><strong>If you spent just 30 seconds looking at each of the 380,000 objects, it would take&nbsp;about 100 days of continuous viewing (8 hours a day, no breaks),&nbsp;<a href="https://www.tripadvisor.com/ShowTopic-g187147-i14-k6923382-How_long_it_takes_for_Louvre-Paris_Ile_de_France.html">according to Tripadvisor</a>&nbsp;and&nbsp;<a href="https://www.headout.com/blog/louvre-paris-in-2-3-hours/">Headout</a>.&nbsp;</strong></p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>Things to keep in mind: there are food options in the Louvre, it's just kind of expensive. There's a terrace I found overlooking the pyramids that I spent hours journaling in after buying an espresso and pastry. Amazing place to get lost in but it does cost like 30 euros to enter, so I only went twice - though it's free for full-time students somehow I think? It's worth looking into but not something I qualified for since I was on exchange. There's also an intense shopping mall in the end.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The painting below is now my favorite painting, and it's all thanks to my friend Gaby encouraging me to seek it out. I'm pretty sure it's Baaqir's too based on his reaction 😂</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:gallery {"linkTo":"none","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|20","left":"var:preset|spacing|20"}}}} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":1165,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/louvre.jpg?w=768" alt="" class="wp-image-1165"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1167,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/louvre2.jpeg?w=768" alt="" class="wp-image-1167"/></figure>
+<!-- /wp:image --><figcaption class="blocks-gallery-caption wp-element-caption">Baaqir and I observing<strong> Modern Rome </strong>by<strong>&nbsp;Giovanni Paolo Panini</strong></figcaption></figure>
+<!-- /wp:gallery -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"d-orsay-museum"} -->
+<h3 id="d-orsay-museum" class="wp-block-heading has-small-font-size">D’Orsay Museum</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>An incredible museum, and probably Baaqir's favorite!! Lyric, Cory, Baaqir and I went together, and we were blown away by all the impressionist art, the Van Gogh exhibit, and most notably, the polar bear statue by <a href="https://www.musee-orsay.fr/en/artworks/ours-blanc-15496">François Pompon</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Lyric, Cory, Baaqir and I refer to this museum visit often, always affectionally referring to the statue itself as Pompon 🐻‍❄️</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:gallery {"linkTo":"none"} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":1055,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/orsay2.jpeg?w=768" alt="" class="wp-image-1055"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1053,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/orsay3.jpeg?w=768" alt="" class="wp-image-1053"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1054,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/orsay4.jpeg?w=768" alt="" class="wp-image-1054"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1052,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/orsay1.jpeg?w=768" alt="" class="wp-image-1052"/></figure>
+<!-- /wp:image --></figure>
+<!-- /wp:gallery -->
+
+<!-- wp:paragraph {"fontSize":"large"} -->
+<p class="has-large-font-size"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"fontSize":"medium","anchor":"montmarte-my-favorite-neighborhood"} -->
+<h2 id="montmarte-my-favorite-neighborhood" class="wp-block-heading has-medium-font-size"><span style="text-decoration: underline">Montmarte, My Favorite Neighborhood</span></h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I have nothing but love for Montmarte!!! There's a lot to see so it’s worth doing some extra research, but below are a few of my favorites, including the Wall of Love, <a href="https://fotoautomat.fr/en/noscabines/photobooth-07/">the oldest analog photobooth in Paris</a>, Sacré-Cœur Basilica, and a microbrewery that Baaqir and I stumbled upon.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>The Wall of Love is a little landmark found right by Abessess metro. Be warned - if you're getting off the metro here, take the elevator or prepare to climb what feels like a million stairs. It's STEEP. There's a cute gift shop right across from it too. The park is not open 24/7, so be mindful of when it closes if you plan to see it.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>My favorite souvenirs from Paris are undoubtedly the photo strips I got from this photobooth at <strong><a href="https://goo.gl/maps/Xf66EVFcFw24PaRD9">53 rue des Trois Frères</a></strong>. It also isn't open 24/7, I believe it closes around 9 or 10pm. It takes card and Apple Pay, you just have to read the instructions and tap when it tells you to - it's confusing at first. There was almost always a line when I went so that's to be expected, but I always thought it was worth it. There are definitely other photo booths around the city, but this one was my tried and true.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>There's nothing like the view of Paris from the stairs of the Basilica, especially because there's almost always a musician busking and people laughing and dancing and embodying the joie de vivre that Paris is known for. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>The evening that Baaqir and I found Patoche is still one of my favorite dates we've ever had. They have a lot of great beer and ciders on draft, as well as many, many games available to borrow and play with!! I came back with Vicky later on in the year and it was incredibly fun then too. I debated buying a t-shirt because they have cool merch but never did, so if you go back and want to bring me a souvenir.... let me know.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:heading {"level":4,"fontSize":"small","anchor":"wall-of-love-1"} -->
+<h4 id="wall-of-love-1" class="wp-block-heading has-small-font-size">Wall of Love</h4>
+<!-- /wp:heading -->
+
+<!-- wp:image {"id":1036,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/walloflove-1.jpeg?w=768" alt="" class="wp-image-1036"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:heading {"level":4,"fontSize":"small","anchor":"photobooth-1"} -->
+<h4 id="photobooth-1" class="wp-block-heading has-small-font-size">Photobooth</h4>
+<!-- /wp:heading -->
+
+<!-- wp:image {"id":1197,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/photobooth.jpeg?w=768" alt="" class="wp-image-1197"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:heading {"level":4,"fontSize":"small","anchor":"sacre-coeur-1"} -->
+<h4 id="sacre-coeur-1" class="wp-block-heading has-small-font-size">Sacré-Cœur</h4>
+<!-- /wp:heading -->
+
+<!-- wp:image {"id":1042,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/montmarte.jpg?w=768" alt="" class="wp-image-1042"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:heading {"level":4,"fontSize":"small","anchor":"patoche-microbrasserie"} -->
+<h4 id="patoche-microbrasserie" class="wp-block-heading has-small-font-size">Patoche - Microbrasserie</h4>
+<!-- /wp:heading -->
+
+<!-- wp:jetpack/tiled-gallery {"columns":0,"columnWidths":[["31.23207","37.53587","31.23207"]],"ids":[1058,1198,1199]} -->
+<div class="wp-block-jetpack-tiled-gallery aligncenter is-style-rectangular"><div class=""><div class="tiled-gallery__gallery"><div class="tiled-gallery__row"><div class="tiled-gallery__col" style="flex-basis:31.23207%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="1058" data-link="https://valerianicolette.wordpress.com/?attachment_id=1058" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/patoche.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/patoche.jpeg"/></figure></div><div class="tiled-gallery__col" style="flex-basis:37.53587%"><figure class="tiled-gallery__item"><img alt="" data-height="1703" data-id="1198" data-link="https://valerianicolette.wordpress.com/?attachment_id=1198" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/patoche2-e1750869237800.jpg?w=924" data-width="1536" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/patoche2-e1750869237800.jpg"/></figure></div><div class="tiled-gallery__col" style="flex-basis:31.23207%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="1199" data-link="https://valerianicolette.wordpress.com/?attachment_id=1199" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/patoche3.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/patoche3.jpeg"/></figure></div></div></div></div></div>
+<!-- /wp:jetpack/tiled-gallery --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:paragraph {"fontSize":"large"} -->
+<p class="has-large-font-size"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"fontSize":"medium","anchor":"shopping"} -->
+<h2 id="shopping" class="wp-block-heading has-medium-font-size"><span style="text-decoration: underline">Shopping</span></h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Rue de Rivoli borders the Marais it and is near where you'll find more shopping i.e. Bershka, Mango, H&amp;M, Ikea, Urban Outfitters, etc. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There are also lots of thrift shops around this neighborhood!! If there's one thing I'll encourage you to take advantage of in France, it's their thrifting. While you're near Rivoli, check out all the various <strong>Kilo Shop</strong> locations and <strong>Hippy Market.</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:gallery {"linkTo":"none"} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":1173,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/thrift1.jpeg?w=768" alt="" class="wp-image-1173"/><figcaption class="wp-element-caption">Kilo Shop</figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1175,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/hippy.jpeg?w=768" alt="" class="wp-image-1175"/><figcaption class="wp-element-caption">Hippy Market</figcaption></figure>
+<!-- /wp:image --></figure>
+<!-- /wp:gallery -->
+
+<!-- wp:paragraph -->
+<p>Another thrift shop, closer to the Eiffel Tower and off the Motte-Picquet Grenelle metro stop, is <strong>Five Vintage</strong>!! It's essentially a three-story Goodwill, and where I found a lot of great winter pieces. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:gallery {"linkTo":"none"} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":1177,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fivevintage2.jpeg?w=768" alt="" class="wp-image-1177"/><figcaption class="wp-element-caption">Downstairs of Five Vintage</figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1172,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/thrift.jpg?w=768" alt="" class="wp-image-1172"/><figcaption class="wp-element-caption">Thrifting in Annecy</figcaption></figure>
+<!-- /wp:image --></figure>
+<!-- /wp:gallery -->
+
+<!-- wp:heading {"fontSize":"medium","anchor":"beyond-paris"} -->
+<h2 id="beyond-paris" class="wp-block-heading has-medium-font-size"><span style="text-decoration: underline">Beyond Paris</span></h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"palace-of-versailles"} -->
+<h3 id="palace-of-versailles" class="wp-block-heading has-small-font-size">Palace of Versailles</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Super easy to get to, only about 45 minutes outside of Paris. Just make sure you get the right RER ticket because if they catch you without one, you <span style="text-decoration: underline">will</span> get fined. Baaqir and I learned that the hard way :/</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:gallery {"linkTo":"none"} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":1033,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/versailles-1.jpeg?w=768" alt="" class="wp-image-1033"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1034,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/versailles2.jpeg?w=768" alt="" class="wp-image-1034"/></figure>
+<!-- /wp:image --></figure>
+<!-- /wp:gallery -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"annecy-chamonix-mt-blanc"} -->
+<h3 id="annecy-chamonix-mt-blanc" class="wp-block-heading has-small-font-size">Annecy - Chamonix - Mt. Blanc </h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Mel planned the most perfect girls trip for the three of us to see the French Alps. We went from having the perfect time in Paris, enjoying the beauty of Annecy, exploring the cute mountain town of Chamonix, and seeing the marvel that was Mt Blanc. Driving the boat on Lake Annecy was perfect, and taking the time to walk around this charming town was a dream. Nothing could've prepared me for how awe-inspiring reaching the top of Mt Blanc would be, which I learned is the highest mountain in the Alps and Western Europe. What a weekend!! If you want more details, let me know but I'll have to ask Mel because she was the mastermind behind our itinerary. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:jetpack/tiled-gallery {"columns":0,"columnWidths":[["33.32641","33.34718","33.32641"],["48.96668","51.03332"]],"ids":[1217,1223,1221,866,1021]} -->
+<div class="wp-block-jetpack-tiled-gallery aligncenter is-style-rectangular"><div class=""><div class="tiled-gallery__gallery"><div class="tiled-gallery__row"><div class="tiled-gallery__col" style="flex-basis:33.32641%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="1217" data-link="https://valerianicolette.wordpress.com/?attachment_id=1217" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/rainbow.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/rainbow.jpeg"/></figure></div><div class="tiled-gallery__col" style="flex-basis:33.34718%"><figure class="tiled-gallery__item"><img alt="" data-height="533" data-id="1223" data-link="https://valerianicolette.wordpress.com/?attachment_id=1223" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lakeannecy.gif" data-width="400" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lakeannecy.gif"/></figure></div><div class="tiled-gallery__col" style="flex-basis:33.32641%"><figure class="tiled-gallery__item"><img alt="" data-height="2048" data-id="1221" data-link="https://valerianicolette.wordpress.com/?attachment_id=1221" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/annecy-2.jpg?w=768" data-width="1536" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/annecy-2.jpg"/></figure></div></div><div class="tiled-gallery__row"><div class="tiled-gallery__col" style="flex-basis:48.96668%"><figure class="tiled-gallery__item"><img alt="" data-height="4032" data-id="866" data-link="https://valerianicolette.wordpress.com/chamonix/" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chamonix.jpeg?w=768" data-width="3024" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chamonix.jpeg"/></figure></div><div class="tiled-gallery__col" style="flex-basis:51.03332%"><figure class="tiled-gallery__item"><img alt="" data-height="3294" data-id="1021" data-link="https://valerianicolette.wordpress.com/?attachment_id=1021" data-url="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/mtblanc-e1750872459819.jpeg?w=779" data-width="2575" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/mtblanc-e1750872459819.jpeg"/></figure></div></div></div></div></div>
+<!-- /wp:jetpack/tiled-gallery -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"nice"} -->
+<h3 id="nice" class="wp-block-heading has-small-font-size">Nice</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I took a day trip to Nice, spent one night in a hostel just because I wanted to explore. If I could have afforded staying longer I definitely would have, but I loved that I was able to give myself a solo beach day in such a beautiful place.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:gallery {"linkTo":"none"} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":1049,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nice.gif?w=400" alt="" class="wp-image-1049"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1048,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nice-1.jpg?w=576" alt="" class="wp-image-1048"/></figure>
+<!-- /wp:image --></figure>
+<!-- /wp:gallery -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"disney"} -->
+<h3 id="disney" class="wp-block-heading has-small-font-size">Disney</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Monica and I went to Disneyland Paris just to say we did!! It was a really fun but cold day - overall super magical because we got blessed with the snow and experienced the park with even more holiday whimsy because of it. It's a really easy metro ride, just a 40-minute ride on the<strong> RER-A </strong>train to the Marne-la-Vallée/Chessy station. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:gallery {"linkTo":"none"} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":1206,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/disney.jpeg?w=768" alt="" class="wp-image-1206"/></figure>
+<!-- /wp:image --></figure>
+<!-- /wp:gallery -->
+
+<!-- wp:heading {"level":3,"fontSize":"small","anchor":"strasbourg"} -->
+<h3 id="strasbourg" class="wp-block-heading has-small-font-size">Strasbourg</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>During Monica's last week, we took a day trip to Strasbourg because we'd heard so much hype about their Christmas markets and because we wanted to explore outside Paris. Cute small town that we spent the entire day in, but didn't stay overnight. I think we did it right because a day is all you need to see the markets and the other main attractions (in my opinion). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:gallery {"linkTo":"none"} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":1209,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/strasbourg2.jpeg?w=768" alt="" class="wp-image-1209"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1208,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/strasbourg-1.jpeg?w=768" alt="" class="wp-image-1208"/></figure>
+<!-- /wp:image --></figure>
+<!-- /wp:gallery -->
+            
+        </div>
+        </div>
+    </section>
+
+      <!-- 5. thanks -->
+     <section class="py-24 bg-cream/60 backdrop-blur-sm fade">
+      <div class="max-w-5xl mx-auto px-6 md:px-0">
+        <h2 class="font-display text-3xl md:text-4xl pb-6 section-divider"> Thanks for Reading!</h2>
+        <div class="space-y-12 mt-12">
+            If you have any suggestions, questions, or comments, please reach out and let me know - I'd love to hear from you! Bonne chance et profitez de Paris pour moi! ♡ 
+         </div>
+        </div>
+    </section>
+
+
+    <!-- QUOTE -->
+    <section class="bg-contact text-cream py-16 fade">
+      <div class="max-w-4xl mx-auto text-center px-6">
+        <blockquote class="text-2xl md:text-3xl font-display italic mb-6">
+          "The people crazy enough to think they can change the world are the ones that do."
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="py-24 bg-cream fade">
+      <div class="max-w-4xl mx-auto text-center space-y-12 px-6 md:px-0">
+        <div class="space-y-4">
+          <h3 class="font-display text-2xl md:text-3xl">Ready to Create Change Together?</h3>
+          <p class="text-[#4a4a45] max-w-2xl mx-auto">Whether you're looking to collaborate on climate policy, need creative content, or want to chat about making systems more human-centered, I'd love to connect.</p>
+        </div>
+
+        <!-- ICONS -->
+        <div class="flex justify-center space-x-10">
+            <a href="mailto:vnm58293@gmail.com" aria-label="Email" class="social-icon">
+            <i data-lucide="mail"></i></a>
+
+           <a href="https://www.linkedin.com/in/valeriamera/" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <i data-lucide="linkedin"></i></a>
+          
+            <a href="https://www.instagram.com/valeriamera/" target="_blank" aria-label="Instagram" class="social-icon">
+            <i data-lucide="instagram"></i></a>
+
+            <a href="https://valeriamera.substack.com/" aria-label="Substack" class="social-icon">
+            <i data-lucide="newspaper"></i></a>
+        </div>
+
+       <form
+      action="https://valeriamera.substack.com/api/v1/free?nojs=true"
+      method="POST"
+      class="max-w-lg mx-auto flex border border-story focus-within:ring-2 focus-within:ring-story rounded-lg overflow-hidden"
+    >
+      <input type="hidden" name="first_url" value="https://valeriamera.substack.com" />
+      <input type="hidden" name="first_referrer" value="" />
+      <input type="email" name="email" placeholder="Your email" class="flex-grow px-5 py-3 bg-transparent placeholder-[#706f6a] focus:outline-none min-w-0" required />
+      <button type="submit" class="px-4 sm:px-6 py-3 bg-contact text-white font-medium hover:bg-contac/90 transition-colors flex items-center justify-center flex-shrink-0">
+        Subscribe
+      </button>
+    </form>
+
+
+        <div class="flex flex-col items-center justify-center w-full gap-2 text-sm text-[#6d6d67]">
+          <div class="flex items-center gap-4">
+            <p>© <span id="year"></span> Valeria Nicolette Mera</p>
+          </div>
+          <span>Site designed and coded by yours truly.</span>
+        </div>
+      </div>
+
+      <div class="visitor-counter" id="visitorCounter">
+        <span class="counter-icon">🪩</span>
+        <span>Visitors:</span>
+        <span class="counter-number" id="counterNumber">...</span>
+      </div>
+    </footer>
+
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        if (window.lucide && typeof lucide.createIcons === 'function') {
+          lucide.createIcons();
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: '0px' }
+        );
+        document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+        const yearElement = document.getElementById('year');
+        if (yearElement) yearElement.textContent = new Date().getFullYear();
+
+        const contactForm = document.querySelector('form[action*="formspree"]');
+        if (contactForm) {
+          contactForm.addEventListener('submit', function(e) {
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin mr-2"></i>Sending...';
+            submitButton.disabled = true;
+            setTimeout(() => {
+              submitButton.innerHTML = originalText;
+              submitButton.disabled = false;
+              if (window.lucide) lucide.createIcons();
+            }, 3000);
+          });
+        }
+      });
+    </script>
+
+    <script>
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const hamburger = document.querySelector('.hamburger');
+        mobileMenu.classList.toggle('open');
+        hamburger.classList.toggle('open');
+      }
+      function closeMobileMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const hamburger = document.querySelector('.hamburger');
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+      }
+      document.addEventListener('click', function(event) {
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (!event.target.closest('nav') && mobileMenu.classList.contains('open')) {
+          closeMobileMenu();
+        }
+      });
+    </script>
+
+    <script src="counter.js"></script>
+
+  </body>
+</html>
