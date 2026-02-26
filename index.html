@@ -374,7 +374,7 @@
 
       .color-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             gap: 50px 40px;
             margin-bottom: 60px;
         }
@@ -387,19 +387,28 @@
         }
 
         .color-circle {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+              display: flex;             /* center icon */
+              align-items: center;       /* vertical center */
+              justify-content: center;   /* horizontal center */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
+        .color-circle svg {
+            width: 28px;
+            height: 28px;
+            stroke: white;
+        }
         .color-circle:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 30px rgba(0,0,0,0.2);
         }
 
+ 
        
         /* Color-specific circles (use these if not using images) */
         .home-color { background-color: #ad1457; }
@@ -836,6 +845,61 @@
         </div>
       </div>
     </section>
+
+    <!-- COLORS -->
+    <section id="colors" class="py-24 bg-cream">
+       <div class="max-w-5xl mx-auto px-6 md:px-0">
+
+        <div class="text-center mb-12 fade">
+          <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">EXPLORE</h2>
+          <p class="text-lg text-[#4a4a45] mt-8 max-w-2xl mx-auto">
+            </p>
+        
+         <div class="color-grid mt-16">
+
+        <div class="color-item">
+        <div class="color-circle home-color"><i data-lucide="home"></i></div>
+        <h3 class="font-display text-xl mb-2 text-[#22221f]">
+            <a href="#" class="nav-link text-home">HOME</a>
+        </h3>
+    </div>
+
+         <div class="color-item">
+           <div class="color-circle experience-color"><i data-lucide="briefcase"></i></div>
+            <h3 class="font-display text-xl mb-2 text-[#22221f]"><a href="experience.html" class="nav-link text-exp">EXPERIENCE</a></h3>
+   
+        </div>
+
+        <div class="color-item">
+            <div class="color-circle story-color"> <i data-lucide="book-open"></i></div> 
+            <h3 class="font-display text-xl mb-2 text-[#22221f]"><a href="story.html" class="nav-link text-story">INSIGHTS</a></h3>
+   
+        </div>
+
+         <div class="color-item">
+            <div class="color-circle portfolio-color"> <i data-lucide="palette"></i></div> 
+            <h3 class="font-display text-xl mb-2 text-[#22221f]"><a href="portfolio.html" class="nav-link text-portfolio">PORTFOLIO</a></h3>
+   
+        </div>
+        
+
+        <div class="color-item">
+          <div class="color-circle worldview-color"> <i data-lucide="earth"></i></div> 
+            <h3 class="font-display text-xl mb-2 text-[#22221f]"><a href="world.html" class="nav-link text-world">BACKGROUND</a></h3>
+ 
+        </div>
+
+        <div class="color-item">
+            <div class="color-circle contact-color"> <i data-lucide="book-heart"></i></div> 
+            <h3 class="font-display text-xl mb-2 text-[#22221f]"><a href="contact.html" class="nav-link text-contact">CONNECT</a></h3>
+   
+        </div>
+
+    </div>
+
+
+        </div>
+      </section>
 
     <!-- QUOTE SECTION -->
     <section class="bg-index text-cream py-16 fade">
