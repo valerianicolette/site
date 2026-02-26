@@ -341,14 +341,13 @@
         border-radius: 2px;
       }
 
-      /* Nav hover colors */
+       /* Nav hover colors */
       .text-home:hover { color: #ad1457 }
-      .text-about:hover { color: #E0295D; }
-      .text-story:hover { color: #f48fb1; }
-      .text-world:hover { color: #4caf50; }
       .text-exp:hover { color: #2e7d32; }
+      .text-story:hover { color: #1976d2; }
       .text-portfolio:hover { color: #0887f7 }
-      .text-contact:hover { color: #1976d2; }
+      .text-world:hover { color: #4caf50; }
+      .text-contact:hover { color: #E0295D; }
 
       /* Utility classes */
       .bg-guava { background-color: #f7a1a1; }
@@ -620,12 +619,11 @@
        <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-8 text-sm tracking-wide uppercase font-medium">
             <a href="index.html" class="nav-link text-home">Home</a>
-            <a href="about.html" class="nav-link text-about">About Me</a>
-            <a href="story.html" class="nav-link text-story">Blog</a>
-            <a href="world.html" class="nav-link text-world">Worldview</a>
             <a href="experience.html" class="nav-link text-exp">Experience</a>
+            <a href="story.html" class="nav-link text-story">Insights</a>
             <a href="portfolio.html" class="nav-link text-portfolio">Portfolio</a>
-            <a href="contact.html" class="nav-link text-contact">Contact</a>
+            <a href="world.html" class="nav-link text-world">Background</a>
+            <a href="contact.html" class="nav-link text-contact">Connect</a>
         </div>
 
         <!-- Mobile Hamburger Button -->
@@ -640,12 +638,11 @@
     <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-cream/95 backdrop-blur-md z-10 md:hidden">
         <div class="flex flex-col items-center justify-center h-full space-y-8 text-lg tracking-wide uppercase font-medium">
             <a href="index.html" class="nav-link text-home" onclick="closeMobileMenu()">Home</a>
-            <a href="about.html" class="nav-link text-about" onclick="closeMobileMenu()">About Me</a>
-            <a href="story.html" class="nav-link text-story" onclick="closeMobileMenu()">Blog</a>
-            <a href="world.html" class="nav-link text-world" onclick="closeMobileMenu()">Worldview</a>
             <a href="experience.html" class="nav-link text-exp" onclick="closeMobileMenu()">Experience</a>
+            <a href="story.html" class="nav-link text-story" onclick="closeMobileMenu()">Insights</a>
             <a href="portfolio.html" class="nav-link text-portfolio" onclick="closeMobileMenu()">Portfolio</a>
-            <a href="contact.html" class="nav-link text-contact" onclick="closeMobileMenu()">Contact</a>
+            <a href="world.html" class="nav-link text-world" onclick="closeMobileMenu()">Background</a>
+            <a href="contact.html" class="nav-link text-contact" onclick="closeMobileMenu()">Connect</a>
         </div>
     </div>
 
@@ -658,7 +655,7 @@
               <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight">Hi, I'm Valeria. <br/><span class="text-index">Nice to meet you!</span></h1>
             </div>
             <p class="text-lg md:text-xl text-[#4a4a45] leading-relaxed">
-              Welcome to my website, where policy meets creativity — grounded in empathy, driven by purpose.
+              I'm a climate and public policy professional, merging my career ambition with my creative side. Welcome to my website! 
               </p>
             
             <div class="flex flex-wrap gap-4 pt-4">
@@ -666,9 +663,9 @@
             class="scroll-mt-16 md:scroll-mt-24 inline-flex items-center gap-2 px-8 py-3 bg-index text-white hover:bg-index/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-index">
             Explore <i data-lucide="arrow-down" class="w-4 h-4"></i>
             </a>
-            <a href="contact.html" 
+            <a href="https://valeriamera.substack.com/" 
               class="inline-flex items-center gap-2 px-8 py-3 border border-index text-index hover:bg-index hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-index">
-              Let's Collaborate <i data-lucide="mail" class="w-4 h-4"></i>
+              Substack <i data-lucide="mail" class="w-4 h-4"></i>
             </a>
           </div>
           </div>
@@ -682,66 +679,62 @@
       </div>
     </header>
 
+ 
 
-    <!-- Overlay + Popup -->
-  <div id="overlay" class="overlay">
-    <div class="popup">
-      <span class="close-btn" id="closePopup">&times;</span>
-    
-      <!-- GoFundMe Widget -->
-      <div 
-        class="gfm-embed" 
-        data-url="https://www.gofundme.com/f/rebuild-abuelitas-home/widget/large?sharesheet=undefined&attribution_id=sl:91e83d29-fb26-45ad-9a9f-3da65495582d">
-      </div>
-      <br>
-       <p>
-        On my birthday, Sep 3 2025, the home that held generations of memories, including my mom’s ashes, 
-        was lost in a devastating fire. Despite this tragedy, I’m deeply grateful my family is safe.
-      </p>
-      <p>
-        I’ve started a GoFundMe to help build a new beginning for my abuelita and our family.  
-        Please consider donating and/or subscribing to my website for updates.
-      </p>
-
-
-    </div>
-  </div>
-
-  <!-- GoFundMe Embed Script -->
-  <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
-
-  <script>
-    const overlay = document.getElementById('overlay');
-    const closeBtn = document.getElementById('closePopup');
-
-    // Show popup after 3 seconds
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        overlay.style.display = 'flex';
-      }, 3000);
-    });
-
-    // Close with X
-    closeBtn.addEventListener('click', () => {
-      overlay.style.display = 'none';
-    });
-
-    // Close by clicking outside popup
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) {
-        overlay.style.display = 'none';
-      }
-    });
-  </script>
-
-
-     <!-- WHAT I DO -->
-    <section id="about" class="py-24 bg-hero">
-      <div class="max-w-6xl mx-auto px-6 md:px-0">
+    <!-- WHAT I DO -->
+    <section  id="about" class="py-24 bg-hero">
+      <div class="max-w-5xl mx-auto px-6 md:px-0">
         <div class="text-center mb-16 fade">
           <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">WHAT I DO</h2>
           <p class="text-lg text-[#4a4a45] mt-8 max-w-2xl mx-auto">
-            Community is at the heart of everything I do. I believe policy work should center relationships and understanding others — from the personal to the global. This commitment to helping people, combined with the strategic skills to create real change, drives me as a public servant with both the heart to care deeply and the expertise to make it happen.
+            I work at the intersection of climate policy and infrastructure, focused on how regulatory decisions translate into real-world systems. My work is grounded in public service and a commitment to understanding complexity in practice.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-20 mb-16">
+
+          
+            <div class="section-card rounded-2xl p-6 fade-up" style="animation-delay: 0.2s">
+            <div class="section-icon">
+              <i data-lucide="briefcase" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-xl mb-3 text-[#22221f]">Experience</h3>
+            <p class="text-[#4a4a45] text-sm mb-3 leading-relaxed">
+              My professional path spans local, federal, and state government, now focusing on energy policy.
+              I'm committed to building a more sustainable world where no one goes without their basic needs. 
+              I believe the way forward is transforming government programs to genuinely serve people's values — programs built on rigorous research but shaped by the lived experiences of real communities.
+            </p>
+             <a href="experience.html" class="content-link text-index text-sm font-medium inline-flex items-center gap-1">
+              View Experience <i data-lucide="arrow-right" class="w-3 h-3"></i>
+            </a>
+          </div>
+
+            <div class="section-card rounded-2xl p-6 fade-up" style="animation-delay: 0.2s">
+            <div class="section-icon">
+              <i data-lucide="pen-line" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-xl mb-3 text-[#22221f]">Insights</h3>
+            <p class="text-[#4a4a45] text-sm mb-3 leading-relaxed">
+              Reflections on policy, district energy, leadership, and systems thinking — written in real time as I grow in the field.
+              I write about what I’m learning in real time — from technical site visits to policy conferences and reflections on systems thinking. Not as an expert, but as a practitioner committed to growth, clarity, and responsible public service.
+              </p>
+               <a href="story.html" class="content-link text-index text-sm font-medium inline-flex items-center gap-1">
+              Read Insights <i data-lucide="arrow-right" class="w-3 h-3"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+   
+   
+    <!-- MY APPROACH -->
+    <section class="py-24 bg-cream">
+      <div class="max-w-6xl mx-auto px-6 md:px-0">
+        <div class="text-center mb-16 fade">
+          <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">MY APPROACH</h2>
+          <p class="text-lg text-[#4a4a45] mt-8 max-w-2xl mx-auto">
+            Effective policy requires more than analysis — it requires context, communication, and responsibility. I approach infrastructure and governance work with a systems mindset, creative clarity, and a long-term view of public service.
           </p>
         </div>
 
@@ -750,91 +743,51 @@
           <!-- Worldview Card -->
           <div class="section-card rounded-2xl p-6 fade-up" style="animation-delay: 0.2s">
             <div class="section-icon">
-              <i data-lucide="earth" class="w-6 h-6"></i>
+              <i data-lucide="network" class="w-6 h-6"></i>
             </div>
             <h3 class="font-display text-xl mb-3 text-[#22221f]">Global Perspective</h3>
             <p class="text-[#4a4a45] text-sm mb-4 leading-relaxed">
-              Rooted in local compassion and shaped by international experience, I bring a cross-cultural lens to everything I do—connecting place, people, and purpose. I lead with empathy and use my diplomatic nature to find common ground, turning differences into opportunities for meaningful change.
+              Rooted in local compassion and shaped by international experience, I bring a cross-cultural lens to everything I do — connecting place, people, and purpose. 
+              My background has taken me across countries and communities, and that exposure informs how I show up in every room I enter.
             </p>
-            <a href="world.html" class="content-link text-index text-sm font-medium  inline-flex items-center gap-1">
-              My Global Perspective <i data-lucide="arrow-right" class="w-3 h-3"></i>
+            <a href="background.html" class="content-link text-index text-sm font-medium  inline-flex items-center gap-1">
+              My Background <i data-lucide="arrow-right" class="w-3 h-3"></i>
             </a>
           </div>
 
-          <!-- Experience Card -->
+          <!-- Creative Communication Card -->
           <div class="section-card rounded-2xl p-6 fade-up" style="animation-delay: 0.3s">
-            <div class="section-icon">
-              <i data-lucide="briefcase" class="w-6 h-6"></i>
-            </div>
-            <h3 class="font-display text-xl mb-3 text-[#22221f]">Policy & Impact</h3>
-            <p class="text-[#4a4a45] text-sm mb-4 leading-relaxed">
-              I'm committed to building a more sustainable world where no one goes without their basic needs. I believe the way forward is transforming government programs to genuinely serve people's values — programs built on rigorous research but shaped by the lived experiences of real communities.
-            </p>
-            <a href="experience.html" class="content-link text-index text-sm font-medium inline-flex items-center gap-1">
-              My Career Journey<i data-lucide="arrow-right" class="w-3 h-3"></i>
-            </a>
-          </div>
-
-          <!-- Portfolio Card -->
-          <div class="section-card rounded-2xl p-6 fade-up" style="animation-delay: 0.4s">
             <div class="section-icon">
               <i data-lucide="palette" class="w-6 h-6"></i>
             </div>
-            <h3 class="font-display text-xl mb-3 text-[#22221f]">Creative Communication</h3>
+            <h3 class="font-display text-xl mb-3 text-[#22221f]">Creative Mindset</h3>
             <p class="text-[#4a4a45] text-sm mb-4 leading-relaxed">
-              I blend data, design, and storytelling to transform complex ideas into clear, engaging work that creates meaningful and lasting impact. In a responsive democracy, it's essential that our efforts to create change are clearly understood by the people we serve.
+             From policy communications and data visualization to personal video essays and photo collages — my portfolio spans the full range of what it means to be a creative person. 
+             Whether the work is professional or personal, communicating ideas and feelings with intention is how we build the connections that actually matter.
             </p>
             <a href="portfolio.html" class="content-link text-index text-sm font-medium inline-flex items-center gap-1">
-              See My Portfolio <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              View Portfolio <i data-lucide="arrow-right" class="w-3 h-3"></i>
+            </a>
+          </div>
+
+          <!-- Public Service Card -->
+          <div class="section-card rounded-2xl p-6 fade-up" style="animation-delay: 0.4s">
+            <div class="section-icon">
+              <i data-lucide="users" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-xl mb-3 text-[#22221f]">Community Oriented</h3>
+            <p class="text-[#4a4a45] text-sm mb-4 leading-relaxed">
+              Community is at the heart of everything I do — and that starts with genuine connection. Whether you're interested in collaborating on climate policy, a creative project, or simply think we'd get along, my contact page is an open door. I believe relationships are where change actually begins.
+            </p>
+            <a href="contact.html" class="content-link text-index text-sm font-medium inline-flex items-center gap-1">
+              Connect <i data-lucide="arrow-right" class="w-3 h-3"></i>
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHY I DO IT-->
-    <section class="py-24 bg-cream">
-      <div class="max-w-4xl mx-auto px-6 md:px-0">
-        <div class="text-center mb-16 fade">
-          <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">WHY I DO IT</h2>
-          <p class="text-lg text-[#4a4a45] mt-8 max-w-2xl mx-auto">
-            Behind every project and passion is a deeper story — shaped by upbringing, values, and life lessons that inspire my work every day.
-            </p>
-        </div>
 
-        <div class="grid md:grid-cols-2 gap-20 mb-16">
-            <div class="text-center fade-up" style="animation-delay: 0.1s">
-            <div class="section-icon mx-auto">
-              <i data-lucide="message-circle-heart" class="w-6 h-6"></i>
-            </div>
-            <h3 class="font-display text-xl mb-3 text-[#22221f]">About Me</h3>
-            <p class="text-[#4a4a45] text-sm mb-3 leading-relaxed">
-              When I set out to design this website, I knew I wanted it to reflect more than just my résumé and creative work. I wanted it to carry my voice, my personality — and most of all, the intention and care behind every page. This site isn’t just a portfolio; it’s a narrative. A way of understanding myself through the intersections of life, work, and creativity.
-            </p>
-             <a href="about.html" class="content-link text-index text-sm font-medium inline-flex items-center gap-1">
-              Learn More <i data-lucide="arrow-right" class="w-3 h-3"></i>
-            </a>
-          </div>
-
-           <div class="text-center fade-up" style="animation-delay: 0.2s">
-            <div class="section-icon mx-auto">
-              <i data-lucide="book-heart" class="w-6 h-6"></i>
-            </div>
-            <h3 class="font-display text-xl mb-3 text-[#22221f]">My Story</h3>
-            <p class="text-[#4a4a45] text-sm mb-3 leading-relaxed">
-              To say my journey in life is a surprising one would be an understatement. While my personal background isn’t usually at the forefront of my work, I want to be open about the experiences that that have shaped my character. Sharing my story is how I wear my heart on my sleeve and embody the openness I believe is essential for genuine connection.
-
-
-              </p>
-               <a href="story.html" class="content-link text-index text-sm font-medium inline-flex items-center gap-1">
-              Read More <i data-lucide="arrow-right" class="w-3 h-3"></i>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-   
     <!-- WHAT I BRING -->
     <section class="py-24 bg-hero/70 backdrop-blur-sm">
       <div class="max-w-6xl mx-auto px-6 md:px-0">
@@ -947,7 +900,7 @@
 
         <div class="color-item">
             <div class="color-circle contact-color"></div> 
-            <h3 class="font-display text-xl mb-2 text-[#22221f]"><a href="contact.html" class="nav-link text-contact">CONTACT</a></h3>
+            <h3 class="font-display text-xl mb-2 text-[#22221f]"><a href="contact.html" class="nav-link text-contact">CONNECT</a></h3>
            <p class="text-[#4a4a45] text-sm mb-3 leading-relaxed">
             Deep blue like the ocean — a reflection of my desire to connect beneath the surface. I bring steady, open-hearted energy to relationships, even as we navigate the unknown or chart new paths together.
            </p>
