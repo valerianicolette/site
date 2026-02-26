@@ -407,8 +407,9 @@
       .blog-iframe-container {
         position: relative;
         width: 100%;
-        height: 100vh;
-        overflow: hidden;
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 3rem 1rem;
       }
 
       .blog-iframe {
@@ -484,7 +485,7 @@
         }
 
         .blog-iframe-container {
-          height: 600px;
+          padding: 2rem 1rem;
         }
       }
 
@@ -526,7 +527,7 @@
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        color: #c3728d;
+        color: #1976d2;
         text-decoration: none;
         font-size: 0.875rem;
         font-weight: 400;
@@ -537,7 +538,7 @@
       }
 
       .full-blog-link:hover {
-        color: #c3728d;
+        color: #135ea8;
         transform: translateY(-1px);
       }
 
@@ -679,19 +680,19 @@
       <div class="space-y-8 text-left ml-4">
         <div class="floating-element">
           <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight">
-            My Journey,
-            <span class="text-story block">Unfiltered</span>
+            Reflections
+            <span class="text-story block">On Everything</span>
           </h1>
         </div>
 
         <p class="text-lg md:text-xl text-[#4a4a45]">
-            How loss, love, and resilience have woven the story of who I am today.
+            Thoughts on the world, shaped by the life I've lived in it.
         </p>
 
         <div class="flex flex-wrap gap-4 pt-4">
-           <a href="https://valerianicolette.wordpress.com/" target="_blank" 
+           <a href="https://valeriamera.substack.com/" target="_blank" 
            class="inline-flex items-center gap-2 px-8 py-3 bg-story text-white hover:bg-story/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-story">
-           View WordPress <i data-lucide="pencil-line" class="w-4 h-4"></i>
+           View Substack <i data-lucide="pencil-line" class="w-4 h-4"></i>
            </a>
            <a href="https://www.gofundme.com/f/rebuild-abuelitas-home" target="_blank"
            class="inline-flex items-center gap-2 px-8 py-3 border border-story text-story hover:bg-story hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-story">
@@ -744,25 +745,27 @@
         </div>
       </section>
 
-    <!-- WORDPRESS BLOG SECTION -->
+   <!-- SUBSTACK BLOG SECTION -->
     <section id="blog" class="fade">
       <div class="blog-iframe-container">
-        <div class="loading-spinner" id="loading-spinner">
-          <div class="spinner"></div>
+        <div class="substack-embed-wrapper">
+          <iframe
+            src="https://valeriamera.substack.com/embed"
+            width="100%"
+            height="320"
+            style="border:none; background: transparent;"
+            frameborder="0"
+            scrolling="no"
+            class="substack-embed-iframe"
+            title="Valeria Mera's Substack"
+          ></iframe>
         </div>
-        <iframe 
-          src="https://valerianicolette.wordpress.com/" 
-          class="blog-iframe"
-          title="Valeria's Blog"
-          loading="lazy"
-          onload="document.getElementById('loading-spinner').style.display='none'"
-        ></iframe>
       </div>
-      
+
       <!-- Subtle Full Blog Link Bar -->
       <div class="blog-link-bar">
-        <a href="https://valerianicolette.wordpress.com/" target="_blank" class="full-blog-link">
-          <span>View full blog here</span>
+        <a href="https://valeriamera.substack.com/" target="_blank" class="full-blog-link">
+          <span>Read the full blog on Substack</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M7 17L17 7"/>
             <path d="M7 7h10v10"/>
