@@ -716,69 +716,87 @@
      <section id="intro" class="py-24 bg-cream/80 backdrop-blur-sm">
       <div class="max-w-3xl mx-auto px-6 md:px-0">
         <div class="text-center mb-16 fade">
-          <h2 class="font-display text-3xl md:text-4xl mb-10 section-divider">INTRODUCTION</h2>
+          <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">INTRODUCTION</h2>
           <div class="space-y-4 text-[#3e3e38] text-center justify-center leading-relaxed">
           <p>
-            <b>From the outside, you’d probably think I’ve had a pretty normal life.</b>
+            <b>Essays and reflections on public service, learning, and the experiences that shape how we think.</b>
             </p>
             <p>
               What you might already know is I'm from North Carolina, and I’m someone who finds meaning in making things work better for people. But like many of us, there’s more to the story.
              </p>
               <p>
-              When I was 14, I unexpectedly lost my mom. Not long after, my dad left for Peru for a business opportunity. 
-              At first, he was flying back and forth — trying to balance work abroad with life here. But when the business fell through, he could no longer afford to return.
+                I began journaling in eighth grade and never stopped. My grandfather founded the first newspaper in his hometown of Pucallpa, Peru — so perhaps storytelling runs deeper than habit. For me, writing is reflection, discipline, and dialogue.
               </p>
-              <p>
-                Since then, I’ve been finding my way through life — largely on my own, with the support of a strong village, while also helping raise my younger brother. 
-                There’s no easy way to answer any questions about my family, without pausing to decide how much to share or how much of the truth someone is ready to hear.
-              </p>
-              <p>
-              I don’t share this for sympathy. I share it because I know I’m not alone in carrying stories that aren't always visible. I’ve learned that grief, responsibility, and absence can shape you — but they don’t have to define you. I’ve been lucky to have people — friends, mentors, chosen family — who showed up when I needed it most. And I’ve become someone who shows up, too.
-              </p>
-              <p>
-              Writing has been part of my life for as long as I can remember. I started journaling in eighth grade and never stopped. My Abuelito founded the first newspaper in his small Peruvian town of Pucallpa, so storytelling is in my blood. More than a habit, writing is how I make sense of the world — capturing the experiences and emotions that matter, in words that might resonate with someone else.
-              </p>
+              
               <p>
               This blog is where I reflect on the personal and political, the creative and the practical — the messy in-between of building a meaningful life from all I’ve lived. I’m here to write, connect, and keep growing. I’m really glad you’re here.
               </p>
               </div>
         </div>
-      </section>
 
-   <!-- SUBSTACK BLOG SECTION -->
-    <section id="blog" class="fade">
-      <div class="blog-iframe-container">
-        <div class="substack-embed-wrapper">
-          <iframe
-            src="https://valeriamera.substack.com/embed"
-            width="100%"
-            height="320"
-            style="border:none; background: transparent;"
-            frameborder="0"
-            scrolling="no"
-            class="substack-embed-iframe"
-            title="Valeria Mera's Substack"
-          ></iframe>
-        </div>
-      </div>
+        <!-- Latest Post Preview -->
+  <div id="latest-post" class="max-w-3xl mx-auto mt-16 px-6"></div>
 
-      <!-- Subtle Full Blog Link Bar -->
-      <div class="blog-link-bar">
-        <a href="https://valeriamera.substack.com/" target="_blank" class="full-blog-link">
-          <span>Read the full blog on Substack</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M7 17L17 7"/>
-            <path d="M7 7h10v10"/>
-          </svg>
+  <script>
+fetch("https://api.rss2json.com/v1/api.json?rss_url=https://valeriamera.substack.com/feed")
+  .then(res => res.json())
+  .then(data => {
+    const post = data.items[0];
+
+    const formattedDate = new Date(post.pubDate).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+
+    document.getElementById("latest-post").innerHTML = `
+      <div style="border:1px solid #ece7e1; padding:32px; border-radius:20px; background:white;">
+        <p style="font-size:12px; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px;">
+          Latest Writing • ${formattedDate}
+        </p>
+        <h2 style="margin-bottom:16px;">${post.title}</h2>
+        <p style="margin-bottom:20px; line-height:1.6;">
+          ${post.description.replace(/<[^>]*>?/gm, '').substring(0, 220)}...
+        </p>
+        <a href="${post.link}" target="_blank" style="text-decoration:underline;">
+          Read the full essay →
         </a>
       </div>
-    </section>
+    `;
+  })
+  .catch(error => {
+    document.getElementById("latest-post").innerHTML =
+      "<p>Visit my Substack for the latest writing → <a href='https://valeriamera.substack.com' target='_blank'>valeriamera.substack.com</a></p>";
+  });
+</script>
 
-    <section class="bg-story text-cream py-20 fade">
-    <blockquote class="max-w-3xl mx-auto text-center text-2xl md:text-3xl font-display italic px-6 hover:bg-story/90 transition-colors">
-        "The people crazy enough to think they can change the world are the ones that do."
-      </blockquote>
-    </section>
+  <div class="blog-iframe-container">
+    <div class="substack-embed-wrapper">
+      <iframe
+        src="https://valeriamera.substack.com/embed"
+        width="100%"
+        height="320"
+        style="border:none; background: transparent;"
+        frameborder="0"
+        scrolling="no"
+        class="substack-embed-iframe"
+        title="Valeria Mera's Substack"
+      ></iframe>
+    </div>
+  </div>
+  
+      </section>
+
+
+
+
+
+
+<section class="bg-story text-cream py-20 fade">
+  <blockquote class="max-w-3xl mx-auto text-center text-2xl md:text-3xl font-display italic px-6 hover:bg-story/90 transition-colors">
+    "The people crazy enough to think they can change the world are the ones that do."
+  </blockquote>
+</section>
 
     <!-- CONTACT FOOTER -->
     <footer id="contact" class="py-24 bg-cream fade">
