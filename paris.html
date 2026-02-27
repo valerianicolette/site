@@ -30,10 +30,10 @@
                 200: '#f0f0eb',
               },
            
-              contact: {
-                light: '#f06292',
-                DEFAULT: '#E0295D',
-                dark: '#b71c4a',
+              paris: {
+                light: '#0257c5',
+                DEFAULT: '#004aac',
+                dark: '053c85',
               },
             },
             backgroundImage: {
@@ -255,12 +255,12 @@
         background: linear-gradient(145deg, #f7f7f4, #f0f0eb);
         box-shadow: 5px 5px 10px #e6e6e1, -5px -5px 10px #ffffff;
         transition: all 0.3s ease;
-        color: #E0295D;
+        color: #004aac;
       }
       .social-icon:hover {
         transform: translateY(-3px);
         box-shadow: 8px 8px 15px #e6e1d9, -8px -8px 15px #ffffff;
-        color: #b71c4a;
+        color: #053c85;
       }
       .social-icon i { transition: transform 0.3s ease; }
       .social-icon:hover i { transform: scale(1.1); }
@@ -282,7 +282,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(135deg, transparent, #f06292 0%, #E0295D 100%);
+        background: linear-gradient(135deg, transparent, #1c74e6 0%, #004aac 100%);
       }
       .contact-card:hover {
         transform: translateY(-8px);
@@ -392,7 +392,7 @@
         transform: translateX(-50%);
         width: 80px;
         height: 3px;
-        background: linear-gradient(135deg, #f06292 0%, #E0295D 100%);
+        background: linear-gradient(135deg, #347ede 0%, #004aac 100%);
         border-radius: 2px;
       }
 
@@ -422,8 +422,8 @@
         transition: all 0.3s ease;
       }
       .passion-pill:hover {
-        border-color: #E0295D;
-        color: #E0295D;
+        border-color: #004aac;
+        color: #004aac;
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(224, 41, 93, 0.12);
       }
@@ -472,7 +472,7 @@
 
     <nav class="fixed top-0 left-0 w-full z-20 py-5 px-6 md:px-12 flex items-center justify-between bg-cream/60 backdrop-blur-md border-b border-cream-200">
       <a href="index.html" class="home-icon block w-12 h-12 hover:rotate-12 transition-all duration-300" aria-label="Home">
-        <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmabout.png" class="object-cover">
+                  <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmcontact.png" class=" object-cover">
       </a>
 
      <!-- Desktop Navigation -->
@@ -536,7 +536,7 @@
             </p>    
           <p>I'm treating this page like a living document so feel free to send questions or more recommendations for me to add so this can be as updated/helpful as possible 
              To read more about my experience, feel free to read my reflection on my first few months abroad here → <a href="https://open.substack.com/pub/valeriamera/p/thoughts-on-paris-two-months-in?utm_campaign=post-expanded-share&utm_medium=post%20viewer" class="content-link content-link--dark">Thoughts on Paris</a>  ◡̈ </p>
-            </p>
+
       </div>
     
     <div class="flex flex-wrap justify-center gap-3 fade">
@@ -556,8 +556,13 @@
         Where to Go
     </a>
 
+    
+
     </div>
 
+    <p class="text-sm text-center italic text-gray-500">
+  Posted June 25, 2025 / Last Updated: June 25, 2025
+</p>
 
     </div>
     </section>
@@ -984,10 +989,10 @@
     </section>
 
       <!-- 5. thanks -->
-     <section id="thanks" class="py-8 bg-cream/80 backdrop-blur-sm fade">
+     <section id="thanks" class="py-8 bg-cream backdrop-blur-sm fade">
       <div class="max-w-3xl mx-auto px-6 md:px-0">
         <h2 class="font-display text-3xl md:text-4xl pb-6 section-divider"> Thanks for Reading!</h2>
-        <div class="space-y-12 text-center mt-12">
+        <div class="space-y-12 text-center mt-12 pb-6">
             If you have any suggestions, questions, or comments, please reach out and let me know - I'd love to hear from you! Bonne chance et profitez de Paris pour moi! ♡ 
          </div>
         </div>
@@ -995,7 +1000,7 @@
 
 
     <!-- QUOTE -->
-    <section class="bg-contact text-cream py-16 fade">
+    <section class="bg-paris text-cream py-16 fade">
       <div class="max-w-4xl mx-auto text-center px-6">
         <blockquote class="text-2xl md:text-3xl font-display italic mb-6">
           "The people crazy enough to think they can change the world are the ones that do."
@@ -1034,7 +1039,7 @@
       <input type="hidden" name="first_url" value="https://valeriamera.substack.com" />
       <input type="hidden" name="first_referrer" value="" />
       <input type="email" name="email" placeholder="Your email" class="flex-grow px-5 py-3 bg-transparent placeholder-[#706f6a] focus:outline-none min-w-0" required />
-      <button type="submit" class="px-4 sm:px-6 py-3 bg-contact text-white font-medium hover:bg-contac/90 transition-colors flex items-center justify-center flex-shrink-0">
+      <button type="submit" class="px-4 sm:px-6 py-3 bg-paris text-white font-medium hover:bg-contac/90 transition-colors flex items-center justify-center flex-shrink-0">
         Subscribe
       </button>
     </form>
@@ -1049,7 +1054,7 @@
       </div>
 
       <div class="visitor-counter" id="visitorCounter">
-        <span class="counter-icon">🪩</span>
+        <span class="counter-icon">🥐</span>
         <span>Visitors:</span>
         <span class="counter-number" id="counterNumber">...</span>
       </div>
