@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Valeria Mera | Worldview </title>
+    <title>Valeria Mera | Background </title>
 
           <link rel="icon" href="https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmworld.png" type="image/png">
 
@@ -202,6 +202,33 @@
           transform: scale(1.1);
         }
 
+        .guide-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    border: 1px solid #ece7e1;
+    border-radius: 999px;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    color: #4a4a45;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .guide-pill:hover {
+    border-color: #4caf50;
+    color: #4caf50;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.15);
+  }
+
+  .guide-pill.disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+  }
+
      /* Page colors */
       .hover-page:hover { color: #66bb6a!important; }
       .bg-page { background-color: #4caf50; }
@@ -216,6 +243,10 @@
       .text-portfolio:hover { color: #0887f7 }
       .text-world:hover { color: #4caf50; }
       .text-contact:hover { color: #E0295D; }
+
+        .floating-element {
+        animation: float 4s ease-in-out infinite;
+      }
 
      @keyframes float {
         0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -570,20 +601,23 @@
           <!-- Text content on the left -->
           <div class="space-y-8 text-left ml-4">
             <div class="floating-element">
-            <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight">Bridging Worlds<br> <span class="text-world block">Local impact, global perspective</span></h1>
+            <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight">
+            Rooted between
+            <span class="text-world block">two worlds</span>
+            </h1>
             </div>
 
             <p class="text-lg md:text-xl text-[#4a4a45] leading-relaxed">
-            How community care and cultural connection shaped my global perspective on shared challenges and collective solutions.</p>
+              <b>Curious about the rest.</b> How culture, language, and place shaped how I move through the world.</p>
             
             <div class="flex flex-wrap gap-4 pt-4">
-              <a href="#map" 
+              <a href="#background" 
               class="inline-flex items-center gap-2 px-8 py-3 bg-page text-white hover:bg-page/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-world scroll-mt-16 md:scroll-mt-24">
-                Travel <i data-lucide="plane" class="w-4 h-4"></i>
+                 Cultural Roots<i data-lucide="map-pin-house" class="w-4 h-4"></i>
               </a>
-               <a href="paris.html" 
+               <a href="#global" 
               target="_blank" class=" inline-flex items-center gap-2 px-8 py-3 border border-page text-world hover:bg-world hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-world">
-              Paris Guide<i data-lucide="file-heart" class="w-4 h-4"></i></a>
+              Global Experiences<i data-lucide="plane" class="w-4 h-4"></i></a>
           </div>
           </div>
 
@@ -599,182 +633,235 @@
       </div>
     </header>
 
-     <!-- 1. INTRODUCTION-->
-     <section id="intro" class="py-24 bg-cream/80 backdrop-blur-sm">
-       <div class="max-w-4xl mx-auto px-6 md:px-0 space-y-12">
+     <!-- BACKGROUND -->
+     <section id="background" class="py-24 bg-cream/80 backdrop-blur-sm">
+  <div class="max-w-5xl mx-auto px-6 md:px-0 space-y-12">
 
-        <h2 class="font-display text-3xl md:text-4xl mb-4 section-divider">INTRODUCTION</h2>
-        <div class="space-y-8 text-[#3e3e38] text-center justify-center leading-relaxed">
-          <p>
-          My worldview was shaped long before I even knew what a worldview was. Both sides of my family live in Pucallpa, a small city in Peru that many have never heard of. 
-          From the day school let out to just before it started again, I spent every summer in the Amazon—switching between two completely different worlds each year. 
-          Growing up this way gave me a deep understanding that there are countless ways to live, solve problems, and build community. 
-          I didn’t always appreciate being fluent in Spanish as a kid, but now I see it as so much more than a skill—it’s how I connect with my grandparents, understand my roots, and see the world through a different lens.
-          </p>
+    <h2 class="font-display text-3xl md:text-4xl mb-4 section-divider">WHERE I COME FROM</h2>
 
-          <p>
-          As I got older, especially in high school, that way of seeing the world deepened. It’s when I first became drawn to political science and environmental science, and when I truly began to appreciate the power of language—so much so that I was inspired to learn a third. 
-          It’s also when I started connecting the dots: what I do locally can impact the world more broadly. 
-          While my community in Raleigh held me up through some of my hardest personal moments, I was also learning about deforestation in the Amazon near where my family lives. 
-          It became clear to me that we need collective thinking to care for each other, both locally and globally.
-          </p>
+    <div class="max-w-4xl mx-auto space-y-6 text-[#3e3e38] text-center leading-relaxed">
+      <p>
+        My worldview was shaped long before I knew what a worldview was. Both sides of my family live in Pucallpa — a small city in the Peruvian Amazon that most people have never heard of. From the last day of school to just before it started again, I spent every summer there, moving between two completely different worlds: North Carolina and the Amazon, English and Spanish, two sets of cousins, two kitchens, two ways of understanding what it means to belong somewhere.
+      </p>
 
-          <p>
-          This curiosity and awareness eventually led me to start learning French, a journey I began when I decided to minor in it during college.
-           At the time, I imagined it as a skill that might one day help me land a posting at the UN, but it’s always been deeper than that. 
-          From the beginning, I’ve been guided by the belief that partnership, diplomacy, and human connection are essential to real progress. 
-          Alongside my Spanish fluency, learning French has opened up new ways of understanding how people communicate, think, and experience the world. 
-          Seeking understanding has become my way of showing up. I know I’m just one person in a much bigger world, and the solutions we need depend on listening to every voice, especially the ones that haven’t been heard yet.
-          </p>
+        
+    </div>
 
 
+     <!-- ON BEING PERUVIAN: stacked, centered, max-w-4xl -->
+<div class="max-w-4xl mx-auto space-y-8">
+
+  <h3 class="font-display text-2xl text-center">ON BEING PERUVIAN</h3>
+
+  <!-- Text -->
+  <div class="space-y-6 text-[#3e3e38] text-center leading-relaxed">
+    <p>
+      My dad moved back to Peru. My grandparents still live there. My tios, tias, and primos. Pucallpa isn't a place I visit — it's a place I come from, and that distinction matters more to me the older I get.
+      Spanish isn't just a second language; it's the only way I communicate with my family. My culture shaped how I think about family, resilience, hospitality, and responsibility.
+    </p>
+    <p>
+      Growing up between two worlds gave me something I didn't have a word for at the time: the understanding that there is no one default way to be a person. Countless ways to live, to solve problems, to build community. That realization — quiet and slow as it was — is the foundation of everything else.
+    </p>
+  </div>
+
+  <!-- Filmstrip — full width of the container -->
+  <div class="relative w-full">
+    <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory" style="scrollbar-width: thin; scrollbar-color: #4caf50 #f0f0eb;">
+
+      <!-- Photo 1 -->
+      <div class="flex-none w-56 snap-start">
+        <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+          <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pucallpa-e1750114915508.jpg"
+            alt="Pucallpa" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
         </div>
-        </div>
-     </section>
-
-   
-     <!-- 2. Global Experience Section -->
-     <section id="experience" class="py-24 bg-hero/80 backdrop-blur-sm">
-      <div class="max-w-5xl mx-auto px-6 md:px-8">
-        <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">GLOBAL EXPERIENCE</h2>
-        <div class="space-y-12 mt-12">
-
-          <!-- AFDC -->
-          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
-
-            <div class="experience-left">
-              <div class="experience-date">2025</div>
-              <div class="experience-position">Active Member</div>
-            </div>
-
-            <div class="experience-right">
-              <h3 class="experience-company">Alliance Française</h3>
-              <p class="experience-description">
-                Enrolled in French courses (currently level B1.1) to enhance language proficiency and cultural understanding. 
-                Actively participating in cultural events and discussions to deepen knowledge of Francophone cultures and strengthen community ties.
-              </p>
-
-          </div>
-          </div>
-
-          <!--  SCIENCES PO -->
-          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
-
-            <div class="experience-left">
-              <div class="experience-date">2024</div>
-              <div class="experience-position">Study Abroad</div>
-            </div>
-
-            <div class="experience-right">
-              <h3 class="experience-company">Sciences Po - Paris, France</h3>
-
-              <p class="experience-description">
-                Completed a semester abroad at Sciences Po, one of Europe's leading universities for social sciences, focusing on international relations and public policy. 
-                Engaged in cross-cultural exchanges with students from over 150 countries, enhancing global perspectives on policy issues.
-              </p>
-
-               <p class="experience-description mt-2">
-                            <a href="https://valerianicolette.wordpress.com/paris/" class="content-link" target="_blank" rel="noopener noreferrer">
-                                My Paris Recommendations
-                                <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i>
-                            </a></p>
-            </div>
-          </div>
-
-          <!-- HUM SUB -->
-           <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
-
-            <div class="experience-left">
-              <div class="experience-date">2022</div>
-              <div class="experience-position">Volunteer</div>
-            </div>
-          
-            <div class="experience-right">
-              <h3 class="experience-company">Hum Sub Diwali</h3>
-              <p class="experience-description">
-                Recruited to represent the Town of Apex in the 
-                <a href="https://humsub.org/about/" target="_blank" class="content-link" rel="noopener noreferrer">Hum Sub</a>
-                Diwali "celebrity" dance-off. Rehearsed for 2 hours weekly over 3 months to perform alongside the mayor and other Town of Apex staff, embracing and celebrating this rich cultural tradition. </p>
-
-               <p class="experience-description mt-2">
-                <a href="https://youtu.be/DXFIHOOY7-I?si=jZbqif4p5pCbNHAa&t=720" class="content-link" target="_blank" rel="noopener noreferrer">
-                  Watch the Performance
-                  <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i>
-                </a></p>
-
-            </div>
-          </div>
-
-          <!--  GPC -->
-          <section id="gpc">
-          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
-
-            <div class="experience-left">
-              <div class="experience-date">2017 - 2020</div>
-              <div class="experience-position">Certificate</div>
-            </div>
-            <div class="experience-right">
-              <h3 class="experience-company">Global Perspective Certificate Program, NC State</h3>
-              <p class="experience-description">
-                Completed the Global Perspective Certificate Program at NC State and developed a deep understanding of global issues through coursework, cultural immersion, and hands-on experience.
-              </p>
-               <p class="experience-description mt-2">
-                <a href="https://catalog.ncsu.edu/undergraduate/university-college/global-perspectives-certificate/#planrequirementstext" class="content-link" target="_blank" rel="noopener noreferrer">
-                  Read Certificate Requirements
-                  <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i></a>
-              </p>
-            </div>
-          </div>
-          </section>
-
-          <!--  Prague  -->
-          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
-
-            <div class="experience-left">
-              <div class="experience-date">2018</div>
-              <div class="experience-position">Study Abroad</div>
-            </div>
-            <div class="experience-right">
-              <h3 class="experience-company">Prague Institute - Prague, Czech Republic</h3>
-              <p class="experience-description">
-                Participated in a semester study abroad program in Prague, focusing on European history and culture. 
-                Engaged with local communities and explored the rich cultural heritage of Central Europe.
-              </p>
-            </div>
-          </div>
-
-          <!-- Cuba -->
-          <div class="experience-item grid grid-cols-1 sm:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_4fr] gap-6 sm:gap-10 mb-16">
-
-            <div class="experience-left">
-              <div class="experience-date">2017</div>
-              <div class="experience-position">Study Abroad</div>
-            </div>
-            <div class="experience-right">
-              <h3 class="experience-company">Havana, Cuba</h3>
-              <p class="experience-description">
-                Participated in a summer study abroad program in Havana, Cuba, focusing on Latin American politics and culture. 
-                Engaged with local communities and explored the rich cultural heritage of the Caribbean region. 
-                Developed a nuanced understanding of Cuba's unique political landscape and its historical context.
-              </p>
-            </div>
-          </div>
-
-        </div>
+        <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Pucallpa</p>
       </div>
-     </section>
 
+      <!-- Photo 2 -->
+      <div class="flex-none w-56 snap-start">
+        <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+          <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/lima-e1750114452756.jpeg"
+            alt="Lima" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Lima</p>
+      </div>
 
-        <!-- WHERE I'VE BEEN -->
+      <!-- Photo 3 -->
+      <div class="flex-none w-56 snap-start">
+        <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+          <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cuzco.jpg"
+            alt="Cusco" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Cusco</p>
+      </div>
 
-        <section id="map" class="py-24 bg-cream/80 backdrop-blur-sm">
-          <div class="max-w-4xl mx-auto px-6 md:px-0">
-            <div class="text-center mb-12 fade">
-              <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">WHERE I'VE BEEN</h2>
-              
-              <p class="text-lg text-[#4a4a45] mt-8 pb-4 max-w-4xl mx-auto">
-                A map made for me, by me — visualizing the cities I’ve visited and some of the memories tied to them. It’s not just a snapshot of my travels, but a creative way to keep building my coding skills and create a digital keepsake.
-               </p>
+      <!-- Photo 4 -->
+      <div class="flex-none w-56 snap-start">
+        <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+          <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/cajamarca.jpeg"
+            alt="Cajamarca" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Cajamarca</p>
+      </div>
+
+      <!-- Placeholder 5 -->
+      <div class="flex-none w-56 snap-start">
+        <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 border-2 border-dashed border-world/30 shadow-sm flex items-center justify-center">
+          <div class="text-center px-4">
+            <p class="text-3xl mb-2">📸</p>
+            <p class="text-xs text-[#9ca3af]">Add your photo here</p>
+          </div>
+        </div>
+        <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Your caption</p>
+      </div>
+
+      <!-- Placeholder 6 -->
+      <div class="flex-none w-56 snap-start">
+        <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 border-2 border-dashed border-world/30 shadow-sm flex items-center justify-center">
+          <div class="text-center px-4">
+            <p class="text-3xl mb-2">📸</p>
+            <p class="text-xs text-[#9ca3af]">Add your photo here</p>
+          </div>
+        </div>
+        <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Your caption</p>
+      </div>
+
+    </div>
+    <p class="text-xs text-[#9ca3af] text-right mt-1 italic">scroll for more →</p>
+  </div>
+
+</div>
+
+  </div>
+</section>
+  
+    <!-- GLOBAL -->
+     <section id="global" class="py-24 bg-hero/80 backdrop-blur-sm">
+
+    <div class="max-w-4xl mx-auto px-6 md:px-8 space-y-8">
+
+    <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">WHERE IT'S TAKEN ME</h2>
+
+    <div class="space-y-6 text-[#3e3e38] text-center leading-relaxed">
+
+      <!-- Intro -->
+      <p>
+        Growing up between two countries, navigating two languages, loving a family spread across an ocean — that doesn't leave you. It becomes a lens. And for me, it became a hunger: to keep learning, keep listening, keep showing up somewhere new and finding out what I have in common with the people there. In high school, that hunger started taking shape. I fell in love with political science and environmental science, and I started connecting the dots between the local and the global — between the deforestation happening near where my grandmother lives and the policy conversations happening nowhere near her. Real progress requires collective thinking. And collective thinking requires being willing to understand perspectives that aren't your own.
+      </p>
+
+      <!-- Language -->
+      <h3 class="font-display text-2xl mt-8">THE LANGUAGE OF CONNECTION</h3>
+
+      <p>
+        Language was the first door. Spanish didn't feel like a gift when I was young — it was as natural to me as English was, nothing special really. Now I know: it's not just how I speak to my family, it's how I learned to see the world from inside another frame entirely. A language isn't just vocabulary and grammar. It's a way of organizing thought, of expressing things that don't translate, of signaling to someone that you're willing to meet them more than halfway.
+      </p>
+
+      <p>
+        That belief is what led me to French — first as a college minor, eventually as something I couldn't put down. I've been studying it consistently for years now, not because fluency is a credential but because every level of a language opens something new: a song that finally makes sense, a conversation that goes deeper than it could have before, a small proof that the distance between people is mostly just unfamiliarity. I'm still learning. I hope I always am. And if you have recommendations — French or Spanish podcasts, films, music, anything — <a href="contact.html" class="content-link">I genuinely want to know<i data-lucide="external-link" class="w-3 h-3"></i></a>.
+      </p>
+
+      <!-- Study Abroad -->
+      
+
+<h3 class="font-display text-2xl mt-8">THE WORLD AS MY CLASSROOM</h3>
+
+  <p>
+    This appreciation for language and culture sent me places. 
+    <b> A summer in Havana</b> — a city that asks you to hold contradiction carefully, where the politics are complicated and the people are extraordinary. 
+    <b>A semester in Prague,</b> where history isn't background; it's in the architecture, the humor, the way people talk about their parents' lives. 
+    <b>A semester in Paris,</b> taking classes at Sciences Po surrounded by students from over 150 countries. Where very seminar made it clearer that the problems we care most about — climate, inequality, governance — don't stop at borders. I arrived as a student and left as someone who understood, in a way I hadn't before, that showing up somewhere with genuine curiosity is its own kind of politics.
+  </p>
+
+  <p class="pt-1">
+    <a href="experience.html#global" class="content-link">See my full professional and global experience →</a>
+  </p>
+
+<!-- Filmstrip -->
+      <div class="relative w-full my-4">
+        <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory" style="scrollbar-width: thin; scrollbar-color: #4caf50 #f0f0eb;">
+
+          <div class="flex-none w-56 snap-start">
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+              <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/havana.jpg" alt="Havana" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Havana</p>
+          </div>
+
+          <div class="flex-none w-56 snap-start">
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+              <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pinardelrio.jpg" alt="Pinar del Río" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Pinar del Río</p>
+          </div>
+
+          <div class="flex-none w-56 snap-start">
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+              <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/prague.jpg" alt="Prague" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Prague</p>
+          </div>
+
+          <div class="flex-none w-56 snap-start">
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+              <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/karlovy.jpeg" alt="Karlovy Vary" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Karlovy Vary</p>
+          </div>
+
+          <div class="flex-none w-56 snap-start">
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+              <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris.jpeg" alt="Paris" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Paris</p>
+          </div>
+
+          <div class="flex-none w-56 snap-start">
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+              <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/versailles-e1750114482156.jpeg" alt="Versailles" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Versailles</p>
+          </div>
+
+          <div class="flex-none w-56 snap-start">
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+              <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/annecy-e1750114505215.jpg" alt="Annecy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Annecy</p>
+          </div>
+
+          <div class="flex-none w-56 snap-start">
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+              <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/strasbourg.jpeg" alt="Strasbourg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Strasbourg</p>
+          </div>
+
+        </div>
+        <p class="text-xs text-[#9ca3af] text-right mt-1 italic">scroll for more →</p>
+      </div>
+
+            <h3 class="font-display text-2xl mt-12">WHERE I'VE BEEN</h3>
+
+<p>
+  At the heart of all of it — the studying abroad, the language learning, the summers in the Amazon — is a pretty simple thing: I love people. I love the way a place carries its own logic, its own rhythm, its own way of being in the world. I love arriving somewhere new and realizing, again, that the gap between us is mostly just distance and circumstance.
+</p>
+
+<p>
+  This map is my own — built by me, for me, because I'm also someone who needs to see things to feel them. Every dot is a place that left something behind. I made it partly as a creative project, partly as a coding exercise, and mostly because I wanted a living record of everywhere that's shaped how I think. A reminder that there is always somewhere new to go, someone new to understand.
+</p>
+
+<p>
+  And when a place really gets under my skin, I write about it. Because the other thing I love — almost as much as being somewhere — is helping someone else find their way there. The guides below are where those two things meet.
+</p>
+
+<div class="flex flex-wrap justify-center gap-3 mt-6">
+  <a href="paris.html" target="_blank" class="guide-pill">
+    🗼 Paris Guide — work in progress <i data-lucide="external-link" class="w-3 h-3"></i>
+  </a>
+  <span class="guide-pill disabled">
+    🇵🇪 Peru Guide — coming soon
+  </span>
+</div>
              
                 <div class="container">
                 <div id="travel-map"></div>
@@ -794,8 +881,16 @@
                     </div>
                 </div>
             </div>
-               
-        </section>
+
+
+        
+
+        </div>
+        
+
+      </div>
+     </section>
+
 
          <!-- QUOTE SECTION -->
     <section class="bg-page text-cream py-16 fade">
