@@ -8,6 +8,12 @@
 
     <link rel="icon" href="https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmabout.png" type="image/png">
 
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll("img").forEach(img => img.setAttribute("loading", "lazy"));
+    });
+</script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
