@@ -8,12 +8,6 @@
 
     <link rel="icon" href="https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmcontact.png" type="image/png">
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.querySelectorAll("img").forEach(img => img.setAttribute("loading", "lazy"));
-    });
-</script>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -714,15 +708,14 @@
     <!-- 4. WHERE TO GO -->
     <section id="where-to-go" class="py-8 bg-cream/60 backdrop-blur-sm fade">
 
-       <div class="max-w-4xl mx-auto px-6">
-        <h2 class="font-display text-3xl md:text-4xl pb-6 section-divider"> Where to Go </h2>
-         <div class="mb-12">
+    <div class="max-w-4xl mx-auto px-6">
+    <h2 class="font-display text-3xl md:text-4xl pb-6 section-divider"> Where to Go </h2>
+    <div class="mb-12">
+    <p class="has-text-align-center has-small-font-size"><em>This is for anyone needing some recs to Paris - including where to find the world's best croissant! </em>
+    </p>
 
-            <p class="has-text-align-center has-small-font-size"><em>This is for anyone needing some recs to Paris - including where to find the world's best croissant! </em>
-            </p>
-
-             <!-- FOOD & DRINK -->
-            <section id="FOOD">
+    <!-- FOOD & DRINK -->
+    <section id="food">
             <h2 id="general" class="font-display font-bold text-left pt-8 text-3xl underline decoration-dotted"> Food & Drink </h2>
 
             <!-- CROISSANT -->
@@ -771,30 +764,102 @@
             <p>This truffle pasta changed my life. It's what they're known for, and I returned to get it 2x after going for a birthday dinner in September. Also worth noting is that there's a speakeasy underneath the restaurant - not a bad place to get a drink before dinner if there happens to be a wait!</p><br>
             <div class="grid grid-cols-2 gap-4">
                 <div class="image-card"><figure class="square-img"><img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pinkmamma.jpeg?w=800" alt="Pink Mamma" style="max-width:100%;"></figure></div>
-                <div class="image-card"><figure class="square-img"><img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pinkmamma.gif?w=800" alt="Pink Mamma" style="max-width:100%;"></figure></div>
+                <div class="image-card"><figure class="square-img"><img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pinkmamma.gif" alt="Pink Mamma" style="max-width:100%;"></figure></div>
             </div><br>
 
             <!-- CHEZ JANOUS-->
-            <h3 id="chez-janouz" class="font-display font-bold text-left py-2">Chez Janou 🎂</h3>
-            <p>Famous for its chocolate mousse and impeccable French cuisine, Julia was thoughtful and gracious enough to make a dinner reservation here for my actual birthday (which was also my first day of class).</p><br>
-            <p>Baaqir said it was one of the best duck plates he's ever tried, and my risotto was amazing. The chocolate mousse was the best birthday dessert I could've asked for, but you can't go to the restaurant just for the mousse. Like... they won't let you come for just dessert. So definitely come hungry for lunch/dinner!</p><br>
-            <p>You HAVE to get a reservation by either going in person or calling ahead of time though because it's always packed.</p><br>
-            <div class="flex items-start gap-6">
-                <div style="flex: 0 0 65%;">
-                    <div class="grid grid-cols-3 gap-4">
-                        <div class="image-card"><figure><img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/chezjanou5.jpg?w=800" alt="Chez Janou" style="max-width:100%;"></figure></div>
-                        <div class="image-card"><figure><img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/chezjanou4.jpg?w=800" alt="Chez Janou" style="max-width:100%;"></figure></div>
-                        <div class="image-card"><figure><img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chezjanou6.gif?w=800" alt="Chez Janou" style="max-width:100%;"></figure></div>
+            <div class="max-w-4xl mx-auto space-y-8 mt-12">
+
+          <!-- Two column: text left, filmstrip right -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+            <!-- Left: Text -->
+            <div class="space-y-4 text-[#3e3e38] leading-relaxed">
+              <h3 class="font-display font-bold text-left py-2">Chez Janou 🎂</h3>
+
+              <p class="text-sm text-[#9ca3af] font-medium tracking-wide">📍 2 Rue Roger Verlomme</p>
+
+              <p>Famous for its chocolate mousse and impeccable French cuisine, Julia was thoughtful and gracious enough to make a dinner reservation here for my actual birthday (which was also my first day of class).</p>
+
+              <p>Baaqir said it was one of the best duck plates he's ever tried, and my risotto was amazing. The chocolate mousse was the best birthday dessert I could've asked for — but you can't go just for the mousse. They won't seat you for dessert only, so come hungry for lunch or dinner!</p>
+
+              <p>You <em>have</em> to get a reservation by either going in person or calling ahead — it's always packed.</p>
+
+            
+              </div>
+
+                <!-- Right: Horizontal filmstrip -->
+                <div class="relative">
+                  <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory" style="scrollbar-width: thin; scrollbar-color: #4caf50 #f0f0eb;">
+
+                    <!-- Photo 1 - exterior -->
+                    <div class="flex-none w-56 snap-start">
+                      <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                        <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chezjanou.jpeg?w=600"
+                          alt="Chez Janou exterior" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                      </div>
+                      <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">The restaurant</p>
                     </div>
-                </div>
-                <div style="flex: 0 0 30%;">
-                    <div class="image-card">
-                        <figure style="max-width:100%;">
-                            <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chezjanou.jpeg?w=768" alt="Chez Janou" style="max-width:100%; object-fit:cover;">
-                            <figcaption>Chez Janou, 2 Rue Roger Verlomme</figcaption>
-                        </figure>
+
+                    <!-- Photo 2 -->
+                    <div class="flex-none w-56 snap-start">
+                      <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                        <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/chezjanou1.jpg?w=600"
+                          alt="Chez Janou" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                      </div>
+                      <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Risotto</p>
                     </div>
+
+                    <!-- Photo 3 -->
+                    <div class="flex-none w-56 snap-start">
+                      <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                        <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/chezjanou2.jpg?w=600"
+                          alt="Chez Janou food" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                      </div>
+                      <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Me with Baaqir</p>
+                    </div>
+
+                    <!-- Photo 4 -->
+                    <div class="flex-none w-56 snap-start">
+                      <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                        <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/chezjanou3.jpg?w=600"
+                          alt="Chez Janou" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                      </div>
+                      <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Me with Julia</p>
+                    </div>
+
+                    <!-- Photo 5 -->
+                    <div class="flex-none w-56 snap-start">
+                      <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                        <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/chezjanou5.jpg?w=600"
+                          alt="Chez Janou" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                      </div>
+                      <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Me with Colleen</p>
+                    </div>
+
+                    <!-- Photo 6 -->
+                    <div class="flex-none w-56 snap-start">
+                      <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                        <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/chezjanou4.jpg?w=600"
+                          alt="Chez Janou" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                      </div>
+                      <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">My Besties</p>
+                    </div>
+
+                    <!-- Photo 7 - GIF -->
+                    <div class="flex-none w-56 snap-start">
+                      <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                        <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/chezjanou6.gif?w=400"
+                          alt="Chez Janou moment" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                      </div>
+                      <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Bday Mousse ✨</p>
+                    </div>
+
+                  </div>
+                  <p class="text-xs text-[#9ca3af] text-right mt-1 italic">scroll for more →</p>
                 </div>
+
+              </div>
             </div><br>
 
             <!-- DINNER CRUISE -->
@@ -836,19 +901,71 @@
                 </div>
             <p class="pt-2 text-sm">Brasserie des Prés / Groovie, 6 Cr du Commerce Saint-André</p><br>
 
+            
             <!-- CHARCUTERIE -->
             <h3 id="le-17-45" class="font-display font-bold text-left py-2"><a href="https://www.le17-45.fr/">Le 17.45</a></h3>
             <p>Build-Your-Own Charcuterie Boards! Found this place when I was looking for a place to meet Julia and we had the cutest little date. You'll get a menu with all the different <em>charcuterie</em>, <em>fromages</em>, and <em>tartinables</em> they offer - or you can order one of their various pre-selected board combinations.</p><br>
 
+
+              <!-- MOULIN ROUGE -->
+           <div class="max-w-4xl mx-auto space-y-8 mt-12">
+
+          <!-- Two column: text left, filmstrip right -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+            <!-- Left: Text -->
+            <div class="space-y-4 text-[#3e3e38] leading-relaxed">
+
+      
             <!-- MOULIN ROUGE BAR -->
             <h3 id="bar-a-bulles" class="font-display font-bold text-left py-2">Bar À Bulles</h3>
             <p>There's a hidden bar BEHIND the windmill at the Moulin Rouge. To find it, walk past the Moulin Rouge to the left until you see a corridor, which takes you to the main entrance and their sprawling patio / indoor bar. Once you're inside, there may or may not be a line to the right, which is where you wait to be let upstairs and enjoy a drink outdoors in this iconic setting!</p><br>
+            
+              </div>
 
-            </section>
-            <!-- END FOOD SECTION -->
+                <!-- Right: Horizontal filmstrip -->
+                <div class="relative">
+                  <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory" style="scrollbar-width: thin; scrollbar-color: #4caf50 #f0f0eb;">
 
-            <!-- COFFEE SHOPS / COWORKING -->
-            <section id="coffee">
+
+                    <!-- Photo 2 -->
+                    <div class="flex-none w-56 snap-start">
+                      <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                        <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/barabulles2.jpeg?w=768"
+                          alt="Bar À Bulles" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                      </div>
+                      <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Moulin Rouge</p>
+                    </div>
+
+                    <!-- Photo 3 -->
+                    <div class="flex-none w-56 snap-start">
+                      <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                        <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/barabulles1.jpg?w=768"
+                          alt="Bar À Bulles" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                      </div>
+                      <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">With Julia and Lyric </p>
+                    </div>
+
+                    <!-- Photo 4 -->
+                    <div class="flex-none w-56 snap-start">
+                      <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                        <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/barabulles3.gif?w=400"
+                          alt="Bar À Bulles" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                      </div>
+                      <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Behind the Windmill</p>
+                    </div>
+
+                  </div>
+                  <p class="text-xs text-[#9ca3af] text-right mt-1 italic">scroll for more →</p>
+                </div>
+
+              </div>
+            </div><br>
+
+    </section>
+
+    <!-- COFFEE SHOPS / COWORKING -->
+    <section id="coffee">
             <h2 class="font-display font-bold text-left pt-8 text-3xl underline decoration-dotted">
             Coffee Shops / Coworking</h2>
             
@@ -868,43 +985,158 @@
                 <p>Want to eat Swedish in Paris? It's possible! In the heart of the Marais, the Swedish Cafe is an atypical and quiet place, located at 11 rue Payenne. On the inside, come and taste kanelbullar (traditional Swedish brioche with cinnamon) or meatballs. Be careful, there are only about twenty seats! Outside, on the courtyard side, share a drink or a meal on the terrace. The cafe is close to the Picasso Museum.</p>
                 </blockquote><br>
 
-            </section>
-            <!-- END COFFEE SECTION -->
+    </section>      
+        
+    <!-- SITES -->
+    <section id="sites">
+       <h2 class="font-display font-bold text-left pt-8 text-3xl underline decoration-dotted">Sites</h2>
 
-            <!-- SITES -->
-             <h2 class="font-display font-bold text-left pt-8 text-3xl underline decoration-dotted">
-                Sites</h2>
+           <!-- EIFFEL TOWER: WHERE TO SEE IT -->
+          <div class="max-w-4xl mx-auto space-y-8 mt-12">
 
-            <h3 id="eiffel-tower" class="font-display font-bold text-left py-2">Eiffel Tower: Where to See It</h3>
-            <p>One of my favorite parts about when Megan came to visit was that every night, we'd try to see the Eiffel Tower sparkle from a different location!! I'll list out where we went (and a few others) below in case you're also interested in appreciating it from different vantage points.</p><br>
+            <h3 class="font-display text-2xl text-left">Eiffel Tower: Where to See It</h3>
 
-            <div style="flex: 0 0 40%;">
-        <ol style="list-style-type: decimal !important; padding-left: 1.5rem;">
-            <li style="padding-bottom: 0.5rem;">Up close and personal - classic</li>
-            <li style="padding-bottom: 0.5rem;">From the steps of the Sacré-Cœur in Montmartre</li>
-            <li style="padding-bottom: 0.5rem;">Off the Trocadero metro</li>
-            <li style="padding-bottom: 0.5rem;">Any rooftop in the 6th arrondissement</li>
-            <li style="padding-bottom: 0.5rem;">On a bridge near the Seine</li>
-            <li style="padding-bottom: 0.5rem;">On the Line 6 metro, where you can view it while riding over the Seine (between the Passy and Bir-Hakeim stations)</li>
-            <li style="padding-bottom: 0.5rem;">On a dinner cruise</li>
-            <li style="padding-bottom: 0.5rem;">At a waterfront restaurant (such as Francette, which is where Lyric, Cory, Baaqir and I had dinner together)</li>
-            <li style="padding-bottom: 0.5rem;">On the streets of the 5/6th arrondissements</li>
-        </ol>
-    </div>
+            <p class="text-[#4a4a45] leading-relaxed">
+              One of my favorite parts about when Megan came to visit was that every night, we'd try to see the Eiffel Tower sparkle from a different location!! I'll list out where we went (and a few others) below in case you're also interested in appreciating it from different vantage points.
+            </p>
+
+            <!-- Two column: list left, filmstrip right -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+              <!-- Left: Numbered list -->
+              <ol class="text-[#3e3e38] leading-relaxed list-none">
+                <li class="flex gap-3"><span class="text-[#4caf50] font-semibold flex-none">1.</span>Up close and personal — classic</li>
+                <li class="flex gap-3"><span class="text-[#4caf50] font-semibold flex-none">2.</span>From the steps of the Sacré-Cœur in Montmartre</li>
+                <li class="flex gap-3"><span class="text-[#4caf50] font-semibold flex-none">3.</span>Off the Trocadéro metro</li>
+                <li class="flex gap-3"><span class="text-[#4caf50] font-semibold flex-none">4.</span>Any rooftop in the 6th arrondissement</li>
+                <li class="flex gap-3"><span class="text-[#4caf50] font-semibold flex-none">5.</span>On a bridge near the Seine</li>
+                <li class="flex gap-3"><span class="text-[#4caf50] font-semibold flex-none">6.</span>On the Line 6 metro, where you can view it while riding over the Seine (between Passy and Bir-Hakeim stations)</li>
+                <li class="flex gap-3"><span class="text-[#4caf50] font-semibold flex-none">7.</span>On a dinner cruise</li>
+                <li class="flex gap-3"><span class="text-[#4caf50] font-semibold flex-none">8.</span>At a waterfront restaurant (such as Francette, where Lyric, Cory, Baaqir and I had dinner together)</li>
+                <li class="flex gap-3"><span class="text-[#4caf50] font-semibold flex-none">9.</span>On the streets of the 5th/6th arrondissements</li>
+              </ol>
+
+              <!-- Right: Horizontal filmstrip -->
+              <div class="relative">
+                <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory" style="scrollbar-width: thin; scrollbar-color: #4caf50 #f0f0eb;">
+
+                  <!-- 1. Up close -->
+                  <div class="flex-none w-56 snap-start">
+                    <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                      <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sparkle2.gif"
+                        alt="Eiffel Tower up close" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">1. Up close</p>
+                  </div>
+
+                  <!-- 2. Sacré-Cœur -->
+                  <div class="flex-none w-56 snap-start">
+                    <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                      <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sparkle3.gif"
+                        alt="Eiffel Tower from Sacré-Cœur" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">2. Sacré-Cœur</p>
+                  </div>
+
+                  <!-- 3. Trocadéro -->
+                  <div class="flex-none w-56 snap-start">
+                    <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                      <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sparkle4.gif"
+                        alt="Eiffel Tower from Trocadéro" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">3. Trocadéro</p>
+                  </div>
+
+                  <!-- 4. Rooftop -->
+                  <div class="flex-none w-56 snap-start">
+                    <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                      <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sparkle1.gif"
+                        alt="Eiffel Tower from rooftop at midnight" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">4. Rooftop at midnight</p>
+                  </div>
+
+                  <!-- 5. Bridge -->
+                  <div class="flex-none w-56 snap-start">
+                    <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                      <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sparkle6.gif"
+                        alt="Eiffel Tower from a bridge" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">5. Bridge</p>
+                  </div>
+
+                  <!-- 6. Line 6 -->
+                  <div class="flex-none w-56 snap-start">
+                    <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                      <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov7.gif"
+                        alt="Eiffel Tower from Line 6 metro" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">6. Line 6</p>
+                  </div>
+
+                  <!-- 7. Dinner Cruise -->
+                  <div class="flex-none w-56 snap-start">
+                    <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                      <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall14.gif"
+                        alt="Eiffel Tower from dinner cruise" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">7. Dinner cruise</p>
+                  </div>
+
+                  <!-- 8. Waterfront Restaurant -->
+                  <div class="flex-none w-56 snap-start">
+                    <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                      <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sparkle8.gif"
+                        alt="Eiffel Tower from waterfront restaurant" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">8. Waterfront restaurant</p>
+                  </div>
+
+                  <!-- 9. 5th/6th streets -->
+                  <div class="flex-none w-56 snap-start">
+                    <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                      <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/sparkle7.gif"
+                        alt="Eiffel Tower from the 5th/6th arrondissement streets" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">9. 5th/6th streets</p>
+                  </div>
+
+                </div>
+                <p class="text-xs text-[#9ca3af] text-right mt-1 italic">scroll for more →</p>
+              </div>
+
+            </div>
+          </div>
+          <br>
 
         <h3 id="arc-de-triomphe" class="font-display font-bold text-left py-2">Arc de Triomphe</h3>
         <p>I never went to the top of the Arc but there are tickets you can get for that underground... somewhere. I honestly don't have tips for how to find it but it's there. That entrance takes you to a pedestrian tunnel that takes you underneath the Arc in order to get to the center because crossing the street through this busy traffic circle would be terrifying/dangerous. Regardless of if you go to the top or not (we didn't), you have to see it. AND it's super close to the Champs-Elysees for some great shopping, including the biggest Sephora I've ever seen.</p><br>
       
         <h3 id="luxembourg-gardens" class="font-display font-bold text-left py-2">Luxembourg Gardens</h3>
-<p>These gardens will always have my heart. They're beautifully kept year-round, and so peaceful for reading or walking or basking in the sun. I plan to go back - one of my only regrets is not being able to see it in all its springtime glory.</p><br>
+      <p>These gardens will always have my heart. They're beautifully kept year-round, and so peaceful for reading or walking or basking in the sun. I plan to go back - one of my only regrets is not being able to see it in all its springtime glory.</p><br>
 
-<!-- END SITES -->
+    
+      <p>There's a great L'Aduree close by too, which you have to get while you're in Paris (obviously). If you join their rewards program, they'll give you a macaron (or two) for free. I have to say though, I still think about the pistachio chocolate croissant I got from there once. The latte is alright, doesn’t have any caffeine.</p><br>
+
+      <p>Also nearby (but on the other side of L'Aduree) is an amazing artisan gift shop called <a href="https://www.marinmontagut.com/en">Marin Montagut.</a> Perfect for an original souvenir because of the beautiful artistry. I don't have any pictures of it but it's worth checking out if you're in the area! </p>
+
+      <h3 id="galeries" class="font-display font-bold text-left py-2">Galeries Lafayette by the Opera</h3>
+
+      <p>Great shopping and great rooftop view of the city! This is definitely worth seeing just for the interior of the mall!! Gorgeous and ornate, it's home to a myriad of brands from Guerlain to Skims to Free People to Ganni. There's a floor dedicated to just shoes and a floor for kid's toys - which I mention because it's where I bought the cutest macaron jellycat to gift my cousin. </p><br>
+
+      <p>If shopping doesn't appeal to you, there's a<b> FREE</b> rooftop view of Paris!! All you have to do is take the elevator up to the top floor (which is where you'll find souvenir shopping and their cafeteria) and then take a few stairs to get to the roof. Just make sure to go before the rooftop closes!! We missed it once because we didn't realize it closed at 7pm, so I'd double check before heading out there if that's what you're most excited for.</p>
+
+      <h3 id="rivoli" class="font-display font-bold text-left py-2">59 Rivoli</h3>
+
+      <p>Formerly a squat, this building is now a well-known artist residency and public art space in Paris, located at 59 rue de Rivoli. Unlike many residencies, 59 Rivoli is open to the public, giving you a unique opportunity to engage with the creative process and observe some amazing, unique pieces from artists around the world - and it's free!  </p>
+    </section>
+
 
         </div>
         </div>
     </section>
 
-      <!-- 5. thanks -->
+      <!-- THANKS -->
      <section id="thanks" class="py-8 bg-cream backdrop-blur-sm fade">
       <div class="max-w-3xl mx-auto px-6 md:px-0">
         <h2 class="font-display text-3xl md:text-4xl pb-6 section-divider"> Thanks for Reading!</h2>
