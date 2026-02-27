@@ -224,6 +224,19 @@
         opacity: 0.8;
         }
 
+        .square-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.square-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
       .text-home:hover { color: #ad1457 }
       .text-exp:hover { color: #2e7d32; }
       .text-story:hover { color: #1976d2; }
@@ -679,7 +692,7 @@
 
     <!-- SCIENCES PO -->
     <section id="sciences-po">
-    <h2 id="sciences-po" class="font-display font-bold text-left underline pt-6 text-3xl decoration-dashed">Sciences Po</h2>
+    <h2 class="font-display font-bold text-left underline pt-6 text-3xl decoration-dashed">Sciences Po</h2>
 
     <h3 id="registering-for-classes" class="font-display font-bold text-left py-2">Registering for Classes</h3>
 
@@ -795,14 +808,13 @@
             <h3 id="la-maison-d-isabelle" class="font-display font-bold text-left py-2">La Maison d'Isabelle</h3>
             <p>The best croissant on the planet. It is everything a croissant should be. There's a reason it won best butter croissant in 2018 and if I could have it every day I would.</p><br>
             <div class="grid grid-cols-2 gap-4">
-                <div class="image-card"><figure><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/vickycroissant.jpg" alt="Croissant" style="max-width:100%;"></figure></div>
-                <div class="image-card"><figure><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/valcroissant.jpg" alt="Croissant" style="max-width:100%;"></figure></div>
+                <div class="image-card"><figure class="square-img"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/vickycroissant.jpg" alt="Croissant" style="max-width:100%;"></figure></div>
+                <div class="image-card"><figure class="square-img"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/valcroissant.jpg" alt="Croissant" style="max-width:100%;"></figure></div>
             </div><br>
             
             <!-- MAMICHE -->
             <h3 id="mamiche" class="font-display font-bold text-left py-2">Mamiche</h3>
             <p>Mamiche is another well-known bakery with delicious pastries. It's also one of the first places I went to with Nicole when we first arrived in Paris. Would also highly recommend!!</p><br>
-            <div class="image-card"><figure style="max-width:100%;"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/mamiche.jpeg?w=1024" alt="Mamiche" style="max-width:100%;"></figure></div><br>
 
             <!-- HOLYBELLY -->
             <h3 id="holybelly" class="font-display font-bold text-left py-2">Holybelly</h3>
@@ -816,10 +828,9 @@
             <h3 id="mmmozza" class="font-display font-bold text-left py-2">Mmmozza</h3>
             <p>One of Baaqir's personal favorites, this sandwich shop was another food staple I took all my visitors to. Fresh af sandwich.</p><br>
             <div class="grid grid-cols-2 gap-4">
-                <div class="image-card"><figure><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/baaqirmmmozza.jpg" alt="Mmmozza" style="max-width:100%;"></figure></div>
-                <div class="image-card"><figure><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/valmmmozza.jpg" alt="Mmmozza" style="max-width:100%;"></figure></div>
+                <div class="image-card"><figure class="square-img"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/baaqirmmmozza.jpg" alt="Mmmozza" style="max-width:100%;"></figure></div>
+                <div class="image-card"><figure class="square-img"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/valmmmozza.jpg" alt="Mmmozza" style="max-width:100%;"></figure></div>
             </div><br>
-            <div class="image-card"><figure style="max-width:100%;"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/img_1470-1.jpg?w=1024" alt="Mmmozza" style="max-width:100%;"></figure></div><br>
 
             <!-- STEAK FRITES -->
             <h3 id="la-relais-de-l-entrecote" class="font-display font-bold text-left py-2">La Relais de L'Entrecote</h3>
@@ -838,8 +849,8 @@
             <h3 id="pink-mamma" class="font-display font-bold text-left py-2">Pink Mamma</h3>
             <p>This truffle pasta changed my life. It's what they're known for, and I returned to get it 2x after going for a birthday dinner in September. Also worth noting is that there's a speakeasy underneath the restaurant - not a bad place to get a drink before dinner if there happens to be a wait!</p><br>
             <div class="grid grid-cols-2 gap-4">
-                <div class="image-card"><figure><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pinkmamma.jpeg" alt="Pink Mamma" style="max-width:100%;"></figure></div>
-                <div class="image-card"><figure><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pinkmamma.gif" alt="Pink Mamma" style="max-width:100%;"></figure></div>
+                <div class="image-card"><figure class="square-img"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pinkmamma.jpeg" alt="Pink Mamma" style="max-width:100%;"></figure></div>
+                <div class="image-card"><figure class="square-img"><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/pinkmamma.gif" alt="Pink Mamma" style="max-width:100%;"></figure></div>
             </div><br>
 
             <!-- CHEZ JANOUS-->
@@ -873,9 +884,81 @@
                 <div class="image-card"><figure><img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/dinnercruise4.gif?w=400" alt="Dinner Cruise" style="max-width:100%;"></figure></div>
             </div><br>
 
-          
+            <!-- RACLETTE -->
+             <h3 id="raclette" class="font-display font-bold text-left py-2">Raclette</h3>
+            <p>While you're in France, you HAVE to try raclette. If you don't know what it is, it's essentially a superior version of fondue, because it's a dish made by melting cheese and scraping it onto other foods - usually meat and potatoes.</p><br>
+            <ul>
+                <li>Monica and I first tried raclette at <a href="https://lesfondusdelaraclette.fr/">Les Fondus de la Raclette</a> near Montparnasse, and I've been hooked ever since.</li>
+                <li>It was only right that Mel, Kat, and I sat down for a raclette dinner when we went to French Alps since it's a dish that originates from the Swiss mountains.</li>
+                <li>I also had to introduce Mika to raclette when she came to visit, though we went to a different restaurant and I liked the energy more from the first raclette place I went to with Monica.</li>
+                <li>AND if you're around for the Christmas markets, you'll also definitely come across some raclette baguettes, which were so delicious. I'm getting hungry just thinking about it.</li>
+            </ul><br>
+
+            <!-- BRASSERIE -->
+             <h3 id="brasserie-des-pres-groovie" class="font-display font-bold text-left py-2">Brasserie des Prés / Groovie</h3>
+            <p>For another high quality French dining experience, check out Brasserie des Prés. The other plus of going to this brasserie, besides having a reason to enjoy an amazing meal in the Saint-Germaine-Des-Prés neighborhood, is that there's the cutest bar tucked away on the top floor called <strong>Groovie</strong>. Amazing vibes and amazing drinks!</p><br>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="image-card">
+                    <figure class="square-img">
+                    <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/brasserie.jpeg?w=768" 
+                        alt="Brasserie des Prés">
+                    </figure>
+                </div>
+
+            <!-- GROOVIE -->
+                <div class="image-card">
+                    <figure class="square-img">
+                    <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/groovie.gif?w=400" 
+                        alt="Groovie">
+                    </figure>
+                </div>
+                </div>
+            <p class="pt-2 text-sm">Brasserie des Prés / Groovie, 6 Cr du Commerce Saint-André</p><br>
+
+            <!-- CHARCUTERIE -->
+            <h3 id="le-17-45" class="font-display font-bold text-left py-2"><a href="https://www.le17-45.fr/">Le 17.45</a></h3>
+            <p>Build-Your-Own Charcuterie Boards! Found this place when I was looking for a place to meet Julia and we had the cutest little date. You'll get a menu with all the different <em>charcuterie</em>, <em>fromages</em>, and <em>tartinables</em> they offer - or you can order one of their various pre-selected board combinations.</p><br>
+
+            <!-- MOULIN ROUGE BAR -->
+            <h3 id="bar-a-bulles" class="font-display font-bold text-left py-2">Bar À Bulles</h3>
+            <p>There's a hidden bar BEHIND the windmill at the Moulin Rouge. To find it, walk past the Moulin Rouge to the left until you see a corridor, which takes you to the main entrance and their sprawling patio / indoor bar. Once you're inside, there may or may not be a line to the right, which is where you wait to be let upstairs and enjoy a drink outdoors in this iconic setting!</p><br>
+
             </section>
             <!-- END FOOD SECTION -->
+
+            <!-- COFFEE SHOPS / COWORKING -->
+            <section id="coffee">
+            <h2 class="font-display font-bold text-left pt-8 text-3xl underline decoration-dotted">
+            Coffee Shops / Coworking</h2>
+            
+                <h3 class="font-display font-bold text-left py-2">Cafe Noir</h3>
+                <p>There's a few different locations around the city, you just have to have your own wifi/hotspot. There's one super close to campus too which was really convenient when I needed a quick pick-me-up between classes.</p><br>
+      
+                <h3 class="font-display font-bold text-left py-2">Bonjour Jacob</h3>
+                <p>Modern coffee shop with SOME tables set aside for laptops/working. At the location we went to, there were two-three tables set aside for working. At all other tables, they'll ask you to put your laptops away so getting a seat/table for working isn't guaranteed but worth a shot! This is another good matcha option and they offer a few pastries, like the pistachio caramel cookie you see pictured.</p><br>
+     
+                <h3 id="food-society-paris" class="font-display font-bold text-left py-2"><a href="https://www.foodsociety.fr/">Food Society Paris</a></h3>
+                <p>Awesome coworking space right by the Montparnasse, introduced to me by my Parisian roommate. They have coffee, food, wifi, outlets, and plenty of space to work. Come hungry because they have a lot of food options - it is a food hall after all!</p><br>
+       
+                <h3 id="cafe-fika" class="font-display font-bold text-left py-2">Cafe Fika</h3>
+                <p>A Swedish cafe that's great for getting a coffee or pastry and has lots of seating indoors and outdoors for working. It fills up quickly but both times I've been able to get a table outside (not that surprising because I went when it was cold out). A few months later, this specific coffee shop was alluded to in one of my French lessons (shoutout Alliance Francaise) which I thought was serendipitous because it was my Swedish friend Ida - who I met abroad through Bumble - that introduced me to the cafe!</p><br>
+
+                <blockquote class="mt-4 pl-4 border-l-2 border-gray-300 italic text-sm">
+                <p>Want to eat Swedish in Paris? It's possible! In the heart of the Marais, the Swedish Cafe is an atypical and quiet place, located at 11 rue Payenne. On the inside, come and taste kanelbullar (traditional Swedish brioche with cinnamon) or meatballs. Be careful, there are only about twenty seats! Outside, on the courtyard side, share a drink or a meal on the terrace. The cafe is close to the Picasso Museum.</p>
+                </blockquote><br>
+
+            </section>
+            <!-- END COFFEE SECTION -->
+
+            <!-- SITES -->
+             <h2 class="font-display font-bold text-left pt-8 text-3xl underline decoration-dotted">
+                Sites</h2>
+
+            <h3 id="eiffel-tower" class="font-display font-bold text-left py-2">Eiffel Tower: Where to See It</h3>
+            <p>One of my favorite parts about when Megan came to visit was that every night, we'd try to see the Eiffel Tower sparkle from a different location!! I'll list out where we went (and a few others) below in case you're also interested in appreciating it from different vantage points.</p><br>
+
+            <!-- END SITES -->
+
         </div>
         </div>
     </section>
