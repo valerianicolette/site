@@ -718,25 +718,187 @@
     <section id="food">
             <h2 id="general" class="font-display font-bold text-left pt-8 text-3xl underline decoration-dotted"> Food & Drink </h2>
 
-            <!-- CROISSANT -->
-            <h3 id="la-maison-d-isabelle" class="font-display font-bold text-left py-2">La Maison d'Isabelle</h3>
-            <p>The best croissant on the planet. It is everything a croissant should be. There's a reason it won best butter croissant in 2018 and if I could have it every day I would.</p><br>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="image-card"><figure><img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/vickycroissant.jpg?w=800" alt="Croissant" style="max-width:75%;"></figure></div>
-                <div class="image-card"><figure><img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/valcroissant.jpg?w=800" alt="Croissant" style="max-width:100%;"></figure></div>
-            </div><br>
-            
-            <!-- MAMICHE -->
-            <h3 id="mamiche" class="font-display font-bold text-left py-2">Mamiche</h3>
-            <p>Mamiche is another well-known bakery with delicious pastries. It's also one of the first places I went to with Nicole when we first arrived in Paris. Would also highly recommend!!</p><br>
+     <!-- CROISSANTS -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mt-12">
 
-            <!-- HOLYBELLY -->
-            <h3 id="holybelly" class="font-display font-bold text-left py-2">Holybelly</h3>
-            <p>I'd been dreaming about this restaurant since the first time I visited Paris, back in 2018. As soon as I knew I'd be in Paris again, I knew I'd be coming back... and I went back many, many times because it's still the best brunch in the world to me. If someone asks me if I'd rather have sweet or savory for breakfast, my answer is always that I have to have both!! Their savoury stack is one I will continue to dream about because it's truly the best combination of flavors you could ask for.</p><br>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="image-card"><figure><img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/holybellybaaqir.jpg?w=800" alt="Holybelly" style="max-width:100%;"></figure></div>
-                <div class="image-card"><figure><img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/holybellymegan.jpg?w=800" alt="Holybelly" style="max-width:100%;"></figure></div>
-            </div><br>
+      <!-- LEFT: Text -->
+      <div class="space-y-2 text-[#3e3e38] leading-relaxed">
+
+        <h3 id="la-maison-d-isabelle" class="font-display font-bold text-left">
+          La Maison d'Isabelle
+        </h3>
+        <p>
+          The best croissant on the planet. It is everything a croissant should be.
+          There's a reason it won best butter croissant in 2018 and if I could have
+          it every day I would.
+        </p>
+
+        <h3 id="mamiche" class="font-display font-bold text-left pt-2">
+          Mamiche
+        </h3>
+        <p>
+          Mamiche is another well-known bakery with delicious pastries. It's also
+          one of the first places I went to with Nicole when we first arrived in Paris.
+          Would also highly recommend!!
+        </p>
+
+      </div>
+
+      <!-- RIGHT: Carousel -->
+      <div class="relative">
+        <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory"
+            style="scrollbar-width: thin; scrollbar-color: #4caf50 #f0f0eb;">
+
+          <!-- Photo 1 -->
+          <div class="flex-none w-56 snap-start">
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+              <img loading="lazy"
+                src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/vickycroissant.jpg?w=800"
+                alt="Croissant"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">
+              Vicky + La Maison croissant
+            </p>
+          </div>
+
+          <!-- Photo 2 -->
+          <div class="flex-none w-56 snap-start">
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+              <img loading="lazy"
+                src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/valcroissant.jpg?w=800"
+                alt="Croissant"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">
+              Me + La Maison croissant
+            </p>
+          </div>
+
+          <!-- Photo 3 -->
+          <div class="flex-none w-56 snap-start">
+            <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+              <img loading="lazy"
+                src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/mamiche.jpg?w=800"
+                alt="Croissant"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">
+              Mamiche Order
+            </p>
+          </div>
+
+          
+        </div>
+
+        <p class="text-xs text-[#9ca3af] text-right mt-1 italic">
+          scroll for more →
+        </p>
+      </div>
+
+    </div>
+
+            
+
+       <!-- HOLYBELLY -->
+<div class="mt-12">
+
+  <!-- Text -->
+  <div class="space-y-2 text-[#3e3e38] leading-relaxed">
+    <h3 id="holybelly" class="font-display font-bold text-left">
+      Holybelly
+    </h3>
+
+    <p class="mt-1">
+      I'd been dreaming about this restaurant since the first time I visited Paris, back in 2018. 
+      As soon as I knew I'd be in Paris again, I knew I'd be coming back... and I went back many, 
+      many times because it's still the best brunch in the world to me. If someone asks me if I'd 
+      rather have sweet or savory for breakfast, my answer is always that I have to have both!! 
+      Their savoury stack is one I will continue to dream about because it's truly the best 
+      combination of flavors you could ask for.
+    </p>
+  </div>
+
+  <!-- Filmstrip -->
+  <div class="relative mt-6">
+    <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory"
+         style="scrollbar-width: thin; scrollbar-color: #4caf50 #f0f0eb;">
+
+     <!-- Photo 3 -->
+      <div class="flex-none w-56 snap-start">
+        <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+          <img loading="lazy"
+            src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/holybelly3.jpg?w=800"
+            alt="Holybelly savoury stack"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">
+          Savoury stack
+        </p>
+      </div>
+
+      <!-- Photo 1 -->
+      <div class="flex-none w-56 snap-start">
+        <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+          <img loading="lazy"
+            src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/holybellybaaqir.jpg?w=800"
+            alt="Holybelly interior"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">
+          The restaurant
+        </p>
+      </div>
+
+      <!-- Photo 4 -->
+      <div class="flex-none w-56 snap-start">
+        <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+          <img loading="lazy"
+            src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/holybelly2.jpg?w=800"
+            alt="Brunch moment"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">
+          Brunch moment
+        </p>
+      </div>
+
+
+      <!-- Photo 2 -->
+      <div class="flex-none w-56 snap-start">
+        <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+          <img loading="lazy"
+            src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/holybellymegan.jpg?w=800"
+            alt="Brunch with friends"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">
+          With Megan
+        </p>
+      </div>
+
+      <!-- Photo 5 -->
+      <div class="flex-none w-56 snap-start">
+        <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+          <img loading="lazy"
+            src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/holybellypancakes.jpg?w=800"
+            alt="Holybelly pancakes"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">
+          From my first visit in 2018
+        </p>
+      </div>
+
+    </div>
+
+    <p class="text-xs text-[#9ca3af] text-right mt-1 italic">
+      scroll for more →
+    </p>
+  </div>
+
+</div>
+
 
             <!-- MMMOZZA-->
             <h3 id="mmmozza" class="font-display font-bold text-left py-2">Mmmozza</h3>
@@ -746,17 +908,71 @@
                 <div class="image-card"><figure class="square-img"><img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2026/02/valmmmozza.jpg?w=800" alt="Mmmozza" style="max-width:100%;"></figure></div>
             </div><br>
 
-            <!-- STEAK FRITES -->
-            <h3 id="la-relais-de-l-entrecote" class="font-display font-bold text-left py-2">La Relais de L'Entrecote</h3>
-            <p>This steak frites experience immediately became my obsession, and I took everyone I knew there whenever they came to visit. The only food items offered? Bread, walnut salad, and steak frites. This might sound limiting but you know it means they do these three items extremely well. You tell them how you'd like your steak cooked, and they bring out a serving of this perfect steak with fries and delicious sauce. And then, once you're done with your plate, they bring out a SECOND SERVING. Their house red was also one of the most beautiful and delicious bottles of red wine I've ever had. I'm obsessed with everything about this restaurant, but make sure you plan ahead if you want to eat there - they don't take reservations and there's usually a line out the door when they open because they're <em>that</em> popular.</p><br>
-            <div class="grid grid-cols-3 gap-4">
-                <div class="image-card"><figure><img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais2.jpeg?w=800" alt="Relais de L'Entrecote" style="max-width:100%;"></figure></div>
-                <div class="image-card"><figure><img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais1-1.jpg?w=800" alt="Relais de L'Entrecote" style="max-width:100%;"></figure></div>
-                <div class="image-card"><figure><img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais3.jpeg?w=800" alt="Relais de L'Entrecote" style="max-width:100%;"></figure></div>
-            </div>
-            <div class="grid grid-cols-2 gap-4 mt-4">
-                <div class="image-card"><figure><img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais4-1.jpeg?w=800" alt="Relais de L'Entrecote" style="max-width:100%;"></figure></div>
-                <div class="image-card"><figure><img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais4.jpeg?w=800" alt="Relais de L'Entrecote" style="max-width:100%;"></figure></div>
+          <!-- STEAK FRITES-->
+          <div class="max-w-4xl mx-auto space-y-8 mt-12">
+
+
+            <!-- Text -->
+            <div class="space-y-4 text-[#3e3e38] leading-relaxed">
+              <h3 id="la-relais-de-l-entrecote" class="font-display font-bold text-left py-2">La Relais de L'Entrecote</h3>
+              <p>This steak frites experience immediately became my obsession, and I took everyone I knew there whenever they came to visit. The only food items offered? Bread, walnut salad, and steak frites. This might sound limiting but you know it means they do these three items extremely well. You tell them how you'd like your steak cooked, and they bring out a serving of this perfect steak with fries and delicious sauce. And then, once you're done with your plate, they bring out a SECOND SERVING. Their house red was also one of the most beautiful and delicious bottles of red wine I've ever had. I'm obsessed with everything about this restaurant, but make sure you plan ahead if you want to eat there - they don't take reservations and there's usually a line out the door when they open because they're <em>that</em> popular.</p><br>
+              </div>
+
+                <!-- Filmstrip -->
+                <div class="relative">
+                  <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory" style="scrollbar-width: thin; scrollbar-color: #4caf50 #f0f0eb;">
+
+                    <!-- Photo 1  -->
+                    <div class="flex-none w-56 snap-start">
+                      <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                        <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais2.jpeg?w=800"
+                          alt="." class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                      </div>
+                      <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Monica/p>
+                    </div>
+
+                    <!-- Photo 2 -->
+                    <div class="flex-none w-56 snap-start">
+                      <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                        <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais1-1.jpg?w=800"
+                          alt="Chez Janou" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                      </div>
+                      <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">With Baaqir </p>
+                    </div>
+
+                    <!-- Photo 3 -->
+                    <div class="flex-none w-56 snap-start">
+                      <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                        <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais3.jpeg?w=800"
+                          alt="Chez Janou food" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                      </div>
+                      <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Mika</p>
+                    </div>
+
+                    <!-- Photo 4 -->
+                    <div class="flex-none w-56 snap-start">
+                      <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                        <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais4-1.jpeg?w=800"
+                          alt="Chez Janou" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                      </div>
+                      <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Megan</p>
+                    </div>
+
+                    <!-- Photo 5 -->
+                    <div class="flex-none w-56 snap-start">
+                      <div class="aspect-[3/4] rounded-lg overflow-hidden bg-cream-200 shadow-sm">
+                        <img loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/relais4.jpeg?w=800"
+                          alt="Chez Janou" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                      </div>
+                      <p class="text-xs text-center text-[#9ca3af] mt-2 font-medium tracking-wide uppercase">Vicky</p>
+                    </div>
+
+
+                  </div>
+                  <p class="text-xs text-[#9ca3af] text-right mt-1 italic">scroll for more →</p>
+                </div>
+
+              
             </div><br>
 
             <!-- PINK MAMMA -->
@@ -770,10 +986,7 @@
             <!-- CHEZ JANOUS-->
             <div class="max-w-4xl mx-auto space-y-8 mt-12">
 
-          <!-- Two column: text left, filmstrip right -->
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-
-            <!-- Left: Text -->
+            <!-- Text -->
             <div class="space-y-4 text-[#3e3e38] leading-relaxed">
               <h3 class="font-display font-bold text-left py-2">Chez Janou 🎂</h3>
 
@@ -784,11 +997,9 @@
               <p>Baaqir said it was one of the best duck plates he's ever tried, and my risotto was amazing. The chocolate mousse was the best birthday dessert I could've asked for — but you can't go just for the mousse. They won't seat you for dessert only, so come hungry for lunch or dinner!</p>
 
               <p>You <em>have</em> to get a reservation by either going in person or calling ahead — it's always packed.</p>
-
-            
               </div>
 
-                <!-- Right: Horizontal filmstrip -->
+                <!-- Filmstrip -->
                 <div class="relative">
                   <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory" style="scrollbar-width: thin; scrollbar-color: #4caf50 #f0f0eb;">
 
@@ -859,7 +1070,7 @@
                   <p class="text-xs text-[#9ca3af] text-right mt-1 italic">scroll for more →</p>
                 </div>
 
-              </div>
+              
             </div><br>
 
             <!-- DINNER CRUISE -->
@@ -911,14 +1122,14 @@
            <div class="max-w-4xl mx-auto space-y-8 mt-12">
 
           <!-- Two column: text left, filmstrip right -->
+        
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
             <!-- Left: Text -->
             <div class="space-y-4 text-[#3e3e38] leading-relaxed">
+            <h3 id="bar-a-bulles" class="font-display font-bold text-left">Bar À Bulles</h3>
 
-      
             <!-- MOULIN ROUGE BAR -->
-            <h3 id="bar-a-bulles" class="font-display font-bold text-left py-2">Bar À Bulles</h3>
             <p>There's a hidden bar BEHIND the windmill at the Moulin Rouge. To find it, walk past the Moulin Rouge to the left until you see a corridor, which takes you to the main entrance and their sprawling patio / indoor bar. Once you're inside, there may or may not be a line to the right, which is where you wait to be let upstairs and enjoy a drink outdoors in this iconic setting!</p><br>
             
               </div>
@@ -1004,7 +1215,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
               <!-- Left: Numbered list -->
-              <ol class="text-[#3e3e38] leading-relaxed list-none">
+              <ol class="text-[#3e3e38] text-sm leading-relaxed list-none">
                 <li class="flex gap-3"><span class="text-[#4caf50] font-semibold flex-none">1.</span>Up close and personal — classic</li>
                 <li class="flex gap-3"><span class="text-[#4caf50] font-semibold flex-none">2.</span>From the steps of the Sacré-Cœur in Montmartre</li>
                 <li class="flex gap-3"><span class="text-[#4caf50] font-semibold flex-none">3.</span>Off the Trocadéro metro</li>
