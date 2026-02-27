@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Valeria Mera | Connect</title>
 
-    <link rel="icon" href="https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmabout.png" type="image/png">
+    <link rel="icon" href="https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmcontact.png" type="image/png">
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -101,7 +101,7 @@
         transform-origin: right;
         transition: transform 0.3s ease;
       }
-      .content-link:hover { color: #E0295D; }
+      .content-link:hover { color: #004aac; }
       .content-link:hover::after { transform: scaleX(1); transform-origin: left; }
 
       .home-icon {
@@ -112,7 +112,7 @@
         color: #262626;
       }
       .home-icon::after { display: none !important; }
-      .home-icon:hover { color: #ad1457 !important; }
+      .home-icon:hover { color: #004aac !important; }
 
       nav a {
         display: initial;
@@ -179,7 +179,7 @@
       .section-icon {
         width: 3rem;
         height: 3rem;
-        background: linear-gradient(135deg, #F9D5D3 0%, #ad1457 100%);
+        background: linear-gradient(135deg, #F9D5D3 0%, #004aac 100%);
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -293,90 +293,6 @@
       @keyframes float {
         0%, 100% { transform: translateY(0px) rotate(0deg); }
         50% { transform: translateY(-15px) rotate(1deg); }
-      }
-
-      .contact-method {
-        background: white;
-        border-radius: 16px;
-        padding: 2rem;
-        transition: all 0.3s ease;
-        border: 1px solid #ece7e1;
-        position: relative;
-        overflow: hidden;
-      }
-      .contact-method::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(157, 184, 141, 0.1), transparent);
-        transition: left 0.6s ease;
-      }
-      .contact-method:hover::before { transform: scaleX(1); }
-      .contact-method:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-        border-color: #E0295D;
-      }
-
-      .contact-icon {
-        background: linear-gradient(135deg, #f06292 0%, #E0295D 100%);
-        color: white;
-        width: 4rem;
-        height: 4rem;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.5rem;
-        transition: all 0.3s ease;
-      }
-      .contact-method:hover .contact-icon { transform: scale(1.1) rotate(5deg); }
-
-      .form-input {
-        background: rgba(255, 255, 255, 0.8);
-        border: 2px solid #ece7e1;
-        border-radius: 12px;
-        padding: 1rem 1.5rem;
-        transition: all 0.3s ease;
-        font-family: 'Inter', sans-serif;
-      }
-      .form-input:focus {
-        outline: none;
-        border-color: #bfa76f;
-        background: white;
-        box-shadow: 0 0 0 4px rgba(191, 167, 111, 0.1);
-        transform: translateY(-2px);
-      }
-      .form-textarea { resize: vertical; min-height: 120px; }
-
-      .send-button {
-        background: linear-gradient(135deg, #f06292 0%, #E0295D 100%);
-        color: white;
-        border: none;
-        border-radius: 12px;
-        padding: 1rem 2.5rem;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-      .send-button::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-        transition: left 0.5s;
-      }
-      .send-button:hover::before { left: 100%; }
-      .send-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(191, 167, 111, 0.4);
       }
 
       .section-divider {
