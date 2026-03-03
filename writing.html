@@ -20,7 +20,7 @@
             },
             colors: {
               cream: {
-                DEFAULT: '#f7f7f4',
+                DEFAULT: '#f7f7f4',fl
                 100: '#f9f9f6',
                 200: '#f0f0eb',
               },
@@ -732,55 +732,73 @@
         </div>
 
         <!-- Latest Post Preview -->
-  <div id="latest-post" class="max-w-3xl mx-auto mt-16 px-6"></div>
+ <!-- Posts Grid -->
+<div id="posts-grid" class="mt-16"></div>
 
-  <script>
-fetch("https://api.rss2json.com/v1/api.json?rss_url=https://valeriamera.substack.com/feed")
+<script>
+fetch("https://api.rss2json.com/v1/api.json?rss_url=https://valeriamera.substack.com/feed&count=20")
   .then(res => res.json())
   .then(data => {
-    const post = data.items[0];
+    const posts = data.items;
+    if (!posts || posts.length === 0) throw new Error("No posts");
 
-    const formattedDate = new Date(post.pubDate).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric"
+    const featured = posts[0];
+    const rest = posts.slice(1);
+
+    const formatDate = (d) => new Date(d).toLocaleDateString("en-US", {
+      year: "numeric", month: "long", day: "numeric"
     });
 
-    document.getElementById("latest-post").innerHTML = `
-      <div style="border:1px solid #ece7e1; padding:32px; border-radius:20px; background:white;">
-        <p style="font-size:12px; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px;">
-          Latest Writing • ${formattedDate}
-        </p>
-        <h2 style="margin-bottom:16px;">${post.title}</h2>
-        <p style="margin-bottom:20px; line-height:1.6;">
-          ${post.description.replace(/<[^>]*>?/gm, '').substring(0, 220)}...
-        </p>
-        <a href="${post.link}" target="_blank" style="text-decoration:underline;">
-          Read the full essay →
+    const getThumb = (item) => {
+      const match = item.content && item.content.match(/<img[^>]+src="([^">]+)"/);
+      return match ? match[1] : null;
+    };
+
+    const featuredThumb = getThumb(featured);
+
+    const featuredHTML = `
+      <a href="${featured.link}" target="_blank" class="block group mb-10 rounded-2xl overflow-hidden bg-white border border-[#ece7e1] hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+        ${featuredThumb ? `<div class="h-72 overflow-hidden"><img src="${featuredThumb}" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>` : ''}
+        <div class="p-8">
+          <span class="inline-block text-xs uppercase tracking-widest text-story font-semibold mb-3">Latest Essay · ${formatDate(featured.pubDate)}</span>
+          <h2 class="font-display text-2xl md:text-3xl text-[#22221f] mb-3 group-hover:text-story transition-colors">${featured.title}</h2>
+          <p class="text-[#4a4a45] leading-relaxed mb-5">${featured.description.replace(/<[^>]*>?/gm, '').substring(0, 280)}...</p>
+          <span class="text-story font-medium text-sm underline underline-offset-4">Read the full essay →</span>
+        </div>
+      </a>
+    `;
+
+    const gridHTML = rest.map(post => {
+      const thumb = getThumb(post);
+      return `
+        <a href="${post.link}" target="_blank" class="block group rounded-xl overflow-hidden bg-white border border-[#ece7e1] hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          ${thumb ? `<div class="h-44 overflow-hidden"><img src="${thumb}" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>` : `<div class="h-2 bg-gradient-to-r from-story to-story/40"></div>`}
+          <div class="p-6">
+            <span class="text-xs text-[#9a9a93] uppercase tracking-wide block mb-2">${formatDate(post.pubDate)}</span>
+            <h3 class="font-display text-lg text-[#22221f] mb-2 group-hover:text-story transition-colors leading-snug">${post.title}</h3>
+            <p class="text-[#6b6b65] text-sm leading-relaxed">${post.description.replace(/<[^>]*>?/gm, '').substring(0, 120)}...</p>
+          </div>
+        </a>
+      `;
+    }).join('');
+
+    document.getElementById("posts-grid").innerHTML = `
+      ${featuredHTML}
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        ${gridHTML}
+      </div>
+      <div class="text-center mt-10">
+        <a href="https://valeriamera.substack.com" target="_blank" class="inline-flex items-center gap-2 text-sm text-story hover:text-story-dark font-medium underline underline-offset-4 transition-colors">
+          View all essays on Substack →
         </a>
       </div>
     `;
   })
-  .catch(error => {
-    document.getElementById("latest-post").innerHTML =
-      "<p>Visit my Substack for the latest writing → <a href='https://valeriamera.substack.com' target='_blank'>valeriamera.substack.com</a></p>";
+  .catch(() => {
+    document.getElementById("posts-grid").innerHTML =
+      `<p class="text-center text-[#6b6b65]">Visit my Substack for the latest writing → <a href='https://valeriamera.substack.com' target='_blank' class='text-story underline'>valeriamera.substack.com</a></p>`;
   });
 </script>
-
-  <div class="blog-iframe-container">
-    <div class="substack-embed-wrapper max-w-3xl">
-      <iframe
-        src="https://valeriamera.substack.com/embed"
-        width="100%"
-        height="320"
-        style="border:none; background: transparent;"
-        frameborder="0"
-        scrolling="no"
-        class="substack-embed-iframe"
-        title="Valeria Mera's Substack"
-      ></iframe>
-    </div>
-  </div>
 
       </section>
 
