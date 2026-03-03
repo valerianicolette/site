@@ -731,56 +731,139 @@
               </div>
         </div>
 
-        <!-- Latest Post Preview -->
-  <div id="latest-post" class="max-w-3xl mx-auto mt-16 px-6"></div>
+  <!-- 
+  ============================================================
+  SUBSTACK POSTS GRID — Drop this into writing.html
+  ============================================================
+      --> 
 
-  <script>
-fetch("https://api.rss2json.com/v1/api.json?rss_url=https://valeriamera.substack.com/feed")
-  .then(res => res.json())
-  .then(data => {
-    const post = data.items[0];
 
-    const formattedDate = new Date(post.pubDate).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric"
-    });
+<!-- Posts Grid -->
+<div class="mt-16 max-w-4xl mx-auto">
 
-    document.getElementById("latest-post").innerHTML = `
-      <div style="border:1px solid #ece7e1; padding:32px; border-radius:20px; background:white;">
-        <p style="font-size:12px; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px;">
-          Latest Writing • ${formattedDate}
-        </p>
-        <h2 style="margin-bottom:16px;">${post.title}</h2>
-        <p style="margin-bottom:20px; line-height:1.6;">
-          ${post.description.replace(/<[^>]*>?/gm, '').substring(0, 220)}...
-        </p>
-        <a href="${post.link}" target="_blank" style="text-decoration:underline;">
-          Read the full essay →
-        </a>
+  <!-- Featured Post (latest) -->
+  <a href="https://valeriamera.substack.com/p/on-being-new-to-district-energy"
+     target="_blank"
+     class="group block rounded-2xl overflow-hidden bg-white border border-[#ece7e1] hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 mb-10">
+    <div class="md:flex">
+      <div class="md:w-1/2 h-64 md:h-auto overflow-hidden">
+        <img
+          src="
+          https://substackcdn.com/image/fetch/$s_!pBV2!,w_1250,h_833,c_fill,f_webp,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1e03be93-8f4d-4780-a5f6-d99bf9df8320_3464x2309.jpeg
+          "
+          alt="On Being New to District Energy"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          onerror="this.parentElement.style.background='linear-gradient(135deg, #e8f0f7 0%, #c8d8e8 100%)'; this.style.display='none';"
+        >
       </div>
-    `;
-  })
-  .catch(error => {
-    document.getElementById("latest-post").innerHTML =
-      "<p>Visit my Substack for the latest writing → <a href='https://valeriamera.substack.com' target='_blank'>valeriamera.substack.com</a></p>";
-  });
-</script>
-
-  <div class="blog-iframe-container">
-    <div class="substack-embed-wrapper max-w-3xl">
-      <iframe
-        src="https://valeriamera.substack.com/embed"
-        width="100%"
-        height="320"
-        style="border:none; background: transparent;"
-        frameborder="0"
-        scrolling="no"
-        class="substack-embed-iframe"
-        title="Valeria Mera's Substack"
-      ></iframe>
+      <div class="md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+        <span class="text-xs font-semibold uppercase tracking-widest text-story mb-3 block">Latest Essay · Feb 26, 2026</span>
+        <h2 class="font-display text-2xl md:text-3xl text-[#22221f] mb-4 group-hover:text-story transition-colors duration-300 leading-tight">
+          On Being New to District Energy
+        </h2>
+        <p class="text-[#5a5a54] leading-relaxed mb-6 text-sm md:text-base">
+          Reflections from my first IDEA Conference — on stepping into a new industry, finding community, and learning to be the person in the room who doesn't know everything yet.
+        </p>
+        <span class="inline-flex items-center gap-1 text-story text-sm font-medium underline underline-offset-4 group-hover:gap-2 transition-all">
+          Read the full essay →
+        </span>
+      </div>
     </div>
+  </a>
+
+  <!-- Posts Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+    <!-- Post 2 -->
+    <a href="https://valeriamera.substack.com/p/rebuild-abuelitas-home-a-new-beginning"
+       target="_blank"
+       class="group block rounded-xl overflow-hidden bg-white border border-[#ece7e1] hover:shadow-xl transition-all duration-400 hover:-translate-y-1">
+      <div class="h-48 overflow-hidden">
+        <img
+          src=
+          "https://substackcdn.com/image/fetch/$s_!OxOD!,w_1200,h_800,c_fill,f_webp,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F31a6a3ea-da22-49e3-803e-ecb3e0c4f8de_1452x728.png
+          "
+          alt="Rebuild Abuelita's Home"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          onerror="this.parentElement.classList.add('bg-gradient-to-br', 'from-amber-50', 'to-stone-200'); this.style.display='none';"
+        >
+        <!-- Fallback gradient shown via onerror above -->
+        <div class="w-full h-full bg-gradient-to-br from-amber-50 to-stone-200 hidden fallback-bg"></div>
+      </div>
+      <div class="p-6">
+        <span class="text-xs text-[#9a9a93] uppercase tracking-wide block mb-2">Sep 3, 2025</span>
+        <h3 class="font-display text-lg text-[#22221f] mb-2 group-hover:text-story transition-colors leading-snug">
+          Rebuild Abuelita's Home: A New Beginning
+        </h3>
+        <p class="text-[#6b6b65] text-sm leading-relaxed">The last thing we ever did at my grandma's house.</p>
+      </div>
+    </a>
+
+    <!-- Post 3 -->
+    <a href="https://valeriamera.substack.com/p/im-back-and-graduated"
+       target="_blank"
+       class="group block rounded-xl overflow-hidden bg-white border border-[#ece7e1] hover:shadow-xl transition-all duration-400 hover:-translate-y-1">
+      <div class="h-48 overflow-hidden">
+        <img
+          src="
+          https://substackcdn.com/image/fetch/$s_!_1Pt!,w_1200,h_800,c_fill,f_webp,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F43bec7cb-5e8c-460e-be05-94787b6eb32f_768x1024.jpeg
+          "
+          alt="I'm back (and graduated)"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          onerror="this.parentElement.style.background='linear-gradient(135deg, #e8edf2 0%, #c5d0da 100%)'; this.style.display='none';"
+        >
+      </div>
+      <div class="p-6">
+        <span class="text-xs text-[#9a9a93] uppercase tracking-wide block mb-2">May 22, 2025</span>
+        <h3 class="font-display text-lg text-[#22221f] mb-2 group-hover:text-story transition-colors leading-snug">
+          I'm back (and graduated)
+        </h3>
+        <p class="text-[#6b6b65] text-sm leading-relaxed">I can't believe it's already over.</p>
+      </div>
+    </a>
+
+   
+
   </div>
+
+  <!-- View All Link -->
+  <div class="text-center mt-10">
+    <a href="https://valeriamera.substack.com" target="_blank"
+       class="inline-flex items-center gap-2 text-sm text-story hover:text-story-dark font-medium transition-all duration-300 group">
+      <span class="underline underline-offset-4">View all essays on Substack</span>
+      <span class="group-hover:translate-x-1 transition-transform">→</span>
+    </a>
+  </div>
+
+</div>
+
+<!-- Substack subscribe embed (keep this below the grid) -->
+<div class="blog-iframe-container mt-12">
+  <div class="substack-embed-wrapper max-w-3xl">
+    <iframe
+      src="https://valeriamera.substack.com/embed"
+      width="100%"
+      height="320"
+      style="border:none; background: transparent;"
+      frameborder="0"
+      scrolling="no"
+      title="Valeria Mera's Substack"
+    ></iframe>
+  </div>
+</div>
+
+<!--
+  ============================================================
+  NOTE ON IMAGES:
+  The cover images use Substack's CDN URLs which require the 
+  exact image hash from each post. Since I can't fetch those 
+  directly, the images will fall back to subtle color gradients 
+  if they don't load — which still looks clean.
+  
+  TO FIX IMAGES: Right-click each cover image on your Substack,
+  copy the image URL, and replace the src="" values above.
+  ============================================================
+-->
 
       </section>
 
