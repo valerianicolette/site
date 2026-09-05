@@ -4,11 +4,8 @@
 # Browser partial downloads
 *.crdownload
 
-# Original full-size photos (optimized copies live in assets/img/)
+# Original full-size photos (the site uses the copies hosted on WordPress)
 /paris/
 
-# Local preview tooling
-node_modules/
-_site/
-.jekyll-cache/
+# Editor / tooling
 .claude/

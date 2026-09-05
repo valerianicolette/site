@@ -1,9 +1,10 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{%- for p in site.data.pages %}
-  <url><loc>{{ site.url }}/{% unless p.url == "index.html" %}{{ p.url }}{% endunless %}</loc></url>
-{%- endfor %}
+  <url><loc>https://valeriamera.com/</loc></url>
+  <url><loc>https://valeriamera.com/work.html</loc></url>
+  <url><loc>https://valeriamera.com/writing.html</loc></url>
+  <url><loc>https://valeriamera.com/portfolio.html</loc></url>
+  <url><loc>https://valeriamera.com/background.html</loc></url>
+  <url><loc>https://valeriamera.com/contact.html</loc></url>
+  <url><loc>https://valeriamera.com/paris.html</loc></url>
 </urlset>

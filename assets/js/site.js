@@ -3,27 +3,29 @@
 (() => {
   'use strict';
 
-  /* ---------- Mobile menu ---------- */
-  const menu = document.getElementById('mobileMenu');
-  const burger = document.querySelector('.hamburger');
+  /* ---------- Mobile menu (the nav is inserted by layout.js) ---------- */
+  function initMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const burger = document.querySelector('.hamburger');
 
-  function setMenu(open) {
-    if (!menu || !burger) return;
-    menu.classList.toggle('open', open);
-    burger.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', String(open));
+    function setMenu(open) {
+      if (!menu || !burger) return;
+      menu.classList.toggle('open', open);
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', String(open));
+    }
+    if (burger) burger.addEventListener('click', (e) => { e.stopPropagation(); setMenu(!menu.classList.contains('open')); });
+    if (menu) {
+      menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+      document.addEventListener('click', (e) => {
+        if (menu.classList.contains('open') && !e.target.closest('nav') && !e.target.closest('#mobileMenu')) setMenu(false);
+      });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+    }
+    // Kept for any page content that still calls these inline
+    window.toggleMobileMenu = () => setMenu(!menu.classList.contains('open'));
+    window.closeMobileMenu = () => setMenu(false);
   }
-  if (burger) burger.addEventListener('click', (e) => { e.stopPropagation(); setMenu(!menu.classList.contains('open')); });
-  if (menu) {
-    menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
-    document.addEventListener('click', (e) => {
-      if (menu.classList.contains('open') && !e.target.closest('nav') && !e.target.closest('#mobileMenu')) setMenu(false);
-    });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
-  }
-  // Kept for any page content that still calls these inline
-  window.toggleMobileMenu = () => setMenu(!menu.classList.contains('open'));
-  window.closeMobileMenu = () => setMenu(false);
 
   /* ---------- Visitor counter (Abacus: free counter API, no account) ---------- */
   function initCounter() {
@@ -55,6 +57,7 @@
 
   /* ---------- On load ---------- */
   window.addEventListener('DOMContentLoaded', () => {
+    initMenu();
     if (window.lucide && typeof lucide.createIcons === 'function') lucide.createIcons();
 
     const observer = new IntersectionObserver((entries) => {

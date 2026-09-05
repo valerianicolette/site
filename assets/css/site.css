@@ -1,6 +1,6 @@
 /* ==========================================================================
    Shared styles for every page of valeriamera.com
-   Colors come from CSS variables set in _layouts/default.html:
+   Colors come from CSS variables set by assets/js/layout.js (values in assets/js/config.js):
      --accent / --accent-light / --accent-dark  = the CURRENT page's color
      --c-home, --c-exp, --c-story, ...          = every page's color
    Page-specific rules live in assets/css/<page>.css.

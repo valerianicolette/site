@@ -1,68 +1,49 @@
 # valeriamera.com
 
 Source for [valeriamera.com](https://valeriamera.com), hosted on GitHub Pages.
-Pages are plain HTML; the parts shared by every page (head, nav, footer, colors)
-are pulled in by Jekyll, which GitHub Pages runs automatically on every push.
-There is nothing to build before committing.
+
+Every page is a plain HTML file: **double-click it to preview, edit, push.**
+The parts shared by every page (menu, footer, colors, fonts, analytics) are
+loaded from two small JavaScript files, so you change them once.
 
 ## Where things live
 
 | Want to change... | Edit |
 |---|---|
-| Page names, order in the menu, page colors, favicons, counter emoji | `_data/pages.yml` |
-| Site-wide text (footer, disclaimer, email, social links), background gradient, base colors, fonts, analytics id | `_config.yml` |
-| The nav bar or mobile menu | `_includes/nav.html` |
-| The footer | `_includes/footer.html` |
-| The `<head>`, fonts, Tailwind config, anything wrapped around every page | `_layouts/default.html` |
+| Page names, menu order, page colors, favicons, counter emoji | `assets/js/config.js` (the `pages` list) |
+| Site-wide text (footer, disclaimer, email, social links), background, base colors, fonts, analytics id | `assets/js/config.js` |
+| The nav bar, mobile menu, or footer markup | `assets/js/layout.js` |
 | Styles used on every page (nav, links, animations, footer) | `assets/css/site.css` |
 | Styles for one page only | `assets/css/<page>.css` |
-| Shared JavaScript (menu, fade-ins, counter) | `assets/js/site.js` |
-| The content of a page | `<page>.html` (below the `---` block) |
+| Shared behaviour (menu, fade-ins, visitor counter) | `assets/js/site.js` |
+| The content of a page | `<page>.html`, inside `<main>` |
 
 ### Colors
 
-Each page has an accent color in `_data/pages.yml`. Inside a page you can use it as:
+Each page has an accent color in `assets/js/config.js`. Inside a page you can use it as:
 
 - Tailwind classes: `text-theme`, `bg-theme`, `border-theme` (current page) or
-  `text-exp`, `bg-story/90`, `border-contact` (a specific page)
+  `text-exp`, `bg-story/90`, `border-contact` (a specific page); `text-ink` / `text-ink-muted` for body text
 - CSS: `var(--accent)`, `var(--accent-light)`, `var(--accent-dark)` (current page) or
   `var(--c-exp)`, `var(--c-story)` ... (a specific page)
 
 ## Adding a page
 
-1. Copy an existing page, e.g. `contact.html`, and change the front matter at the top:
-
-   ```yaml
-   ---
-   layout: default
-   title: My New Page
-   page_key: contact      # which color/favicon set to use (a key from _data/pages.yml)
-   description: One sentence for search engines and link previews.
-   css: contact           # optional: loads assets/css/contact.css
-   ---
-   ```
-
-2. To give it its own color and a spot in the menu, add an entry to `_data/pages.yml`.
-
-## Previewing locally
-
-Opening the HTML files directly no longer works (the layout has to be applied).
-Run the preview server instead:
-
-```bash
-npm install     # once
-npm run preview # then open http://localhost:4000
-```
-
-`npm run build` writes the fully rendered site to `_site/` if you ever want to inspect it.
+1. Copy an existing page, e.g. `contact.html`.
+2. In the copy, change `data-page="contact"` on the `<html>` tag to the key of the color set
+   you want, and update the `<title>`, description, canonical, and `og:` tags at the top.
+3. To give it its own color and a spot in the menu, add an entry to `pages` in `assets/js/config.js`.
+4. Add it to `sitemap.xml`.
 
 ## Visitor counter
 
-The badge in the footer uses [Abacus](https://abacus.jasoncameron.dev), a free counter
-API that needs no account. It counts one visit per browser session, site-wide, and hides
-itself if the service is unreachable. The namespace is `counter_namespace` in `_config.yml`.
+The badge in the footer uses [Abacus](https://abacus.jasoncameron.dev), a free counter API
+that needs no account. It counts one visit per browser session, site-wide, and hides itself
+if the service is unreachable. The namespace is `counterNamespace` in `assets/js/config.js`.
+(When previewing a file from your computer the badge may stay hidden; it works on the live site.)
 
 ## Notes
 
-- `paris/` holds the original full-size photos and is ignored by git.
+- `paris/` holds the original full-size photos and is ignored by git; the site uses the copies on WordPress.
 - `about.html` and `mylife.html` are redirects kept so old links still work.
+- `.nojekyll` tells GitHub Pages to publish the files exactly as they are.
