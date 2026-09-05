@@ -1,0 +1,154 @@
+/* Styles used only on contact.html. Shared styles are in site.css. */
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(191, 167, 111, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, transparent, var(--accent-light) 0%, var(--accent) 100%);
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.contact-method {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border: 1px solid #ece7e1;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-method::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(157, 184, 141, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.contact-method:hover::before { transform: scaleX(1); }
+
+.contact-method:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent);
+}
+
+.contact-icon {
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+  color: white;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.contact-method:hover .contact-icon { transform: scale(1.1) rotate(5deg); }
+
+.form-input {
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid #ece7e1;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #bfa76f;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(191, 167, 111, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-textarea { resize: vertical; min-height: 120px; }
+
+.send-button {
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.send-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.send-button:hover::before { left: 100%; }
+
+.send-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(191, 167, 111, 0.4);
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #ece7e1;
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent);
+}
+
+.passion-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border: 1px solid #ece7e1;
+  border-radius: 999px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  color: #4a4a45;
+  transition: all 0.3s ease;
+}
+
+.passion-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(224, 41, 93, 0.12);
+}

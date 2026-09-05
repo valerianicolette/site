@@ -1,0 +1,76 @@
+# One entry per page. The ORDER here is the order of the navigation menu.
+#
+#   key      - short id. Used in a page's front matter (page_key: exp) and as the
+#              Tailwind color name, so text-exp / bg-exp / border-exp all work.
+#   label    - name shown in the nav
+#   url      - the html file
+#   color    - the page's accent (also --accent inside that page, --c-<key> everywhere)
+#   light /  - lighter and darker shades of the accent
+#   dark
+#   favicon  - tab icon and the little logo in the top-left of the nav
+#   emoji    - shown in the visitor counter badge
+#   nav      - set to false to keep a page out of the menu (e.g. the Paris guide)
+
+- key: home
+  label: Home
+  url: index.html
+  color: "#ad1457"
+  light: "#cd729a"
+  dark: "#dc2626"
+  favicon: https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmindex.png
+  emoji: "🎨"
+
+- key: exp
+  label: Experience
+  url: work.html
+  color: "#2e7d32"
+  light: "#6ca46f"
+  dark: "#246428"
+  favicon: https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmexperience.png
+  emoji: "🌱"
+
+- key: story
+  label: Writing
+  url: writing.html
+  color: "#1976d2"
+  light: "#5d9fdf"
+  dark: "#135ea8"
+  favicon: https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmcontact.png
+  emoji: "✍️"
+
+- key: portfolio
+  label: Portfolio
+  url: portfolio.html
+  color: "#6B2060"
+  light: "#9B4F8E"
+  dark: "#4A1542"
+  favicon: https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmportfolio.png
+  emoji: "🦋"
+
+- key: world
+  label: Background
+  url: background.html
+  color: "#4caf50"
+  light: "#81c784"
+  dark: "#357a38"
+  favicon: https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmworld.png
+  emoji: "🌎"
+
+- key: contact
+  label: Connect
+  url: contact.html
+  color: "#E0295D"
+  light: "#f06292"
+  dark: "#b71c4a"
+  favicon: https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmabout.png
+  emoji: "🪩"
+
+- key: paris
+  label: Paris Guide
+  url: paris.html
+  nav: false
+  color: "#004aac"
+  light: "#0257c5"
+  dark: "#053c85"
+  favicon: https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmcontact.png
+  emoji: "🥐"

@@ -1,0 +1,47 @@
+# Site-wide settings. Anything here is available in layouts/includes as {{ site.xxx }}.
+# Edit this file (and _data/pages.yml) to change things that appear on every page.
+
+title: Valeria Mera
+url: https://valeriamera.com
+description: Climate and public policy professional merging career ambition with a creative side. Writing, portfolio, experience, and ways to connect.
+author: Valeria Nicolette Mera
+email: vnm58293@gmail.com
+linkedin: https://www.linkedin.com/in/valeriamera/
+instagram: https://www.instagram.com/valeriamera/
+substack: https://valeriamera.substack.com/
+og_image: https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/russell.png
+
+# Google Analytics 4 measurement id
+ga_id: G-EYFPGPTP0F
+
+# Visitor counter (Abacus, https://abacus.jasoncameron.dev - free, no account needed)
+counter_namespace: valeriamera-com
+
+# Footer text
+footer_heading: Ready to Create Change Together?
+footer_text: Whether you're looking to collaborate on climate policy, need creative content, or want to chat about making systems more human-centered, I'd love to connect.
+disclaimer: Opinions expressed here are personal and not representative of the positions or policies of the EIF Program, Department of Energy, ORISE, or the U.S. Government
+
+# Shared look: page background, base palette, fonts
+background: "radial-gradient(ellipse at top left, #fefdfb 0%, #f5f1eb 40%, #f0ece6 75%)"
+colors:
+  cream: "#f7f7f4"
+  cream_100: "#f9f9f6"
+  cream_200: "#f0f0eb"
+  text: "#22221f"
+  text_muted: "#4a4a45"
+  nav_text: "#262626"
+fonts:
+  display: ["Playfair Display", "serif"]
+  body: ["Inter", "Helvetica Neue", "sans-serif"]
+  google: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+
+# Files Jekyll should not publish
+exclude:
+  - node_modules
+  - scripts
+  - package.json
+  - package-lock.json
+  - README.md
+  - paris
+  - _site

@@ -1,1040 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Valeria Mera | Portfolio</title>
-
-    <link rel="icon" href="https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmportfolio.png" type="image/png">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              display: ['Marion', 'Playfair Display', 'serif'],
-              body: ['Inter', 'Helvetica Neue', 'sans-serif'],
-            },
-            colors: {
-              cream: {
-                DEFAULT: '#f7f7f4',
-                100: '#f9f9f6',
-                200: '#f0f0eb',
-              },
-             
-            portfolio: {
-            light: '#9B4F8E',
-            DEFAULT: '#6B2060',
-            dark: '#4A1542',
-          },
-           
-              accent: '#046ec3',
-            },
-              
-            backgroundImage: {
-            hero: 'radial-gradient(ellipse at top left, #fefdfb 0%, #f5f1eb 40%, #f0ece6 75%)',}
-          },
-        },
-      };
-    </script>
-
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Marion&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-
-     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EYFPGPTP0F"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-EYFPGPTP0F');
-    </script>
-
-
-    <style>
-      html{scroll-behavior:smooth}
-      body{font-family:'Inter',sans-serif}
-      .fade{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
-      .show{opacity:1;transform:translateY(0)}
-      .link{position:relative}
-      .link::after{content:'';position:absolute;left:0;bottom:-2px;width:100%;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
-      .link:hover::after{transform:scaleX(1)}
-
-
-   /* Universal body link styles - applies to all links in body content */
-      .content-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem; /* gap-1 equivalent */
-      color: #808080; 
-      font-weight: 500; /* font-medium */
-      position: relative;
-      transition: color 0.3s ease;
-      text-decoration: none;
-    }
-
-    .content-link::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -1px;
-      width: 100%;
-      height: 1.5px;
-      background: currentColor;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.3s ease;
-    }
-
-    .content-link:hover {
-      color: #0887f7;
-    }
-
-    .content-link:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-    .home-icon {
-      display: block !important;
-      align-items: initial !important;
-      gap: initial !important;
-      position: static !important;
-      color: #262626;
-    }
-
-    .home-icon::after {
-      display: none !important;
-    }
-
-    .home-icon:hover {
-      color: #ad1457  !important; /* Keeps the same color on hover, or change to a different shade if you want */
-    }
-
-
-    /* Keep nav links separate with their own styling */
-    nav a {
-      display: initial;
-      align-items: initial;
-      gap: initial;
-      color: #262626;
-    }
-
-    .nav-link {
-      position: relative;
-      transition: color 0.3s ease;
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 100%;
-      height: 1.5px;
-      background: currentColor;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.3s ease;
-    }
-    
-    .nav-link:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-      /* Mobile menu animation */
-        .mobile-menu {
-            transition: all 0.3s ease;
-            transform: translateY(-100%);
-            opacity: 0;
-        }
-        .mobile-menu.open {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
-        /* Hamburger animation */
-        .hamburger span {
-            transition: all 0.3s ease;
-        }
-        .hamburger.open span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .hamburger.open span:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger.open span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-
-
-       .social-icon {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-        background: linear-gradient(145deg, #f7f7f4, #f0f0eb);
-        box-shadow: 5px 5px 10px #e6e6e1, -5px -5px 10px #ffffff;
-        transition: all 0.3s ease;
-        color: #0887f7;
-      }
-      .social-icon:hover {
-        transform: translateY(-3px);
-        box-shadow: 8px 8px 15px #e6e1d9, -8px -8px 15px #ffffff;
-      }
-      .social-icon i {
-        transition: transform 0.3s ease;
-      }
-      .social-icon:hover i {
-        transform: scale(1.1);
-      }
-
-      
-      /* Timeline Styles for Education */
-      .timeline {
-        position: relative;
-        padding-left: 2rem;
-      }
-
-      .timeline::before {
-        content: '';
-        position: absolute;
-        left: 1rem;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: linear-gradient(180deg, #bfa76f 0%, #8a8d6f 100%);
-      }
-
-      .timeline-item {
-        position: relative;
-        margin-bottom: 3rem;
-        background: white;
-        border-radius: 12px;
-        padding: 2rem;
-        margin-left: 2rem;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
-        border-left: 3px solid #bfa76f;
-      }
-
-      .timeline-item:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-      }
-
-      .timeline-item::before {
-        content: '';
-        position: absolute;
-        left: -3.5rem;
-        top: 2rem;
-        width: 12px;
-        height: 12px;
-        background: #bfa76f;
-        border-radius: 50%;
-        border: 3px solid white;
-        box-shadow: 0 0 0 2px #bfa76f;
-      }
-
-      .timeline-date {
-        display: inline-block;
-        background: linear-gradient(135deg, #bfa76f 0%, #8a8d6f 100%);
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-size: 0.875rem;
-        font-weight: 500;
-        margin-bottom: 1rem;
-        font-family: 'Inter', sans-serif;
-      }
-
-      .timeline-title {
-        font-family: 'Marion', 'Playfair Display', serif;
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: #22221f;
-        margin-bottom: 0.5rem;
-      }
-
-      .timeline-subtitle {
-        font-size: 1.125rem;
-        color: #bfa76f;
-        font-weight: 500;
-        margin-bottom: 1rem;
-      }
-
-      .timeline-description {
-        color: #4a4a45;
-        line-height: 1.7;
-        margin-bottom: 1rem;
-      }
-
-      .timeline-skills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 1rem;
-      }
-
-      .skill-tag {
-        background: #f7f5f2;
-        color: #5a6c7d;
-        padding: 0.25rem 0.75rem;
-        border-radius: 16px;
-        font-size: 0.75rem;
-        font-weight: 500;
-        border: 1px solid #ece7e1;
-      }
-
-      .achievement {
-        background: #fdf4e7;
-        border-left: 4px solid #bfa76f;
-        padding: 0.75rem 1rem;
-        margin-top: 1rem;
-        border-radius: 0 6px 6px 0;
-      }
-
-      .achievement-text {
-        color: #8a8d6f;
-        font-weight: 500;
-        font-size: 0.875rem;
-      }
-
-      /* Clean Experience Layout */
-      .experience-item {
-        display: grid;
-        grid-template-columns: 1fr 4fr;
-        gap: 4rem;
-        margin-bottom: 4rem;
-        align-items: start;
-      }
-
-      .experience-left {
-        text-align: left;
-      }
-
-      .experience-date {
-        font-family: 'Inter', sans-serif;
-        font-size: 0.875rem;
-        color: #6b7280;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        margin-bottom: 0.5rem;
-      }
-
-      .experience-position {
-        font-family: 'Inter', sans-serif;
-        font-size: 1rem;
-        color: #374151;
-        font-weight: 500;
-      }
-
-      .experience-right {
-        position: relative;
-      }
-
-      .experience-right::before {
-        content: '';
-        position: absolute;
-        left: -2rem;
-        top: 0.5rem;
-        width: 8px;
-        height: 8px;
-        background: #bfa76f;
-        border-radius: 50%;
-      }
-
-      .experience-company {
-        font-family: 'Inter', sans-serif;
-        font-size: 1.125rem;
-        color: #111827;
-        font-weight: 600;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        margin-bottom: 1rem;
-      }
-
-      .experience-description {
-        color: #4b5563;
-        line-height: 1.7;
-        font-size: 0.95rem;
-      }
-
-      /* Nav hover colors */
-      .text-home:hover { color: #ad1457 }
-      .text-exp:hover { color: #2e7d32; }
-      .text-story:hover { color: #1976d2; }
-      .text-portfolio:hover { color: #0887f7 }
-      .text-world:hover { color: #4caf50; }
-      .text-contact:hover { color: #E0295D; }
-
-       .floating-element {
-        animation: float 4s ease-in-out infinite;
-      }
-
-      @keyframes float {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-15px) rotate(1deg); }
-      }
-
-      @media (max-width: 768px) {
-        .timeline {
-          padding-left: 1rem;
-        }
-        
-        .timeline-item {
-          margin-left: 1.5rem;
-          padding: 1.5rem;
-        }
-        
-        .timeline-item::before {
-          left: -2.5rem;
-        }
-
-        .experience-item {
-          grid-template-columns: 1fr;
-          gap: 1.5rem;
-          margin-bottom: 3rem;
-        }
-
-        .experience-right::before {
-          display: none;
-        }
-      }
-
-      .section-divider {
-        position: relative;
-        text-align: center;
-        margin: 3rem 0;
-      }
-
-      .section-divider::after {
-        content: '';
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 2px;
-        background: linear-gradient(135deg, #066cc5 0%, #046ec3 100%);
-        border-radius: 2px;
-      }
-
-      /* Portfolio Card Styles */
-
-      .portfolio-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        
-        .portfolio-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .portfolio-link {
-            color: #6B2060;
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-        
-        .portfolio-link:hover {
-                color: #9B4F8E;
-               text-decoration-line: underline;
-               text-decoration-color: #9B4F8E;
-        }
-        
-          .section-divider {
-        position: relative;
-        text-align: center;
-        margin: 3rem 0;
-      }
-
-      .section-divider::after {
-        content: '';
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 2px;
-        background: linear-gradient(135deg,  #0887f7 0%,  #1976d2 100%);
-        border-radius: 2px;
-      }
-        
-        .media-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-        
-        .media-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 24px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .social-grid-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
-            border-radius: 12px;
-            border: 1px solid rgba(180, 165, 199, 0.2);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-        
-        .social-grid-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
-            border-color: #046ec3;
-        }
-        
-        .category-badge {
-            background: linear-gradient(135deg,  #0887f7, #1976d2);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-
-        
-        .intro-section {
-            backdrop-filter: blur(8px);
-        }
-        
-        .fade {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        
-        .fade.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .font-display {
-            font-family: Georgia, serif;
-        }
-        
-        .text-accent {
-          color: #6B2060;
-        }
-                
-        .horizontal-media-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            margin-bottom: 2rem;
-        }
-        
-        .horizontal-media-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-        
-        .media-image-placeholder {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-        }
-        
-        .reel-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            height: 100%;
-        }
-        
-        .reel-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
-        }
-        
-        .reel-placeholder {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        /* Your existing carousel styles */
-        .carousel-container {
-            max-width: 400px;
-            width: 100%;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            overflow: hidden;
-            position: relative;
-            margin: 0 auto;
-        }
-
-        .carousel-wrapper {
-            position: relative;
-            overflow: hidden;
-            aspect-ratio: 4/5;
-        }
-
-        .carousel-track {
-            display: flex;
-            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            height: 100%;
-        }
-
-        .carousel-slide {
-            min-width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        .carousel-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            user-select: none;
-            -webkit-user-drag: none;
-        }
-
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 6px;
-            padding: 16px;
-            position: absolute;
-            bottom: 16px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dot.active {
-            background: rgba(255, 255, 255, 0.9);
-            transform: scale(1.2);
-        }
-
-        .carousel-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 10;
-        }
-
-        .carousel-container:hover .carousel-nav {
-            opacity: 1;
-        }
-
-        .carousel-nav:hover {
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        .carousel-nav.prev {
-            left: 16px;
-        }
-
-        .carousel-nav.next {
-            right: 16px;
-        }
-
-        .carousel-counter {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 16px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        .carousel-wrapper {
-            touch-action: pan-y;
-        }
-
-        .carousel-track.dragging {
-            transition: none;
-        }
-
-      /* carousel for tweet */
-
-       .tweet-carousel-container {
-            max-width: 850px;
-            width: 100%;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            overflow: hidden;
-            position: relative;
-            margin: 0 auto;
-        }
-
-        .tweet-carousel-wrapper {
-            position: relative;
-            overflow: hidden;
-            min-height: 400px;
-        }
-
-        .tweet-carousel-track {
-            display: flex;
-            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            height: 100%;
-        }
-
-        .tweet-carousel-slide {
-            min-width: 100%;
-            height: 100%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .tweet-container {
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .tweet-carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            padding: 20px;
-            background: #fff;
-        }
-
-        .tweet-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(29, 161, 242, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .tweet-dot.active {
-            background: #1da1f2;
-            transform: scale(1.2);
-        }
-
-        .tweet-carousel-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 10;
-        }
-
-        .tweet-carousel-container:hover .tweet-carousel-nav {
-            opacity: 1;
-        }
-
-        .tweet-carousel-nav:hover {
-            background: rgba(0, 0, 0, 0.8);
-        }
-
-        .tweet-carousel-nav.prev {
-            left: 16px;
-        }
-
-        .tweet-carousel-nav.next {
-            right: 16px;
-        }
-
-        .tweet-carousel-counter {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: rgba(29, 161, 242, 0.9);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 16px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        .tweet-carousel-track.dragging {
-            transition: none;
-        }
-
-        /* Loading state for tweets */
-        .tweet-loading {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 200px;
-            color: #657786;
-            font-size: 14px;
-        }
-
-         /* Visitor Counter Styles */
-    .visitor-counter {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: rgba(74, 74, 69, 0.7);
-      color: rgba(245, 245, 240, 0.9);
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-size: 12px;
-      font-weight: 400;
-      box-shadow: 0 2px 8px rgba(74, 74, 69, 0.15);
-      backdrop-filter: blur(6px);
-      border: 1px solid rgba(74, 74, 69, 0.2);
-      z-index: 1000;
-      transition: all 0.3s ease;
-      font-family: inherit;
-      opacity: 0.8;
-    }
-
-    .visitor-counter:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(74, 74, 69, 0.25);
-      background: rgba(74, 74, 69, 0.85);
-      opacity: 1;
-    }
-
-    .counter-icon {
-      display: inline-block;
-      margin-right: 6px;
-      font-size: 14px;
-      opacity: 1;
-    }
-
-    .counter-number {
-      color: rgba(245, 245, 240, 0.9);
-      font-weight: 500;
-      margin-left: 4px;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-
-    .visitor-counter.new-visit {
-      animation: pulse 0.6s ease-in-out;
-    }
-
-    @media (max-width: 640px) {
-      .visitor-counter {
-        bottom: 15px;
-        right: 15px;
-        padding: 10px 14px;
-        font-size: 12px;
-      }
-      
-      .counter-icon {
-        font-size: 13px;
-      }
-    }
-
-    .folder-wrap {
-  background: #f0e9df;
-  border-radius: 16px 16px 0 0;
-  padding: 0 2.5rem;
-  display: flex;
-  gap: 6px;
-  align-items: flex-end;
-  max-width: 90rem;
-  margin: 0 auto;
-}
-.folder-tab {
-  position: relative;
-  padding: 14px 36px;
-  border-radius: 10px 10px 0 0;
-  font-family: 'Marion', 'Playfair Display', serif;
-  font-size: 1rem;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  border: none;
-  transition: all 0.25s ease;
-  background: #e8ddd1;
-  color: #9a8878;
-  border: 1px solid #d9cfc4;
-  border-bottom: none;
-  bottom: -1px;
-}
-.folder-tab:hover {
-  background: #f5f0ea;
-  color: #4a3728;
-}
-.folder-tab.active {
-  background: #f5f0ea;
-  color: #6B2060;
-  font-weight: 600;
-  z-index: 2;
-  padding-top: 16px;
-  border-color: #ddd4c8;
-  border-bottom: 1px solid #f5f0ea;
-}
-.folder-tab.active::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: #f5f0ea;
-}
-.folder-body {
-  background: #f5f0ea;
-  border: 1px solid #ddd4c8;
-  border-radius: 0 16px 16px 16px;
-  max-width: 90rem;
-  margin: 0 auto;
-  box-shadow: 0 4px 24px rgba(74, 55, 40, 0.07);
-  overflow: hidden;
-}
-.folder-intro {
-  padding: 3rem 3.5rem 2.5rem;
-  border-bottom: 1px solid #ddd4c8;
-}
-.tab-section {
-  animation: fadeInTab 0.35s ease;
-}
-@keyframes fadeInTab {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.folder-label {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #6B2060;
-  margin-bottom: 1rem;
-}
-.folder-headline {
-  font-family: 'Marion', 'Playfair Display', serif;
-  font-size: 1.9rem;
-  color: #22221f;
-  line-height: 1.35;
-  margin-bottom: 1rem;
-}
-.folder-body-text {
-  color: #5a5550;
-  font-size: 1rem;
-  line-height: 1.8;
-  max-width: 640px;
-}
-
-    </style>
-  </head>
-
-   <body class="font-body antialiased text-[#22221f] bg-hero bg-fixed bg-no-repeat bg-cover min-h-screen">
-   
-    <nav class="fixed top-0 left-0 w-full z-20 py-5 px-6 md:px-12 flex items-center justify-between bg-cream/60 backdrop-blur-md border-b border-cream-200">
-       
-     <!-- Home Icon -->
-         <a href="index.html" class="home-icon block w-12 h-12 hover:rotate-12 transition-all duration-300" aria-label="Home">
-          <img src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmportfolio.png" class=" object-cover">
-      </a>
-
-
-       <!-- Desktop Navigation -->
-        <div class="hidden md:flex space-x-8 text-sm tracking-wide uppercase font-medium">
-            <a href="index.html" class="nav-link text-home">Home</a>
-            <a href="work.html" class="nav-link text-exp">Experience</a>
-            <a href="writing.html" class="nav-link text-story">Writing</a>
-            <a href="portfolio.html" class="nav-link text-portfolio">Portfolio</a>
-            <a href="background.html" class="nav-link text-world">Background</a>
-            <a href="contact.html" class="nav-link text-contact">Connect</a>
-        </div>
-
-        <!-- Mobile Hamburger Button -->
-        <button class="md:hidden hamburger flex flex-col justify-center items-center w-6 h-6 space-y-1" onclick="toggleMobileMenu()" aria-label="Toggle menu">
-            <span class="block w-5 h-0.5 bg-current"></span>
-            <span class="block w-5 h-0.5 bg-current"></span>
-            <span class="block w-5 h-0.5 bg-current"></span>
-        </button>
-       </nav>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-cream/95 backdrop-blur-md z-10 md:hidden">
-        <div class="flex flex-col items-center justify-center h-full space-y-8 text-lg tracking-wide uppercase font-medium">
-            <a href="index.html" class="nav-link text-home" onclick="closeMobileMenu()">Home</a>
-            <a href="work.html" class="nav-link text-exp" onclick="closeMobileMenu()">Experience</a>
-            <a href="writing.html" class="nav-link text-story" onclick="closeMobileMenu()">Writing</a>
-            <a href="portfolio.html" class="nav-link text-portfolio" onclick="closeMobileMenu()">Portfolio</a>
-            <a href="background.html" class="nav-link text-world" onclick="closeMobileMenu()">Background</a>
-            <a href="contact.html" class="nav-link text-contact" onclick="closeMobileMenu()">Connect</a>
-        </div>
-    </div>
-
+---
+layout: default
+title: Portfolio
+page_key: portfolio
+description: "Policy communications, data visualization, video essays, and photo collages: the creative side of my work."
+css: portfolio
+---
 
      <!-- HERO SECTION -->
     <header class="relative flex items-center justify-center min-h-screen pt-32 pb-24 px-6 md:px-0">
@@ -1130,11 +100,11 @@
                               My role in assisting the creation of the town's first sustainability program allowed me to collaborate with and learn from the communications department, gaining hands-on experience in municipal messaging and community outreach. Below are examples of two newsletters I created—one internal and one external—showing how I shared updates related to the sustainability program with different audiences within the town, adapting tone and content to meet the specific needs of staff versus residents.
                             </p>
                             <div class="space-y-3">
-                                <a href="https://www.apexnc.org/DocumentCenter/View/40154/July-22---Community" target="_blank" 
+                                <a href="https://www.apexnc.org/DocumentCenter/View/40154/July-22---Community" target="_blank" rel="noopener noreferrer" 
                                 class="block portfolio-link">
                                     Community Newsletter (July 2022) →
                                 </a>
-                                <a href="https://www.apexnc.org/DocumentCenter/View/40950/Oct-2022-Newsletter---Staff" target="_blank" class="block portfolio-link">
+                                <a href="https://www.apexnc.org/DocumentCenter/View/40950/Oct-2022-Newsletter---Staff" target="_blank" rel="noopener noreferrer" class="block portfolio-link">
                                     Staff Newsletter (October 2022) →
                                 </a>
                             </div>
@@ -1159,10 +129,10 @@
                               I was able to do just that—creating a visually appealing poster and presentation that distilled my research into clear, engaging content that could resonate with both academic and general audiences.
                             </p>
                              <div class="space-y-3">
-                                <a href="https://www.linkedin.com/posts/valeriamera_with-graduation-fast-approaching-i-cant-activity-7327705469500768256-qeh2/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACEPIqwBxZ8G95E2NuCqWVMwdBduoo0tVM8" target="_blank" class="block portfolio-link">
+                                <a href="https://www.linkedin.com/posts/valeriamera_with-graduation-fast-approaching-i-cant-activity-7327705469500768256-qeh2/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACEPIqwBxZ8G95E2NuCqWVMwdBduoo0tVM8" target="_blank" rel="noopener noreferrer" class="block portfolio-link">
                                     Thesis Presentation (May 2025) →
                                 </a>
-                                <a href="https://www.proquest.com/docview/3215951181" target="_blank" class="block portfolio-link">
+                                <a href="https://www.proquest.com/docview/3215951181" target="_blank" rel="noopener noreferrer" class="block portfolio-link">
                                     Published Thesis (June 2025) →
                                 </a>
                             </div>
@@ -1201,7 +171,7 @@
                             <p class="text-[#4a4a45] mb-4 text-sm leading-relaxed">
                                 Explore how Generation Z thinks about politics, identity, and the future in this interactive feature from The Washington Post.
                             </p>
-                            <a href="https://www.washingtonpost.com/politics/interactive/2022/gen-z-five-questions/" target="_blank" class="portfolio-link font-medium">
+                            <a href="https://www.washingtonpost.com/politics/interactive/2022/gen-z-five-questions/" target="_blank" rel="noopener noreferrer" class="portfolio-link font-medium">
                                 Watch Interview →
                             </a>
                         </div>
@@ -1224,7 +194,7 @@
                             <p class="text-[#4a4a45] mb-4 text-sm leading-relaxed">
                               Assisted in the creation of an engaging video content to promote the Town’s inaugural Earth Day event, highlighting environmental awareness, sustainability advocacy, and strong communication and on-camera skills.
                             </p>
-                            <a href="https://www.facebook.com/watch/?v=1198151587391738" target="_blank" class="portfolio-link font-medium">
+                            <a href="https://www.facebook.com/watch/?v=1198151587391738" target="_blank" rel="noopener noreferrer" class="portfolio-link font-medium">
                                 Watch Video →
                             </a>
                         </div>
@@ -1338,7 +308,7 @@
                          class="w-full h-[270px] object-cover">
                         <div class="p-4">
                         <h6 class="font-semibold text-base mb-2 text-[#22221f]">Commencement Toast</h6>
-                        <a href="https://www.instagram.com/reel/DJo1gPNA029/?igsh=cWp6eGJuZ3Zvb2Vy" target="_blank" class="portfolio-link text-sm font-medium">
+                        <a href="https://www.instagram.com/reel/DJo1gPNA029/?igsh=cWp6eGJuZ3Zvb2Vy" target="_blank" rel="noopener noreferrer" class="portfolio-link text-sm font-medium">
                             View Reel →
                         </a>
                         </div>
@@ -1353,7 +323,7 @@
 
                        <div class="p-4">
                         <h6 class="font-semibold text-base mb-2 text-[#22221f]">Women's History Month</h6>
-                        <a href="https://www.instagram.com/reel/C3-hD7_gQWF/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="portfolio-link text-sm font-medium">
+                        <a href="https://www.instagram.com/reel/C3-hD7_gQWF/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" class="portfolio-link text-sm font-medium">
                             View Reel →
                         </a>
                       </div>
@@ -1367,7 +337,7 @@
 
                         <div class="p-4">
                         <h6 class="font-semibold text-base mb-2 text-[#22221f]">Thanksgiving</h6>
-                        <a href="https://www.instagram.com/reel/Cz9BCq3geBI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="portfolio-link text-sm font-medium">
+                        <a href="https://www.instagram.com/reel/Cz9BCq3geBI/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" class="portfolio-link text-sm font-medium">
                             View Reel →
                         </a>
                         </div>
@@ -1421,7 +391,7 @@
                         class="w-full h-[270px] object-cover">
                         <div class="p-4">
                         <p class="text-[#4a4a45] text-sm leading-relaxed mb-4">If you really want to soak in the #oktoberfest spirit, you need to try our food specials. Crispy pork schnitzel, Kartoffelpuffer (potato pancakes), German potato salad -- You get a little taste of the old country with a modern twist. 🇩🇪🍺</p>
-                        <a href="https://www.instagram.com/reel/CxTeAp0R3p_/?utm_source=ig_web_copy_link" target="_blank" class="portfolio-link text-base font-medium">
+                        <a href="https://www.instagram.com/reel/CxTeAp0R3p_/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer" class="portfolio-link text-base font-medium">
                             View on Instagram →
                         </a>
                         </div>
@@ -1492,7 +462,7 @@
                           class="w-full h-[270px] object-cover">
                           <div class="p-4">
                             <h6 class="font-semibold text-base mb-2 text-[#22221f]">Turning 26</h6>
-                            <a href="https://www.tiktok.com/@applecider498/video/7410170233480138014" target="_blank" class="portfolio-link text-sm font-medium">
+                            <a href="https://www.tiktok.com/@applecider498/video/7410170233480138014" target="_blank" rel="noopener noreferrer" class="portfolio-link text-sm font-medium">
                               View TikTok →
                             </a>
                           </div>
@@ -1507,7 +477,7 @@
                         </div>
                         <div class="p-4">
                           <h6 class="font-semibold text-base mb-2 text-[#22221f]"> August in Paris</h6>
-                          <a href="https://www.tiktok.com/@applecider498/video/7407793912380689695" target="_blank" class="portfolio-link text-sm font-medium">
+                          <a href="https://www.tiktok.com/@applecider498/video/7407793912380689695" target="_blank" rel="noopener noreferrer" class="portfolio-link text-sm font-medium">
                             View TikTok →
                           </a>
                         </div>
@@ -1520,7 +490,7 @@
                             class="w-full h-[270px] object-cover">
                         <div class="p-4">
                           <h6 class="font-semibold text-base mb-2 text-[#22221f]">Spring Recap</h6>
-                          <a href="https://www.tiktok.com/@applecider498/video/7162989891708587307" target="_blank" class="portfolio-link text-sm font-medium">
+                          <a href="https://www.tiktok.com/@applecider498/video/7162989891708587307" target="_blank" rel="noopener noreferrer" class="portfolio-link text-sm font-medium">
                             View TikTok →
                           </a>
                         </div>
@@ -1533,7 +503,7 @@
                             class="w-full h-[270px] object-cover">
                         <div class="p-4">
                           <h6 class="font-semibold text-base mb-2 text-[#22221f]">A Weekend in DC</h6>
-                          <a href="https://www.tiktok.com/@applecider498/video/7217604264749878574" target="_blank" class="portfolio-link text-sm font-medium">
+                          <a href="https://www.tiktok.com/@applecider498/video/7217604264749878574" target="_blank" rel="noopener noreferrer" class="portfolio-link text-sm font-medium">
                             View TikTok →
                           </a>
                         </div>
@@ -1974,96 +944,6 @@
           "The people crazy enough to think they can change the world are the ones that do."
         </blockquote>
       </section>
-
-    <!-- CONTACT FOOTER -->
-    <footer id="contact" class="py-24 bg-cream fade">
-      <div class="max-w-4xl mx-auto text-center space-y-12 px-6 md:px-0">
-        <div class="space-y-4">
-          <h3 class="font-display text-2xl md:text-3xl">Ready to Create Change Together?</h3>
-          <p class="text-[#4a4a45] max-w-2xl mx-auto">Whether you're looking to collaborate on climate policy, need creative content, or want to chat about making systems more human-centered, I'd love to connect.</p>
-        </div>
-        
-         <!-- ICONS -->
-        <div class="flex justify-center space-x-10">
-            <a href="mailto:vnm58293@gmail.com" aria-label="Email" class="social-icon">
-            <i data-lucide="mail"></i></a>
-
-           <a href="https://www.linkedin.com/in/valeriamera/" target="_blank" aria-label="LinkedIn" class="social-icon">
-            <i data-lucide="linkedin"></i></a>
-          
-            <a href="https://www.instagram.com/valeriamera/" target="_blank" aria-label="Instagram" class="social-icon">
-            <i data-lucide="instagram"></i></a>
-
-            <a href="https://valeriamera.substack.com/" aria-label="Substack" class="social-icon">
-            <i data-lucide="newspaper"></i></a>
-        </div>
-        
-       <p class="text-sm text-[#6d6d67]">Want to stay in the loop? Subscribe via Substack for updates.</p>
-<form
-  action="https://valeriamera.substack.com/api/v1/free?nojs=true"
-  method="POST"
-  target="_blank"
-  class="max-w-lg mx-auto flex border border-portfolio focus-within:ring-2 focus-within:ring-portfolio rounded-lg overflow-hidden">
-  <input type="hidden" name="first_url" value="https://valeriamera.substack.com" />
-  <input type="hidden" name="first_referrer" value="" />
-  <input type="email" name="email" placeholder="Your email" class="flex-grow px-5 py-3 bg-transparent placeholder-[#706f6a] focus:outline-none min-w-0" required />
-  <button type="submit" class="px-4 sm:px-6 py-3 bg-portfolio text-white font-medium hover:bg-portfolio/90 transition-colors flex items-center justify-center flex-shrink-0">
-    Subscribe 
-  </button>
-</form>
-
-
-
-      <div class="flex flex-col items-center justify-center w-full gap-2 text-sm text-[#6d6d67]">
-        <div class="flex items-center gap-4">
-          <p>© <span id="year"></span> Valeria Nicolette Mera</p>
-        </div>
-        <span class="text-xs">Site designed and coded by yours truly. <br>Opinions expressed here are personal and not representative of the positions or <br>policies of the EIF Program, Department of Energy, ORISE, or the U.S. Government</span>
-      </div>
-    </div>
-
-       <!-- Visitor Counter -->
-    <div class="visitor-counter" id="visitorCounter">
-      <span class="counter-icon">🦋</span>
-      <span>Visitors:</span>
-      <span class="counter-number" id="counterNumber">...</span>
-    </div>
-  </footer>
-
-    <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        // Initialize Lucide icons
-        if (window.lucide && typeof lucide.createIcons === 'function') {
-          lucide.createIcons();
-        }
-
-        // Initialize Intersection Observer
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          {
-            threshold: 0.15,
-            rootMargin: '0px'
-          }
-        );
-
-        // Observe all fade elements
-        document.querySelectorAll('.fade').forEach(el => observer.observe(el));
-
-        // Update copyright year
-        const yearElement = document.getElementById('year');
-        if (yearElement) {
-          yearElement.textContent = new Date().getFullYear();
-        }
-      });
-    </script>
-
    <script>
     class InstagramCarousel {
         constructor(container, carouselId) {
@@ -2252,6 +1132,8 @@
                 this.prevBtn = document.getElementById('tweetPrevBtn');
                 this.nextBtn = document.getElementById('tweetNextBtn');
                 
+                // Nothing to do if the tweet carousel isn't on the page
+                if (!this.track || !this.prevBtn || !this.nextBtn) return;
                 this.init();
             }
             
@@ -2383,36 +1265,3 @@
             }
         }, 1000);
     </script>
-
-     <script>
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            const hamburger = document.querySelector('.hamburger');
-            
-            mobileMenu.classList.toggle('open');
-            hamburger.classList.toggle('open');
-        }
-
-        function closeMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            const hamburger = document.querySelector('.hamburger');
-            
-            mobileMenu.classList.remove('open');
-            hamburger.classList.remove('open');
-        }
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const mobileMenu = document.getElementById('mobileMenu');
-            const hamburger = document.querySelector('.hamburger');
-            
-            if (!event.target.closest('nav') && mobileMenu.classList.contains('open')) {
-                closeMobileMenu();
-            }
-        });
-    </script>
-
-   <script src="counter.js"></script>
-
-  </body>
-</html>

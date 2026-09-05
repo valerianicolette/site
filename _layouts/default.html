@@ -1,0 +1,121 @@
+{%- comment -%}
+  The one template every page uses. Edit this to change the <head>, the fonts,
+  analytics, or anything wrapped around the page content.
+  Page-specific values come from the page's front matter and _data/pages.yml.
+{%- endcomment -%}
+{%- assign current = site.data.pages | where: "key", page.page_key | first -%}
+{%- assign home = site.data.pages | where: "key", "home" | first -%}
+{%- if current == nil %}{% assign current = home %}{% endif -%}
+{%- assign page_description = page.description | default: site.description -%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page_description }}" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+    <link rel="icon" href="{{ current.favicon }}" type="image/png" />
+
+    <!-- Social sharing previews (LinkedIn, Substack, iMessage, ...) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}" />
+    <meta property="og:description" content="{{ page_description }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:image" content="{{ page.image | default: site.og_image }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Tailwind (pinned) + the shared color/font config -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: [{% for f in site.fonts.display %}'{{ f }}', {% endfor %}],
+              body: [{% for f in site.fonts.body %}'{{ f }}', {% endfor %}],
+            },
+            colors: {
+              cream: {
+                DEFAULT: '{{ site.colors.cream }}',
+                100: '{{ site.colors.cream_100 }}',
+                200: '{{ site.colors.cream_200 }}',
+              },
+              // One Tailwind color per page, from _data/pages.yml (text-exp, bg-story/90, border-contact ...)
+              {%- for p in site.data.pages %}
+              '{{ p.key }}': { light: '{{ p.light }}', DEFAULT: '{{ p.color }}', dark: '{{ p.dark }}' },
+              {%- endfor %}
+              index: { light: '{{ home.light }}', DEFAULT: '{{ home.color }}', dark: '{{ home.dark }}' }, // alias kept for index.html
+              accent: '#046ec3', // used on the portfolio page
+              // "theme" = whatever the CURRENT page's accent is (text-theme, bg-theme ...)
+              theme: { light: 'var(--accent-light)', DEFAULT: 'var(--accent)', dark: 'var(--accent-dark)' },
+            },
+            backgroundImage: {
+              hero: '{{ site.background }}',
+            },
+          },
+        },
+      };
+    </script>
+
+    <link href="{{ site.fonts.google }}" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@0.545.0/dist/umd/lucide.min.js" defer></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_id }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.ga_id }}');
+    </script>
+
+    <!-- Colors every page can use: --c-<key> for each page in _data/pages.yml -->
+    <style>
+      :root {
+        {%- for p in site.data.pages %}
+        --c-{{ p.key }}: {{ p.color }}; --c-{{ p.key }}-light: {{ p.light }}; --c-{{ p.key }}-dark: {{ p.dark }};
+        {%- endfor %}
+        --cream: {{ site.colors.cream }};
+        --text: {{ site.colors.text }};
+        --text-muted: {{ site.colors.text_muted }};
+        --nav-text: {{ site.colors.nav_text }};
+        --font-display: {% for f in site.fonts.display %}'{{ f }}'{% unless forloop.last %}, {% endunless %}{% endfor %};
+        --font-body: {% for f in site.fonts.body %}'{{ f }}'{% unless forloop.last %}, {% endunless %}{% endfor %};
+      }
+      {%- for p in site.data.pages %}
+      .text-{{ p.key }}:hover { color: var(--c-{{ p.key }}); }
+      {%- endfor %}
+    </style>
+
+    <!-- Shared styles, then this page's own styles -->
+    <link rel="stylesheet" href="assets/css/site.css" />
+    {%- for href in page.stylesheets %}
+    <link rel="stylesheet" href="{{ href }}" />
+    {%- endfor %}
+    {%- if page.css %}
+    <link rel="stylesheet" href="assets/css/{{ page.css }}.css" />
+    {%- endif %}
+  </head>
+
+  <body class="font-body antialiased text-[#22221f] bg-hero bg-fixed bg-no-repeat bg-cover min-h-screen"
+        style="--accent: {{ current.color }}; --accent-light: {{ current.light }}; --accent-dark: {{ current.dark }};"
+        data-page="{{ current.key }}"
+        data-counter-ns="{{ site.counter_namespace }}">
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    {% include nav.html %}
+
+    <main id="main">
+{{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    <script src="assets/js/site.js"></script>
+    {%- for src in page.scripts %}
+    <script src="{{ src }}"></script>
+    {%- endfor %}
+  </body>
+</html>

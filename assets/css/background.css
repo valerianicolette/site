@@ -1,0 +1,250 @@
+/* Styles used only on background.html. Shared styles are in site.css. */
+
+.guide-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border: 1px solid #ece7e1;
+  border-radius: 999px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  color: #4a4a45;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.guide-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.15);
+}
+
+.guide-pill.disabled {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Page colors */
+.hover-page:hover { color: #66bb6a!important; }
+
+.bg-page { background-color: var(--accent); }
+
+.bg-page:hover { background-color: #66bb6a; }
+
+.bg-page { background-color: var(--accent); }
+
+.border-page { border-color: var(--accent); }
+
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 1rem;
+  }
+
+  .timeline-item {
+    margin-left: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .timeline-item::before {
+    left: -2.5rem;
+  }
+
+  .experience-item {
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .experience-right::before {
+    display: none;
+  }
+}
+
+.timeline-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.skill-tag {
+  background: #f7f5f2;
+  color: #5a6c7d;
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid #ece7e1;
+}
+
+/* Clean Experience Layout */
+.experience-item {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  align-items: start;
+}
+
+.experience-left {
+  text-align: left;
+}
+
+.experience-date {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: #6b7280;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.experience-position {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.experience-right {
+  position: relative;
+}
+
+.experience-right::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.experience-company {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  color: #111827;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.experience-description {
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Travel Map Styles */
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.stat {
+  text-align: center;
+  padding: 10px;
+}
+
+.stat-number {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--accent);
+  margin: 0;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 5px 0 0 0;
+}
+
+#travel-map {
+  height: 600px;
+  width: 100%;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  padding: 0;
+}
+
+.popup-content {
+  text-align: center;
+  padding: 15px;
+  min-width: 200px;
+  max-width: 250px;
+}
+
+.popup-content h3 {
+  margin: 0 0 8px 0;
+  color: var(--accent);
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.popup-content p {
+  margin: 0 0 10px 0;
+  color: #666;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.popup-content img {
+  width: 100%;
+  max-width: 200px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.custom-city-marker {
+  background: transparent;
+  border: none;
+}
+
+.custom-city-marker div {
+  background-color: var(--accent);
+  border: 3px solid white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.custom-city-marker:hover div {
+  transform: scale(1.2);
+  background-color: #5a8a3a;
+}
+
+@media (max-width: 768px) {
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .stat {
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 15px;
+  }
+
+  .stat:last-child {
+    border-bottom: none;
+  }
+
+  #travel-map {
+    height: 400px;
+  }
+}
