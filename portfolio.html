@@ -65,33 +65,47 @@
     </header>
 
     <div class="px-6 md:px-12 py-16 max-w-screen-xl mx-auto">
- 
 
-  <div class="sticky top-[72px] z-10 bg-hero pb-0 pt-6">
-<div class="folder-wrap">
-    <button id="tabProfessional" class="folder-tab active" onclick="switchTab('professional')">
-      Professional
-    </button>
-    <button id="tabPersonal" class="folder-tab" onclick="switchTab('personal')">
-      Personal
-    </button>
-  </div>
-
-  <!-- Folder body -->
-  <div class="folder-body">
-    <div id="folderInner" class="tab-section">
-
-      <!-- Folder intro text (updates on tab switch) -->
-      <div class="folder-intro">
-        <span class="folder-label" id="folderLabel">Professional Work</span>
-        <p class="folder-body-text" id="folderDesc">
-           My drive to work at the intersection of policy and communications stems from believing that helping people understand the vital work of our government is <em>essential</em> for democracy - especially now. 
-           From creating community newsletters for the Town of Apex to drafting social media content during my Senate EPW Committee internship, I've learned to translate complex information for diverse audiences—whether institutional, community, or academic. 
-        </p>
+      <!-- Folder tabs (stick under the nav while you scroll) -->
+      <div class="sticky top-[88px] z-10 bg-hero pt-6">
+        <div class="folder-wrap" role="tablist" aria-label="Portfolio sections">
+          <button id="tabProfessional" type="button" class="folder-tab active" role="tab" aria-selected="true" aria-controls="sectionProfessional" tabindex="0">Professional</button>
+          <button id="tabPersonal" type="button" class="folder-tab" role="tab" aria-selected="false" aria-controls="sectionPersonal" tabindex="-1">Personal</button>
+        </div>
       </div>
 
-      <!-- Tab content -->
-      <div id="sectionProfessional">
+      <!-- Folder body -->
+      <div class="folder-body">
+        <div id="folderInner" class="tab-section">
+
+          <!-- Intro text for the open tab (filled from the two <template>s below) -->
+          <div class="folder-intro">
+            <span class="folder-label" id="folderLabel"></span>
+            <p class="folder-body-text" id="folderDesc"></p>
+            <nav class="tab-pills" id="folderPills" aria-label="Jump to a section"></nav>
+          </div>
+
+          <template id="introProfessional">
+            <span class="label">Professional work</span>
+            <p class="desc">
+              My drive to work at the intersection of policy and communications stems from believing that helping people understand the vital work of our government is <em>essential</em> for democracy - especially now. 
+           From creating community newsletters for the Town of Apex to drafting social media content during my Senate EPW Committee internship, I've learned to translate complex information for diverse audiences—whether institutional, community, or academic.
+            </p>
+            <a class="pill" href="#written-work">Written work</a>
+            <a class="pill" href="#senate">Social media</a>
+          </template>
+
+          <template id="introPersonal">
+            <span class="label">Personal work</span>
+            <p class="desc">
+              My imagination extends far beyond professional work - I've always considered myself a creative person, and I genuinely love making things just because they bring me joy. Whether it's capturing moments from my travels, experimenting with video editing, making jewelry, playing ukulele, or even coding this website, these projects are pure expressions of who I am outside of work. My creative spirit is what drives everything I do.
+            </p>
+            <a class="pill" href="#personal-videos">Videos</a>
+            <a class="pill" href="#design">Design &amp; collages</a>
+          </template>
+
+          <!-- PROFESSIONAL -->
+          <div id="sectionProfessional" role="tabpanel" aria-labelledby="tabProfessional">
 
             <!-- PROFESSIONAL WORK SECTION -->
 
@@ -438,525 +452,517 @@
 
               
     </section>
-
+        </div>
       </div>
-      <div id="sectionPersonal" style="display:none"></div>
+      </div>
+    </section>
+          </div>
 
-    </div>
-  </div>
-
-</div>
-
-
-    <section id="personal" class="py-14 bg-hero/50 backdrop-blur-sm">
+          <!-- PERSONAL -->
+          <div id="sectionPersonal" role="tabpanel" aria-labelledby="tabPersonal" hidden>
+      <section id="personal" class="py-24 bg-cream/80 backdrop-blur-sm">
      
-    <div class="max-w-5xl mx-auto px-6 md:px-0">
+          <div class="max-w-6xl mx-auto px-6 md:px-0">
         
-        <!-- Social Media & Digital Content -->
 
-        <!-- Section Header -->
-            <div class="text-center mb-16">
-                <div class="text-center mb-16">
-                <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">PERSONAL</h2>
-                 <p class="text-lg text-ink-muted mt-6 max-w-4xl mx-auto mb-6">
-                      My imagination extends far beyond professional work - I've always considered myself a creative person, and I genuinely love making things just because they bring me joy. Whether it's capturing moments from my travels, experimenting with video editing, making jewelry, playing ukulele, or even coding this website, these projects are pure expressions of who I am outside of work. My creative spirit is what drives everything I do.
-                    </p>
+
+                <h3 id="personal-videos" class="font-display text-3xl md:text-4xl mb-12 text-center text-accent section-divider">Personal Videos</h3>
+                <p class="text-ink-muted mx-auto text-center mb-6 max-w-4xl">
+                 Through short films and video snippets, I document the energy and essence of everyday moments—turning fleeting experiences into cinematic memories that capture not just what happened, but how it felt.
+                 It's really natural to me to film my day to day, and I find that teaching myself about the editing process a really fun and rewarding part of this medium.
+                  </p>
+
+                     <!-- Personal Reels Section -->
+                    <div class="mt-12">  
+                      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+
+                            <!-- 25th Birthday -->
+                             <div class="reel-card">
+                              <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/25th.png" 
+                                alt="25 Birthday Recap Screenshot" 
+                                class="w-full h-[270px] object-cover">
+                                <div class="p-4">
+                                  <h6 class="font-semibold text-base mb-2 text-ink">Turning 26</h6>
+                                  <a href="https://www.tiktok.com/@applecider498/video/7410170233480138014" target="_blank" rel="noopener noreferrer" class="portfolio-link text-sm font-medium">
+                                    View TikTok →
+                                  </a>
+                                </div>
+                              </div>
+
+                            <!-- Paris -->
+                            <div class="reel-card">
+                              <div class="aspect-w-9 aspect-h-16 bg-black">
+                               <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/augustreel.png"
+                            alt="August in Paris Screenshot" 
+                            class="w-full h-[270px] object-cover">
+                              </div>
+                              <div class="p-4">
+                                <h6 class="font-semibold text-base mb-2 text-ink"> August in Paris</h6>
+                                <a href="https://www.tiktok.com/@applecider498/video/7407793912380689695" target="_blank" rel="noopener noreferrer" class="portfolio-link text-sm font-medium">
+                                  View TikTok →
+                                </a>
+                              </div>
+                            </div>
+
+                            <!-- SPRING -->
+                            <div class="reel-card">
+                               <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/springreel.png" 
+                                  alt="Spring Recap Reel Screenshot" 
+                                  class="w-full h-[270px] object-cover">
+                              <div class="p-4">
+                                <h6 class="font-semibold text-base mb-2 text-ink">Spring Recap</h6>
+                                <a href="https://www.tiktok.com/@applecider498/video/7162989891708587307" target="_blank" rel="noopener noreferrer" class="portfolio-link text-sm font-medium">
+                                  View TikTok →
+                                </a>
+                              </div>
+                            </div>
+
+                             <!-- DC -->
+                            <div class="reel-card">
+                               <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/screenshot-2025-06-11-at-1.02.42e280afpm.png" 
+                                  alt="Spring Garden Tour Screenshot" 
+                                  class="w-full h-[270px] object-cover">
+                              <div class="p-4">
+                                <h6 class="font-semibold text-base mb-2 text-ink">A Weekend in DC</h6>
+                                <a href="https://www.tiktok.com/@applecider498/video/7217604264749878574" target="_blank" rel="noopener noreferrer" class="portfolio-link text-sm font-medium">
+                                  View TikTok →
+                                </a>
+                              </div>
+                            </div>
+
+                      </div>
+                    </div>
+
+                   <div class="mb-20 max-w-7xl mx-auto"></div>
+        
+              <!-- Two Column Horizontal Cards -->
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+
+                  <!-- Grand Canyon -->
+                  <div class="horizontal-media-card">
+                    <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; border: 1px solid #ccc;">
+                      <iframe 
+                         src="https://www.youtube.com/embed/G_VnPLhfglI?si=mpp1gYV1sxxkLOm5" 
+                         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                         frameborder="0" 
+                         allowfullscreen>
+                      </iframe>
+                     </div>
+    
+                   <div class="p-6">
+                      <h4 class="font-semibold text-xl mb-3 text-ink">Grand Canyon (2020)</h4>
+                      <p class="text-ink-muted mb-4 text-sm">My sweet family trip to the Grand Canyon over Christmas Break</p>
+                      <a href="https://youtu.be/G_VnPLhfglI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-base">
+                       Watch on YouTube →
+                   </a>
+                    </div>
                   </div>
-            </div>
-
-
-          <h3 class="font-display text-2xl md:text-3xl mb-6 text-accent">Personal Videos</h3>
-          <p class="text-left text-gray-600 mb-6 max-w-4xl">
-           Through short films and video snippets, I document the energy and essence of everyday moments—turning fleeting experiences into cinematic memories that capture not just what happened, but how it felt.
-           It's really natural to me to film my day to day, and I find that teaching myself about the editing process a really fun and rewarding part of this medium.
-            </p>
-
-               <!-- Personal Reels Section -->
-              <div class="mt-12">  
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-
-
-                      <!-- 25th Birthday -->
-                       <div class="reel-card">
-                        <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/25th.png" 
-                          alt="25 Birthday Recap Screenshot" 
-                          class="w-full h-[270px] object-cover">
-                          <div class="p-4">
-                            <h6 class="font-semibold text-base mb-2 text-ink">Turning 26</h6>
-                            <a href="https://www.tiktok.com/@applecider498/video/7410170233480138014" target="_blank" rel="noopener noreferrer" class="portfolio-link text-sm font-medium">
-                              View TikTok →
-                            </a>
-                          </div>
-                        </div>
-
-                      <!-- Paris -->
-                      <div class="reel-card">
-                        <div class="aspect-w-9 aspect-h-16 bg-black">
-                         <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/augustreel.png"
-                      alt="August in Paris Screenshot" 
-                      class="w-full h-[270px] object-cover">
-                        </div>
-                        <div class="p-4">
-                          <h6 class="font-semibold text-base mb-2 text-ink"> August in Paris</h6>
-                          <a href="https://www.tiktok.com/@applecider498/video/7407793912380689695" target="_blank" rel="noopener noreferrer" class="portfolio-link text-sm font-medium">
-                            View TikTok →
-                          </a>
-                        </div>
-                      </div>
-
-                      <!-- SPRING -->
-                      <div class="reel-card">
-                         <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/springreel.png" 
-                            alt="Spring Recap Reel Screenshot" 
-                            class="w-full h-[270px] object-cover">
-                        <div class="p-4">
-                          <h6 class="font-semibold text-base mb-2 text-ink">Spring Recap</h6>
-                          <a href="https://www.tiktok.com/@applecider498/video/7162989891708587307" target="_blank" rel="noopener noreferrer" class="portfolio-link text-sm font-medium">
-                            View TikTok →
-                          </a>
-                        </div>
-                      </div>
-
-                       <!-- DC -->
-                      <div class="reel-card">
-                         <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/screenshot-2025-06-11-at-1.02.42e280afpm.png" 
-                            alt="Spring Garden Tour Screenshot" 
-                            class="w-full h-[270px] object-cover">
-                        <div class="p-4">
-                          <h6 class="font-semibold text-base mb-2 text-ink">A Weekend in DC</h6>
-                          <a href="https://www.tiktok.com/@applecider498/video/7217604264749878574" target="_blank" rel="noopener noreferrer" class="portfolio-link text-sm font-medium">
-                            View TikTok →
-                          </a>
-                        </div>
-                      </div>
-
-                </div>
-              </div>
-
-             <div class="mb-20 max-w-7xl mx-auto"></div>
-        
-        <!-- Two Column Horizontal Cards -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-
-            <!-- Grand Canyon -->
-            <div class="horizontal-media-card">
-              <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; border: 1px solid #ccc;">
-                <iframe 
-                   src="https://www.youtube.com/embed/G_VnPLhfglI?si=mpp1gYV1sxxkLOm5" 
-                   style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                   frameborder="0" 
-                   allowfullscreen>
-                </iframe>
-               </div>
-    
-             <div class="p-6">
-                <h4 class="font-semibold text-xl mb-3 text-ink">Grand Canyon (2020)</h4>
-                <p class="text-ink-muted mb-4 text-sm">My sweet family trip to the Grand Canyon over Christmas Break</p>
-                <a href="https://youtu.be/G_VnPLhfglI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-base">
-                 Watch on YouTube →
-             </a>
-              </div>
-            </div>
             
-            <!-- 22nd Birthday -->
-            <div class="horizontal-media-card">
-             <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; border: 1px solid #ccc;">
-              <iframe 
-                src="https://www.youtube.com/embed/ylz4s1wjsBM" 
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                frameborder="0" 
-                allowfullscreen>
-              </iframe>
-            </div>
+                  <!-- 22nd Birthday -->
+                  <div class="horizontal-media-card">
+                   <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; border: 1px solid #ccc;">
+                    <iframe 
+                      src="https://www.youtube.com/embed/ylz4s1wjsBM" 
+                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                      frameborder="0" 
+                      allowfullscreen>
+                    </iframe>
+                  </div>
     
-            <div class="p-6">
-              <h4 class="font-semibold text-xl mb-3 text-ink">22nd Birthday (2020)</h4>
-               <p class="text-ink-muted mb-4 text-sm">A recap of my 22nd birthday week</p>
-               <a href="https://youtu.be/ylz4s1wjsBM" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-base">
-                Watch on YouTube →
-              </a>
-              </div>
-            </div>
+                  <div class="p-6">
+                    <h4 class="font-semibold text-xl mb-3 text-ink">22nd Birthday (2020)</h4>
+                     <p class="text-ink-muted mb-4 text-sm">A recap of my 22nd birthday week</p>
+                     <a href="https://youtu.be/ylz4s1wjsBM" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-base">
+                      Watch on YouTube →
+                    </a>
+                    </div>
+                  </div>
             
-        </div>
+              </div>
 
-         <h3 class="font-display text-2xl md:text-3xl mb-6 text-accent">Graphic Design + Collages</h3>
-         <p class="text-left text-gray-600 mb-8 max-w-4xl">
-        Instagram has become my favorite creative playground—a space where I can experiment with visual storytelling and curate moments into a digital scrapbook. Each post is a little canvas for design exploration and memory keeping.
-        </p>
+               <h3 id="design" class="font-display text-3xl md:text-4xl mb-12 text-center text-accent section-divider mt-20">Graphic Design + Collages</h3>
+               <p class="text-ink-muted mx-auto text-center mb-8 max-w-4xl">
+              Instagram has become my favorite creative playground—a space where I can experiment with visual storytelling and curate moments into a digital scrapbook. Each post is a little canvas for design exploration and memory keeping.
+              </p>
 
-         <!-- Three Column Carousels I-->
-         <div class="mt-8 mb-12">
-           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+               <!-- Three Column Carousels I-->
+               <div class="mt-8 mb-12">
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-            <!-- First Carousel - GRAD -->
-             <div class="carousel-container" data-carousel="1">
-               <div class="carousel-wrapper">
-                 <div class="carousel-track" id="carouselTrack1">
-                   <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad1.jpg" alt="Grad 1">>
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad2.jpg" alt="Grad 2">>
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad3.jpg" alt="Grad 3">>
-                   </div>
-                      <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad4.jpg" alt="Grad 4">>
-                   </div>
-                      <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad5.jpg" alt="Grad 5">>
-                   </div>
-                      <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad6.jpg" alt="Grad 6">>
-                   </div>
-                      <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad7.jpg" alt="Grad 7">>
-                   </div>
-                     <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad8.jpg" alt="Grad 8">>
-                   </div>
-                      <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad9.jpg" alt="Grad 9">>
-                   </div>
-                      <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad10.jpg" alt="Grad 10">>
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad11.jpg" alt="Grad 11">>
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad12.jpg" alt="Grad 12">>
-                   </div>
+                  <!-- First Carousel - GRAD -->
+                   <div class="carousel-container" data-carousel="1">
+                     <div class="carousel-wrapper">
+                       <div class="carousel-track" id="carouselTrack1">
+                         <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad1.jpg" alt="Grad 1">>
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad2.jpg" alt="Grad 2">>
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad3.jpg" alt="Grad 3">>
+                         </div>
+                            <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad4.jpg" alt="Grad 4">>
+                         </div>
+                            <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad5.jpg" alt="Grad 5">>
+                         </div>
+                            <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad6.jpg" alt="Grad 6">>
+                         </div>
+                            <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad7.jpg" alt="Grad 7">>
+                         </div>
+                           <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad8.jpg" alt="Grad 8">>
+                         </div>
+                            <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad9.jpg" alt="Grad 9">>
+                         </div>
+                            <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad10.jpg" alt="Grad 10">>
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad11.jpg" alt="Grad 11">>
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/grad12.jpg" alt="Grad 12">>
+                         </div>
            
-                 </div>
-                 <button class="carousel-nav prev" data-carousel="1" data-direction="prev">‹</button>
-                 <button class="carousel-nav next" data-carousel="1" data-direction="next">›</button>
-                 <div class="carousel-counter" id="counter1">1 / 12</div>
-                 <div class="carousel-dots" id="dots1"></div>
-               </div>
+                       </div>
+                       <button class="carousel-nav prev" data-carousel="1" data-direction="prev">‹</button>
+                       <button class="carousel-nav next" data-carousel="1" data-direction="next">›</button>
+                       <div class="carousel-counter" id="counter1">1 / 12</div>
+                       <div class="carousel-dots" id="dots1"></div>
+                     </div>
 
-                 <div class="p-6">
-                <p class="text-ink-muted mb-4 text-sm">a little extra from the grad festivities 🎬🥂</p>
-                <a href="https://www.instagram.com/p/DKMybg_OWL_RO089DFbeG_hppz6EXLljRCHnlI0/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-sm">
-                 View on Instagram →
-             </a>
-              </div>
+                       <div class="p-6">
+                      <p class="text-ink-muted mb-4 text-sm">a little extra from the grad festivities 🎬🥂</p>
+                      <a href="https://www.instagram.com/p/DKMybg_OWL_RO089DFbeG_hppz6EXLljRCHnlI0/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-sm">
+                       View on Instagram →
+                   </a>
+                    </div>
 
-             </div>
+                   </div>
 
-              <!-- Second Carousel - SPRING -->
-             <div class="carousel-container" data-carousel="1">
-               <div class="carousel-wrapper">
-                 <div class="carousel-track" id="carouselTrack1">
-                   <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring1.gif" alt="Spring 1">>
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring2.gif" alt="Spring 2">>
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring3.jpg" alt="Spring 3">
-                   </div>
-                      <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring4.jpg" alt="Spring 4">
-                   </div>
-                      <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring5.jpg" alt="Spring 5">
-                   </div>
-                      <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring6.jpg" alt="Spring 6">
-                   </div>
-                      <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring7.jpg" alt="Spring 7">
-                   </div>
-                     <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring8.jpg" alt="Spring 8">
-                   </div>
-                      <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring9.jpg" alt="Spring 9">
-                   </div>
-                      <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring10.jpg" alt="Spring 10">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring11.jpg" alt="Spring 11">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring12.jpg" alt="Spring 12">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring13.jpg" alt="Spring 13">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring14.gif" alt="Spring 14">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring15.gif" alt="Spring 14">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring16.jpg" alt="Spring 16">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring17.jpg" alt="Spring 17">
-                   </div>
-                    <div class="carousel-slide">
-                      <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring18.gif" alt="Spring 18">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring19.jpg" alt="Spring 19">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring20.jpg" alt="Spring 20">
-                   </div>
-                 </div>
-                 <button class="carousel-nav prev" data-carousel="1" data-direction="prev">‹</button>
-                 <button class="carousel-nav next" data-carousel="1" data-direction="next">›</button>
-                 <div class="carousel-counter" id="counter1">1 / 20</div>
-                 <div class="carousel-dots" id="dots1"></div>
-               </div>
+                    <!-- Second Carousel - SPRING -->
+                   <div class="carousel-container" data-carousel="1">
+                     <div class="carousel-wrapper">
+                       <div class="carousel-track" id="carouselTrack1">
+                         <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring1.gif" alt="Spring 1">>
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring2.gif" alt="Spring 2">>
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring3.jpg" alt="Spring 3">
+                         </div>
+                            <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring4.jpg" alt="Spring 4">
+                         </div>
+                            <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring5.jpg" alt="Spring 5">
+                         </div>
+                            <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring6.jpg" alt="Spring 6">
+                         </div>
+                            <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring7.jpg" alt="Spring 7">
+                         </div>
+                           <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring8.jpg" alt="Spring 8">
+                         </div>
+                            <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring9.jpg" alt="Spring 9">
+                         </div>
+                            <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring10.jpg" alt="Spring 10">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring11.jpg" alt="Spring 11">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring12.jpg" alt="Spring 12">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring13.jpg" alt="Spring 13">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring14.gif" alt="Spring 14">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring15.gif" alt="Spring 14">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring16.jpg" alt="Spring 16">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring17.jpg" alt="Spring 17">
+                         </div>
+                          <div class="carousel-slide">
+                            <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring18.gif" alt="Spring 18">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring19.jpg" alt="Spring 19">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/spring20.jpg" alt="Spring 20">
+                         </div>
+                       </div>
+                       <button class="carousel-nav prev" data-carousel="1" data-direction="prev">‹</button>
+                       <button class="carousel-nav next" data-carousel="1" data-direction="next">›</button>
+                       <div class="carousel-counter" id="counter1">1 / 20</div>
+                       <div class="carousel-dots" id="dots1"></div>
+                     </div>
 
-                 <div class="p-6">
-                <p class="text-ink-muted mb-4 text-sm">recap of my last semester is COMPLETE!!! who knew so much could happen in four months</p>
-                <a href="https://www.instagram.com/valeriamera/p/DJ5DqonJcsLHpH6eL4REQFYLUo7pXCySmXwn2Y0/?img_index=1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-sm">
-                 View on Instagram →
-             </a>
-              </div>
+                       <div class="p-6">
+                      <p class="text-ink-muted mb-4 text-sm">recap of my last semester is COMPLETE!!! who knew so much could happen in four months</p>
+                      <a href="https://www.instagram.com/valeriamera/p/DJ5DqonJcsLHpH6eL4REQFYLUo7pXCySmXwn2Y0/?img_index=1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-sm">
+                       View on Instagram →
+                   </a>
+                    </div>
 
-             </div>
+                   </div>
              
              
-             <!-- Third Carousel - NOVEMBER -->
-             <div class="carousel-container" data-carousel="1">
-               <div class="carousel-wrapper">
-                 <div class="carousel-track" id="carouselTrack1">
-                   <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov1.jpg" alt="November1">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov2.jpg" alt="November2">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov3.jpg" alt="November3">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov4.jpg" alt="November4">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov5.jpg" alt="November5">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov6.jpg" alt="November6">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov7.gif" alt="November7">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov8.jpg" alt="November8">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov9.jpg" alt="November9">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov10.gif" alt="November10">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov11.jpg" alt="November11">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov12.jpg" alt="November12">
-                   </div>
+                   <!-- Third Carousel - NOVEMBER -->
+                   <div class="carousel-container" data-carousel="1">
+                     <div class="carousel-wrapper">
+                       <div class="carousel-track" id="carouselTrack1">
+                         <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov1.jpg" alt="November1">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov2.jpg" alt="November2">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov3.jpg" alt="November3">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov4.jpg" alt="November4">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov5.jpg" alt="November5">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov6.jpg" alt="November6">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov7.gif" alt="November7">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov8.jpg" alt="November8">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov9.jpg" alt="November9">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov10.gif" alt="November10">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov11.jpg" alt="November11">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/nov12.jpg" alt="November12">
+                         </div>
                    
-                 </div>
-                 <button class="carousel-nav prev" data-carousel="1" data-direction="prev">‹</button>
-                 <button class="carousel-nav next" data-carousel="1" data-direction="next">›</button>
-                 <div class="carousel-counter" id="counter1">1 / 12</div>
-                 <div class="carousel-dots" id="dots1"></div>
-               </div>
+                       </div>
+                       <button class="carousel-nav prev" data-carousel="1" data-direction="prev">‹</button>
+                       <button class="carousel-nav next" data-carousel="1" data-direction="next">›</button>
+                       <div class="carousel-counter" id="counter1">1 / 12</div>
+                       <div class="carousel-dots" id="dots1"></div>
+                     </div>
               
-                 <div class="p-6">
-                <p class="text-ink-muted mb-4 text-sm">catching up again! this time with pics from November 🍂🤎</p>
-                <a href="https://www.instagram.com/p/DJpRJs2JeTmqBeCJBts1xCbOnIKB7IsI5VsnBM0/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-sm">
-                 View on Instagram →
-               </a> <br>
-              </div>
+                       <div class="p-6">
+                      <p class="text-ink-muted mb-4 text-sm">catching up again! this time with pics from November 🍂🤎</p>
+                      <a href="https://www.instagram.com/p/DJpRJs2JeTmqBeCJBts1xCbOnIKB7IsI5VsnBM0/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-sm">
+                       View on Instagram →
+                     </a> <br>
+                    </div>
 
-             </div>
+                   </div>
 
-           </div>
-         </div>
+                 </div>
+               </div>
 
-            <!-- Three Column Carousels II -->
-         <div class="mt-8 mb-12">
-           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <!-- Three Column Carousels II -->
+               <div class="mt-8 mb-12">
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-            <!-- Fourth Carousel - FALL BREAK -->
-             <div class="carousel-container" data-carousel="1">
-               <div class="carousel-wrapper">
-                 <div class="carousel-track" id="carouselTrack1">
-                   <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall1.jpg" alt="Fall Break 1">>
-                   </div>
-                   <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall2.jpg" alt="Fall Break 2">>
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall3.jpg" alt="Fall Break 3">>
-                   </div>
-                      <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall4.jpg" alt="Fall Break 4">>
-                   </div>
-                      <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall5.jpg" alt="Fall Break 5">>
-                   </div>
-                     <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall6.jpg" alt="Fall Break 6">>
-                   </div>
-                      <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall7.jpg" alt="Fall Break 7">>
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall8.jpg" alt="Fall Break 8">>
-                   </div>
-                     <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall9.gif" alt="Fall Break 9">>
-                   </div>
-                     <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall10.jpg" alt="Fall Break 10">>
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall11.jpg" alt="Fall Break 11">>
-                   </div>
-                   <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall12.jpg" alt="Fall Break 12">>
-                   </div>
-                   <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall13.jpg" alt="Fall Break 13">>
-                   </div>
-                   <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall14.gif" alt="Fall Break 14">>
-                   </div>
-                   <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall15.jpg" alt="Fall Break 15">>
-                   </div>
+                  <!-- Fourth Carousel - FALL BREAK -->
+                   <div class="carousel-container" data-carousel="1">
+                     <div class="carousel-wrapper">
+                       <div class="carousel-track" id="carouselTrack1">
+                         <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall1.jpg" alt="Fall Break 1">>
+                         </div>
+                         <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall2.jpg" alt="Fall Break 2">>
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall3.jpg" alt="Fall Break 3">>
+                         </div>
+                            <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall4.jpg" alt="Fall Break 4">>
+                         </div>
+                            <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall5.jpg" alt="Fall Break 5">>
+                         </div>
+                           <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall6.jpg" alt="Fall Break 6">>
+                         </div>
+                            <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall7.jpg" alt="Fall Break 7">>
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall8.jpg" alt="Fall Break 8">>
+                         </div>
+                           <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall9.gif" alt="Fall Break 9">>
+                         </div>
+                           <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall10.jpg" alt="Fall Break 10">>
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall11.jpg" alt="Fall Break 11">>
+                         </div>
+                         <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall12.jpg" alt="Fall Break 12">>
+                         </div>
+                         <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall13.jpg" alt="Fall Break 13">>
+                         </div>
+                         <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall14.gif" alt="Fall Break 14">>
+                         </div>
+                         <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/fall15.jpg" alt="Fall Break 15">>
+                         </div>
     
               
-                 </div>
-                 <button class="carousel-nav prev" data-carousel="1" data-direction="prev">‹</button>
-                 <button class="carousel-nav next" data-carousel="1" data-direction="next">›</button>
-                 <div class="carousel-counter" id="counter1">1 / 15</div>
-                 <div class="carousel-dots" id="dots1"></div>
-               </div>
+                       </div>
+                       <button class="carousel-nav prev" data-carousel="1" data-direction="prev">‹</button>
+                       <button class="carousel-nav next" data-carousel="1" data-direction="next">›</button>
+                       <div class="carousel-counter" id="counter1">1 / 15</div>
+                       <div class="carousel-dots" id="dots1"></div>
+                     </div>
 
-                 <div class="p-6">
-                <p class="text-ink-muted mb-4 text-sm">fall break con mis amores 💌</p>
-                <a href="https://www.instagram.com/p/DIUpmmcyur_uepsM5xcm4imLJe8cos0wyc2BWo0/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-sm">
-                 View on Instagram →
-             </a>
-              </div>
+                       <div class="p-6">
+                      <p class="text-ink-muted mb-4 text-sm">fall break con mis amores 💌</p>
+                      <a href="https://www.instagram.com/p/DIUpmmcyur_uepsM5xcm4imLJe8cos0wyc2BWo0/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-sm">
+                       View on Instagram →
+                   </a>
+                    </div>
 
-             </div>
+                   </div>
              
-             <!-- Fifth Carousel - SEPTEMBER -->
-             <div class="carousel-container" data-carousel="1">
-               <div class="carousel-wrapper">
-                 <div class="carousel-track" id="carouselTrack1">
-                   <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris1.jpg" alt="Paris 1">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris2.jpg" alt="Paris 2">
-                   </div>
-                    <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris3.jpg" alt="Paris 3">
-                   </div>
-                     <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris4.jpg" alt="Paris 4">
-                   </div>
-                     <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris5.jpg" alt="Paris 5">
-                   </div>
-                     <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris6.jpg" alt="Paris 6">
-                   </div>
-                     <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris7.jpg" alt="Paris 7">
-                   </div>
-                     <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris8.jpg" alt="Paris 8">
-                   </div>
-                     <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris9.jpg" alt="Paris 9">
-                   </div>
-                     <div class="carousel-slide">
-                     <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris10.jpg" alt="Paris 10">
-                   </div>
-                 </div>
-                 <button class="carousel-nav prev" data-carousel="1" data-direction="prev">‹</button>
-                 <button class="carousel-nav next" data-carousel="1" data-direction="next">›</button>
-                 <div class="carousel-counter" id="counter1">1 / 10</div>
-                 <div class="carousel-dots" id="dots1"></div>
-               </div>
+                   <!-- Fifth Carousel - SEPTEMBER -->
+                   <div class="carousel-container" data-carousel="1">
+                     <div class="carousel-wrapper">
+                       <div class="carousel-track" id="carouselTrack1">
+                         <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris1.jpg" alt="Paris 1">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris2.jpg" alt="Paris 2">
+                         </div>
+                          <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris3.jpg" alt="Paris 3">
+                         </div>
+                           <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris4.jpg" alt="Paris 4">
+                         </div>
+                           <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris5.jpg" alt="Paris 5">
+                         </div>
+                           <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris6.jpg" alt="Paris 6">
+                         </div>
+                           <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris7.jpg" alt="Paris 7">
+                         </div>
+                           <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris8.jpg" alt="Paris 8">
+                         </div>
+                           <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris9.jpg" alt="Paris 9">
+                         </div>
+                           <div class="carousel-slide">
+                           <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/paris10.jpg" alt="Paris 10">
+                         </div>
+                       </div>
+                       <button class="carousel-nav prev" data-carousel="1" data-direction="prev">‹</button>
+                       <button class="carousel-nav next" data-carousel="1" data-direction="next">›</button>
+                       <div class="carousel-counter" id="counter1">1 / 10</div>
+                       <div class="carousel-dots" id="dots1"></div>
+                     </div>
               
-                 <div class="p-6">
-                <p class="text-ink-muted mb-4 text-sm">septembre / thoughts on studying abroad two months in 💭</p>
-                <a href="https://www.instagram.com/p/DA8yPkXu09sxt3hiatZGm9YnMwXKqLUKl0TpVM0/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-sm">
-                 View on Instagram →
-               </a> <br>
-               <a href="https://valerianicolette.wordpress.com/2024/10/10/paris/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-sm">
-                Read on WordPress →
-               </a>
+                       <div class="p-6">
+                      <p class="text-ink-muted mb-4 text-sm">septembre / thoughts on studying abroad two months in 💭</p>
+                      <a href="https://www.instagram.com/p/DA8yPkXu09sxt3hiatZGm9YnMwXKqLUKl0TpVM0/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-sm">
+                       View on Instagram →
+                     </a> <br>
+                     <a href="https://valerianicolette.wordpress.com/2024/10/10/paris/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-sm">
+                      Read on WordPress →
+                     </a>
+                    </div>
+
+                   </div>
+
+                    <!-- Sixth Carousel -->
+                  <div class="carousel-container" data-carousel="1">
+                    <div class="carousel-wrapper">
+                      <div class="carousel-track" id="carouselTrack1">
+                        <div class="carousel-slide">
+                          <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/august1.jpg" alt="August 1">
+                        </div>
+                        <div class="carousel-slide">
+                          <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/august2.jpg" alt="August 2">
+                        </div>
+                        <div class="carousel-slide">
+                          <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/august3.jpg" alt="August 3">
+                        </div>
+                        <div class="carousel-slide">
+                          <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/august4.jpg" alt="August 4">
+                        </div>
+                        <div class="carousel-slide">
+                          <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/august5.jpg" alt="August 5">
+                        </div>
+                        <div class="carousel-slide">
+                          <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/august6.jpg" alt="August 6">
+                        </div>
+                        <div class="carousel-slide">
+                          <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/august7.jpg" alt="August 7">
+                        </div>
+                      </div>
+                      <button class="carousel-nav prev" data-carousel="1" data-direction="prev">‹</button>
+                      <button class="carousel-nav next" data-carousel="1" data-direction="next">›</button>
+                      <div class="carousel-counter" id="counter1">1 / 7</div>
+                      <div class="carousel-dots" id="dots1"></div>
+                    </div>
+
+                    <div class="p-6">
+                      <p class="text-ink-muted mb-4 text-sm">early august in Paris - thank you to Nicole for moving me in to my new city ◡̈</p>
+                      <a href="https://www.instagram.com/p/DAPNCVji6AUETdp26Iw-lWE92jt9xM0aoRZy8Y0/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-sm">
+                        View on Instagram →
+                      </a>
+                    </div>
+                  </div>
+
+                 </div>
+               </div>
+
               </div>
 
-             </div>
-
-              <!-- Sixth Carousel -->
-            <div class="carousel-container" data-carousel="1">
-              <div class="carousel-wrapper">
-                <div class="carousel-track" id="carouselTrack1">
-                  <div class="carousel-slide">
-                    <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/august1.jpg" alt="August 1">
-                  </div>
-                  <div class="carousel-slide">
-                    <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/august2.jpg" alt="August 2">
-                  </div>
-                  <div class="carousel-slide">
-                    <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/august3.jpg" alt="August 3">
-                  </div>
-                  <div class="carousel-slide">
-                    <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/august4.jpg" alt="August 4">
-                  </div>
-                  <div class="carousel-slide">
-                    <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/august5.jpg" alt="August 5">
-                  </div>
-                  <div class="carousel-slide">
-                    <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/august6.jpg" alt="August 6">
-                  </div>
-                  <div class="carousel-slide">
-                    <img decoding="async" loading="lazy" src="https://valerianicolette.wordpress.com/wp-content/uploads/2025/06/august7.jpg" alt="August 7">
-                  </div>
-                </div>
-                <button class="carousel-nav prev" data-carousel="1" data-direction="prev">‹</button>
-                <button class="carousel-nav next" data-carousel="1" data-direction="next">›</button>
-                <div class="carousel-counter" id="counter1">1 / 7</div>
-                <div class="carousel-dots" id="dots1"></div>
-              </div>
-
-              <div class="p-6">
-                <p class="text-ink-muted mb-4 text-sm">early august in Paris - thank you to Nicole for moving me in to my new city ◡̈</p>
-                <a href="https://www.instagram.com/p/DAPNCVji6AUETdp26Iw-lWE92jt9xM0aoRZy8Y0/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center portfolio-link font-medium text-sm">
-                  View on Instagram →
-                </a>
-              </div>
-            </div>
-
-           </div>
-         </div>
+      </section>
+          </div>
 
         </div>
-
-</section>
+      </div>
+    </div>
 
  <!-- QUOTE SECTION -->
     <section class="bg-portfolio text-cream py-16 fade">
@@ -964,7 +970,70 @@
         <blockquote class="text-2xl md:text-3xl font-display italic mb-6">
           "The people crazy enough to think they can change the world are the ones that do."
         </blockquote>
-      </section>
+      </div>
+    </section>
+<script>
+  // Professional / Personal folder tabs
+  (() => {
+    const tabs = [...document.querySelectorAll('.folder-tab[role="tab"]')];
+    const panels = tabs.map((t) => document.getElementById(t.getAttribute('aria-controls')));
+    const label = document.getElementById('folderLabel');
+    const desc = document.getElementById('folderDesc');
+    const pills = document.getElementById('folderPills');
+    const inner = document.getElementById('folderInner');
+    const nameOf = (tab) => tab.id.replace('tab', '').toLowerCase();
+
+    function showTab(name, { updateHash = true } = {}) {
+      const idx = tabs.findIndex((t) => nameOf(t) === name);
+      if (idx < 0) return;
+      tabs.forEach((t, i) => {
+        const on = i === idx;
+        t.classList.toggle('active', on);
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        panels[i].hidden = !on;
+      });
+      const tpl = document.getElementById('intro' + name.charAt(0).toUpperCase() + name.slice(1));
+      if (tpl) {
+        label.textContent = tpl.content.querySelector('.label').textContent;
+        desc.innerHTML = tpl.content.querySelector('.desc').innerHTML;
+        pills.innerHTML = '';
+        tpl.content.querySelectorAll('.pill').forEach((a) => pills.appendChild(a.cloneNode(true)));
+      }
+      inner.classList.remove('tab-section'); void inner.offsetWidth; inner.classList.add('tab-section');
+      if (updateHash) history.replaceState(null, '', '#' + name);
+    }
+    window.switchTab = showTab;
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => showTab(nameOf(tab)));
+      tab.addEventListener('keydown', (e) => {
+        const map = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 };
+        if (!(e.key in map)) return;
+        e.preventDefault();
+        const next = tabs[(map[e.key] + tabs.length) % tabs.length];
+        next.focus(); showTab(nameOf(next));
+      });
+    });
+
+    // Open the right tab for a link like portfolio.html#senate or #personal, then scroll to it
+    function openFromHash() {
+      const hash = decodeURIComponent(location.hash || '');
+      if (!hash || hash === '#') return showTab('professional', { updateHash: false });
+      const name = hash.slice(1);
+      if (tabs.some((t) => nameOf(t) === name)) return showTab(name, { updateHash: false });
+      const target = document.getElementById(name);
+      const panel = target && target.closest('[role="tabpanel"]');
+      if (panel) {
+        showTab(nameOf(tabs[panels.indexOf(panel)]), { updateHash: false });
+        requestAnimationFrame(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      }
+    }
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
+  })();
+</script>
+
    <script>
     class InstagramCarousel {
         constructor(container, carouselId) {
