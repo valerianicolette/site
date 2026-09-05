@@ -25,10 +25,10 @@
               },
              
             portfolio: {
-              light: '#46befa',
-              DEFAULT: '#0887f7',
-              dark: '#046ec3',
-              },
+            light: '#9B4F8E',
+            DEFAULT: '#6B2060',
+            dark: '#4A1542',
+          },
            
               accent: '#046ec3',
             },
@@ -446,16 +446,16 @@
         }
         
         .portfolio-link {
-            color: #046ec3;
+            color: #6B2060;
             text-decoration: none;
             border-bottom: 2px solid transparent;
             transition: all 0.3s ease;
         }
         
         .portfolio-link:hover {
-                color: #0887f7;
+                color: #9B4F8E;
                text-decoration-line: underline;
-               text-decoration-color: #0887f7;
+               text-decoration-color: #9B4F8E;
         }
         
           .section-divider {
@@ -538,9 +538,9 @@
         }
         
         .text-accent {
-            color: #046ec3;
+          color: #6B2060;
         }
-        
+                
         .horizontal-media-card {
             background: white;
             border-radius: 16px;
@@ -901,6 +901,97 @@
       }
     }
 
+    .folder-wrap {
+  background: #f0e9df;
+  border-radius: 16px 16px 0 0;
+  padding: 0 2.5rem;
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+  max-width: 90rem;
+  margin: 0 auto;
+}
+.folder-tab {
+  position: relative;
+  padding: 14px 36px;
+  border-radius: 10px 10px 0 0;
+  font-family: 'Marion', 'Playfair Display', serif;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+  background: #e8ddd1;
+  color: #9a8878;
+  border: 1px solid #d9cfc4;
+  border-bottom: none;
+  bottom: -1px;
+}
+.folder-tab:hover {
+  background: #f5f0ea;
+  color: #4a3728;
+}
+.folder-tab.active {
+  background: #f5f0ea;
+  color: #6B2060;
+  font-weight: 600;
+  z-index: 2;
+  padding-top: 16px;
+  border-color: #ddd4c8;
+  border-bottom: 1px solid #f5f0ea;
+}
+.folder-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #f5f0ea;
+}
+.folder-body {
+  background: #f5f0ea;
+  border: 1px solid #ddd4c8;
+  border-radius: 0 16px 16px 16px;
+  max-width: 90rem;
+  margin: 0 auto;
+  box-shadow: 0 4px 24px rgba(74, 55, 40, 0.07);
+  overflow: hidden;
+}
+.folder-intro {
+  padding: 3rem 3.5rem 2.5rem;
+  border-bottom: 1px solid #ddd4c8;
+}
+.tab-section {
+  animation: fadeInTab 0.35s ease;
+}
+@keyframes fadeInTab {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.folder-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6B2060;
+  margin-bottom: 1rem;
+}
+.folder-headline {
+  font-family: 'Marion', 'Playfair Display', serif;
+  font-size: 1.9rem;
+  color: #22221f;
+  line-height: 1.35;
+  margin-bottom: 1rem;
+}
+.folder-body-text {
+  color: #5a5550;
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 640px;
+}
+
     </style>
   </head>
 
@@ -960,10 +1051,10 @@
 
             <div class="flex flex-wrap gap-4 pt-4">
               <a href="#professional" class="inline-flex items-center gap-2 px-8 py-3 bg-portfolio text-white hover:bg-portfolio/90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ballet scroll-mt-16 md:scroll-mt-24">
-                Professional <i data-lucide="mail" class="w-4 h-4"></i>
+                Writing <i data-lucide="mail" class="w-4 h-4"></i>
               </a>
               <a href="#personal" class="inline-flex items-center gap-2 px-8 py-3 border border-portfolio text-portfolio hover:bg-portfolio hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ballet scroll-mt-16 md:scroll-mt-24">
-                Personal <i data-lucide="star" class="w-4 h-4"></i>
+                Explore below ↓ <i data-lucide="star" class="w-4 h-4"></i>
               </a>
             </div>
          </div>
@@ -982,20 +1073,41 @@
       </div>
     </header>
 
-    <!-- PROFESSIONAL WORK SECTION -->
+    <div class="px-6 md:px-12 py-16 max-w-screen-xl mx-auto">
+ 
+
+  <div class="sticky top-[72px] z-10 bg-hero pb-0 pt-6">
+<div class="folder-wrap">
+    <button id="tabProfessional" class="folder-tab active" onclick="switchTab('professional')">
+      Professional
+    </button>
+    <button id="tabPersonal" class="folder-tab" onclick="switchTab('personal')">
+      Personal
+    </button>
+  </div>
+
+  <!-- Folder body -->
+  <div class="folder-body">
+    <div id="folderInner" class="tab-section">
+
+      <!-- Folder intro text (updates on tab switch) -->
+      <div class="folder-intro">
+        <span class="folder-label" id="folderLabel">Professional Work</span>
+        <p class="folder-body-text" id="folderDesc">
+           My drive to work at the intersection of policy and communications stems from believing that helping people understand the vital work of our government is <em>essential</em> for democracy - especially now. 
+           From creating community newsletters for the Town of Apex to drafting social media content during my Senate EPW Committee internship, I've learned to translate complex information for diverse audiences—whether institutional, community, or academic. 
+        </p>
+      </div>
+
+      <!-- Tab content -->
+      <div id="sectionProfessional">
+
+            <!-- PROFESSIONAL WORK SECTION -->
 
     <section class="py-24 bg-cream/80 backdrop-blur-sm">
       <div class="max-w-6xl mx-auto px-6 md:px-0">
             
-            <!-- Section Header -->
-            <div class="text-center mb-16">
-                <h2 class="font-display text-3xl md:text-4xl mb-6 section-divider">PROFESSIONAL</h2>
-          <p class="text-lg text-[#4a4a45] mt-6 max-w-4xl mx-auto mb-6">
-                      My drive to work at the intersection of policy and communications stems from believing that helping people understand the vital work of our government is <em>essential</em> for democracy - especially now. 
-                    From creating community newsletters for the Town of Apex to drafting social media content during my Senate EPW Committee internship, I've learned to translate complex information for diverse audiences—whether institutional, community, or academic.
-                    </p>
-                
-            </div>
+
 
             <!-- Written Work Section -->
             <div class="mb-20">
@@ -1006,7 +1118,7 @@
                     <!-- Municipal Communications -->
                      <section id="apex">
                     <div class="portfolio-card">
-                        <div class="p-8">
+                        <div class="p-10">
                             <div class="flex items-center justify-between mb-4">
                                 <h4 class="font-semibold text-xl text-[#22221f]">Civic Engagement</h4>
                                 <span class="category-badge">Government</span>
@@ -1032,7 +1144,7 @@
 
                     <!-- Master's Thesis -->
                     <div class="portfolio-card">
-                        <div class="p-8">
+                        <div class="p-10">
                             <div class="flex items-center justify-between mb-4">
                                 <h4 class="font-semibold text-xl text-[#22221f]">Master's Thesis</h4>
                                 <span class="category-badge">Academic</span>
@@ -1332,10 +1444,18 @@
                         </div>
                     </div>
                 </div>
-                </section>
 
               
     </section>
+
+      </div>
+      <div id="sectionPersonal" style="display:none"></div>
+
+    </div>
+  </div>
+
+</div>
+
 
     <section id="personal" class="py-14 bg-hero/50 backdrop-blur-sm">
      
