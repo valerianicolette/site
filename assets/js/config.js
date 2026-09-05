@@ -34,7 +34,7 @@ window.SITE = {
     navText: '#2d2d2d',
   },
   fonts: {
-    display: ['Playfair Display', 'serif'],
+    display: ['Marion', 'Playfair Display', 'serif'],
     body: ['Inter', 'Helvetica Neue', 'sans-serif'],
     google: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap',
   },
