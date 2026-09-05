@@ -5,13 +5,13 @@
 }
 
 /* Page colors */
-.hover-exp:hover { color: #044c8c!important; }
+.hover-exp:hover { color: var(--accent-dark)!important; }
 
-.bg-exp { background-color: #055194; }
+.bg-exp { background-color: var(--accent-dark); }
 
-.border-exp { border-color: #066cc6;}
+.border-exp { border-color: var(--accent);}
 
-.text-exp { color: #066cc6; }
+.text-exp { color: var(--accent); }
 
 /* Mobile Responsive styles */
 @media (max-width: 768px) {

@@ -7,7 +7,7 @@
    ========================================================================== */
 
 html { scroll-behavior: smooth; }
-body { font-family: var(--font-body, 'Inter', sans-serif); background-color: var(--cream, #f7f7f4); color: var(--text, #22221f); }
+body { font-family: var(--font-body, 'Inter', sans-serif); background-color: var(--cream, #f7f7f4); color: var(--text, var(--text)); }
 
 /* Accessibility: "skip to content" link, visible only when focused */
 .skip-link {

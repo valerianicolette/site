@@ -14,26 +14,26 @@
 
 /* First button - guava bg, white text -> lighter guava bg, white text */
 .btn-primary {
-  background-color: #f87171 !important; /* guava */
+  background-color: #c85a5e !important; /* rose */
   color: white !important;
 }
 
 .btn-primary:hover {
-  background-color: #fca5a5 !important; /* lighter guava */
+  background-color: #d9574c !important; /* coral */
   color: white !important;
 }
 
 /* Second button - transparent bg, guava text -> dark guava bg, white text */
 .btn-secondary {
   background-color: transparent !important;
-  color: #f87171 !important; /* guava text */
-  border: 1px solid #f87171 !important; /* guava border */
+  color: #c85a5e !important; /* rose text */
+  border: 1px solid #c85a5e !important; /* rose border */
 }
 
 .btn-secondary:hover {
-  background-color: #f87171 !important; /* dark guava */
+  background-color: #c85a5e !important; /* rose */
   color: white !important;
-  border-color: #f87171 !important;
+  border-color: #c85a5e !important;
 }
 
 .section-card {
@@ -120,7 +120,7 @@
 }
 
 .skill-list li {
-  color: #4a4a45;
+  color: var(--text-muted);
   font-size: 0.875rem;
   margin-bottom: 0.5rem;
   position: relative;
@@ -135,15 +135,15 @@
 }
 
 /* Utility classes */
-.bg-guava { background-color: #f7a1a1; }
+.bg-guava { background-color: #d9574c; }
 
-.bg-guava:hover { background-color: #f37272; }
+.bg-guava:hover { background-color: #c85a5e; }
 
-.border-guava { border-color: #f87171; }
+.border-guava { border-color: #c85a5e; }
 
-.text-guava { color: #f87171; }
+.text-guava { color: #c85a5e; }
 
-.text-guava2 { color: #fa9e9e; }
+.text-guava2 { color: #e07a5a; }
 
 @media (max-width: 768px) {
   .skills-grid {

@@ -23,15 +23,15 @@ window.SITE = {
   footerText: "Whether you're looking to collaborate on climate policy, need creative content, or want to chat about making systems more human-centered, I'd love to connect.",
   disclaimer: 'Opinions expressed here are personal and not representative of the positions or policies of the EIF Program, Department of Energy, ORISE, or the U.S. Government',
 
-  // Shared look
-  background: 'radial-gradient(ellipse at top left, #fefdfb 0%, #f5f1eb 40%, #f0ece6 75%)',
+  // Shared look (warm ivory background, warm near-black text)
+  background: 'radial-gradient(ellipse at top left, #fdfaf4 0%, #f4eee2 40%, #ece4d6 75%)',
   colors: {
-    cream: '#f7f7f4',
-    cream100: '#f9f9f6',
-    cream200: '#f0f0eb',
-    text: '#22221f',
-    textMuted: '#4a4a45',
-    navText: '#262626',
+    cream: '#faf6ee',
+    cream100: '#fcf9f3',
+    cream200: '#f1ebe0',
+    text: '#191612',
+    textMuted: '#3a2e26',
+    navText: '#2d2d2d',
   },
   fonts: {
     display: ['Playfair Display', 'serif'],
@@ -50,12 +50,12 @@ window.SITE = {
        emoji   - shown in the visitor counter badge
        nav     - false keeps a page out of the menu (e.g. the Paris guide)          */
   pages: [
-    { key: 'home',      label: 'Home',        url: 'index.html',      color: '#ad1457', light: '#cd729a', dark: '#dc2626', emoji: '🎨', favicon: 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmindex.png' },
-    { key: 'exp',       label: 'Experience',  url: 'work.html',       color: '#2e7d32', light: '#6ca46f', dark: '#246428', emoji: '🌱', favicon: 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmexperience.png' },
-    { key: 'story',     label: 'Writing',     url: 'writing.html',    color: '#1976d2', light: '#5d9fdf', dark: '#135ea8', emoji: '✍️', favicon: 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmcontact.png' },
-    { key: 'portfolio', label: 'Portfolio',   url: 'portfolio.html',  color: '#6B2060', light: '#9B4F8E', dark: '#4A1542', emoji: '🦋', favicon: 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmportfolio.png' },
-    { key: 'world',     label: 'Background',  url: 'background.html', color: '#4caf50', light: '#81c784', dark: '#357a38', emoji: '🌎', favicon: 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmworld.png' },
-    { key: 'contact',   label: 'Connect',     url: 'contact.html',    color: '#E0295D', light: '#f06292', dark: '#b71c4a', emoji: '🪩', favicon: 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmabout.png' },
-    { key: 'paris',     label: 'Paris Guide', url: 'paris.html',      color: '#004aac', light: '#0257c5', dark: '#053c85', emoji: '🥐', favicon: 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmcontact.png', nav: false },
+    { key: 'home',      label: 'Home',        url: 'index.html',      color: '#ae2c78', light: '#c85a9a', dark: '#7d1f56', emoji: '🎨', favicon: 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmindex.png' },
+    { key: 'exp',       label: 'Experience',  url: 'work.html',       color: '#1f5b46', light: '#3a6b52', dark: '#143d2f', emoji: '🌱', favicon: 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmexperience.png' },
+    { key: 'story',     label: 'Writing',     url: 'writing.html',    color: '#2b48a0', light: '#5d6a8a', dark: '#1f2a48', emoji: '✍️', favicon: 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmcontact.png' },
+    { key: 'portfolio', label: 'Portfolio',   url: 'portfolio.html',  color: '#d9552d', light: '#e07a5a', dark: '#9c4f2b', emoji: '🦋', favicon: 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmportfolio.png' },
+    { key: 'world',     label: 'Background',  url: 'background.html', color: '#3a6b52', light: '#4aa876', dark: '#24483a', emoji: '🌎', favicon: 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmworld.png' },
+    { key: 'contact',   label: 'Connect',     url: 'contact.html',    color: '#d9574c', light: '#e88a80', dark: '#b52f2e', emoji: '🪩', favicon: 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmabout.png' },
+    { key: 'paris',     label: 'Paris Guide', url: 'paris.html',      color: '#1f2a48', light: '#5d6a8a', dark: '#141b30', emoji: '🥐', favicon: 'https://valerianicolette.wordpress.com/wp-content/uploads/2025/07/vmcontact.png', nav: false },
   ],
 };

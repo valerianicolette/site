@@ -16,7 +16,7 @@
     cream: { DEFAULT: S.colors.cream, 100: S.colors.cream100, 200: S.colors.cream200 },
     ink: { DEFAULT: S.colors.text, muted: S.colors.textMuted },
     index: { light: home.light, DEFAULT: home.color, dark: home.dark }, // alias kept for index.html
-    accent: '#046ec3', // used on the portfolio page
+    accent: '#a67a2e', // deep mustard, used on the portfolio page
     theme: { light: 'var(--accent-light)', DEFAULT: 'var(--accent)', dark: 'var(--accent-dark)' }, // current page's color
   };
   S.pages.forEach((p) => { colors[p.key] = { light: p.light, DEFAULT: p.color, dark: p.dark }; });

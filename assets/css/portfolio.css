@@ -62,7 +62,7 @@
   font-family: 'Marion', 'Playfair Display', serif;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #22221f;
+  color: var(--text);
   margin-bottom: 0.5rem;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .timeline-description {
-  color: #4a4a45;
+  color: var(--text-muted);
   line-height: 1.7;
   margin-bottom: 1rem;
 }
@@ -659,7 +659,7 @@
 .folder-headline {
   font-family: 'Marion', 'Playfair Display', serif;
   font-size: 1.9rem;
-  color: #22221f;
+  color: var(--text);
   line-height: 1.35;
   margin-bottom: 1rem;
 }
