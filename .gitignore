@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Browser partial downloads
+*.crdownload
+
+# Original full-size photos (optimized copies live in assets/img/)
+/paris/
+
+# Local preview tooling
+node_modules/
+_site/
+.jekyll-cache/
