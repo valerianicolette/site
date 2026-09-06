@@ -13,6 +13,7 @@ loaded from two small JavaScript files, so you change them once.
 | Page names, menu order, page colors, favicons, counter emoji | `assets/js/config.js` (the `pages` list) |
 | Site-wide text (footer, disclaimer, email, social links), background, base colors, fonts, analytics id | `assets/js/config.js` |
 | The nav bar, mobile menu, or footer markup | `assets/js/layout.js` |
+| The VM monogram (logo and tab icon) | `assets/img/vm-monogram.svg` is the master; the path is also pasted into `assets/js/layout.js` (bottom of the file) so it works when a page is opened straight from a file. `assets/img/favicon-<key>.png` are colored fallbacks for Safari. |
 | Styles used on every page (nav, links, animations, footer) | `assets/css/site.css` |
 | Styles for one page only | `assets/css/<page>.css` |
 | Shared behaviour (menu, fade-ins, visitor counter) | `assets/js/site.js` |
@@ -41,6 +42,12 @@ The badge in the footer uses [Abacus](https://abacus.jasoncameron.dev), a free c
 that needs no account. It counts one visit per browser session, site-wide, and hides itself
 if the service is unreachable. The namespace is `counterNamespace` in `assets/js/config.js`.
 (When previewing a file from your computer the badge may stay hidden; it works on the live site.)
+
+## Logo
+
+The monogram is one SVG shape that takes each page's color automatically, in the nav and in the browser tab.
+If you ever redesign it: replace `assets/img/vm-monogram.svg`, copy its `d="..."` path into `MONOGRAM_PATH`
+at the top of `assets/js/layout.js`, and re-export the small PNG favicons (or ask for them to be regenerated).
 
 ## Notes
 

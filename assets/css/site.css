@@ -59,6 +59,7 @@ body { font-family: var(--font-body, 'Inter', sans-serif); background-color: var
   position: static !important; color: var(--nav-text);
 }
 .home-icon::after { display: none !important; }
+.home-mark { display: block; width: 3rem; height: 3rem; color: var(--accent); }
 .home-icon:hover { color: var(--accent) !important; }
 
 nav a { display: initial; align-items: initial; gap: initial; color: var(--nav-text); }
