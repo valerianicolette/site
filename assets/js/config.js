@@ -31,6 +31,7 @@ window.SITE = {
     cream200: '#f1ebe0',
     text: '#191612',
     textMuted: '#3a2e26',
+    textLight: '#7a6f64',
     navText: '#2d2d2d',
   },
   fonts: {

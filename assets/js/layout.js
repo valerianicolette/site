@@ -14,7 +14,7 @@
   /* ---------- Tailwind config (the CDN script must be loaded before this file) ---------- */
   const colors = {
     cream: { DEFAULT: S.colors.cream, 100: S.colors.cream100, 200: S.colors.cream200 },
-    ink: { DEFAULT: S.colors.text, muted: S.colors.textMuted },
+    ink: { DEFAULT: S.colors.text, muted: S.colors.textMuted, light: S.colors.textLight },
     index: { light: home.light, DEFAULT: home.color, dark: home.dark }, // alias kept for index.html
     accent: '#a67a2e', // deep mustard, used on the portfolio page
     theme: { light: 'var(--accent-light)', DEFAULT: 'var(--accent)', dark: 'var(--accent-dark)' }, // current page's color
@@ -45,6 +45,7 @@
   st.setProperty('--cream', S.colors.cream);
   st.setProperty('--text', S.colors.text);
   st.setProperty('--text-muted', S.colors.textMuted);
+  st.setProperty('--text-light', S.colors.textLight);
   st.setProperty('--nav-text', S.colors.navText);
   st.setProperty('--font-display', S.fonts.display.map((f) => `'${f}'`).join(', '));
   st.setProperty('--font-body', S.fonts.body.map((f) => `'${f}'`).join(', '));
@@ -111,17 +112,17 @@
           <a href="${esc(S.instagram)}" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon"><i data-lucide="instagram"></i></a>
           <a href="${esc(S.substack)}" target="_blank" rel="noopener noreferrer" aria-label="Substack" class="social-icon"><i data-lucide="newspaper"></i></a>
         </div>
-        <p class="text-sm text-[#6d6d67]">Want to stay in the loop? Subscribe via Substack for updates.</p>
+        <p class="text-sm text-ink-light">Want to stay in the loop? Subscribe via Substack for updates.</p>
         <form action="${esc(S.substack)}api/v1/free?nojs=true" method="POST" target="_blank"
               class="max-w-lg mx-auto flex border border-${k} focus-within:ring-2 focus-within:ring-${k} rounded-lg overflow-hidden">
           <input type="hidden" name="first_url" value="${esc(S.substack)}">
           <input type="hidden" name="first_referrer" value="">
           <label for="footer-email" class="sr-only">Email address</label>
           <input id="footer-email" type="email" name="email" placeholder="Your email" autocomplete="email" required
-                 class="flex-grow px-5 py-3 bg-transparent placeholder-[#706f6a] focus:outline-none min-w-0">
+                 class="flex-grow px-5 py-3 bg-transparent placeholder-ink-light focus:outline-none min-w-0">
           <button type="submit" class="px-4 sm:px-6 py-3 bg-${k} text-white font-medium hover:bg-${k}/90 transition-colors flex items-center justify-center flex-shrink-0">Subscribe</button>
         </form>
-        <div class="flex flex-col items-center justify-center w-full gap-2 text-sm text-[#6d6d67]">
+        <div class="flex flex-col items-center justify-center w-full gap-2 text-sm text-ink-light">
           <p>© <span id="year"></span> ${esc(S.author)}</p>
           <span class="text-xs max-w-xl">Site designed and coded by yours truly.<br>${esc(S.disclaimer)}</span>
         </div>

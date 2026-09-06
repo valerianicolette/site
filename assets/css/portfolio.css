@@ -13,7 +13,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, #bfa76f 0%, #8a8d6f 100%);
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-dark) 100%);
 }
 
 .timeline-item {
@@ -25,7 +25,7 @@
   margin-left: 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  border-left: 3px solid #bfa76f;
+  border-left: 3px solid var(--accent);
 }
 
 .timeline-item:hover {
@@ -40,15 +40,15 @@
   top: 2rem;
   width: 12px;
   height: 12px;
-  background: #bfa76f;
+  background: var(--accent);
   border-radius: 50%;
   border: 3px solid white;
-  box-shadow: 0 0 0 2px #bfa76f;
+  box-shadow: 0 0 0 2px var(--accent);
 }
 
 .timeline-date {
   display: inline-block;
-  background: linear-gradient(135deg, #bfa76f 0%, #8a8d6f 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -68,7 +68,7 @@
 
 .timeline-subtitle {
   font-size: 1.125rem;
-  color: #bfa76f;
+  color: var(--accent);
   font-weight: 500;
   margin-bottom: 1rem;
 }
@@ -88,7 +88,7 @@
 
 .skill-tag {
   background: #f7f5f2;
-  color: #5a6c7d;
+  color: var(--text-light);
   padding: 0.25rem 0.75rem;
   border-radius: 16px;
   font-size: 0.75rem;
@@ -98,14 +98,14 @@
 
 .achievement {
   background: #fdf4e7;
-  border-left: 4px solid #bfa76f;
+  border-left: 4px solid var(--accent);
   padding: 0.75rem 1rem;
   margin-top: 1rem;
   border-radius: 0 6px 6px 0;
 }
 
 .achievement-text {
-  color: #8a8d6f;
+  color: var(--accent-dark);
   font-weight: 500;
   font-size: 0.875rem;
 }
@@ -126,7 +126,7 @@
 .experience-date {
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
-  color: #6b7280;
+  color: var(--text-light);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
@@ -135,7 +135,7 @@
 .experience-position {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
-  color: #374151;
+  color: var(--text-muted);
   font-weight: 500;
 }
 
@@ -150,14 +150,14 @@
   top: 0.5rem;
   width: 8px;
   height: 8px;
-  background: #bfa76f;
+  background: var(--accent);
   border-radius: 50%;
 }
 
 .experience-company {
   font-family: 'Inter', sans-serif;
   font-size: 1.125rem;
-  color: #111827;
+  color: var(--text);
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -165,7 +165,7 @@
 }
 
 .experience-description {
-  color: #4b5563;
+  color: var(--text-muted);
   line-height: 1.7;
   font-size: 0.95rem;
 }
@@ -248,11 +248,11 @@
 .social-grid-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
-  border-color: #046ec3;
+  border-color: var(--accent);
 }
 
 .category-badge {
-  background: linear-gradient(135deg,  #0887f7, #1976d2);
+  background: linear-gradient(135deg,  var(--accent-light), var(--accent));
   color: white;
   padding: 4px 12px;
   border-radius: 20px;
@@ -290,7 +290,7 @@
 }
 
 .media-image-placeholder {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
   height: 200px;
   display: flex;
   align-items: center;
@@ -315,7 +315,7 @@
 }
 
 .reel-placeholder {
-  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+  background: linear-gradient(135deg, var(--accent-light) 0%, #f1ebe0 60%, #f1ebe0 100%);
   height: 180px;
   display: flex;
   align-items: center;
@@ -503,7 +503,7 @@
 }
 
 .tweet-dot.active {
-  background: #1da1f2;
+  background: var(--accent);
   transform: scale(1.2);
 }
 
@@ -565,7 +565,7 @@
   align-items: center;
   justify-content: center;
   height: 200px;
-  color: #657786;
+  color: var(--text-light);
   font-size: 14px;
 }
 
@@ -665,7 +665,7 @@
 }
 
 .folder-body-text {
-  color: #5a5550;
+  color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.8;
   max-width: 640px;

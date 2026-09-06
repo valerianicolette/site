@@ -28,11 +28,11 @@
 }
 
 /* Page colors */
-.hover-page:hover { color: #66bb6a!important; }
+.hover-page:hover { color: var(--accent-light)!important; }
 
 .bg-page { background-color: var(--accent); }
 
-.bg-page:hover { background-color: #66bb6a; }
+.bg-page:hover { background-color: var(--accent-light); }
 
 .bg-page { background-color: var(--accent); }
 
@@ -71,7 +71,7 @@
 
 .skill-tag {
   background: #f7f5f2;
-  color: #5a6c7d;
+  color: var(--text-light);
   padding: 0.25rem 0.75rem;
   border-radius: 16px;
   font-size: 0.75rem;
@@ -95,7 +95,7 @@
 .experience-date {
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
-  color: #6b7280;
+  color: var(--text-light);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
@@ -104,7 +104,7 @@
 .experience-position {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
-  color: #374151;
+  color: var(--text-muted);
   font-weight: 500;
 }
 
@@ -126,7 +126,7 @@
 .experience-company {
   font-family: 'Inter', sans-serif;
   font-size: 1.125rem;
-  color: #111827;
+  color: var(--text);
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -134,7 +134,7 @@
 }
 
 .experience-description {
-  color: #4b5563;
+  color: var(--text-muted);
   line-height: 1.7;
   font-size: 0.95rem;
 }
@@ -144,8 +144,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 20px;
-  background: #f8f9fa;
-  border-bottom: 1px solid #e9ecef;
+  background: #fcf9f3;
+  border-bottom: 1px solid #f1ebe0;
 }
 
 .stat {
@@ -161,7 +161,7 @@
 }
 
 .stat-label {
-  color: #666;
+  color: var(--text-light);
   font-size: 0.9em;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -194,7 +194,7 @@
 
 .popup-content p {
   margin: 0 0 10px 0;
-  color: #666;
+  color: var(--text-light);
   font-size: 0.9em;
   font-style: italic;
 }
@@ -226,7 +226,7 @@
 
 .custom-city-marker:hover div {
   transform: scale(1.2);
-  background-color: #5a8a3a;
+  background-color: var(--accent-dark);
 }
 
 @media (max-width: 768px) {
@@ -236,7 +236,7 @@
   }
 
   .stat {
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid #f1ebe0;
     padding-bottom: 15px;
   }
 

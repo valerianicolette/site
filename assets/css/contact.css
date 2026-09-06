@@ -81,7 +81,7 @@
 
 .form-input:focus {
   outline: none;
-  border-color: #bfa76f;
+  border-color: var(--accent);
   background: white;
   box-shadow: 0 0 0 4px rgba(191, 167, 111, 0.1);
   transform: translateY(-2px);
