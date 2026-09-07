@@ -86,5 +86,18 @@
     });
 
     initCounter();
+    initClips();
   });
+
+  /* ---------- Looping clips: only download and play while on screen ---------- */
+  function initClips() {
+    const clips = document.querySelectorAll('video.clip');
+    if (!clips.length) return;
+    const play = (v) => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+    if (!('IntersectionObserver' in window)) { clips.forEach(play); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) play(e.target); else e.target.pause(); });
+    }, { rootMargin: '200px 0px' });
+    clips.forEach((v) => io.observe(v));
+  }
 })();

@@ -131,3 +131,6 @@ a.nav-link[aria-current="page"] { color: var(--accent); }
   .visitor-counter { bottom: 15px; right: 15px; }
   .counter-icon { font-size: 13px; }
 }
+
+/* Short looping clips (converted from GIFs): behave like images */
+video.clip { display: block; max-width: 100%; height: auto; }
