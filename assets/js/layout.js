@@ -68,6 +68,17 @@ window.MONOGRAM_PATH = 'M199 402C199 402 199 399 199 399C199 399 205 399 212 399
   iconLink.href = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(iconSvg);
   document.head.prepend(iconLink);
 
+  // External scripts have to be created with createElement to actually run
+  const addScript = (src, onload) => {
+    const el = document.createElement('script');
+    el.src = src; el.async = true; if (onload) el.onload = onload;
+    document.head.appendChild(el);
+  };
+  addScript('https://unpkg.com/lucide@0.545.0/dist/umd/lucide.min.js', () => {
+    if (document.readyState !== 'loading' && window.lucide) window.lucide.createIcons();
+  });
+  addScript(`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(S.gaId)}`);
+
   window.dataLayer = window.dataLayer || [];
   window.gtag = function () { window.dataLayer.push(arguments); };
   window.gtag('js', new Date());
