@@ -4,9 +4,6 @@
   color: var(--accent-dark); /* Darker shade for links */
 }
 
-/* Page colors */
-.hover-exp:hover { color: var(--accent-dark)!important; }
-
 .bg-exp { background-color: var(--accent-dark); }
 
 .border-exp { border-color: var(--accent);}

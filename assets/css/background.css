@@ -27,9 +27,6 @@
   pointer-events: none;
 }
 
-/* Page colors */
-.hover-page:hover { color: var(--accent-light)!important; }
-
 .bg-page { background-color: var(--accent); }
 
 .bg-page:hover { background-color: var(--accent-light); }
@@ -37,107 +34,6 @@
 .bg-page { background-color: var(--accent); }
 
 .border-page { border-color: var(--accent); }
-
-@media (max-width: 768px) {
-  .timeline {
-    padding-left: 1rem;
-  }
-
-  .timeline-item {
-    margin-left: 1.5rem;
-    padding: 1.5rem;
-  }
-
-  .timeline-item::before {
-    left: -2.5rem;
-  }
-
-  .experience-item {
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-
-  .experience-right::before {
-    display: none;
-  }
-}
-
-.timeline-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.skill-tag {
-  background: #f7f5f2;
-  color: var(--text-light);
-  padding: 0.25rem 0.75rem;
-  border-radius: 16px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  border: 1px solid #ece7e1;
-}
-
-/* Clean Experience Layout */
-.experience-item {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  gap: 4rem;
-  margin-bottom: 4rem;
-  align-items: start;
-}
-
-.experience-left {
-  text-align: left;
-}
-
-.experience-date {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.875rem;
-  color: var(--text-light);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-.experience-position {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-.experience-right {
-  position: relative;
-}
-
-.experience-right::before {
-  content: '';
-  position: absolute;
-  left: -2rem;
-  top: 0.5rem;
-  width: 8px;
-  height: 8px;
-  background: var(--accent);
-  border-radius: 50%;
-}
-
-.experience-company {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.125rem;
-  color: var(--text);
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.experience-description {
-  color: var(--text-muted);
-  line-height: 1.7;
-  font-size: 0.95rem;
-}
 
 /* Travel Map Styles */
 .stats {
@@ -171,11 +67,6 @@
 #travel-map {
   height: 600px;
   width: 100%;
-}
-
-.leaflet-popup-content {
-  margin: 0;
-  padding: 0;
 }
 
 .popup-content {

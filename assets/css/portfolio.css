@@ -1,199 +1,4 @@
-/* Styles used only on portfolio.html. Shared styles are in site.css. */
 
-/* Timeline Styles for Education */
-.timeline {
-  position: relative;
-  padding-left: 2rem;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 1rem;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-dark) 100%);
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 3rem;
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  margin-left: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  border-left: 3px solid var(--accent);
-}
-
-.timeline-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -3.5rem;
-  top: 2rem;
-  width: 12px;
-  height: 12px;
-  background: var(--accent);
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 0 0 2px var(--accent);
-}
-
-.timeline-date {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  font-family: 'Inter', sans-serif;
-}
-
-.timeline-title {
-  font-family: 'Marion', 'Playfair Display', serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 0.5rem;
-}
-
-.timeline-subtitle {
-  font-size: 1.125rem;
-  color: var(--accent);
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-.timeline-description {
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 1rem;
-}
-
-.timeline-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.skill-tag {
-  background: #f7f5f2;
-  color: var(--text-light);
-  padding: 0.25rem 0.75rem;
-  border-radius: 16px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  border: 1px solid #ece7e1;
-}
-
-.achievement {
-  background: #fdf4e7;
-  border-left: 4px solid var(--accent);
-  padding: 0.75rem 1rem;
-  margin-top: 1rem;
-  border-radius: 0 6px 6px 0;
-}
-
-.achievement-text {
-  color: var(--accent-dark);
-  font-weight: 500;
-  font-size: 0.875rem;
-}
-
-/* Clean Experience Layout */
-.experience-item {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  gap: 4rem;
-  margin-bottom: 4rem;
-  align-items: start;
-}
-
-.experience-left {
-  text-align: left;
-}
-
-.experience-date {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.875rem;
-  color: var(--text-light);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-.experience-position {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-.experience-right {
-  position: relative;
-}
-
-.experience-right::before {
-  content: '';
-  position: absolute;
-  left: -2rem;
-  top: 0.5rem;
-  width: 8px;
-  height: 8px;
-  background: var(--accent);
-  border-radius: 50%;
-}
-
-.experience-company {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.125rem;
-  color: var(--text);
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.experience-description {
-  color: var(--text-muted);
-  line-height: 1.7;
-  font-size: 0.95rem;
-}
-
-@media (max-width: 768px) {
-  .timeline {
-    padding-left: 1rem;
-  }
-
-  .timeline-item {
-    margin-left: 1.5rem;
-    padding: 1.5rem;
-  }
-
-  .timeline-item::before {
-    left: -2.5rem;
-  }
-
-  .experience-item {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-
-  .experience-right::before {
-    display: none;
-  }
-}
 
 .portfolio-card {
   background: rgba(255, 255, 255, 0.8);
@@ -262,16 +67,8 @@
   letter-spacing: 0.5px;
 }
 
-.intro-section {
-  backdrop-filter: blur(8px);
-}
-
 .font-display {
   font-family: Georgia, serif;
-}
-
-.text-accent {
-  color: var(--accent);
 }
 
 .horizontal-media-card {
@@ -289,16 +86,6 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-.media-image-placeholder {
-  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 600;
-}
-
 .reel-card {
   background: white;
   border-radius: 12px;
@@ -312,17 +99,6 @@
 .reel-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
-}
-
-.reel-placeholder {
-  background: linear-gradient(135deg, var(--accent-light) 0%, #f1ebe0 60%, #f1ebe0 100%);
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 600;
-  font-size: 0.9rem;
 }
 
 /* Your existing carousel styles */
@@ -485,14 +261,6 @@
   margin: 0 auto;
 }
 
-.tweet-carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 20px;
-  background: #fff;
-}
-
 .tweet-dot {
   width: 8px;
   height: 8px;
@@ -507,32 +275,8 @@
   transform: scale(1.2);
 }
 
-.tweet-carousel-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 10;
-}
-
 .tweet-carousel-container:hover .tweet-carousel-nav {
   opacity: 1;
-}
-
-.tweet-carousel-nav:hover {
-  background: rgba(0, 0, 0, 0.8);
 }
 
 .tweet-carousel-nav.prev {
@@ -543,30 +287,8 @@
   right: 16px;
 }
 
-.tweet-carousel-counter {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: rgba(29, 161, 242, 0.9);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-size: 12px;
-  font-weight: 500;
-}
-
 .tweet-carousel-track.dragging {
   transition: none;
-}
-
-/* Loading state for tweets */
-.tweet-loading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
-  color: var(--text-light);
-  font-size: 14px;
 }
 
 .folder-wrap {
@@ -653,14 +375,6 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 1rem;
-}
-
-.folder-headline {
-  font-family: 'Marion', 'Playfair Display', serif;
-  font-size: 1.9rem;
-  color: var(--text);
-  line-height: 1.35;
   margin-bottom: 1rem;
 }
 
