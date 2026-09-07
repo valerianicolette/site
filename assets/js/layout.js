@@ -60,7 +60,9 @@ window.MONOGRAM_PATH = 'M199 402C199 402 199 399 199 399C199 399 205 399 212 399
   document.head.insertAdjacentHTML('beforeend', `
     <style id="page-colors">${hoverCss}</style>
     <link href="${esc(S.fonts.google)}" rel="stylesheet">
-    <link rel="icon" href="${esc(page.favicon)}" type="image/png">`);
+    <link rel="icon" href="${esc(page.favicon)}" type="image/png">
+    <meta name="theme-color" content="${esc(page.color)}">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">`);
   // Tab icon in the page color (SVG; browsers that can't show SVG icons keep the PNG above)
   const iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="${page.color}" fill-rule="evenodd"><path d="${MONOGRAM_PATH}"/></svg>`;
   const iconLink = document.createElement('link');
@@ -126,7 +128,7 @@ window.MONOGRAM_PATH = 'M199 402C199 402 199 399 199 399C199 399 205 399 212 399
           <a href="${esc(S.substack)}" target="_blank" rel="noopener noreferrer" aria-label="Substack" class="social-icon"><i data-lucide="newspaper"></i></a>
         </div>
         <p class="text-sm text-ink-light">Want to stay in the loop? Subscribe via Substack for updates.</p>
-        <form action="${esc(S.substack)}api/v1/free?nojs=true" method="POST" target="_blank"
+        <form action="${esc(S.substack)}api/v1/free?nojs=true" method="POST" target="_blank" rel="noopener"
               class="max-w-lg mx-auto flex border border-${k} focus-within:ring-2 focus-within:ring-${k} rounded-lg overflow-hidden">
           <input type="hidden" name="first_url" value="${esc(S.substack)}">
           <input type="hidden" name="first_referrer" value="">

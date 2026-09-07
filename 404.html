@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" data-page="home">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found | Valeria Mera</title>
+  <meta name="robots" content="noindex">
+
+  <!-- Shared setup: names, colors and text come from assets/js/config.js -->
+  <script src="assets/js/config.js"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="assets/js/layout.js"></script>
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+
+<body class="font-body antialiased text-ink bg-hero bg-fixed bg-no-repeat bg-cover min-h-screen">
+  <!-- The nav is inserted here by assets/js/layout.js -->
+
+  <main id="main">
+    <section class="min-h-[70vh] flex items-center justify-center pt-32 pb-16 px-6">
+      <div class="max-w-xl text-center space-y-6">
+        <p class="text-sm tracking-[0.2em] uppercase text-theme font-medium">404</p>
+        <h1 class="font-display text-4xl md:text-6xl leading-tight">That page wandered off.</h1>
+        <p class="text-lg text-ink-muted">The link might be old, or the page moved. Everything worth seeing is one click away.</p>
+        <div class="flex flex-wrap gap-4 justify-center pt-2">
+          <a href="index.html" class="inline-flex items-center gap-2 px-8 py-3 bg-theme text-white hover:opacity-90 transition">Back home <i data-lucide="home" class="w-4 h-4"></i></a>
+          <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-3 border border-theme text-theme hover:bg-theme hover:text-white transition">Say hi <i data-lucide="mail" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- The footer is inserted here by assets/js/layout.js -->
+  <script src="assets/js/site.js"></script>
+</body>
+</html>
